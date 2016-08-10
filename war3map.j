@@ -21,17 +21,17 @@ real yd_MapMaxX= 0
 real yd_MapMinX= 0
 real yd_MapMaxY= 0
 real yd_MapMinY= 0
-string array YDWEBase___yd_PlayerColor
-trigger array YDWEBase___AbilityCastingOverEventQueue
-integer array YDWEBase___AbilityCastingOverEventType
-integer YDWEBase___AbilityCastingOverEventNumber= 0
+string array YDWEBase__yd_PlayerColor
+trigger array YDWEBase__AbilityCastingOverEventQueue
+integer array YDWEBase__AbilityCastingOverEventType
+integer YDWEBase__AbilityCastingOverEventNumber= 0
 //endglobals from YDWEBase
 //globals from YDWEGetForceOfPlayerNull:
 constant boolean LIBRARY_YDWEGetForceOfPlayerNull=true
+force yd_NullTempForce
 //endglobals from YDWEGetForceOfPlayerNull
 //globals from YDWEGetPlayersByMapControlNull:
 constant boolean LIBRARY_YDWEGetPlayersByMapControlNull=true
-force yd_NullTempForce
 //endglobals from YDWEGetPlayersByMapControlNull
 //globals from YDWEGetUnitsInRangeOfLocMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsInRangeOfLocMatchingNull=true
@@ -73,6 +73,10 @@ trigger YDWETriggerEvent___MoveItemEventTrigger= null
 trigger array YDWETriggerEvent___MoveItemEventQueue
 integer YDWETriggerEvent___MoveItemEventNumber= 0
 //endglobals from YDWETriggerEvent
+//globals from YDWETriggerRegisterEnterRectSimpleNull:
+constant boolean LIBRARY_YDWETriggerRegisterEnterRectSimpleNull=true
+region yd_NullTempRegion
+//endglobals from YDWETriggerRegisterEnterRectSimpleNull
 //globals from MemoryLeakHelper:
 constant boolean LIBRARY_MemoryLeakHelper=true
 constant real MemoryLeakHelper___HASH_DECAY_TIME= 500.
@@ -254,19 +258,12 @@ integer udg_e_skill= 0
 integer array udg_e_skill_array
 string udg_e_string
     // Generated
-rect gg_rct_CS_A= null
-rect gg_rct_CS_B= null
-rect gg_rct_CS_C= null
-rect gg_rct_CS_D= null
 rect gg_rct_GA0= null
 rect gg_rct_GA1= null
 rect gg_rct_GA2= null
 rect gg_rct_GB0= null
 rect gg_rct_GB1= null
 rect gg_rct_GB2= null
-rect gg_rct_GC0= null
-rect gg_rct_GC1= null
-rect gg_rct_GC2= null
 rect gg_rct_GD0= null
 rect gg_rct_GD1= null
 rect gg_rct_GD2= null
@@ -279,7 +276,6 @@ rect gg_rct_GF2= null
 rect gg_rct______________001________5= null
 rect gg_rct______________012= null
 rect gg_rct______________012_______u= null
-rect gg_rct______________012________2= null
 rect gg_rct______________012________3= null
 rect gg_rct______________012________4= null
 rect gg_rct______________012________5= null
@@ -344,7 +340,8 @@ trigger gg_trg_B_SSW= null
 trigger gg_trg_C_LLF= null
 trigger gg_trg_C_LLI= null
 trigger gg_trg_A_LLL= null
-trigger gg_trg_C_LLP= null
+trigger gg_trg_A_PPF= null
+trigger gg_trg_A_PPI= null
 trigger gg_trg_A_LSW= null
 trigger gg_trg_A_SSS= null
 trigger gg_trg_A_PPD= null
@@ -381,6 +378,8 @@ trigger gg_trg_B_LWF1_______u= null
 trigger gg_trg_B_LWF2_______u= null
 trigger gg_trg_B_DPL1= null
 trigger gg_trg_B_DPF1= null
+trigger gg_trg_B_DEW1= null
+trigger gg_trg_B_DEW2= null
 trigger gg_trg_Diabolic_Edict_a= null
 trigger gg_trg_Diabolic_Edict_b= null
 trigger gg_trg_Plasma_Field_a= null
@@ -389,17 +388,17 @@ trigger gg_trg_Vacuum_a= null
 trigger gg_trg_Vacuum_b= null
 trigger gg_trg_huiGuangFanZhao= null
 trigger gg_trg_xueXiHuiGuangFanZhao= null
-<<<<<<< HEAD
+trigger gg_trg_jiShengZhongZi= null
 hashtable CZ_HT=InitHashtable()
 group SHSJDWZ=CreateGroup()
 constant integer CZ_PLMJ='e005'
+constant integer CZ_MRXX='e006'
+constant integer CZ_WXMM='e006'
 constant integer CZ_LTYJMJJN='A03J'
 constant integer CZ_GZFCMJJN='A03K'
 constant integer CZ_MRXXMJJN='A03O'
 constant integer CZ_YXJNGZFC='A03L'
 constant integer CZ_YXJNMRXX='A03N'
-=======
->>>>>>> origin/master
 
 trigger l__library_init
 
@@ -507,9 +506,8 @@ trigger array st__MemoryLeakHelper___GTable_onDestroy
 integer array si__YDWETimerPattern___Thread_type
 trigger array st__YDWETimerPattern___Thread_onDestroy
 trigger array st___prototype167
-trigger array st___prototype169
+trigger array st___prototype170
 real f__result_real
-trigger array st___prototype173
 trigger array st___prototype174
 trigger array st___prototype175
 trigger array st___prototype176
@@ -521,6 +519,7 @@ trigger array st___prototype181
 trigger array st___prototype182
 trigger array st___prototype183
 trigger array st___prototype184
+trigger array st___prototype185
 unit f__arg_unit1
 location f__arg_location1
 location f__arg_location2
@@ -1005,208 +1004,208 @@ function sc___prototype167_evaluate takes integer i,unit a1,location a2,real a3 
     call TriggerEvaluate(st___prototype167[i])
 
 endfunction
-function sc___prototype169_execute takes integer i returns nothing
+function sc___prototype170_execute takes integer i returns nothing
 
-    call TriggerExecute(st___prototype169[i])
+    call TriggerExecute(st___prototype170[i])
 endfunction
-function sc___prototype169_evaluate takes integer i returns real
+function sc___prototype170_evaluate takes integer i returns real
 
-    call TriggerEvaluate(st___prototype169[i])
+    call TriggerEvaluate(st___prototype170[i])
  return f__result_real
 endfunction
-function sc___prototype173_execute takes integer i,location a1 returns nothing
+function sc___prototype174_execute takes integer i,location a1 returns nothing
     set f__arg_location1=a1
-
-    call TriggerExecute(st___prototype173[i])
-endfunction
-function sc___prototype173_evaluate takes integer i,location a1 returns nothing
-    set f__arg_location1=a1
-
-    call TriggerEvaluate(st___prototype173[i])
-
-endfunction
-function sc___prototype174_execute takes integer i,group a1 returns nothing
-    set f__arg_group1=a1
 
     call TriggerExecute(st___prototype174[i])
 endfunction
-function sc___prototype174_evaluate takes integer i,group a1 returns nothing
-    set f__arg_group1=a1
+function sc___prototype174_evaluate takes integer i,location a1 returns nothing
+    set f__arg_location1=a1
 
     call TriggerEvaluate(st___prototype174[i])
 
 endfunction
-function sc___prototype175_execute takes integer i,effect a1 returns nothing
-    set f__arg_effect1=a1
+function sc___prototype175_execute takes integer i,group a1 returns nothing
+    set f__arg_group1=a1
 
     call TriggerExecute(st___prototype175[i])
 endfunction
-function sc___prototype175_evaluate takes integer i,effect a1 returns nothing
-    set f__arg_effect1=a1
+function sc___prototype175_evaluate takes integer i,group a1 returns nothing
+    set f__arg_group1=a1
 
     call TriggerEvaluate(st___prototype175[i])
 
 endfunction
-function sc___prototype176_execute takes integer i,location a1,real a2,real a3 returns nothing
-    set f__arg_location1=a1
-    set f__arg_real1=a2
-    set f__arg_real2=a3
+function sc___prototype176_execute takes integer i,effect a1 returns nothing
+    set f__arg_effect1=a1
 
     call TriggerExecute(st___prototype176[i])
 endfunction
-function sc___prototype176_evaluate takes integer i,location a1,real a2,real a3 returns nothing
-    set f__arg_location1=a1
-    set f__arg_real1=a2
-    set f__arg_real2=a3
+function sc___prototype176_evaluate takes integer i,effect a1 returns nothing
+    set f__arg_effect1=a1
 
     call TriggerEvaluate(st___prototype176[i])
 
 endfunction
-function sc___prototype177_execute takes integer i,integer a1,integer a2,player a3,location a4,real a5 returns nothing
-    set f__arg_integer1=a1
-    set f__arg_integer2=a2
-    set f__arg_player1=a3
-    set f__arg_location1=a4
-    set f__arg_real1=a5
+function sc___prototype177_execute takes integer i,location a1,real a2,real a3 returns nothing
+    set f__arg_location1=a1
+    set f__arg_real1=a2
+    set f__arg_real2=a3
 
     call TriggerExecute(st___prototype177[i])
 endfunction
-function sc___prototype177_evaluate takes integer i,integer a1,integer a2,player a3,location a4,real a5 returns nothing
-    set f__arg_integer1=a1
-    set f__arg_integer2=a2
-    set f__arg_player1=a3
-    set f__arg_location1=a4
-    set f__arg_real1=a5
+function sc___prototype177_evaluate takes integer i,location a1,real a2,real a3 returns nothing
+    set f__arg_location1=a1
+    set f__arg_real1=a2
+    set f__arg_real2=a3
 
     call TriggerEvaluate(st___prototype177[i])
 
 endfunction
-function sc___prototype178_execute takes integer i,unit a1,string a2,location a3 returns nothing
-    set f__arg_unit1=a1
-    set f__arg_string1=a2
-    set f__arg_location1=a3
+function sc___prototype178_execute takes integer i,integer a1,integer a2,player a3,location a4,real a5 returns nothing
+    set f__arg_integer1=a1
+    set f__arg_integer2=a2
+    set f__arg_player1=a3
+    set f__arg_location1=a4
+    set f__arg_real1=a5
 
     call TriggerExecute(st___prototype178[i])
 endfunction
-function sc___prototype178_evaluate takes integer i,unit a1,string a2,location a3 returns nothing
-    set f__arg_unit1=a1
-    set f__arg_string1=a2
-    set f__arg_location1=a3
+function sc___prototype178_evaluate takes integer i,integer a1,integer a2,player a3,location a4,real a5 returns nothing
+    set f__arg_integer1=a1
+    set f__arg_integer2=a2
+    set f__arg_player1=a3
+    set f__arg_location1=a4
+    set f__arg_real1=a5
 
     call TriggerEvaluate(st___prototype178[i])
 
 endfunction
-function sc___prototype179_execute takes integer i,unit a1,location a2 returns nothing
+function sc___prototype179_execute takes integer i,unit a1,string a2,location a3 returns nothing
     set f__arg_unit1=a1
-    set f__arg_location1=a2
+    set f__arg_string1=a2
+    set f__arg_location1=a3
 
     call TriggerExecute(st___prototype179[i])
 endfunction
-function sc___prototype179_evaluate takes integer i,unit a1,location a2 returns nothing
+function sc___prototype179_evaluate takes integer i,unit a1,string a2,location a3 returns nothing
     set f__arg_unit1=a1
-    set f__arg_location1=a2
+    set f__arg_string1=a2
+    set f__arg_location1=a3
 
     call TriggerEvaluate(st___prototype179[i])
 
 endfunction
-function sc___prototype180_execute takes integer i,real a1,location a2,boolexpr a3 returns nothing
-    set f__arg_real1=a1
+function sc___prototype180_execute takes integer i,unit a1,location a2 returns nothing
+    set f__arg_unit1=a1
     set f__arg_location1=a2
-    set f__arg_boolexpr1=a3
 
     call TriggerExecute(st___prototype180[i])
 endfunction
-function sc___prototype180_evaluate takes integer i,real a1,location a2,boolexpr a3 returns nothing
-    set f__arg_real1=a1
+function sc___prototype180_evaluate takes integer i,unit a1,location a2 returns nothing
+    set f__arg_unit1=a1
     set f__arg_location1=a2
-    set f__arg_boolexpr1=a3
 
     call TriggerEvaluate(st___prototype180[i])
 
 endfunction
-function sc___prototype181_execute takes integer i,integer a1,integer a2,player a3,location a4,location a5 returns nothing
-    set f__arg_integer1=a1
-    set f__arg_integer2=a2
-    set f__arg_player1=a3
-    set f__arg_location1=a4
-    set f__arg_location2=a5
+function sc___prototype181_execute takes integer i,real a1,location a2,boolexpr a3 returns nothing
+    set f__arg_real1=a1
+    set f__arg_location1=a2
+    set f__arg_boolexpr1=a3
 
     call TriggerExecute(st___prototype181[i])
 endfunction
-function sc___prototype181_evaluate takes integer i,integer a1,integer a2,player a3,location a4,location a5 returns nothing
-    set f__arg_integer1=a1
-    set f__arg_integer2=a2
-    set f__arg_player1=a3
-    set f__arg_location1=a4
-    set f__arg_location2=a5
+function sc___prototype181_evaluate takes integer i,real a1,location a2,boolexpr a3 returns nothing
+    set f__arg_real1=a1
+    set f__arg_location1=a2
+    set f__arg_boolexpr1=a3
 
     call TriggerEvaluate(st___prototype181[i])
 
 endfunction
-function sc___prototype182_execute takes integer i,group a1,code a2 returns nothing
-    set f__arg_group1=a1
-    set f__arg_code1=a2
+function sc___prototype182_execute takes integer i,integer a1,integer a2,player a3,location a4,location a5 returns nothing
+    set f__arg_integer1=a1
+    set f__arg_integer2=a2
+    set f__arg_player1=a3
+    set f__arg_location1=a4
+    set f__arg_location2=a5
 
     call TriggerExecute(st___prototype182[i])
 endfunction
-function sc___prototype182_evaluate takes integer i,group a1,code a2 returns nothing
-    set f__arg_group1=a1
-    set f__arg_code1=a2
+function sc___prototype182_evaluate takes integer i,integer a1,integer a2,player a3,location a4,location a5 returns nothing
+    set f__arg_integer1=a1
+    set f__arg_integer2=a2
+    set f__arg_player1=a3
+    set f__arg_location1=a4
+    set f__arg_location2=a5
 
     call TriggerEvaluate(st___prototype182[i])
 
 endfunction
-function sc___prototype183_execute takes integer i,string a1,widget a2,string a3 returns nothing
-    set f__arg_string1=a1
-    set f__arg_widget1=a2
-    set f__arg_string2=a3
+function sc___prototype183_execute takes integer i,group a1,code a2 returns nothing
+    set f__arg_group1=a1
+    set f__arg_code1=a2
 
     call TriggerExecute(st___prototype183[i])
 endfunction
-function sc___prototype183_evaluate takes integer i,string a1,widget a2,string a3 returns nothing
-    set f__arg_string1=a1
-    set f__arg_widget1=a2
-    set f__arg_string2=a3
+function sc___prototype183_evaluate takes integer i,group a1,code a2 returns nothing
+    set f__arg_group1=a1
+    set f__arg_code1=a2
 
     call TriggerEvaluate(st___prototype183[i])
 
 endfunction
-function sc___prototype184_execute takes integer i,location a1,string a2 returns nothing
-    set f__arg_location1=a1
-    set f__arg_string1=a2
+function sc___prototype184_execute takes integer i,string a1,widget a2,string a3 returns nothing
+    set f__arg_string1=a1
+    set f__arg_widget1=a2
+    set f__arg_string2=a3
 
     call TriggerExecute(st___prototype184[i])
 endfunction
-function sc___prototype184_evaluate takes integer i,location a1,string a2 returns nothing
-    set f__arg_location1=a1
-    set f__arg_string1=a2
+function sc___prototype184_evaluate takes integer i,string a1,widget a2,string a3 returns nothing
+    set f__arg_string1=a1
+    set f__arg_widget1=a2
+    set f__arg_string2=a3
 
     call TriggerEvaluate(st___prototype184[i])
 
 endfunction
+function sc___prototype185_execute takes integer i,location a1,string a2 returns nothing
+    set f__arg_location1=a1
+    set f__arg_string1=a2
+
+    call TriggerExecute(st___prototype185[i])
+endfunction
+function sc___prototype185_evaluate takes integer i,location a1,string a2 returns nothing
+    set f__arg_location1=a1
+    set f__arg_string1=a2
+
+    call TriggerEvaluate(st___prototype185[i])
+
+endfunction
 function h__PolarProjectionBJ takes location a0, real a1, real a2 returns location
     //hook: MemoryLeakHelper___PP
-    call sc___prototype176_evaluate(1,a0,a1,a2)
+    call sc___prototype177_evaluate(1,a0,a1,a2)
 return PolarProjectionBJ(a0,a1,a2)
 endfunction
 function h__CreateNUnitsAtLoc takes integer a0, integer a1, player a2, location a3, real a4 returns group
     //hook: MemoryLeakHelper___CU
-    call sc___prototype177_evaluate(1,a0,a1,a2,a3,a4)
+    call sc___prototype178_evaluate(1,a0,a1,a2,a3,a4)
 return CreateNUnitsAtLoc(a0,a1,a2,a3,a4)
 endfunction
 function h__CreateNUnitsAtLocFacingLocBJ takes integer a0, integer a1, player a2, location a3, location a4 returns group
     //hook: MemoryLeakHelper___CUF
-    call sc___prototype181_evaluate(1,a0,a1,a2,a3,a4)
+    call sc___prototype182_evaluate(1,a0,a1,a2,a3,a4)
 return CreateNUnitsAtLocFacingLocBJ(a0,a1,a2,a3,a4)
 endfunction
 function h__IssuePointOrderLocBJ takes unit a0, string a1, location a2 returns boolean
     //hook: MemoryLeakHelper___IPO
-    call sc___prototype178_evaluate(1,a0,a1,a2)
+    call sc___prototype179_evaluate(1,a0,a1,a2)
 return IssuePointOrderLocBJ(a0,a1,a2)
 endfunction
 function h__SetUnitPositionLoc takes unit a0, location a1 returns nothing
     //hook: MemoryLeakHelper___SUP
-    call sc___prototype179_evaluate(1,a0,a1)
+    call sc___prototype180_evaluate(1,a0,a1)
 call SetUnitPositionLoc(a0,a1)
 endfunction
 function h__SetUnitFacingToFaceLocTimed takes unit a0, location a1, real a2 returns nothing
@@ -1216,57 +1215,57 @@ call SetUnitFacingToFaceLocTimed(a0,a1,a2)
 endfunction
 function h__GetUnitsInRangeOfLocMatching takes real a0, location a1, boolexpr a2 returns group
     //hook: MemoryLeakHelper___GUR
-    call sc___prototype180_evaluate(1,a0,a1,a2)
+    call sc___prototype181_evaluate(1,a0,a1,a2)
 return GetUnitsInRangeOfLocMatching(a0,a1,a2)
 endfunction
 function h__RemoveLocation takes location a0 returns nothing
     //hook: MemoryLeakHelper___ReleaseLocation
-    call sc___prototype173_evaluate(1,a0)
+    call sc___prototype174_evaluate(1,a0)
 call RemoveLocation(a0)
 endfunction
 function h__ForGroupBJ takes group a0, code a1 returns nothing
     //hook: MemoryLeakHelper___FG
-    call sc___prototype182_evaluate(1,a0,a1)
+    call sc___prototype183_evaluate(1,a0,a1)
 call ForGroupBJ(a0,a1)
 endfunction
 function h__GroupPickRandomUnit takes group a0 returns unit
     //hook: MemoryLeakHelper___CatchGroup
-    call sc___prototype174_evaluate(1,a0)
+    call sc___prototype175_evaluate(1,a0)
 return GroupPickRandomUnit(a0)
 endfunction
 function h__CountUnitsInGroup takes group a0 returns integer
     //hook: MemoryLeakHelper___CatchGroup
-    call sc___prototype174_evaluate(1,a0)
+    call sc___prototype175_evaluate(1,a0)
 return CountUnitsInGroup(a0)
 endfunction
 function h__DestroyGroup takes group a0 returns nothing
     //hook: MemoryLeakHelper___ReleaseGroup
-    call sc___prototype174_evaluate(2,a0)
+    call sc___prototype175_evaluate(2,a0)
 call DestroyGroup(a0)
 endfunction
 function h__AddSpecialEffectLocBJ takes location a0, string a1 returns effect
     //hook: MemoryLeakHelper___ASE
-    call sc___prototype184_evaluate(1,a0,a1)
+    call sc___prototype185_evaluate(1,a0,a1)
 return AddSpecialEffectLocBJ(a0,a1)
 endfunction
 function h__AddSpecialEffectTargetUnitBJ takes string a0, widget a1, string a2 returns effect
     //hook: MemoryLeakHelper___ASETU
-    call sc___prototype183_evaluate(1,a0,a1,a2)
+    call sc___prototype184_evaluate(1,a0,a1,a2)
 return AddSpecialEffectTargetUnitBJ(a0,a1,a2)
 endfunction
 function h__DestroyEffect takes effect a0 returns nothing
     //hook: MemoryLeakHelper___ReleaseEffect
-    call sc___prototype175_evaluate(1,a0)
+    call sc___prototype176_evaluate(1,a0)
 call DestroyEffect(a0)
 endfunction
 function h__DestroyEffectBJ takes effect a0 returns nothing
     //hook: MemoryLeakHelper___ReleaseEffect
-    call sc___prototype175_evaluate(1,a0)
+    call sc___prototype176_evaluate(1,a0)
 call DestroyEffectBJ(a0)
 endfunction
 
 //library YDTriggerSaveLoadSystem:
- function YDTriggerSaveLoadSystem___Init takes nothing returns nothing
+ function YDTriggerSaveLoadSystem__Init takes nothing returns nothing
 		set YDHT=InitHashtable()
 	endfunction
 
@@ -1870,11 +1869,11 @@ endfunction
 function YDWESyStemAbilityCastingOverTriggerAction takes unit hero,integer index returns nothing
  local integer i= 0
     loop
-        exitwhen i >= YDWEBase___AbilityCastingOverEventNumber
-        if YDWEBase___AbilityCastingOverEventType[i] == index then
+        exitwhen i >= YDWEBase__AbilityCastingOverEventNumber
+        if YDWEBase__AbilityCastingOverEventType[i] == index then
             set bj_lastAbilityCastingUnit=hero
-			if YDWEBase___AbilityCastingOverEventQueue[i] != null and TriggerEvaluate(YDWEBase___AbilityCastingOverEventQueue[i]) and IsTriggerEnabled(YDWEBase___AbilityCastingOverEventQueue[i]) then
-				call TriggerExecute(YDWEBase___AbilityCastingOverEventQueue[i])
+			if YDWEBase__AbilityCastingOverEventQueue[i] != null and TriggerEvaluate(YDWEBase__AbilityCastingOverEventQueue[i]) and IsTriggerEnabled(YDWEBase__AbilityCastingOverEventQueue[i]) then
+				call TriggerExecute(YDWEBase__AbilityCastingOverEventQueue[i])
 			endif
 		endif
         set i=i + 1
@@ -1884,9 +1883,9 @@ endfunction
 //YDWE技能捕捉事件 
 //===========================================================================  
 function YDWESyStemAbilityCastingOverRegistTrigger takes trigger trg,integer index returns nothing
-	set YDWEBase___AbilityCastingOverEventQueue[YDWEBase___AbilityCastingOverEventNumber]=trg
-	set YDWEBase___AbilityCastingOverEventType[YDWEBase___AbilityCastingOverEventNumber]=index
-	set YDWEBase___AbilityCastingOverEventNumber=YDWEBase___AbilityCastingOverEventNumber + 1
+	set YDWEBase__AbilityCastingOverEventQueue[YDWEBase__AbilityCastingOverEventNumber]=trg
+	set YDWEBase__AbilityCastingOverEventType[YDWEBase__AbilityCastingOverEventNumber]=index
+	set YDWEBase__AbilityCastingOverEventNumber=YDWEBase__AbilityCastingOverEventNumber + 1
 endfunction 
 //===========================================================================
 //系统函数完善
@@ -1923,7 +1922,7 @@ endfunction
 //unitpool bj_lastCreatedPool=null
 //unit bj_lastPoolAbstractedUnit=null
 function YDWEGetPlayerColorString takes player p,string s returns string
-    return YDWEBase___yd_PlayerColor[GetHandleId(GetPlayerColor(p))] + s + "|r"
+    return YDWEBase__yd_PlayerColor[GetHandleId(GetPlayerColor(p))] + s + "|r"
 endfunction
 //===========================================================================
 //===========================================================================
@@ -1948,11 +1947,7 @@ endfunction
 //===========================================================================
 //显示版本
 function YDWEVersion_Display takes nothing returns boolean
-<<<<<<< HEAD
-    call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 30, "|cFF1E90FF当前编辑器版本为： |r|cFF00FF00YDWE 1.28.0.903")
-=======
-    call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 30, "|cFF1E90FF当前编辑器版本为： |r|cFF00FF00YDWE 1.29.3.1243")
->>>>>>> origin/master
+    call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 30, "|cFF1E90FF当前编辑器版本为： |r|cFF00FF00YDWE 1.30.0.1301")
     return false
 endfunction
 function YDWEVersion_Init takes nothing returns nothing
@@ -1973,22 +1968,22 @@ function InitializeYD takes nothing returns nothing
 	set yd_MapMaxX=GetCameraBoundMaxX() + GetCameraMargin(CAMERA_MARGIN_RIGHT)
 	set yd_MapMaxY=GetCameraBoundMaxY() + GetCameraMargin(CAMERA_MARGIN_TOP)
 	
-    set YDWEBase___yd_PlayerColor[0]="|cFFFF0303"
-    set YDWEBase___yd_PlayerColor[1]="|cFF0042FF"
-    set YDWEBase___yd_PlayerColor[2]="|cFF1CE6B9"
-    set YDWEBase___yd_PlayerColor[3]="|cFF540081"
-    set YDWEBase___yd_PlayerColor[4]="|cFFFFFC01"
-    set YDWEBase___yd_PlayerColor[5]="|cFFFE8A0E"
-    set YDWEBase___yd_PlayerColor[6]="|cFF20C000"
-    set YDWEBase___yd_PlayerColor[7]="|cFFE55BB0"
-    set YDWEBase___yd_PlayerColor[8]="|cFF959697"
-    set YDWEBase___yd_PlayerColor[9]="|cFF7EBFF1"
-    set YDWEBase___yd_PlayerColor[10]="|cFF106246"
-    set YDWEBase___yd_PlayerColor[11]="|cFF4E2A04"
-    set YDWEBase___yd_PlayerColor[12]="|cFF282828"
-    set YDWEBase___yd_PlayerColor[13]="|cFF282828"
-    set YDWEBase___yd_PlayerColor[14]="|cFF282828"
-    set YDWEBase___yd_PlayerColor[15]="|cFF282828"
+    set YDWEBase__yd_PlayerColor[0]="|cFFFF0303"
+    set YDWEBase__yd_PlayerColor[1]="|cFF0042FF"
+    set YDWEBase__yd_PlayerColor[2]="|cFF1CE6B9"
+    set YDWEBase__yd_PlayerColor[3]="|cFF540081"
+    set YDWEBase__yd_PlayerColor[4]="|cFFFFFC01"
+    set YDWEBase__yd_PlayerColor[5]="|cFFFE8A0E"
+    set YDWEBase__yd_PlayerColor[6]="|cFF20C000"
+    set YDWEBase__yd_PlayerColor[7]="|cFFE55BB0"
+    set YDWEBase__yd_PlayerColor[8]="|cFF959697"
+    set YDWEBase__yd_PlayerColor[9]="|cFF7EBFF1"
+    set YDWEBase__yd_PlayerColor[10]="|cFF106246"
+    set YDWEBase__yd_PlayerColor[11]="|cFF4E2A04"
+    set YDWEBase__yd_PlayerColor[12]="|cFF282828"
+    set YDWEBase__yd_PlayerColor[13]="|cFF282828"
+    set YDWEBase__yd_PlayerColor[14]="|cFF282828"
+    set YDWEBase__yd_PlayerColor[15]="|cFF282828"
     //=================显示版本=====================
     call YDWEVersion_Init()
 endfunction
@@ -2280,6 +2275,16 @@ function GetLastMovedItemInItemSlot takes nothing returns item
 endfunction
 
 //library YDWETriggerEvent ends
+//library YDWETriggerRegisterEnterRectSimpleNull:
+function YDWETriggerRegisterEnterRectSimpleNull takes trigger trig,rect r returns event
+    local region rectRegion= CreateRegion()
+    call RegionAddRect(rectRegion, r)
+    set yd_NullTempRegion=rectRegion
+    set rectRegion=null
+    return TriggerRegisterEnterRegion(trig, yd_NullTempRegion, null)
+endfunction
+
+//library YDWETriggerRegisterEnterRectSimpleNull ends
 //library MemoryLeakHelper:
     
     function MemoryLeakHelper___GetElapsedGameTime takes nothing returns real
@@ -3752,11 +3757,7 @@ endfunction
 // 
 //   Warcraft III map script
 //   Generated by the Warcraft III World Editor
-<<<<<<< HEAD
-//   Date: Tue Aug 09 15:13:56 2016
-=======
-//   Date: Mon Aug 08 23:43:05 2016
->>>>>>> origin/master
+//   Date: Wed Aug 10 21:50:09 2016
 //   Map Author: 未知
 // 
 //===========================================================================
@@ -3948,14 +3949,14 @@ endfunction
 //***************************************************************************
 function CreateAllItems takes nothing returns nothing
     local integer itemID
-    call CreateItem('I00K', 24.6, - 1195.9)
-    call CreateItem('I00L', 108.6, - 1206.5)
-    call CreateItem('I00M', 107.8, - 1298.0)
-    call CreateItem('I00N', 194.2, - 1233.0)
-    call CreateItem('I00O', 263.7, - 1230.1)
-    call CreateItem('I00P', 14.8, - 1295.6)
-    call CreateItem('I00Q', 277.6, - 1321.7)
-    call CreateItem('I00R', 194.5, - 1324.9)
+    call CreateItem('I00K', 5353.9, - 1075.1)
+    call CreateItem('I00L', 5469.6, - 1090.8)
+    call CreateItem('I00M', 5700.9, - 1131.5)
+    call CreateItem('I00N', 5352.7, - 1178.4)
+    call CreateItem('I00O', 5468.5, - 1225.6)
+    call CreateItem('I00P', 5721.8, - 1231.0)
+    call CreateItem('I00Q', 5599.9, - 1234.5)
+    call CreateItem('I00R', 5582.0, - 1112.3)
 endfunction
 //***************************************************************************
 //*
@@ -3969,12 +3970,8 @@ function CreateUnitsForPlayer0 takes nothing returns nothing
     local integer unitID
     local trigger t
     local real life
-    set u=CreateUnit(p, 'Hpal', - 155.7, - 945.1, 165.602)
-    set u=CreateUnit(p, 'earc', 66.7, - 894.9, 8.723)
-    set u=CreateUnit(p, 'earc', - 9.6, - 930.7, 270.404)
-    set u=CreateUnit(p, 'earc', - 84.9, - 816.2, 169.876)
-    set u=CreateUnit(p, 'ufro', - 224.8, - 1080.9, 103.121)
-    set u=CreateUnit(p, 'Hblm', - 519.7, - 1001.0, 306.462)
+    set u=CreateUnit(p, 'Hblm', 5208.2, - 1142.6, 164.448)
+    set u=CreateUnit(p, 'Hblm', 5044.9, - 1061.0, 164.448)
 endfunction
 //===========================================================================
 function CreateNeutralHostile takes nothing returns nothing
@@ -3983,41 +3980,74 @@ function CreateNeutralHostile takes nothing returns nothing
     local integer unitID
     local trigger t
     local real life
-    set u=CreateUnit(p, 'opeo', 1453.0, 1291.9, 183.236)
-    set u=CreateUnit(p, 'opeo', 1369.0, 1089.4, 6.361)
-    set u=CreateUnit(p, 'ewsp', 1669.3, - 1945.2, 119.777)
-    set u=CreateUnit(p, 'ewsp', 1530.7, - 2029.5, 354.452)
-    set u=CreateUnit(p, 'ewsp', 1502.2, - 1719.5, 26.566)
-    set u=CreateUnit(p, 'ewsp', 858.0, - 1742.0, 295.772)
-    set u=CreateUnit(p, 'ewsp', 839.6, - 1501.0, 109.120)
-    set u=CreateUnit(p, 'ewsp', 1467.1, - 2180.1, 303.298)
-    set u=CreateUnit(p, 'ewsp', 1757.7, - 2117.2, 81.290)
-    set u=CreateUnit(p, 'ewsp', 1394.5, - 1851.4, 217.942)
-    set u=CreateUnit(p, 'ewsp', - 1739.2, 1193.7, 355.045)
-    set u=CreateUnit(p, 'ewsp', - 1659.4, 856.3, 293.509)
-    set u=CreateUnit(p, 'ewsp', - 1435.3, 1281.1, 301.276)
-    set u=CreateUnit(p, 'ewsp', - 800.4, 587.9, 23.654)
-    set u=CreateUnit(p, 'ewsp', - 1564.3, 913.4, 260.834)
-    set u=CreateUnit(p, 'ewsp', - 1474.2, 569.0, 231.950)
-    set u=CreateUnit(p, 'ewsp', - 899.0, 424.2, 73.358)
-    set u=CreateUnit(p, 'opeo', 1360.7, 1024.8, 337.587)
-    set u=CreateUnit(p, 'opeo', 1033.5, 849.1, 33.817)
-    set u=CreateUnit(p, 'opeo', 1095.6, 839.6, 164.855)
-    set u=CreateUnit(p, 'opeo', 1226.0, 607.2, 193.893)
-    set u=CreateUnit(p, 'opeo', 1262.1, 588.5, 240.784)
-    set u=CreateUnit(p, 'opeo', 1585.0, 916.8, 41.156)
-    set u=CreateUnit(p, 'opeo', 1612.9, 889.9, 324.436)
-    set u=CreateUnit(p, 'opeo', 1391.1, 692.8, 310.879)
-    set u=CreateUnit(p, 'opeo', 1282.5, 760.2, 157.142)
-    set u=CreateUnit(p, 'opeo', 1179.9, 946.6, 62.119)
-    set u=CreateUnit(p, 'opeo', 1420.2, 865.6, 302.221)
-    set u=CreateUnit(p, 'opeo', 1514.8, 799.3, 159.746)
-    set u=CreateUnit(p, 'opeo', 1604.1, 760.2, 227.578)
-    set u=CreateUnit(p, 'opeo', 1794.2, 1049.3, 235.191)
-    set u=CreateUnit(p, 'opeo', 1678.1, 1074.3, 220.250)
-    set u=CreateUnit(p, 'opeo', 1599.0, 1081.8, 290.597)
-    set u=CreateUnit(p, 'opeo', 1549.5, 1084.3, 50.099)
-    set u=CreateUnit(p, 'opeo', 1488.3, 1221.6, 288.455)
+    set u=CreateUnit(p, 'opeo', 7423.1, - 2541.6, 183.236)
+    set u=CreateUnit(p, 'opeo', 7339.1, - 2744.1, 6.361)
+    set u=CreateUnit(p, 'opeo', 7330.8, - 2808.7, 337.587)
+    set u=CreateUnit(p, 'opeo', 7003.6, - 2984.5, 33.817)
+    set u=CreateUnit(p, 'opeo', 7065.7, - 2993.9, 164.855)
+    set u=CreateUnit(p, 'opeo', 7196.1, - 3226.3, 193.893)
+    set u=CreateUnit(p, 'opeo', 7232.2, - 3245.1, 240.784)
+    set u=CreateUnit(p, 'opeo', 7555.1, - 2916.7, 41.156)
+    set u=CreateUnit(p, 'opeo', 7583.0, - 2943.7, 324.436)
+    set u=CreateUnit(p, 'opeo', 7361.2, - 3140.8, 310.879)
+    set u=CreateUnit(p, 'opeo', 7252.6, - 3073.4, 157.142)
+    set u=CreateUnit(p, 'opeo', 7150.0, - 2887.0, 62.119)
+    set u=CreateUnit(p, 'opeo', 7390.3, - 2967.9, 302.221)
+    set u=CreateUnit(p, 'opeo', 7484.9, - 3034.2, 159.746)
+    set u=CreateUnit(p, 'opeo', 7574.2, - 3073.4, 227.578)
+    set u=CreateUnit(p, 'hpea', 7800.1, - 2997.7, 344.531)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7749.4, - 3049.9, 275.853)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'opeo', 7764.3, - 2784.2, 235.191)
+    set u=CreateUnit(p, 'hpea', 7727.4, - 3080.5, 84.125)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7689.9, - 3135.8, 130.752)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'opeo', 7648.2, - 2759.3, 220.250)
+    set u=CreateUnit(p, 'opeo', 7569.1, - 2751.7, 290.597)
+    set u=CreateUnit(p, 'opeo', 7519.6, - 2749.2, 50.099)
+    set u=CreateUnit(p, 'opeo', 7458.4, - 2612.0, 288.455)
+    set u=CreateUnit(p, 'hpea', 7649.0, - 3174.1, 121.732)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7588.6, - 3213.3, 76.841)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7530.4, - 3244.2, 27.258)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7498.2, - 3267.4, 172.304)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7481.1, - 3304.1, 52.329)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7968.5, - 3187.3, 230.566)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7882.7, - 3258.5, 308.758)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7801.6, - 3300.7, 263.735)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7740.9, - 3329.8, 216.404)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 8047.6, - 2551.9, 148.386)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 8096.4, - 2726.6, 306.451)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 8113.8, - 2862.0, 254.187)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 8125.5, - 2974.7, 58.163)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 8134.0, - 3053.8, 168.876)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 8129.3, - 3172.8, 274.941)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 8117.7, - 3280.9, 132.367)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7976.2, - 2810.3, 213.614)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7927.1, - 2967.6, 284.434)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7926.8, - 2999.8, 20.424)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
+    set u=CreateUnit(p, 'hpea', 7945.8, - 3039.6, 134.521)
+    call SetUnitState(u, UNIT_STATE_MANA, 0)
     set u=CreateUnit(p, 'opeo', - 1335.7, - 1518.1, 183.236)
     set u=CreateUnit(p, 'opeo', - 1419.7, - 1720.6, 6.361)
     set u=CreateUnit(p, 'opeo', - 1427.9, - 1785.2, 337.587)
@@ -4038,6 +4068,9 @@ function CreateNeutralHostile takes nothing returns nothing
     set u=CreateUnit(p, 'opeo', - 1189.7, - 1728.2, 290.597)
     set u=CreateUnit(p, 'opeo', - 1239.1, - 1725.7, 50.099)
     set u=CreateUnit(p, 'opeo', - 1300.3, - 1588.5, 288.455)
+    set u=CreateUnit(p, 'n00I', 7921.9, - 1115.1, 75.347)
+    set u=CreateUnit(p, 'n00I', 7912.4, - 1297.8, 105.054)
+    set u=CreateUnit(p, 'n00I', 7900.9, - 1456.6, 332.292)
 endfunction
 //===========================================================================
 function CreatePlayerBuildings takes nothing returns nothing
@@ -4059,43 +4092,35 @@ endfunction
 //***************************************************************************
 function CreateRegions takes nothing returns nothing
     local weathereffect we
-    set gg_rct_CS_A=Rect(2016.0, - 2560.0, 2048.0, - 2528.0)
-    set gg_rct_CS_B=Rect(- 2048.0, 1536.0, - 2016.0, 1568.0)
-    set gg_rct_CS_C=Rect(2048.0, 1536.0, 2080.0, 1568.0)
-    set gg_rct_CS_D=Rect(- 2048.0, - 2560.0, - 2016.0, - 2528.0)
-    set gg_rct_GA0=Rect(0.0, 1824.0, 32.0, 1856.0)
-    set gg_rct_GA1=Rect(64.0, 1696.0, 96.0, 1728.0)
-    set gg_rct_GA2=Rect(- 96.0, 1696.0, - 64.0, 1728.0)
-    set gg_rct_GB0=Rect(0.0, - 2912.0, 32.0, - 2880.0)
-    set gg_rct_GB1=Rect(64.0, - 2752.0, 96.0, - 2720.0)
-    set gg_rct_GB2=Rect(- 96.0, - 2752.0, - 64.0, - 2720.0)
-    set gg_rct_GC0=Rect(2368.0, - 512.0, 2400.0, - 480.0)
-    set gg_rct_GC1=Rect(2208.0, - 608.0, 2240.0, - 576.0)
-    set gg_rct_GC2=Rect(2208.0, - 448.0, 2240.0, - 416.0)
-    set gg_rct_GD0=Rect(- 2400.0, - 544.0, - 2368.0, - 512.0)
-    set gg_rct_GD1=Rect(- 2240.0, - 608.0, - 2208.0, - 576.0)
-    set gg_rct_GD2=Rect(- 2240.0, - 448.0, - 2208.0, - 416.0)
-    set gg_rct_GE0=Rect(5696.0, - 6240.0, 5728.0, - 6208.0)
-    set gg_rct_GE1=Rect(5632.0, - 6048.0, 5664.0, - 6016.0)
-    set gg_rct_GE2=Rect(5504.0, - 6176.0, 5536.0, - 6144.0)
+    set gg_rct_GA0=Rect(7808.0, - 992.0, 7840.0, - 960.0)
+    set gg_rct_GA1=Rect(7872.0, - 1120.0, 7904.0, - 1088.0)
+    set gg_rct_GA2=Rect(7712.0, - 1120.0, 7744.0, - 1088.0)
+    set gg_rct_GB0=Rect(7840.0, - 2080.0, 7872.0, - 2048.0)
+    set gg_rct_GB1=Rect(7904.0, - 1920.0, 7936.0, - 1888.0)
+    set gg_rct_GB2=Rect(7744.0, - 1920.0, 7776.0, - 1888.0)
+    set gg_rct_GD0=Rect(- 2176.0, - 544.0, - 2144.0, - 512.0)
+    set gg_rct_GD1=Rect(- 2016.0, - 608.0, - 1984.0, - 576.0)
+    set gg_rct_GD2=Rect(- 2016.0, - 448.0, - 1984.0, - 416.0)
+    set gg_rct_GE0=Rect(5632.0, - 3168.0, 5664.0, - 3136.0)
+    set gg_rct_GE1=Rect(5568.0, - 2976.0, 5600.0, - 2944.0)
+    set gg_rct_GE2=Rect(5440.0, - 3104.0, 5472.0, - 3072.0)
     set gg_rct_GF0=Rect(5664.0, 5152.0, 5696.0, 5184.0)
     set gg_rct_GF1=Rect(5504.0, 5056.0, 5536.0, 5088.0)
     set gg_rct_GF2=Rect(5664.0, 4992.0, 5696.0, 5024.0)
-    set gg_rct______________001________5=Rect(4256.0, - 3200.0, 4960.0, - 2432.0)
-    set gg_rct______________012=Rect(- 384.0, 1408.0, 384.0, 2176.0)
-    set gg_rct______________012_______u=Rect(- 384.0, - 3200.0, 384.0, - 2432.0)
-    set gg_rct______________012________2=Rect(1920.0, - 896.0, 2688.0, - 128.0)
-    set gg_rct______________012________3=Rect(- 2688.0, - 896.0, - 1920.0, - 128.0)
+    set gg_rct______________001________5=Rect(6272.0, - 3456.0, 6976.0, - 2688.0)
+    set gg_rct______________012=Rect(7424.0, - 1408.0, 8192.0, - 640.0)
+    set gg_rct______________012_______u=Rect(7456.0, - 2368.0, 8224.0, - 1600.0)
+    set gg_rct______________012________3=Rect(- 2464.0, - 896.0, - 1696.0, - 128.0)
     set gg_rct______________012________4=Rect(5248.0, 4736.0, 6016.0, 5504.0)
-    set gg_rct______________012________5=Rect(- 6016.0, 4736.0, - 5248.0, 5504.0)
-    set gg_rct______________012________6=Rect(- 6016.0, - 6528.0, - 5248.0, - 5760.0)
-    set gg_rct______________012________7=Rect(5248.0, - 6528.0, 6016.0, - 5760.0)
-    set gg_rct_GG1=Rect(- 5696.0, 5120.0, - 5664.0, 5152.0)
-    set gg_rct_GG2=Rect(- 5696.0, 4928.0, - 5664.0, 4960.0)
-    set gg_rct_GG3=Rect(- 5536.0, 5088.0, - 5504.0, 5120.0)
-    set gg_rct_GH0=Rect(- 5824.0, - 6272.0, - 5792.0, - 6240.0)
-    set gg_rct_GH1=Rect(- 5760.0, - 6080.0, - 5728.0, - 6048.0)
-    set gg_rct_GH2=Rect(- 5600.0, - 6208.0, - 5568.0, - 6176.0)
+    set gg_rct______________012________5=Rect(- 5792.0, 4736.0, - 5024.0, 5504.0)
+    set gg_rct______________012________6=Rect(- 5792.0, - 6528.0, - 5024.0, - 5760.0)
+    set gg_rct______________012________7=Rect(5184.0, - 3456.0, 5952.0, - 2688.0)
+    set gg_rct_GG1=Rect(- 5472.0, 5120.0, - 5440.0, 5152.0)
+    set gg_rct_GG2=Rect(- 5472.0, 4928.0, - 5440.0, 4960.0)
+    set gg_rct_GG3=Rect(- 5312.0, 5088.0, - 5280.0, 5120.0)
+    set gg_rct_GH0=Rect(- 5600.0, - 6272.0, - 5568.0, - 6240.0)
+    set gg_rct_GH1=Rect(- 5536.0, - 6080.0, - 5504.0, - 6048.0)
+    set gg_rct_GH2=Rect(- 5376.0, - 6208.0, - 5344.0, - 6176.0)
 endfunction
 //***************************************************************************
 //*
@@ -4259,7 +4284,7 @@ function Trig_elementActions takes nothing returns nothing
     set udg_e_skill='AEsh'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="156"
-    set udg_e_skill='AEsh'
+    set udg_e_skill='A03M'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="157"
     set udg_e_skill='AEsh'
@@ -4339,7 +4364,7 @@ function Trig_elementActions takes nothing returns nothing
     set udg_e_skill='AEsh'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="005"
-    set udg_e_skill='AEsh'
+    set udg_e_skill='A03W'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="006"
     set udg_e_skill='AEsh'
@@ -4444,10 +4469,10 @@ function Trig_elementActions takes nothing returns nothing
     set udg_e_skill='A02C'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="554"
-    set udg_e_skill='AEsh'
+    set udg_e_skill='A02E'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="556"
-    set udg_e_skill='A02E'
+    set udg_e_skill='A03V'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="557"
     set udg_e_skill='A021'
@@ -4468,7 +4493,7 @@ function Trig_elementActions takes nothing returns nothing
     set udg_e_skill='A02R'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="667"
-    set udg_e_skill='A01E'
+    set udg_e_skill='A03Q'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="770"
     set udg_e_skill='AEsh'
@@ -4489,7 +4514,7 @@ function Trig_elementActions takes nothing returns nothing
     set udg_e_skill='A02U'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="663"
-    set udg_e_skill='A03I'
+    set udg_e_skill='A03R'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="773"
     set udg_e_skill='A02V'
@@ -4497,11 +4522,11 @@ function Trig_elementActions takes nothing returns nothing
     set udg_e_string="574"
     set udg_e_skill='A03L'
     call TriggerExecute(gg_trg_compute)
-    set udg_e_string="165"
-    set udg_e_skill='A03M'
-    call TriggerExecute(gg_trg_compute)
     set udg_e_string="167"
     set udg_e_skill='A03N'
+    call TriggerExecute(gg_trg_compute)
+    set udg_e_string="104"
+    set udg_e_skill='A03P'
     call TriggerExecute(gg_trg_compute)
 endfunction
 //===========================================================================
@@ -4921,19 +4946,6 @@ function InitTrig_roundtime_2 takes nothing returns nothing
     call TriggerAddAction(gg_trg_roundtime_2, function Trig_roundtime_2Actions)
 endfunction
 //===========================================================================
-// Trigger: 未命名触发器 001
-//===========================================================================
-function Trig____________________001Actions takes nothing returns nothing
-    set udg_e_string="0"
-    set udg_e_skill='A02V'
-    call TriggerExecute(gg_trg_compute)
-endfunction
-//===========================================================================
-function InitTrig____________________001 takes nothing returns nothing
-    set gg_trg____________________001=CreateTrigger()
-    call TriggerAddAction(gg_trg____________________001, function Trig____________________001Actions)
-endfunction
-//===========================================================================
 // Trigger: dialog
 //===========================================================================
 function Trig_dialogFunc010Func018Func019Conditions takes nothing returns nothing
@@ -5107,9 +5119,6 @@ endfunction
 function Trig_GAFunc007Func005001001002 takes nothing returns boolean
     return ( ( IsUnitAliveBJ(GetFilterUnit()) == true ) )
 endfunction
-function Trig_GAFunc008Func005001001002 takes nothing returns boolean
-    return ( ( IsUnitAliveBJ(GetFilterUnit()) == true ) )
-endfunction
 function Trig_GAActions takes nothing returns nothing
     local integer ydl_localvar_step= LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
     set ydl_localvar_step=ydl_localvar_step + 3
@@ -5129,42 +5138,35 @@ function Trig_GAActions takes nothing returns nothing
         call h__CreateNUnitsAtLoc(1, udg_GuaiA2[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GB2), bj_UNIT_FACING)
     else
     endif
-    if ( ( h__CountUnitsInGroup(YDWEGetUnitsInRectMatchingNull(gg_rct______________012________2 , Condition(function Trig_GAFunc003Func005001001002))) == 0 ) ) then
-        call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2, GetRandomInt(1, 4))
-        call h__CreateNUnitsAtLoc(1, udg_GuaiA1[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GC0), bj_UNIT_FACING)
-        call h__CreateNUnitsAtLoc(1, udg_GuaiA2[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GC1), bj_UNIT_FACING)
-        call h__CreateNUnitsAtLoc(1, udg_GuaiA2[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GC2), bj_UNIT_FACING)
-    else
-    endif
-    if ( ( h__CountUnitsInGroup(YDWEGetUnitsInRectMatchingNull(gg_rct______________012________3 , Condition(function Trig_GAFunc004Func005001001002))) == 0 ) ) then
+    if ( ( h__CountUnitsInGroup(YDWEGetUnitsInRectMatchingNull(gg_rct______________012________3 , Condition(function Trig_GAFunc003Func005001001002))) == 0 ) ) then
         call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2, GetRandomInt(1, 4))
         call h__CreateNUnitsAtLoc(1, udg_GuaiA1[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GD0), bj_UNIT_FACING)
         call h__CreateNUnitsAtLoc(1, udg_GuaiA2[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GD1), bj_UNIT_FACING)
         call h__CreateNUnitsAtLoc(1, udg_GuaiA2[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GD2), bj_UNIT_FACING)
     else
     endif
-    if ( ( h__CountUnitsInGroup(YDWEGetUnitsInRectMatchingNull(gg_rct______________012________7 , Condition(function Trig_GAFunc005Func005001001002))) == 0 ) ) then
+    if ( ( h__CountUnitsInGroup(YDWEGetUnitsInRectMatchingNull(gg_rct______________012________7 , Condition(function Trig_GAFunc004Func005001001002))) == 0 ) ) then
         call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2, GetRandomInt(1, 4))
         call h__CreateNUnitsAtLoc(1, udg_GuaiB1[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GE0), bj_UNIT_FACING)
         call h__CreateNUnitsAtLoc(1, udg_GuaiB2[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GE1), bj_UNIT_FACING)
         call h__CreateNUnitsAtLoc(1, udg_GuaiB2[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GE2), bj_UNIT_FACING)
     else
     endif
-    if ( ( h__CountUnitsInGroup(YDWEGetUnitsInRectMatchingNull(gg_rct______________012________4 , Condition(function Trig_GAFunc006Func005001001002))) == 0 ) ) then
+    if ( ( h__CountUnitsInGroup(YDWEGetUnitsInRectMatchingNull(gg_rct______________012________4 , Condition(function Trig_GAFunc005Func005001001002))) == 0 ) ) then
         call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2, GetRandomInt(1, 4))
         call h__CreateNUnitsAtLoc(1, udg_GuaiB1[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GF0), bj_UNIT_FACING)
         call h__CreateNUnitsAtLoc(1, udg_GuaiB2[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GF1), bj_UNIT_FACING)
         call h__CreateNUnitsAtLoc(1, udg_GuaiB2[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GF2), bj_UNIT_FACING)
     else
     endif
-    if ( ( h__CountUnitsInGroup(YDWEGetUnitsInRectMatchingNull(gg_rct______________012________5 , Condition(function Trig_GAFunc007Func005001001002))) == 0 ) ) then
+    if ( ( h__CountUnitsInGroup(YDWEGetUnitsInRectMatchingNull(gg_rct______________012________5 , Condition(function Trig_GAFunc006Func005001001002))) == 0 ) ) then
         call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2, GetRandomInt(1, 4))
         call h__CreateNUnitsAtLoc(1, udg_GuaiB1[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GG1), bj_UNIT_FACING)
         call h__CreateNUnitsAtLoc(1, udg_GuaiB2[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GG2), bj_UNIT_FACING)
         call h__CreateNUnitsAtLoc(1, udg_GuaiB2[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GG3), bj_UNIT_FACING)
     else
     endif
-    if ( ( h__CountUnitsInGroup(YDWEGetUnitsInRectMatchingNull(gg_rct______________012________6 , Condition(function Trig_GAFunc008Func005001001002))) == 0 ) ) then
+    if ( ( h__CountUnitsInGroup(YDWEGetUnitsInRectMatchingNull(gg_rct______________012________6 , Condition(function Trig_GAFunc007Func005001001002))) == 0 ) ) then
         call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2, GetRandomInt(1, 4))
         call h__CreateNUnitsAtLoc(1, udg_GuaiB1[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GH0), bj_UNIT_FACING)
         call h__CreateNUnitsAtLoc(1, udg_GuaiB2[LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC01454E2)], Player(PLAYER_NEUTRAL_AGGRESSIVE), GetRectCenter(gg_rct_GH1), bj_UNIT_FACING)
@@ -6884,190 +6886,218 @@ function InitTrig_A_LLL takes nothing returns nothing
     call TriggerAddAction(gg_trg_A_LLL, function Trig_A_LLLActions)
 endfunction
 //===========================================================================
-// Trigger: C LLP
+// Trigger: A PPF
 //===========================================================================
-function Trig_C_LLPConditions takes nothing returns boolean
-    return ( ( GetSpellAbilityId() == 'A02E' ) )
+function Trig_A_PPFConditions takes nothing returns boolean
+    return ( ( GetSpellAbilityId() == 'A03Q' ) )
 endfunction
-function Trig_C_LLPFunc015T takes nothing returns nothing
-    if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xABEAFB06) < 100 ) ) then
-        call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xABEAFB06, ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xABEAFB06) + 4 ))
-        set bj_forLoopAIndex=1
-        set bj_forLoopAIndexEnd=5
-        loop
-            exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
-            call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0xA99320FA, GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x8786956E)))
-            call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0xFDF65382, GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x8786956E)))
-            call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0x41713DA3, ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xA99320FA) + ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x6A7A5B61) * CosBJ(LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC7EA1948)) ) ))
-            call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0x71CA3531, ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xFDF65382) + ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x6A7A5B61) * SinBJ(LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC7EA1948)) ) ))
-            call SaveUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x90BB9840, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xB95F828C)), 'u01L', LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x41713DA3), LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x71CA3531), 0.00))
-            call GroupAddUnitSimple(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x90BB9840), LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xD42855DB))
-            call SaveReal(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x90BB9840)), 0xC07D222F, LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC7EA1948))
-            call SaveReal(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x90BB9840)), 0x6A7A5B61, LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x6A7A5B61))
-            call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0x6A7A5B61, ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x6A7A5B61) + 10.00 ))
-            set bj_forLoopAIndex=bj_forLoopAIndex + 1
-        endloop
-    else
-        call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
-        call DestroyTimer(GetExpiredTimer())
-    endif
+function Trig_A_PPFFunc011003003 takes nothing returns boolean
+    return ( ( ( ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_STRUCTURE) == false ) and ( IsUnitType(GetFilterUnit(), UNIT_TYPE_MAGIC_IMMUNE) == false ) ) and ( false == false ) ) and ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) == false ) and ( ( IsUnitAlly(GetFilterUnit(), GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB95F828C))) == false ) and ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_DEAD) == false ) and ( GetUnitPointValue(GetFilterUnit()) != 999 ) ) ) ) ) )
 endfunction
-function Trig_C_LLPFunc017Func001Func002A takes nothing returns nothing
-    call h__DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(GetEnumUnit()), 0x93FE3865))
-    call FlushChildHashtable(YDHT, GetHandleId(GetEnumUnit()))
-    call RemoveUnit(GetEnumUnit())
+function Trig_A_PPFFunc012A takes nothing returns nothing
+    call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xF017C0F3)), 0x35200533, 0)
+    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xF017C0F3, GetEnumUnit())
+    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x3893EA54, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB95F828C)), 'u019', LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xA99320FA), LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xFDF65382), 0.00))
+    call UnitAddAbility(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x3893EA54), LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB0A9479A))
+    call SetUnitAbilityLevelSwapped(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB0A9479A), LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x3893EA54), LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x683BAEBE))
+    call IssueTargetOrder(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x3893EA54), "drunkenhaze", LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xF017C0F3))
+    call YDWETimerRemoveUnit(0.50 , LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x3893EA54))
 endfunction
-function Trig_C_LLPFunc017Func001Func010A takes nothing returns nothing
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xC7EA1948, LoadReal(YDHT, GetHandleId(GetEnumUnit()), 0xC07D222F))
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x6A7A5B61, LoadReal(YDHT, GetHandleId(GetEnumUnit()), 0x6A7A5B61))
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xC7EA1948, GetUnitFacing(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8786956E)))
-    call SaveReal(YDHT, GetHandleId(GetEnumUnit()), 0xC07D222F, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xC7EA1948))
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x41713DA3, ( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xA99320FA) + ( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x6A7A5B61) * CosBJ(LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xC7EA1948)) ) ))
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x71CA3531, ( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xFDF65382) + ( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x6A7A5B61) * SinBJ(LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xC7EA1948)) ) ))
-    call SetUnitX(GetEnumUnit(), (RMinBJ(RMaxBJ(((LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x41713DA3))*1.0), yd_MapMinX), yd_MapMaxX))) // INLINED!!
-    call SetUnitY(GetEnumUnit(), (RMinBJ(RMaxBJ(((LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x71CA3531))*1.0), yd_MapMinY), yd_MapMaxY))) // INLINED!!
-    call SetUnitFacing(GetEnumUnit(), ( ( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xC7EA1948) ) - ( 0.00 ) ))
-    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB8F332A5, GetEnumUnit())
-endfunction
-function Trig_C_LLPFunc017Func001Func011Func001Func002Func003003003 takes nothing returns boolean
-    return ( ( ( ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_STRUCTURE) == false ) and ( IsUnitType(GetFilterUnit(), UNIT_TYPE_MAGIC_IMMUNE) == false ) ) and ( IsUnitInGroup(GetFilterUnit(), LoadGroupHandle(YDHT, GetHandleId(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD42855DB)), 0x93FE3865)) == false ) ) and ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) == false ) and ( ( IsUnitAlly(GetFilterUnit(), GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB95F828C))) == false ) and ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_DEAD) == false ) and ( GetUnitPointValue(GetFilterUnit()) != 999 ) ) ) ) ) )
-endfunction
-function Trig_C_LLPFunc017Func001Func011Func001Func002Func004Func007T takes nothing returns nothing
-    call GroupRemoveUnitSimple(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3), LoadGroupHandle(YDHT, GetHandleId(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xD42855DB)), 0x93FE3865))
-    call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
-    call DestroyTimer(GetExpiredTimer())
-endfunction
-function Trig_C_LLPFunc017Func001Func011Func001Func002Func004A takes nothing returns nothing
-    local timer ydl_timer
+function Trig_A_PPFFunc014Func002A takes nothing returns nothing
     call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3, GetEnumUnit())
-    call UnitDamageTargetBJ(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB95F828C), GetEnumUnit(), LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x9720DBE0), ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC)
-    call h__DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Items\\OrbVenom\\OrbVenomSpecialArt.mdl", LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3), "chest"))
-    call UnitDamageTargetBJ(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB95F828C), GetEnumUnit(), LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x9720DBE0), ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC)
-    if ( ( GetRandomInt(0, 2) == 0 ) ) then
-        call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x3893EA54, CreateUnitAtLoc(GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB95F828C)), 'u005', LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x32A9E4C8), 0))
-        call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB0A9479A, 'A008')
-        call SetUnitAbilityLevelSwapped(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB0A9479A), LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x3893EA54), LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0x683BAEBE))
-        call IssueTargetOrder(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x3893EA54), "attackonce", GetEnumUnit())
-        call YDWETimerRemoveUnit(0.30 , LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x3893EA54))
+    if ( ( UnitHasBuffBJ(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3), 'B007') == true ) ) then
+        if ( ( UnitHasBuffBJ(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3), 'B00D') == true ) ) then
+            if ( ( LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x35200533) >= 10 ) ) then
+                call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x35200533, 10)
+            else
+                call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x35200533, ( LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x35200533) + 1 ))
+            endif
+        else
+            call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x35200533, 1)
+        endif
+        call h__DestroyEffect(AddSpecialEffectTarget("war3mapImported\\BottleMissile1.mdx", LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3), "chest"))
+        call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x2392447A, GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)))
+        call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB0897302, GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)))
+        call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8DF21269, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB95F828C)), 'u019', LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x2392447A), LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB0897302), 0.00))
+        call UnitAddAbility(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8DF21269), LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xE08EC4DF))
+        call SetUnitAbilityLevelSwapped(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xE08EC4DF), LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8DF21269), LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x35200533))
+        call IssueTargetOrder(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8DF21269), "acidbomb", LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3))
+        call YDWETimerRemoveUnit(0.50 , LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8DF21269))
     else
-    endif
-    call GroupAddUnit(LoadGroupHandle(YDHT, GetHandleId(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD42855DB)), 0x93FE3865), GetEnumUnit())
-    set ydl_timer=CreateTimer()
-    call SaveGroupHandle(YDHT, GetHandleId(ydl_timer), 0xD42855DB, LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD42855DB))
-    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xF017C0F3, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3))
-    call TimerStart(ydl_timer, 0.10, false, function Trig_C_LLPFunc017Func001Func011Func001Func002Func004Func007T)
-    set ydl_timer=null
-endfunction
-function Trig_C_LLPFunc017Func001Func011Func001A takes nothing returns nothing
-    local group ydl_group
-    local unit ydl_unit
-    local timer ydl_timer
-    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB8F332A5, GetEnumUnit())
-    if ( ( ModuloInteger(R2I(LoadReal(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB8F332A5)), 0x6A7A5B61)), 50) == 0 ) ) then
-        call SaveLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x32A9E4C8, Location(GetUnitX(GetEnumUnit()), GetUnitY(GetEnumUnit())))
-        call SaveGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7, YDWEGetUnitsInRangeOfLocMatchingNull(60.00 , LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x32A9E4C8) , Condition(function Trig_C_LLPFunc017Func001Func011Func001Func002Func003003003)))
-        call h__ForGroupBJ(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7), function Trig_C_LLPFunc017Func001Func011Func001Func002Func004A)
-        call h__RemoveLocation(LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x32A9E4C8))
-        call h__DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7))
-    else
-    endif
-    set ydl_group=null
-    set ydl_unit=null
-    set ydl_timer=null
-endfunction
-function Trig_C_LLPFunc017Conditions takes nothing returns nothing
-    local group ydl_group
-    local unit ydl_unit
-    local timer ydl_timer
-    if ( ( LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xBEAE5704) < 450 ) and ( IsUnitGroupEmptyBJ(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD42855DB)) == false ) and ( GetUnitState(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8786956E), UNIT_STATE_LIFE) > ( 0.81 / 2.00 ) ) ) then
-        call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xA99320FA, GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8786956E)))
-        call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xFDF65382, GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8786956E)))
-        call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xBEAE5704, ( LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xBEAE5704) + 2 ))
-        call h__ForGroupBJ(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD42855DB), function Trig_C_LLPFunc017Func001Func010A)
-        if ( ( LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xBEAE5704) > 50 ) ) then
-            call h__ForGroupBJ(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD42855DB), function Trig_C_LLPFunc017Func001Func011Func001A)
+        if ( ( LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0x2970F80D) > 4 ) ) then
+            call UnitRemoveAbility(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3), 'B00D')
+            call GroupRemoveUnit(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7), LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3))
+            call RemoveSavedInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x35200533)
         else
         endif
-    else
-        call SetUnitTurnSpeed(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB95F828C), GetUnitDefaultTurnSpeed(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB95F828C)))
-        call h__ForGroupBJ(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD42855DB), function Trig_C_LLPFunc017Func001Func002A)
-        call h__DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD42855DB)), 0x93FE3865))
-        call FlushChildHashtable(YDHT, GetHandleId(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD42855DB)))
-        call h__DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD42855DB))
+    endif
+endfunction
+function Trig_A_PPFFunc014Conditions takes nothing returns nothing
+    local group ydl_group
+    local unit ydl_unit
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0x2970F80D, ( LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0x2970F80D) + 1 ))
+    call h__ForGroupBJ(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7), function Trig_A_PPFFunc014Func002A)
+    if ( ( IsUnitGroupEmptyBJ(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7)) == true ) ) then
+        call h__DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7))
         call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()))
         call DestroyTrigger(GetTriggeringTrigger())
+    else
     endif
     set ydl_group=null
     set ydl_unit=null
-    set ydl_timer=null
 endfunction
-function Trig_C_LLPActions takes nothing returns nothing
-    local timer ydl_timer
+function Trig_A_PPFActions takes nothing returns nothing
+    local group ydl_group
+    local unit ydl_unit
     local trigger ydl_trigger
     local integer ydl_localvar_step= LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
     set ydl_localvar_step=ydl_localvar_step + 3
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
     call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C, GetTriggerUnit())
+    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC2FCB08E, GetSpellTargetUnit())
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE, GetUnitAbilityLevel(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C), GetSpellAbilityId()))
-    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x8786956E, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C))
-    call SaveGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD42855DB, CreateGroup())
-    call SaveGroupHandle(YDHT, GetHandleId(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD42855DB)), 0x93FE3865, CreateGroup())
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2970F80D, 0)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9720DBE0, ( 0.00 + ( 100.00 * I2R(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE)) ) ))
     call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA, GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C)))
     call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382, GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C)))
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x41713DA3, GetSpellTargetX())
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x71CA3531, GetSpellTargetY())
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC7EA1948, AngleBetweenPoints(Location(LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA), LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382)), Location(LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x41713DA3), LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x71CA3531))))
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9720DBE0, 12.00)
-    call SetUnitTurnSpeed(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C), 0.02)
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6A7A5B61, 50.00)
-    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xABEAFB06, 0)
-    set ydl_timer=CreateTimer()
-    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xB95F828C, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xC7EA1948, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC7EA1948))
-    call SaveGroupHandle(YDHT, GetHandleId(ydl_timer), 0xD42855DB, LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD42855DB))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0x6A7A5B61, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6A7A5B61))
-    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0x90BB9840, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x90BB9840))
-    call SaveInteger(YDHT, GetHandleId(ydl_timer), 0xABEAFB06, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xABEAFB06))
-    call SaveInteger(YDHT, GetHandleId(ydl_timer), 0xABEAFB06, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xABEAFB06))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xA99320FA, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0x41713DA3, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x41713DA3))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xFDF65382, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0x71CA3531, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x71CA3531))
-    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0x8786956E, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x8786956E))
-    call TimerStart(ydl_timer, 0.02, true, function Trig_C_LLPFunc015T)
-    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBEAE5704, 0)
+    call SaveLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x32A9E4C8, GetUnitLoc(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC2FCB08E)))
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB0A9479A, 'A03S')
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE08EC4DF, 'A03U')
+    call SaveGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF3DA78D7, YDWEGetUnitsInRangeOfLocMatchingNull(200.00 , LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x32A9E4C8) , Condition(function Trig_A_PPFFunc011003003)))
+    call h__ForGroupBJ(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF3DA78D7), function Trig_A_PPFFunc012A)
+    call h__RemoveLocation(LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x32A9E4C8))
     set ydl_trigger=CreateTrigger()
-    call SaveInteger(YDHT, GetHandleId(ydl_trigger), 0xB0A9479A, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB0A9479A))
-    call SaveInteger(YDHT, GetHandleId(ydl_trigger), 0x683BAEBE, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE))
+    call SaveInteger(YDHT, GetHandleId(ydl_trigger), 0xE08EC4DF, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE08EC4DF))
     call SaveUnitHandle(YDHT, GetHandleId(ydl_trigger), 0xB95F828C, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C))
-    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0xC7EA1948, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC7EA1948))
-    call SaveGroupHandle(YDHT, GetHandleId(ydl_trigger), 0xD42855DB, LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD42855DB))
     call SaveGroupHandle(YDHT, GetHandleId(ydl_trigger), 0xF3DA78D7, LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF3DA78D7))
-    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0x6A7A5B61, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6A7A5B61))
-    call SaveUnitHandle(YDHT, GetHandleId(ydl_trigger), 0x3893EA54, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x3893EA54))
-    call SaveLocationHandle(YDHT, GetHandleId(ydl_trigger), 0x32A9E4C8, LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x32A9E4C8))
-    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0x9720DBE0, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9720DBE0))
-    call SaveInteger(YDHT, GetHandleId(ydl_trigger), 0xBEAE5704, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBEAE5704))
-    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0xA99320FA, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA))
-    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0x41713DA3, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x41713DA3))
+    call SaveUnitHandle(YDHT, GetHandleId(ydl_trigger), 0x8DF21269, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x8DF21269))
+    call SaveInteger(YDHT, GetHandleId(ydl_trigger), 0x2970F80D, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2970F80D))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0x2392447A, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2392447A))
     call SaveUnitHandle(YDHT, GetHandleId(ydl_trigger), 0xF017C0F3, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF017C0F3))
-    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0xFDF65382, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382))
-    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0x71CA3531, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x71CA3531))
-    call SaveUnitHandle(YDHT, GetHandleId(ydl_trigger), 0xB8F332A5, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB8F332A5))
-    call SaveUnitHandle(YDHT, GetHandleId(ydl_trigger), 0x8786956E, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x8786956E))
-    call TriggerRegisterTimerEventPeriodic(ydl_trigger, 0.02)
-    call TriggerAddCondition(ydl_trigger, Condition(function Trig_C_LLPFunc017Conditions))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0xB0897302, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB0897302))
+    call TriggerRegisterTimerEventPeriodic(ydl_trigger, 1.00)
+    call TriggerAddCondition(ydl_trigger, Condition(function Trig_A_PPFFunc014Conditions))
     call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
-    set ydl_timer=null
+    set ydl_group=null
+    set ydl_unit=null
     set ydl_trigger=null
 endfunction
 //===========================================================================
-function InitTrig_C_LLP takes nothing returns nothing
-    set gg_trg_C_LLP=CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ(gg_trg_C_LLP, EVENT_PLAYER_UNIT_SPELL_EFFECT)
-    call TriggerAddCondition(gg_trg_C_LLP, Condition(function Trig_C_LLPConditions))
-    call TriggerAddAction(gg_trg_C_LLP, function Trig_C_LLPActions)
+function InitTrig_A_PPF takes nothing returns nothing
+    set gg_trg_A_PPF=CreateTrigger()
+    call TriggerRegisterAnyUnitEventBJ(gg_trg_A_PPF, EVENT_PLAYER_UNIT_SPELL_EFFECT)
+    call TriggerAddCondition(gg_trg_A_PPF, Condition(function Trig_A_PPFConditions))
+    call TriggerAddAction(gg_trg_A_PPF, function Trig_A_PPFActions)
+endfunction
+//===========================================================================
+// Trigger: A PPI
+//===========================================================================
+function Trig_A_PPIConditions takes nothing returns boolean
+    return ( ( GetSpellAbilityId() == 'A03R' ) )
+endfunction
+function Trig_A_PPIFunc012003003 takes nothing returns boolean
+    return ( ( ( ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_STRUCTURE) == false ) and ( IsUnitType(GetFilterUnit(), UNIT_TYPE_MAGIC_IMMUNE) == false ) ) and ( false == false ) ) and ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) == false ) and ( ( IsUnitAlly(GetFilterUnit(), GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB95F828C))) == false ) and ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_DEAD) == false ) and ( GetUnitPointValue(GetFilterUnit()) != 999 ) ) ) ) ) )
+endfunction
+function Trig_A_PPIFunc013A takes nothing returns nothing
+    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xF017C0F3, GetEnumUnit())
+    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x3893EA54, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB95F828C)), 'u019', LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xA99320FA), LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xFDF65382), 0.00))
+    call UnitAddAbility(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x3893EA54), LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB0A9479A))
+    call SetUnitAbilityLevelSwapped(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB0A9479A), LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x3893EA54), LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x683BAEBE))
+    call IssueTargetOrder(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x3893EA54), "drunkenhaze", LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xF017C0F3))
+    call YDWETimerRemoveUnit(0.50 , LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x3893EA54))
+endfunction
+function Trig_A_PPIFunc015Func002A takes nothing returns nothing
+    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3, GetEnumUnit())
+    if ( ( UnitHasBuffBJ(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3), 'B00E') == true ) ) then
+        call h__DestroyEffect(AddSpecialEffectTarget("war3mapImported\\BottleMissile2.mdx", LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3), "chest"))
+        if ( ( HaveSavedInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x6D066063) == true ) ) then
+            if ( ( LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x6D066063) >= 10 ) ) then
+                call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x6D066063, 10)
+            else
+                call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x6D066063, ( LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x6D066063) + 1 ))
+            endif
+            call SetUnitAbilityLevelSwapped(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xE08EC4DF), LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3), LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x35200533))
+        else
+            call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x6D066063, 1)
+            call UnitAddAbility(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3), LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xE08EC4DF))
+        endif
+        call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x2392447A, GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)))
+        call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB0897302, GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)))
+        call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8DF21269, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB95F828C)), 'u019', LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x2392447A), LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB0897302), 0.00))
+        call UnitAddAbility(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8DF21269), LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0x24D992B5))
+        call SetUnitAbilityLevelSwapped(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0x24D992B5), LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8DF21269), LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x6D066063))
+        call IssueTargetOrder(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8DF21269), "acidbomb", LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3))
+        call YDWETimerRemoveUnit(0.50 , LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8DF21269))
+    else
+        if ( ( LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0x2970F80D) > 4 ) ) then
+            call UnitRemoveAbilityBJ('A03I', LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3))
+            call UnitRemoveAbility(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3), 'B00F')
+            call GroupRemoveUnit(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7), LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3))
+            call RemoveSavedInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0x6D066063)
+        else
+        endif
+    endif
+endfunction
+function Trig_A_PPIFunc015Conditions takes nothing returns nothing
+    local group ydl_group
+    local unit ydl_unit
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0x2970F80D, ( LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0x2970F80D) + 1 ))
+    call h__ForGroupBJ(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7), function Trig_A_PPIFunc015Func002A)
+    if ( ( IsUnitGroupEmptyBJ(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7)) == true ) ) then
+        call h__DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7))
+        call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()))
+        call DestroyTrigger(GetTriggeringTrigger())
+    else
+    endif
+    set ydl_group=null
+    set ydl_unit=null
+endfunction
+function Trig_A_PPIActions takes nothing returns nothing
+    local group ydl_group
+    local unit ydl_unit
+    local trigger ydl_trigger
+    local integer ydl_localvar_step= LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+    set ydl_localvar_step=ydl_localvar_step + 3
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C, GetTriggerUnit())
+    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC2FCB08E, GetSpellTargetUnit())
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE, GetUnitAbilityLevel(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C), GetSpellAbilityId()))
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2970F80D, 0)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9720DBE0, ( 0.00 + ( 100.00 * I2R(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE)) ) ))
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA, GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C)))
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382, GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C)))
+    call SaveLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x32A9E4C8, GetUnitLoc(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC2FCB08E)))
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB0A9479A, 'A03T')
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE08EC4DF, 'A03I')
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x24D992B5, 'A01E')
+    call SaveGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF3DA78D7, YDWEGetUnitsInRangeOfLocMatchingNull(200.00 , LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x32A9E4C8) , Condition(function Trig_A_PPIFunc012003003)))
+    call h__ForGroupBJ(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF3DA78D7), function Trig_A_PPIFunc013A)
+    call h__RemoveLocation(LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x32A9E4C8))
+    set ydl_trigger=CreateTrigger()
+    call SaveInteger(YDHT, GetHandleId(ydl_trigger), 0xE08EC4DF, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE08EC4DF))
+    call SaveInteger(YDHT, GetHandleId(ydl_trigger), 0x24D992B5, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x24D992B5))
+    call SaveUnitHandle(YDHT, GetHandleId(ydl_trigger), 0xB95F828C, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C))
+    call SaveGroupHandle(YDHT, GetHandleId(ydl_trigger), 0xF3DA78D7, LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF3DA78D7))
+    call SaveUnitHandle(YDHT, GetHandleId(ydl_trigger), 0x8DF21269, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x8DF21269))
+    call SaveInteger(YDHT, GetHandleId(ydl_trigger), 0x2970F80D, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2970F80D))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0x2392447A, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2392447A))
+    call SaveUnitHandle(YDHT, GetHandleId(ydl_trigger), 0xF017C0F3, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF017C0F3))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0xB0897302, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB0897302))
+    call TriggerRegisterTimerEventPeriodic(ydl_trigger, 1.00)
+    call TriggerAddCondition(ydl_trigger, Condition(function Trig_A_PPIFunc015Conditions))
+    call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+    set ydl_group=null
+    set ydl_unit=null
+    set ydl_trigger=null
+endfunction
+//===========================================================================
+function InitTrig_A_PPI takes nothing returns nothing
+    set gg_trg_A_PPI=CreateTrigger()
+    call TriggerRegisterAnyUnitEventBJ(gg_trg_A_PPI, EVENT_PLAYER_UNIT_SPELL_EFFECT)
+    call TriggerAddCondition(gg_trg_A_PPI, Condition(function Trig_A_PPIConditions))
+    call TriggerAddAction(gg_trg_A_PPI, function Trig_A_PPIActions)
 endfunction
 //===========================================================================
 // Trigger: A LSW
@@ -8802,7 +8832,7 @@ function Trig_A_III_2Actions takes nothing returns nothing
         call YDWESetLocalVariableLocation("point" , Location(GetUnitX(YDWEGetLocalVariableUnit("Caster")), GetUnitY(YDWEGetLocalVariableUnit("Caster"))))
         call YDWESetLocalVariableUnit("Nuker" , CreateUnit(GetOwningPlayer(YDWEGetLocalVariableUnit("Source")), 'u019', GetUnitX(YDWEGetLocalVariableUnit("Target")), GetUnitY(YDWEGetLocalVariableUnit("Target")), 0))
         call YDWESetLocalVariableGroup("Frost" , YDWEGetUnitsInRangeOfLocMatchingNull(512 , YDWEGetLocalVariableLocation("point") , Condition(function Trig_A_III_2Func009Func003002003)))
-        call UnitDamageTargetBJ(YDWEGetLocalVariableUnit("Source"), YDWEGetLocalVariableUnit("Target"), ( 75.00 + ( 50.00 * I2R(YDWEGetLocalVariableInteger("dengji")) ) ), ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC)
+        call UnitDamageTargetBJ(YDWEGetLocalVariableUnit("Source"), YDWEGetLocalVariableUnit("Target"), ( 50.00 + ( 25.00 * I2R(YDWEGetLocalVariableInteger("dengji")) ) ), ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC)
         call UnitAddAbility(YDWEGetLocalVariableUnit("Nuker"), 'A024')
         call IssueTargetOrder(YDWEGetLocalVariableUnit("Nuker"), "frostnova", YDWEGetLocalVariableUnit("Target"))
         call h__DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\FrostNova\\FrostNovaTarget.mdl", YDWEGetLocalVariableUnit("Target"), "origin"))
@@ -8884,9 +8914,10 @@ call UnitAddAbility(u2, CZ_LTYJMJJN)
 return u2
 endfunction
 function CZ_CJLDMJ3 takes unit u returns unit
-local unit u3=CreateUnit(GetOwningPlayer(u), CZ_PLMJ, GetUnitX(u), GetUnitY(u), GetUnitFacing(u))
+local unit u3=CreateUnit(GetOwningPlayer(u), CZ_MRXX, GetUnitX(u), GetUnitY(u), GetUnitFacing(u))
 call UnitAddAbility(u3, CZ_MRXXMJJN)
-call UnitApplyTimedLife(u3, 'BHwe', 0.80)
+call UnitApplyTimedLife(u3, 'BHwe', 5.1)
+call SetUnitVertexColorBJ(u3, 100, 100, 100, 100.00)
 return u3
 endfunction//===========================================================================
 // Trigger: B LWF1 复制
@@ -8997,24 +9028,19 @@ endfunction
 function Trig_B_DPF1Conditions takes nothing returns boolean
     return ( ( GetSpellAbilityId() == CZ_YXJNMRXX ) )
 endfunction
-function Trig_B_DPF1Func001003002 takes nothing returns boolean
-    return ( ( ( IsUnitEnemy(GetFilterUnit(), GetOwningPlayer(GetTriggerUnit())) == true ) and ( IsUnitAliveBJ(GetFilterUnit()) == true ) ) )
-endfunction
 function Trig_B_DPF1Actions takes nothing returns nothing
     local integer ydl_localvar_step= LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
     set ydl_localvar_step=ydl_localvar_step + 3
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
-    call SaveGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7B2D08E8, YDWEGetUnitsInRectMatchingNull(GetPlayableMapRect() , Condition(function Trig_B_DPF1Func001003002)))
-    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x437E2A40, h__GroupPickRandomUnit(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7B2D08E8)))
+    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x437E2A40, GetTriggerUnit())
+    call SaveLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9CD60476, GetUnitLoc(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x437E2A40)))
+    call PingMinimapLocForForceEx(GetPlayersAll(), LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9CD60476), 1, bj_MINIMAPPINGSTYLE_ATTACK, 100, 100, 100)
     call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD963A09F, CZ_CJLDMJ3(GetTriggerUnit()))
     call SetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD963A09F), GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x437E2A40)))
     call SetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD963A09F), GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x437E2A40)))
-    call SaveLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9CD60476, GetUnitLoc(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x437E2A40)))
-    call PingMinimapLocForForceEx(GetPlayersAll(), LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9CD60476), 1, bj_MINIMAPPINGSTYLE_ATTACK, 100, 100, 100)
+    call IssuePointOrderLoc(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD963A09F), "rainoffire", LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9CD60476))
     call h__RemoveLocation(LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9CD60476))
-    call IssuePointOrder(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD963A09F), "flamestrike", GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x437E2A40)), GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD963A09F)))
-    call h__DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7B2D08E8))
     call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
 endfunction
 //===========================================================================
@@ -9023,6 +9049,81 @@ function InitTrig_B_DPF1 takes nothing returns nothing
     call TriggerRegisterAnyUnitEventBJ(gg_trg_B_DPF1, EVENT_PLAYER_UNIT_SPELL_EFFECT)
     call TriggerAddCondition(gg_trg_B_DPF1, Condition(function Trig_B_DPF1Conditions))
     call TriggerAddAction(gg_trg_B_DPF1, function Trig_B_DPF1Actions)
+endfunction
+//===========================================================================
+// Trigger: B DEW1
+//===========================================================================
+function Trig_B_DEW1Conditions takes nothing returns boolean
+    return ( ( GetUnitTypeId(GetSummonedUnit()) == CZ_WXMM ) )
+endfunction
+function Trig_B_DEW1Func002Func001Func005T takes nothing returns nothing
+    if ( ( IsUnitAliveBJ(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x437E2A40)) == true ) and ( HaveSavedInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x437E2A40)), 0xECC38EC2) == true ) ) then
+        call SetUnitFlyHeight(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x437E2A40), GetUnitDefaultFlyHeight(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x437E2A40)), 100000000.00)
+    else
+    endif
+    call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
+    call DestroyTimer(GetExpiredTimer())
+endfunction
+function Trig_B_DEW1Actions takes nothing returns nothing
+    local group ydl_group
+    local unit ydl_unit
+    local timer ydl_timer
+    local integer ydl_localvar_step= LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+    set ydl_localvar_step=ydl_localvar_step + 3
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+    call YDWETimerRemoveUnit(2.00 , GetTriggerUnit())
+    set ydl_group=CreateGroup()
+    call GroupEnumUnitsInRange(ydl_group, GetUnitX(GetSummonedUnit()), GetUnitY(GetSummonedUnit()), 512, null)
+    loop
+        set ydl_unit=FirstOfGroup(ydl_group)
+        exitwhen ydl_unit == null
+        call GroupRemoveUnit(ydl_group, ydl_unit)
+        if ( ( IsUnitEnemy(ydl_unit, GetOwningPlayer(GetSummonedUnit())) != true ) ) then
+            call YDWEFlyEnable(ydl_unit)
+            call SaveInteger(YDHT, GetHandleId(ydl_unit), 0xECC38EC2, 0)
+            call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x437E2A40, ydl_unit)
+            if ( ( GetOwningPlayer(ydl_unit) == GetLocalPlayer() ) ) then
+                call SelectUnitRemoveForPlayer(ydl_unit, GetOwningPlayer(ydl_unit))
+                call SetUnitFlyHeight(ydl_unit, GetUnitDefaultFlyHeight(ydl_unit), 100000000.00)
+            else
+                call SelectUnitRemoveForPlayer(ydl_unit, GetOwningPlayer(ydl_unit))
+                call SetUnitFlyHeight(ydl_unit, 8000.00, 100000000.00)
+            endif
+            set ydl_timer=CreateTimer()
+            call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0x437E2A40, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x437E2A40))
+            call TimerStart(ydl_timer, 3.00, false, function Trig_B_DEW1Func002Func001Func005T)
+        else
+        endif
+    endloop
+    call h__DestroyGroup(ydl_group)
+    call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+    set ydl_group=null
+    set ydl_unit=null
+    set ydl_timer=null
+endfunction
+//===========================================================================
+function InitTrig_B_DEW1 takes nothing returns nothing
+    set gg_trg_B_DEW1=CreateTrigger()
+    call TriggerRegisterAnyUnitEventBJ(gg_trg_B_DEW1, EVENT_PLAYER_UNIT_SUMMON)
+    call TriggerAddCondition(gg_trg_B_DEW1, Condition(function Trig_B_DEW1Conditions))
+    call TriggerAddAction(gg_trg_B_DEW1, function Trig_B_DEW1Actions)
+endfunction
+//===========================================================================
+// Trigger: B DEW2
+//===========================================================================
+function Trig_B_DEW2Conditions takes nothing returns boolean
+    return ( ( HaveSavedInteger(YDHT, GetHandleId(GetTriggerUnit()), 0xECC38EC2) == true ) )
+endfunction
+function Trig_B_DEW2Actions takes nothing returns nothing
+    call SetUnitFlyHeight(GetTriggerUnit(), GetUnitDefaultFlyHeight(GetTriggerUnit()), 100000000.00)
+endfunction
+//===========================================================================
+function InitTrig_B_DEW2 takes nothing returns nothing
+    set gg_trg_B_DEW2=CreateTrigger()
+    call YDWETriggerRegisterEnterRectSimpleNull(gg_trg_B_DEW2 , bj_mapInitialPlayableArea)
+    call TriggerAddCondition(gg_trg_B_DEW2, Condition(function Trig_B_DEW2Conditions))
+    call TriggerAddAction(gg_trg_B_DEW2, function Trig_B_DEW2Actions)
 endfunction
 //===========================================================================
 // Trigger: Diabolic Edict a
@@ -9274,7 +9375,6 @@ function InitCustomTriggers takes nothing returns nothing
     call InitTrig_team()
     call InitTrig_roundtime_0()
     call InitTrig_roundtime_2()
-    call InitTrig____________________001()
     call InitTrig_dialog()
     call InitTrig_GA()
     call InitTrig_elf()
@@ -9299,7 +9399,8 @@ function InitCustomTriggers takes nothing returns nothing
     call InitTrig_C_LLF()
     call InitTrig_C_LLI()
     call InitTrig_A_LLL()
-    call InitTrig_C_LLP()
+    call InitTrig_A_PPF()
+    call InitTrig_A_PPI()
     call InitTrig_A_LSW()
     call InitTrig_A_SSS()
     call InitTrig_A_PPD()
@@ -9318,6 +9419,8 @@ function InitCustomTriggers takes nothing returns nothing
     call InitTrig_B_LWF2_______u()
     call InitTrig_B_DPL1()
     call InitTrig_B_DPF1()
+    call InitTrig_B_DEW1()
+    call InitTrig_B_DEW2()
     call InitTrig_Diabolic_Edict_a()
     call InitTrig_Diabolic_Edict_b()
     call InitTrig_Plasma_Field_a()
@@ -9812,11 +9915,11 @@ endfunction
 //***************************************************************************
 //===========================================================================
 function main takes nothing returns nothing
-    call SetCameraBounds(- 4736.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), - 5248.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 4736.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 4224.0 - GetCameraMargin(CAMERA_MARGIN_TOP), - 4736.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 4224.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 4736.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), - 5248.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
-    call SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl", "Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
+    call SetCameraBounds(2432.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), - 10880.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 16000.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 2688.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 2432.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 2688.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 16000.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), - 10880.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
+    call SetDayNightModels("Environment\\DNC\\DNCAshenvale\\DNCAshenvaleTerrain\\DNCAshenvaleTerrain.mdl", "Environment\\DNC\\DNCAshenvale\\DNCAshenvaleUnit\\DNCAshenvaleUnit.mdl")
     call NewSoundEnvironment("Default")
-    call SetAmbientDaySound("LordaeronFallDay")
-    call SetAmbientNightSound("LordaeronFallNight")
+    call SetAmbientDaySound("AshenvaleDay")
+    call SetAmbientNightSound("AshenvaleNight")
     call SetMapMusic("Music", true, 0)
     call InitSounds()
     call CreateRegions()
@@ -9824,13 +9927,8 @@ function main takes nothing returns nothing
     call CreateAllUnits()
     call InitBlizzard()
 
-<<<<<<< HEAD
-call ExecuteFunc("jasshelper__initstructs17536540")
-call ExecuteFunc("YDTriggerSaveLoadSystem___Init")
-=======
-call ExecuteFunc("jasshelper__initstructs33613488")
+call ExecuteFunc("jasshelper__initstructs10008968")
 call ExecuteFunc("YDTriggerSaveLoadSystem__Init")
->>>>>>> origin/master
 call ExecuteFunc("InitializeYD")
 call ExecuteFunc("MemoryLeakHelper___Init")
 call ExecuteFunc("YDWETimerPattern___Init")
@@ -9868,6 +9966,7 @@ function config takes nothing returns nothing
     call InitCustomTeams()
     call InitAllyPriorities()
 endfunction
+//library ValueIndexing initializer Init requires YDWEBase
 //===========================================================================  
 //===========================================================================  
 //�Զ����¼� 
@@ -9876,7 +9975,6 @@ endfunction
 //===========================================================================
 //ϵͳ-TimerSystem
 //===========================================================================
-//library ValueIndexing initializer Init requires YDWEBase
 //===========================================================================
 //��Ծϵͳ 
 //===========================================================================
@@ -9917,40 +10015,40 @@ local integer this=f__arg_this
             set s__YDWETimerPattern___Thread_part[this]=""
    return true
 endfunction
-function sa___prototype169_MemoryLeakHelper___GetElapsedGameTime takes nothing returns boolean
+function sa___prototype170_MemoryLeakHelper___GetElapsedGameTime takes nothing returns boolean
 
     set f__result_real= MemoryLeakHelper___GameTime + TimerGetElapsed(MemoryLeakHelper___GameTimeTimer)
     return true
 endfunction
-function sa___prototype173_MemoryLeakHelper___ReleaseLocation takes nothing returns boolean
+function sa___prototype174_MemoryLeakHelper___ReleaseLocation takes nothing returns boolean
     call MemoryLeakHelper___ReleaseLocation(f__arg_location1)
     return true
 endfunction
-function sa___prototype174_MemoryLeakHelper___CatchGroup takes nothing returns boolean
+function sa___prototype175_MemoryLeakHelper___CatchGroup takes nothing returns boolean
     call MemoryLeakHelper___CatchGroup(f__arg_group1)
     return true
 endfunction
-function sa___prototype174_MemoryLeakHelper___ReleaseGroup takes nothing returns boolean
+function sa___prototype175_MemoryLeakHelper___ReleaseGroup takes nothing returns boolean
     call MemoryLeakHelper___ReleaseGroup(f__arg_group1)
     return true
 endfunction
-function sa___prototype175_MemoryLeakHelper___ReleaseEffect takes nothing returns boolean
+function sa___prototype176_MemoryLeakHelper___ReleaseEffect takes nothing returns boolean
     call MemoryLeakHelper___ReleaseEffect(f__arg_effect1)
     return true
 endfunction
-function sa___prototype176_MemoryLeakHelper___PP takes nothing returns boolean
+function sa___prototype177_MemoryLeakHelper___PP takes nothing returns boolean
     call MemoryLeakHelper___PP(f__arg_location1,f__arg_real1,f__arg_real2)
     return true
 endfunction
-function sa___prototype177_MemoryLeakHelper___CU takes nothing returns boolean
+function sa___prototype178_MemoryLeakHelper___CU takes nothing returns boolean
     call MemoryLeakHelper___CU(f__arg_integer1,f__arg_integer2,f__arg_player1,f__arg_location1,f__arg_real1)
     return true
 endfunction
-function sa___prototype178_MemoryLeakHelper___IPO takes nothing returns boolean
+function sa___prototype179_MemoryLeakHelper___IPO takes nothing returns boolean
     call MemoryLeakHelper___IPO(f__arg_unit1,f__arg_string1,f__arg_location1)
     return true
 endfunction
-function sa___prototype179_MemoryLeakHelper___SUP takes nothing returns boolean
+function sa___prototype180_MemoryLeakHelper___SUP takes nothing returns boolean
     call MemoryLeakHelper___SUP(f__arg_unit1,f__arg_location1)
     return true
 endfunction
@@ -9958,32 +10056,28 @@ function sa___prototype167_MemoryLeakHelper___SUF takes nothing returns boolean
     call MemoryLeakHelper___SUF(f__arg_unit1,f__arg_location1,f__arg_real1)
     return true
 endfunction
-function sa___prototype180_MemoryLeakHelper___GUR takes nothing returns boolean
+function sa___prototype181_MemoryLeakHelper___GUR takes nothing returns boolean
     call MemoryLeakHelper___GUR(f__arg_real1,f__arg_location1,f__arg_boolexpr1)
     return true
 endfunction
-function sa___prototype181_MemoryLeakHelper___CUF takes nothing returns boolean
+function sa___prototype182_MemoryLeakHelper___CUF takes nothing returns boolean
     call MemoryLeakHelper___CUF(f__arg_integer1,f__arg_integer2,f__arg_player1,f__arg_location1,f__arg_location2)
     return true
 endfunction
-function sa___prototype182_MemoryLeakHelper___FG takes nothing returns boolean
+function sa___prototype183_MemoryLeakHelper___FG takes nothing returns boolean
     call MemoryLeakHelper___FG(f__arg_group1,f__arg_code1)
     return true
 endfunction
-function sa___prototype183_MemoryLeakHelper___ASETU takes nothing returns boolean
+function sa___prototype184_MemoryLeakHelper___ASETU takes nothing returns boolean
     call MemoryLeakHelper___ASETU(f__arg_string1,f__arg_widget1,f__arg_string2)
     return true
 endfunction
-function sa___prototype184_MemoryLeakHelper___ASE takes nothing returns boolean
+function sa___prototype185_MemoryLeakHelper___ASE takes nothing returns boolean
     call MemoryLeakHelper___ASE(f__arg_location1,f__arg_string1)
     return true
 endfunction
 
-<<<<<<< HEAD
-function jasshelper__initstructs17536540 takes nothing returns nothing
-=======
-function jasshelper__initstructs33613488 takes nothing returns nothing
->>>>>>> origin/master
+function jasshelper__initstructs10008968 takes nothing returns nothing
     set st__MemoryLeakHelper___GTable_onDestroy[2]=CreateTrigger()
     set st__MemoryLeakHelper___GTable_onDestroy[3]=st__MemoryLeakHelper___GTable_onDestroy[2]
     call TriggerAddCondition(st__MemoryLeakHelper___GTable_onDestroy[2],Condition( function sa__MemoryLeakHelper___GTable_onDestroy))
@@ -9992,51 +10086,51 @@ function jasshelper__initstructs33613488 takes nothing returns nothing
     set st__YDWETimerPattern___Thread_onDestroy[7]=st__YDWETimerPattern___Thread_onDestroy[5]
     set st__YDWETimerPattern___Thread_onDestroy[8]=st__YDWETimerPattern___Thread_onDestroy[5]
     call TriggerAddCondition(st__YDWETimerPattern___Thread_onDestroy[5],Condition( function sa__YDWETimerPattern___Thread_onDestroy))
-    set st___prototype169[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype169[1],function sa___prototype169_MemoryLeakHelper___GetElapsedGameTime)
-    call TriggerAddCondition(st___prototype169[1],Condition(function sa___prototype169_MemoryLeakHelper___GetElapsedGameTime))
-    set st___prototype173[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype173[1],function sa___prototype173_MemoryLeakHelper___ReleaseLocation)
-    call TriggerAddCondition(st___prototype173[1],Condition(function sa___prototype173_MemoryLeakHelper___ReleaseLocation))
+    set st___prototype170[1]=CreateTrigger()
+    call TriggerAddAction(st___prototype170[1],function sa___prototype170_MemoryLeakHelper___GetElapsedGameTime)
+    call TriggerAddCondition(st___prototype170[1],Condition(function sa___prototype170_MemoryLeakHelper___GetElapsedGameTime))
     set st___prototype174[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype174[1],function sa___prototype174_MemoryLeakHelper___CatchGroup)
-    call TriggerAddCondition(st___prototype174[1],Condition(function sa___prototype174_MemoryLeakHelper___CatchGroup))
-    set st___prototype174[2]=CreateTrigger()
-    call TriggerAddAction(st___prototype174[2],function sa___prototype174_MemoryLeakHelper___ReleaseGroup)
-    call TriggerAddCondition(st___prototype174[2],Condition(function sa___prototype174_MemoryLeakHelper___ReleaseGroup))
+    call TriggerAddAction(st___prototype174[1],function sa___prototype174_MemoryLeakHelper___ReleaseLocation)
+    call TriggerAddCondition(st___prototype174[1],Condition(function sa___prototype174_MemoryLeakHelper___ReleaseLocation))
     set st___prototype175[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype175[1],function sa___prototype175_MemoryLeakHelper___ReleaseEffect)
-    call TriggerAddCondition(st___prototype175[1],Condition(function sa___prototype175_MemoryLeakHelper___ReleaseEffect))
+    call TriggerAddAction(st___prototype175[1],function sa___prototype175_MemoryLeakHelper___CatchGroup)
+    call TriggerAddCondition(st___prototype175[1],Condition(function sa___prototype175_MemoryLeakHelper___CatchGroup))
+    set st___prototype175[2]=CreateTrigger()
+    call TriggerAddAction(st___prototype175[2],function sa___prototype175_MemoryLeakHelper___ReleaseGroup)
+    call TriggerAddCondition(st___prototype175[2],Condition(function sa___prototype175_MemoryLeakHelper___ReleaseGroup))
     set st___prototype176[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype176[1],function sa___prototype176_MemoryLeakHelper___PP)
-    call TriggerAddCondition(st___prototype176[1],Condition(function sa___prototype176_MemoryLeakHelper___PP))
+    call TriggerAddAction(st___prototype176[1],function sa___prototype176_MemoryLeakHelper___ReleaseEffect)
+    call TriggerAddCondition(st___prototype176[1],Condition(function sa___prototype176_MemoryLeakHelper___ReleaseEffect))
     set st___prototype177[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype177[1],function sa___prototype177_MemoryLeakHelper___CU)
-    call TriggerAddCondition(st___prototype177[1],Condition(function sa___prototype177_MemoryLeakHelper___CU))
+    call TriggerAddAction(st___prototype177[1],function sa___prototype177_MemoryLeakHelper___PP)
+    call TriggerAddCondition(st___prototype177[1],Condition(function sa___prototype177_MemoryLeakHelper___PP))
     set st___prototype178[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype178[1],function sa___prototype178_MemoryLeakHelper___IPO)
-    call TriggerAddCondition(st___prototype178[1],Condition(function sa___prototype178_MemoryLeakHelper___IPO))
+    call TriggerAddAction(st___prototype178[1],function sa___prototype178_MemoryLeakHelper___CU)
+    call TriggerAddCondition(st___prototype178[1],Condition(function sa___prototype178_MemoryLeakHelper___CU))
     set st___prototype179[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype179[1],function sa___prototype179_MemoryLeakHelper___SUP)
-    call TriggerAddCondition(st___prototype179[1],Condition(function sa___prototype179_MemoryLeakHelper___SUP))
+    call TriggerAddAction(st___prototype179[1],function sa___prototype179_MemoryLeakHelper___IPO)
+    call TriggerAddCondition(st___prototype179[1],Condition(function sa___prototype179_MemoryLeakHelper___IPO))
+    set st___prototype180[1]=CreateTrigger()
+    call TriggerAddAction(st___prototype180[1],function sa___prototype180_MemoryLeakHelper___SUP)
+    call TriggerAddCondition(st___prototype180[1],Condition(function sa___prototype180_MemoryLeakHelper___SUP))
     set st___prototype167[1]=CreateTrigger()
     call TriggerAddAction(st___prototype167[1],function sa___prototype167_MemoryLeakHelper___SUF)
     call TriggerAddCondition(st___prototype167[1],Condition(function sa___prototype167_MemoryLeakHelper___SUF))
-    set st___prototype180[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype180[1],function sa___prototype180_MemoryLeakHelper___GUR)
-    call TriggerAddCondition(st___prototype180[1],Condition(function sa___prototype180_MemoryLeakHelper___GUR))
     set st___prototype181[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype181[1],function sa___prototype181_MemoryLeakHelper___CUF)
-    call TriggerAddCondition(st___prototype181[1],Condition(function sa___prototype181_MemoryLeakHelper___CUF))
+    call TriggerAddAction(st___prototype181[1],function sa___prototype181_MemoryLeakHelper___GUR)
+    call TriggerAddCondition(st___prototype181[1],Condition(function sa___prototype181_MemoryLeakHelper___GUR))
     set st___prototype182[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype182[1],function sa___prototype182_MemoryLeakHelper___FG)
-    call TriggerAddCondition(st___prototype182[1],Condition(function sa___prototype182_MemoryLeakHelper___FG))
+    call TriggerAddAction(st___prototype182[1],function sa___prototype182_MemoryLeakHelper___CUF)
+    call TriggerAddCondition(st___prototype182[1],Condition(function sa___prototype182_MemoryLeakHelper___CUF))
     set st___prototype183[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype183[1],function sa___prototype183_MemoryLeakHelper___ASETU)
-    call TriggerAddCondition(st___prototype183[1],Condition(function sa___prototype183_MemoryLeakHelper___ASETU))
+    call TriggerAddAction(st___prototype183[1],function sa___prototype183_MemoryLeakHelper___FG)
+    call TriggerAddCondition(st___prototype183[1],Condition(function sa___prototype183_MemoryLeakHelper___FG))
     set st___prototype184[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype184[1],function sa___prototype184_MemoryLeakHelper___ASE)
-    call TriggerAddCondition(st___prototype184[1],Condition(function sa___prototype184_MemoryLeakHelper___ASE))
+    call TriggerAddAction(st___prototype184[1],function sa___prototype184_MemoryLeakHelper___ASETU)
+    call TriggerAddCondition(st___prototype184[1],Condition(function sa___prototype184_MemoryLeakHelper___ASETU))
+    set st___prototype185[1]=CreateTrigger()
+    call TriggerAddAction(st___prototype185[1],function sa___prototype185_MemoryLeakHelper___ASE)
+    call TriggerAddCondition(st___prototype185[1],Condition(function sa___prototype185_MemoryLeakHelper___ASE))
 
 
 
