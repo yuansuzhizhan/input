@@ -4332,67 +4332,67 @@ V
 }
 
 STRING 1319
-// 技能: A02Z (毒毒毒), Tip (提示工具 - 普通)
+// 技能: A033 (毒毒暗), Tip (提示工具 - 普通)
 {
 瘴气[|cffffcc00E|r] - [|cffffcc00等级 1|r]
 }
 
 STRING 1320
-// 技能: A02Z (毒毒毒), Ubertip (提示工具 - 普通 - 扩展)
+// 技能: A02Z (毒毒风), Ubertip (提示工具 - 普通 - 扩展)
 {
 释放出一阵有毒的瘴气，吸入瘴气的敌方单位会中毒，受到25点初始伤害，同时移动速度会降低。|n|n|cff99ccff最大距离：|r800|n|cff99ccff作用范围：|r125|n|cff99ccff持续时间：|r15|n|cff99ccff冷却时间：|r22
 }
 
 STRING 1321
-// 技能: A02Z (毒毒毒), Researchhotkey (热键 - 学习)
+// 技能: A02Z (毒毒风), Researchhotkey (热键 - 学习)
 {
 E
 }
 
 STRING 1322
-// 技能: A02Z (毒毒毒), Tip (提示工具 - 普通)
+// 技能: A02Z (毒毒风), Tip (提示工具 - 普通)
 {
 瘴气[|cffffcc00E|r] - [|cffffcc00等级 2|r]
 }
 
 STRING 1323
-// 技能: A02Z (毒毒毒), Tip (提示工具 - 普通)
+// 技能: A02Z (毒毒风), Tip (提示工具 - 普通)
 {
 瘴气[|cffffcc00E|r] - [|cffffcc00等级 3|r]
 }
 
 STRING 1324
-// 技能: A02Z (毒毒毒), Ubertip (提示工具 - 普通 - 扩展)
+// 技能: A02Z (毒毒风), Ubertip (提示工具 - 普通 - 扩展)
 {
 释放出一阵有毒的瘴气，吸入瘴气的敌方单位会中毒，受到50点初始伤害，和30点/3秒的持续伤害，同时移动速度会降低。|n|n|cff99ccff最大距离：|r800|n|cff99ccff作用范围：|r125|n|cff99ccff持续时间：|r15|n|cff99ccff冷却时间：|r22
 }
 
 STRING 1325
-// 技能: A02Z (毒毒毒), Ubertip (提示工具 - 普通 - 扩展)
+// 技能: A02Z (毒毒风), Ubertip (提示工具 - 普通 - 扩展)
 {
 释放出一阵有毒的瘴气，吸入瘴气的敌方单位会中毒，受到75点初始伤害，和60点/3秒的持续伤害，同时移动速度会降低。|n|n|cff99ccff最大距离：|r800|n|cff99ccff作用范围：|r125|n|cff99ccff持续时间：|r15|n|cff99ccff冷却时间：|r22
 }
 
 STRING 1326
-// 技能: A02Z (毒毒毒), Researchtip (提示工具 - 学习)
+// 技能: A02Z (毒毒风), Researchtip (提示工具 - 学习)
 {
 学习 瘴气[|cffffcc00E|r] - [|cffffcc00等级 %d|r]|n( Venomous Gale)
 }
 
 STRING 1327
-// 技能: A02Z (毒毒毒), Researchubertip (提示工具 - 学习 - 扩展)
+// 技能: A02Z (毒毒风), Researchubertip (提示工具 - 学习 - 扩展)
 {
 释放出一阵有毒的瘴气，吸入瘴气的敌方单位会中毒，受到伤害，同时移动速度会降低。|n|n|cff99ccff最大距离：|r800|n|cff99ccff作用范围：|r125|n|cff99ccff持续时间：|r15|n|cff99ccff冷却时间：|r22|n|cff99ccff魔法消耗：|r125|n|n|cffffcc00等级 1|r - 受到25点初始伤害，和0点/3秒的持续伤害|n|cffffcc00等级 2|r - 受到50点初始伤害，和30点/3秒的持续伤害|n|cffffcc00等级 3|r - 受到75点初始伤害，和60点/3秒的持续伤害|n|cffffcc00等级 4|r - 受到100点初始伤害，和90点/3秒的持续伤害
 }
 
 STRING 1328
-// 技能: A02Z (毒毒毒), Tip (提示工具 - 普通)
+// 技能: A02Z (毒毒风), Tip (提示工具 - 普通)
 {
 瘴气[|cffffcc00E|r] - [|cffffcc00等级 4|r]
 }
 
 STRING 1329
-// 技能: A02Z (毒毒毒), Ubertip (提示工具 - 普通 - 扩展)
+// 技能: A02Z (毒毒风), Ubertip (提示工具 - 普通 - 扩展)
 {
 释放出一阵有毒的瘴气，吸入瘴气的敌方单位会中毒，受到100点初始伤害，和90点/3秒的持续伤害，同时移动速度会降低。|n|n|cff99ccff最大距离：|r800|n|cff99ccff作用范围：|r125|n|cff99ccff持续时间：|r15|n|cff99ccff冷却时间：|r22
 }
@@ -4656,15 +4656,9 @@ STRING 1393
 }
 
 STRING 1394
-// 技能: A02Z (毒毒毒), Name (名字)
+// 技能: A044 (毒毒毒), Name (名字)
 {
 毒毒毒
-}
-
-STRING 1396
-// 技能: A033 (毒毒暗), Tip (提示工具 - 普通)
-{
-瘴气[|cffffcc00E|r] - [|cffffcc00等级 1|r]
 }
 
 STRING 1397
@@ -5998,5 +5992,101 @@ STRING 1671
 // 技能: A03D (风风冰), Name (名字)
 {
 风风冰
+}
+
+STRING 1672
+// 技能: A02Z (毒毒风), Name (名字)
+{
+毒毒风
+}
+
+STRING 1673
+// 技能: A02Z (毒毒风), Tip (提示工具 - 普通)
+{
+毒雾[|cffffcc00E|r] - [|cffffcc00等级 1|r]
+}
+
+STRING 1674
+// 技能: A044 (毒毒毒), Tip (提示工具 - 普通)
+{
+腐蚀喷吐[|cffffcc00E|r] - [|cffffcc00等级 1|r]
+}
+
+STRING 1675
+// 技能: A044 (毒毒毒), Researchhotkey (热键 - 学习)
+{
+E
+}
+
+STRING 1676
+// 技能: A044 (毒毒毒), Tip (提示工具 - 普通)
+{
+瘴气[|cffffcc00E|r] - [|cffffcc00等级 2|r]
+}
+
+STRING 1677
+// 技能: A044 (毒毒毒), Tip (提示工具 - 普通)
+{
+瘴气[|cffffcc00E|r] - [|cffffcc00等级 3|r]
+}
+
+STRING 1678
+// 技能: A044 (毒毒毒), Ubertip (提示工具 - 普通 - 扩展)
+{
+释放出一阵有毒的瘴气，吸入瘴气的敌方单位会中毒，受到50点初始伤害，和30点/3秒的持续伤害，同时移动速度会降低。|n|n|cff99ccff最大距离：|r800|n|cff99ccff作用范围：|r125|n|cff99ccff持续时间：|r15|n|cff99ccff冷却时间：|r22
+}
+
+STRING 1679
+// 技能: A044 (毒毒毒), Ubertip (提示工具 - 普通 - 扩展)
+{
+释放出一阵有毒的瘴气，吸入瘴气的敌方单位会中毒，受到75点初始伤害，和60点/3秒的持续伤害，同时移动速度会降低。|n|n|cff99ccff最大距离：|r800|n|cff99ccff作用范围：|r125|n|cff99ccff持续时间：|r15|n|cff99ccff冷却时间：|r22
+}
+
+STRING 1680
+// 技能: A044 (毒毒毒), Researchtip (提示工具 - 学习)
+{
+学习 瘴气[|cffffcc00E|r] - [|cffffcc00等级 %d|r]|n( Venomous Gale)
+}
+
+STRING 1681
+// 技能: A044 (毒毒毒), Researchubertip (提示工具 - 学习 - 扩展)
+{
+释放出一阵有毒的瘴气，吸入瘴气的敌方单位会中毒，受到伤害，同时移动速度会降低。|n|n|cff99ccff最大距离：|r800|n|cff99ccff作用范围：|r125|n|cff99ccff持续时间：|r15|n|cff99ccff冷却时间：|r22|n|cff99ccff魔法消耗：|r125|n|n|cffffcc00等级 1|r - 受到25点初始伤害，和0点/3秒的持续伤害|n|cffffcc00等级 2|r - 受到50点初始伤害，和30点/3秒的持续伤害|n|cffffcc00等级 3|r - 受到75点初始伤害，和60点/3秒的持续伤害|n|cffffcc00等级 4|r - 受到100点初始伤害，和90点/3秒的持续伤害
+}
+
+STRING 1682
+// 技能: A044 (毒毒毒), Tip (提示工具 - 普通)
+{
+瘴气[|cffffcc00E|r] - [|cffffcc00等级 4|r]
+}
+
+STRING 1683
+// 技能: A044 (毒毒毒), Ubertip (提示工具 - 普通 - 扩展)
+{
+释放出一阵有毒的瘴气，吸入瘴气的敌方单位会中毒，受到100点初始伤害，和90点/3秒的持续伤害，同时移动速度会降低。|n|n|cff99ccff最大距离：|r800|n|cff99ccff作用范围：|r125|n|cff99ccff持续时间：|r15|n|cff99ccff冷却时间：|r22
+}
+
+STRING 1684
+// 技能: A045 (毒毒毒), Name (名字)
+{
+毒毒毒
+}
+
+STRING 1685
+// 技能: A045 (毒毒毒), EditorSuffix (编辑器后缀)
+{
+马甲技
+}
+
+STRING 1686
+// 单位: u01P (1马甲), Name (名字)
+{
+1马甲
+}
+
+STRING 1687
+// 单位: u01P (1马甲), EditorSuffix (名字 - 编辑器后缀)
+{
+毒
 }
 
