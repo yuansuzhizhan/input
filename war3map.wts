@@ -6090,3 +6090,57 @@ STRING 1687
 毒
 }
 
+STRING 1688
+// 单位: n00V (毒光弹), Name (名字)
+{
+毒光弹
+}
+
+STRING 1689
+// 技能: A046 (毒毒光), Name (名字)
+{
+毒毒光
+}
+
+STRING 1690
+// 技能: A046 (毒毒光), Researchtip (提示工具 - 学习)
+{
+Learn Barbaric Collide(|cffffcc00R|r) 
+}
+
+STRING 1691
+// 技能: A046 (毒毒光), Researchubertip (提示工具 - 学习 - 扩展)
+{
+Input some descriptions of the spell with which you want to match please.
+}
+
+STRING 1692
+// 技能: A046 (毒毒光), Tip (提示工具 - 普通)
+{
+火蚀术(|cffffcc00R|r) 
+}
+
+STRING 1693
+// 技能: A046 (毒毒光), Hotkey (热键 - 普通)
+{
+R
+}
+
+STRING 1694
+// 魔法效果: B00H (), Bufftip (工具提示)
+{
+剧毒光球
+}
+
+STRING 1695
+// 技能: A048 (毒毒光), Name (名字)
+{
+毒毒光
+}
+
+STRING 1696
+// 技能: A048 (毒毒光), EditorSuffix (编辑器后缀)
+{
+马甲技
+}
+
