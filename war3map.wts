@@ -3773,12 +3773,6 @@ STRING 1087
 火舌术
 }
 
-STRING 1093
-// 技能: A02N (冰冰毒), Tip (提示工具 - 普通)
-{
-冰火交加
-}
-
 STRING 1094
 // 技能: A02I (冰冰土), Tip (提示工具 - 普通)
 {
@@ -4227,12 +4221,6 @@ STRING 1266
 // 技能: A02V (火火冰), Name (名字)
 {
 火火冰
-}
-
-STRING 1269
-// 技能: A02U (火火毒), Tip (提示工具 - 普通)
-{
-火舌术
 }
 
 STRING 1298
@@ -6090,57 +6078,213 @@ STRING 1687
 毒
 }
 
-STRING 1688
-// 单位: n00V (毒光弹), Name (名字)
-{
-毒光弹
-}
-
 STRING 1689
-// 技能: A046 (毒毒光), Name (名字)
+// 技能: A04B (毒毒光), Name (名字)
 {
 毒毒光
 }
 
 STRING 1690
-// 技能: A046 (毒毒光), Researchtip (提示工具 - 学习)
+// 技能: A046 (火火光), Researchtip (提示工具 - 学习)
 {
 Learn Barbaric Collide(|cffffcc00R|r) 
 }
 
 STRING 1691
-// 技能: A046 (毒毒光), Researchubertip (提示工具 - 学习 - 扩展)
+// 技能: A046 (火火光), Researchubertip (提示工具 - 学习 - 扩展)
 {
 Input some descriptions of the spell with which you want to match please.
 }
 
-STRING 1692
-// 技能: A046 (毒毒光), Tip (提示工具 - 普通)
-{
-火蚀术(|cffffcc00R|r) 
-}
-
 STRING 1693
-// 技能: A046 (毒毒光), Hotkey (热键 - 普通)
+// 技能: A046 (火火光), Hotkey (热键 - 普通)
 {
 R
 }
 
-STRING 1694
-// 魔法效果: B00H (), Bufftip (工具提示)
-{
-剧毒光球
-}
-
-STRING 1695
-// 技能: A048 (毒毒光), Name (名字)
-{
-毒毒光
-}
-
 STRING 1696
-// 技能: A048 (毒毒光), EditorSuffix (编辑器后缀)
+// 技能: A048 (火火光), EditorSuffix (编辑器后缀)
 {
 马甲技
+}
+
+STRING 1697
+// 技能: A049 (风风毒), Name (名字)
+{
+风风毒
+}
+
+STRING 1698
+// 技能: A049 (风风毒), Tip (提示工具 - 普通)
+{
+移形换位
+}
+
+STRING 1699
+// 技能: A049 (风风毒), Tip (提示工具 - 普通)
+{
+幽光之魂(|cffffcc00C|r) - [|cffffcc00等级 3|r]
+}
+
+STRING 1700
+// 技能: A049 (风风毒), Tip (提示工具 - 普通)
+{
+幽光之魂(|cffffcc00C|r) - [|cffffcc00等级 3|r]
+}
+
+STRING 1701
+// 技能: A049 (风风毒), Ubertip (提示工具 - 普通 - 扩展)
+{
+放出五个幽光之魂围绕英雄转动，对触碰都到的敌方单位造成伤害，伤害大小将取决于你的智力值。|n你将可以调节这些魂灵的绕行范围。
+}
+
+STRING 1702
+// 技能: A049 (风风毒), Ubertip (提示工具 - 普通 - 扩展)
+{
+放出五个幽光之魂围绕英雄转动，对触碰都到的敌方单位造成伤害，伤害大小将取决于你的智力值。|n你将可以调节这些魂灵的绕行范围。
+}
+
+STRING 1703
+// 技能: A04A (火火毒), Name (名字)
+{
+火火毒
+}
+
+STRING 1704
+// 技能: A04A (火火毒), EditorSuffix (编辑器后缀)
+{
+马甲技
+}
+
+STRING 1705
+// 技能: A02U (火火毒), Tip (提示工具 - 普通)
+{
+感染火焰
+}
+
+STRING 1706
+// 魔法效果: B00I (), Buffubertip (工具提示 - 扩展)
+{
+该单位被感染火焰击中了，将增加少量的移动速度并持续受到伤害，同时火焰会感染周围的单位。
+}
+
+STRING 1708
+// 魔法效果: B00I (), Bufftip (工具提示)
+{
+感染火焰
+}
+
+STRING 1710
+// 技能: A046 (火火光), Name (名字)
+{
+火火光
+}
+
+STRING 1712
+// 技能: A048 (火火光), Name (名字)
+{
+火火光
+}
+
+STRING 1713
+// 技能: A04B (毒毒光), Researchtip (提示工具 - 学习)
+{
+Learn Barbaric Collide(|cffffcc00R|r) 
+}
+
+STRING 1714
+// 技能: A04B (毒毒光), Researchubertip (提示工具 - 学习 - 扩展)
+{
+Input some descriptions of the spell with which you want to match please.
+}
+
+STRING 1715
+// 技能: A04B (毒毒光), Tip (提示工具 - 普通)
+{
+穿透毒素(|cffffcc00R|r) 
+}
+
+STRING 1716
+// 技能: A04B (毒毒光), Hotkey (热键 - 普通)
+{
+R
+}
+
+STRING 1717
+// 单位: n00W (毒光球), Name (名字)
+{
+毒光球
+}
+
+STRING 1718
+// 单位: n00V (天火效果), Name (名字)
+{
+天火效果
+}
+
+STRING 1719
+// 魔法效果: B00H (), Bufftip (工具提示)
+{
+涤罪之焰
+}
+
+STRING 1720
+// 技能: A046 (火火光), Tip (提示工具 - 普通)
+{
+涤罪之焰(|cffffcc00R|r) 
+}
+
+STRING 1721
+// 技能: A04C (冰冰毒), Name (名字)
+{
+冰冰毒
+}
+
+STRING 1722
+// 技能: A04C (冰冰毒), EditorSuffix (编辑器后缀)
+{
+马甲技
+}
+
+STRING 1723
+// 技能: A02N (冰冰毒), Tip (提示工具 - 普通)
+{
+寒霜之毒
+}
+
+STRING 1724
+// 魔法效果: B00J (), Bufftip (工具提示)
+{
+寒霜之毒
+}
+
+STRING 1725
+// 单位: u01Q (Z冰冻冷箭源), Name (名字)
+{
+Z冰冻冷箭源
+}
+
+STRING 1726
+// 技能: A04D (1冰冻冷箭效果), Name (名字)
+{
+1冰冻冷箭效果
+}
+
+STRING 1727
+// 魔法效果: B00K (寒霜之毒), EditorName (名字(编辑器))
+{
+寒霜之毒
+}
+
+STRING 1728
+// 魔法效果: B00L (), Bufftip (工具提示)
+{
+寒霜之毒
+}
+
+STRING 1729
+// 魔法效果: B00M (), Bufftip (工具提示)
+{
+寒霜之毒
 }
 
