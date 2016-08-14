@@ -26,32 +26,19 @@ trigger array YDWEBase___AbilityCastingOverEventQueue
 integer array YDWEBase___AbilityCastingOverEventType
 integer YDWEBase___AbilityCastingOverEventNumber= 0
 //endglobals from YDWEBase
-//globals from YDWEGeneralBounsSystem:
-constant boolean LIBRARY_YDWEGeneralBounsSystem=true
-integer array YDWEGeneralBounsSystem___ABILITY_COUNT
-integer array YDWEGeneralBounsSystem___ABILITY_NUM
-integer array YDWEGeneralBounsSystem___BonusAbilitys
-integer array YDWEGeneralBounsSystem___PowersOf2
-integer YDWEGeneralBounsSystem___PRELOAD_DUMMY_UNIT= 'hpea'
-integer array YDWEGeneralBounsSystem___YDWEBONUS_MyChar
-boolean YDWEGeneralBounsSystem___PRELOAD_ABILITYS= true
-constant integer YDWEGeneralBounsSystem___BONUS_TYPES= 4
-integer array YDWEGeneralBounsSystem___MaxBonus
-integer array YDWEGeneralBounsSystem___MinBonus
-//endglobals from YDWEGeneralBounsSystem
 //globals from YDWEGetForceOfPlayerNull:
 constant boolean LIBRARY_YDWEGetForceOfPlayerNull=true
-force yd_NullTempForce
 //endglobals from YDWEGetForceOfPlayerNull
 //globals from YDWEGetPlayersByMapControlNull:
 constant boolean LIBRARY_YDWEGetPlayersByMapControlNull=true
+force yd_NullTempForce
 //endglobals from YDWEGetPlayersByMapControlNull
 //globals from YDWEGetUnitsInRangeOfLocMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsInRangeOfLocMatchingNull=true
-group yd_NullTempGroup
 //endglobals from YDWEGetUnitsInRangeOfLocMatchingNull
 //globals from YDWEGetUnitsInRectMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsInRectMatchingNull=true
+group yd_NullTempGroup
 //endglobals from YDWEGetUnitsInRectMatchingNull
 //globals from YDWEGetUnitsOfPlayerMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsOfPlayerMatchingNull=true
@@ -318,6 +305,7 @@ sound gg_snd_ultrakill= null
 sound gg_snd_unstoppable= null
 sound gg_snd_whickedsick= null
 sound gg_snd_MagicLariatLoop1= null
+trigger gg_trg____________________________u= null
 trigger gg_trg_go_die= null
 trigger gg_trg_element= null
 trigger gg_trg_compute= null
@@ -410,7 +398,8 @@ trigger gg_trg_Plasma_Field_b= null
 trigger gg_trg_Vacuum_a= null
 trigger gg_trg_Vacuum_b= null
 trigger gg_trg_huangChongQun= null
-trigger gg_trg____________________________u= null
+trigger gg_trg_A_WWP= null
+trigger gg_trg_A_WWP_1= null
 hashtable CZ_HT=InitHashtable()
 group SHSJDWZ=CreateGroup()
 constant integer CZ_PLMJ='e005'
@@ -527,9 +516,14 @@ integer array si__MemoryLeakHelper___GTable_type
 trigger array st__MemoryLeakHelper___GTable_onDestroy
 integer array si__YDWETimerPattern___Thread_type
 trigger array st__YDWETimerPattern___Thread_onDestroy
-trigger array st___prototype172
-trigger array st___prototype175
+trigger array st___prototype167
+trigger array st___prototype170
 real f__result_real
+trigger array st___prototype174
+trigger array st___prototype175
+trigger array st___prototype176
+trigger array st___prototype177
+trigger array st___prototype178
 trigger array st___prototype179
 trigger array st___prototype180
 trigger array st___prototype181
@@ -537,11 +531,6 @@ trigger array st___prototype182
 trigger array st___prototype183
 trigger array st___prototype184
 trigger array st___prototype185
-trigger array st___prototype186
-trigger array st___prototype187
-trigger array st___prototype188
-trigger array st___prototype189
-trigger array st___prototype190
 unit f__arg_unit1
 location f__arg_location1
 location f__arg_location2
@@ -1011,278 +1000,278 @@ function s__YDWETimerPattern___Linear__allocate takes nothing returns integer
  return this
 endfunction
 
-function sc___prototype172_execute takes integer i,unit a1,location a2,real a3 returns nothing
+function sc___prototype167_execute takes integer i,unit a1,location a2,real a3 returns nothing
     set f__arg_unit1=a1
     set f__arg_location1=a2
     set f__arg_real1=a3
 
-    call TriggerExecute(st___prototype172[i])
+    call TriggerExecute(st___prototype167[i])
 endfunction
-function sc___prototype172_evaluate takes integer i,unit a1,location a2,real a3 returns nothing
+function sc___prototype167_evaluate takes integer i,unit a1,location a2,real a3 returns nothing
     set f__arg_unit1=a1
     set f__arg_location1=a2
     set f__arg_real1=a3
 
-    call TriggerEvaluate(st___prototype172[i])
+    call TriggerEvaluate(st___prototype167[i])
 
 endfunction
-function sc___prototype175_execute takes integer i returns nothing
+function sc___prototype170_execute takes integer i returns nothing
+
+    call TriggerExecute(st___prototype170[i])
+endfunction
+function sc___prototype170_evaluate takes integer i returns real
+
+    call TriggerEvaluate(st___prototype170[i])
+ return f__result_real
+endfunction
+function sc___prototype174_execute takes integer i,location a1 returns nothing
+    set f__arg_location1=a1
+
+    call TriggerExecute(st___prototype174[i])
+endfunction
+function sc___prototype174_evaluate takes integer i,location a1 returns nothing
+    set f__arg_location1=a1
+
+    call TriggerEvaluate(st___prototype174[i])
+
+endfunction
+function sc___prototype175_execute takes integer i,group a1 returns nothing
+    set f__arg_group1=a1
 
     call TriggerExecute(st___prototype175[i])
 endfunction
-function sc___prototype175_evaluate takes integer i returns real
+function sc___prototype175_evaluate takes integer i,group a1 returns nothing
+    set f__arg_group1=a1
 
     call TriggerEvaluate(st___prototype175[i])
- return f__result_real
+
 endfunction
-function sc___prototype179_execute takes integer i,location a1 returns nothing
+function sc___prototype176_execute takes integer i,effect a1 returns nothing
+    set f__arg_effect1=a1
+
+    call TriggerExecute(st___prototype176[i])
+endfunction
+function sc___prototype176_evaluate takes integer i,effect a1 returns nothing
+    set f__arg_effect1=a1
+
+    call TriggerEvaluate(st___prototype176[i])
+
+endfunction
+function sc___prototype177_execute takes integer i,location a1,real a2,real a3 returns nothing
     set f__arg_location1=a1
+    set f__arg_real1=a2
+    set f__arg_real2=a3
+
+    call TriggerExecute(st___prototype177[i])
+endfunction
+function sc___prototype177_evaluate takes integer i,location a1,real a2,real a3 returns nothing
+    set f__arg_location1=a1
+    set f__arg_real1=a2
+    set f__arg_real2=a3
+
+    call TriggerEvaluate(st___prototype177[i])
+
+endfunction
+function sc___prototype178_execute takes integer i,integer a1,integer a2,player a3,location a4,real a5 returns nothing
+    set f__arg_integer1=a1
+    set f__arg_integer2=a2
+    set f__arg_player1=a3
+    set f__arg_location1=a4
+    set f__arg_real1=a5
+
+    call TriggerExecute(st___prototype178[i])
+endfunction
+function sc___prototype178_evaluate takes integer i,integer a1,integer a2,player a3,location a4,real a5 returns nothing
+    set f__arg_integer1=a1
+    set f__arg_integer2=a2
+    set f__arg_player1=a3
+    set f__arg_location1=a4
+    set f__arg_real1=a5
+
+    call TriggerEvaluate(st___prototype178[i])
+
+endfunction
+function sc___prototype179_execute takes integer i,unit a1,string a2,location a3 returns nothing
+    set f__arg_unit1=a1
+    set f__arg_string1=a2
+    set f__arg_location1=a3
 
     call TriggerExecute(st___prototype179[i])
 endfunction
-function sc___prototype179_evaluate takes integer i,location a1 returns nothing
-    set f__arg_location1=a1
+function sc___prototype179_evaluate takes integer i,unit a1,string a2,location a3 returns nothing
+    set f__arg_unit1=a1
+    set f__arg_string1=a2
+    set f__arg_location1=a3
 
     call TriggerEvaluate(st___prototype179[i])
 
 endfunction
-function sc___prototype180_execute takes integer i,group a1 returns nothing
-    set f__arg_group1=a1
+function sc___prototype180_execute takes integer i,unit a1,location a2 returns nothing
+    set f__arg_unit1=a1
+    set f__arg_location1=a2
 
     call TriggerExecute(st___prototype180[i])
 endfunction
-function sc___prototype180_evaluate takes integer i,group a1 returns nothing
-    set f__arg_group1=a1
+function sc___prototype180_evaluate takes integer i,unit a1,location a2 returns nothing
+    set f__arg_unit1=a1
+    set f__arg_location1=a2
 
     call TriggerEvaluate(st___prototype180[i])
 
 endfunction
-function sc___prototype181_execute takes integer i,effect a1 returns nothing
-    set f__arg_effect1=a1
+function sc___prototype181_execute takes integer i,real a1,location a2,boolexpr a3 returns nothing
+    set f__arg_real1=a1
+    set f__arg_location1=a2
+    set f__arg_boolexpr1=a3
 
     call TriggerExecute(st___prototype181[i])
 endfunction
-function sc___prototype181_evaluate takes integer i,effect a1 returns nothing
-    set f__arg_effect1=a1
+function sc___prototype181_evaluate takes integer i,real a1,location a2,boolexpr a3 returns nothing
+    set f__arg_real1=a1
+    set f__arg_location1=a2
+    set f__arg_boolexpr1=a3
 
     call TriggerEvaluate(st___prototype181[i])
 
 endfunction
-function sc___prototype182_execute takes integer i,location a1,real a2,real a3 returns nothing
-    set f__arg_location1=a1
-    set f__arg_real1=a2
-    set f__arg_real2=a3
+function sc___prototype182_execute takes integer i,integer a1,integer a2,player a3,location a4,location a5 returns nothing
+    set f__arg_integer1=a1
+    set f__arg_integer2=a2
+    set f__arg_player1=a3
+    set f__arg_location1=a4
+    set f__arg_location2=a5
 
     call TriggerExecute(st___prototype182[i])
 endfunction
-function sc___prototype182_evaluate takes integer i,location a1,real a2,real a3 returns nothing
-    set f__arg_location1=a1
-    set f__arg_real1=a2
-    set f__arg_real2=a3
+function sc___prototype182_evaluate takes integer i,integer a1,integer a2,player a3,location a4,location a5 returns nothing
+    set f__arg_integer1=a1
+    set f__arg_integer2=a2
+    set f__arg_player1=a3
+    set f__arg_location1=a4
+    set f__arg_location2=a5
 
     call TriggerEvaluate(st___prototype182[i])
 
 endfunction
-function sc___prototype183_execute takes integer i,integer a1,integer a2,player a3,location a4,real a5 returns nothing
-    set f__arg_integer1=a1
-    set f__arg_integer2=a2
-    set f__arg_player1=a3
-    set f__arg_location1=a4
-    set f__arg_real1=a5
+function sc___prototype183_execute takes integer i,group a1,code a2 returns nothing
+    set f__arg_group1=a1
+    set f__arg_code1=a2
 
     call TriggerExecute(st___prototype183[i])
 endfunction
-function sc___prototype183_evaluate takes integer i,integer a1,integer a2,player a3,location a4,real a5 returns nothing
-    set f__arg_integer1=a1
-    set f__arg_integer2=a2
-    set f__arg_player1=a3
-    set f__arg_location1=a4
-    set f__arg_real1=a5
+function sc___prototype183_evaluate takes integer i,group a1,code a2 returns nothing
+    set f__arg_group1=a1
+    set f__arg_code1=a2
 
     call TriggerEvaluate(st___prototype183[i])
 
 endfunction
-function sc___prototype184_execute takes integer i,unit a1,string a2,location a3 returns nothing
-    set f__arg_unit1=a1
-    set f__arg_string1=a2
-    set f__arg_location1=a3
+function sc___prototype184_execute takes integer i,string a1,widget a2,string a3 returns nothing
+    set f__arg_string1=a1
+    set f__arg_widget1=a2
+    set f__arg_string2=a3
 
     call TriggerExecute(st___prototype184[i])
 endfunction
-function sc___prototype184_evaluate takes integer i,unit a1,string a2,location a3 returns nothing
-    set f__arg_unit1=a1
-    set f__arg_string1=a2
-    set f__arg_location1=a3
+function sc___prototype184_evaluate takes integer i,string a1,widget a2,string a3 returns nothing
+    set f__arg_string1=a1
+    set f__arg_widget1=a2
+    set f__arg_string2=a3
 
     call TriggerEvaluate(st___prototype184[i])
 
 endfunction
-function sc___prototype185_execute takes integer i,unit a1,location a2 returns nothing
-    set f__arg_unit1=a1
-    set f__arg_location1=a2
+function sc___prototype185_execute takes integer i,location a1,string a2 returns nothing
+    set f__arg_location1=a1
+    set f__arg_string1=a2
 
     call TriggerExecute(st___prototype185[i])
 endfunction
-function sc___prototype185_evaluate takes integer i,unit a1,location a2 returns nothing
-    set f__arg_unit1=a1
-    set f__arg_location1=a2
+function sc___prototype185_evaluate takes integer i,location a1,string a2 returns nothing
+    set f__arg_location1=a1
+    set f__arg_string1=a2
 
     call TriggerEvaluate(st___prototype185[i])
 
 endfunction
-function sc___prototype186_execute takes integer i,real a1,location a2,boolexpr a3 returns nothing
-    set f__arg_real1=a1
-    set f__arg_location1=a2
-    set f__arg_boolexpr1=a3
-
-    call TriggerExecute(st___prototype186[i])
-endfunction
-function sc___prototype186_evaluate takes integer i,real a1,location a2,boolexpr a3 returns nothing
-    set f__arg_real1=a1
-    set f__arg_location1=a2
-    set f__arg_boolexpr1=a3
-
-    call TriggerEvaluate(st___prototype186[i])
-
-endfunction
-function sc___prototype187_execute takes integer i,integer a1,integer a2,player a3,location a4,location a5 returns nothing
-    set f__arg_integer1=a1
-    set f__arg_integer2=a2
-    set f__arg_player1=a3
-    set f__arg_location1=a4
-    set f__arg_location2=a5
-
-    call TriggerExecute(st___prototype187[i])
-endfunction
-function sc___prototype187_evaluate takes integer i,integer a1,integer a2,player a3,location a4,location a5 returns nothing
-    set f__arg_integer1=a1
-    set f__arg_integer2=a2
-    set f__arg_player1=a3
-    set f__arg_location1=a4
-    set f__arg_location2=a5
-
-    call TriggerEvaluate(st___prototype187[i])
-
-endfunction
-function sc___prototype188_execute takes integer i,group a1,code a2 returns nothing
-    set f__arg_group1=a1
-    set f__arg_code1=a2
-
-    call TriggerExecute(st___prototype188[i])
-endfunction
-function sc___prototype188_evaluate takes integer i,group a1,code a2 returns nothing
-    set f__arg_group1=a1
-    set f__arg_code1=a2
-
-    call TriggerEvaluate(st___prototype188[i])
-
-endfunction
-function sc___prototype189_execute takes integer i,string a1,widget a2,string a3 returns nothing
-    set f__arg_string1=a1
-    set f__arg_widget1=a2
-    set f__arg_string2=a3
-
-    call TriggerExecute(st___prototype189[i])
-endfunction
-function sc___prototype189_evaluate takes integer i,string a1,widget a2,string a3 returns nothing
-    set f__arg_string1=a1
-    set f__arg_widget1=a2
-    set f__arg_string2=a3
-
-    call TriggerEvaluate(st___prototype189[i])
-
-endfunction
-function sc___prototype190_execute takes integer i,location a1,string a2 returns nothing
-    set f__arg_location1=a1
-    set f__arg_string1=a2
-
-    call TriggerExecute(st___prototype190[i])
-endfunction
-function sc___prototype190_evaluate takes integer i,location a1,string a2 returns nothing
-    set f__arg_location1=a1
-    set f__arg_string1=a2
-
-    call TriggerEvaluate(st___prototype190[i])
-
-endfunction
 function h__PolarProjectionBJ takes location a0, real a1, real a2 returns location
     //hook: MemoryLeakHelper___PP
-    call sc___prototype182_evaluate(1,a0,a1,a2)
+    call sc___prototype177_evaluate(1,a0,a1,a2)
 return PolarProjectionBJ(a0,a1,a2)
 endfunction
 function h__CreateNUnitsAtLoc takes integer a0, integer a1, player a2, location a3, real a4 returns group
     //hook: MemoryLeakHelper___CU
-    call sc___prototype183_evaluate(1,a0,a1,a2,a3,a4)
+    call sc___prototype178_evaluate(1,a0,a1,a2,a3,a4)
 return CreateNUnitsAtLoc(a0,a1,a2,a3,a4)
 endfunction
 function h__CreateNUnitsAtLocFacingLocBJ takes integer a0, integer a1, player a2, location a3, location a4 returns group
     //hook: MemoryLeakHelper___CUF
-    call sc___prototype187_evaluate(1,a0,a1,a2,a3,a4)
+    call sc___prototype182_evaluate(1,a0,a1,a2,a3,a4)
 return CreateNUnitsAtLocFacingLocBJ(a0,a1,a2,a3,a4)
 endfunction
 function h__IssuePointOrderLocBJ takes unit a0, string a1, location a2 returns boolean
     //hook: MemoryLeakHelper___IPO
-    call sc___prototype184_evaluate(1,a0,a1,a2)
+    call sc___prototype179_evaluate(1,a0,a1,a2)
 return IssuePointOrderLocBJ(a0,a1,a2)
 endfunction
 function h__SetUnitPositionLoc takes unit a0, location a1 returns nothing
     //hook: MemoryLeakHelper___SUP
-    call sc___prototype185_evaluate(1,a0,a1)
+    call sc___prototype180_evaluate(1,a0,a1)
 call SetUnitPositionLoc(a0,a1)
 endfunction
 function h__SetUnitFacingToFaceLocTimed takes unit a0, location a1, real a2 returns nothing
     //hook: MemoryLeakHelper___SUF
-    call sc___prototype172_evaluate(1,a0,a1,a2)
+    call sc___prototype167_evaluate(1,a0,a1,a2)
 call SetUnitFacingToFaceLocTimed(a0,a1,a2)
 endfunction
 function h__GetUnitsInRangeOfLocMatching takes real a0, location a1, boolexpr a2 returns group
     //hook: MemoryLeakHelper___GUR
-    call sc___prototype186_evaluate(1,a0,a1,a2)
+    call sc___prototype181_evaluate(1,a0,a1,a2)
 return GetUnitsInRangeOfLocMatching(a0,a1,a2)
 endfunction
 function h__RemoveLocation takes location a0 returns nothing
     //hook: MemoryLeakHelper___ReleaseLocation
-    call sc___prototype179_evaluate(1,a0)
+    call sc___prototype174_evaluate(1,a0)
 call RemoveLocation(a0)
 endfunction
 function h__ForGroupBJ takes group a0, code a1 returns nothing
     //hook: MemoryLeakHelper___FG
-    call sc___prototype188_evaluate(1,a0,a1)
+    call sc___prototype183_evaluate(1,a0,a1)
 call ForGroupBJ(a0,a1)
 endfunction
 function h__GroupPickRandomUnit takes group a0 returns unit
     //hook: MemoryLeakHelper___CatchGroup
-    call sc___prototype180_evaluate(1,a0)
+    call sc___prototype175_evaluate(1,a0)
 return GroupPickRandomUnit(a0)
 endfunction
 function h__CountUnitsInGroup takes group a0 returns integer
     //hook: MemoryLeakHelper___CatchGroup
-    call sc___prototype180_evaluate(1,a0)
+    call sc___prototype175_evaluate(1,a0)
 return CountUnitsInGroup(a0)
 endfunction
 function h__DestroyGroup takes group a0 returns nothing
     //hook: MemoryLeakHelper___ReleaseGroup
-    call sc___prototype180_evaluate(2,a0)
+    call sc___prototype175_evaluate(2,a0)
 call DestroyGroup(a0)
 endfunction
 function h__AddSpecialEffectLocBJ takes location a0, string a1 returns effect
     //hook: MemoryLeakHelper___ASE
-    call sc___prototype190_evaluate(1,a0,a1)
+    call sc___prototype185_evaluate(1,a0,a1)
 return AddSpecialEffectLocBJ(a0,a1)
 endfunction
 function h__AddSpecialEffectTargetUnitBJ takes string a0, widget a1, string a2 returns effect
     //hook: MemoryLeakHelper___ASETU
-    call sc___prototype189_evaluate(1,a0,a1,a2)
+    call sc___prototype184_evaluate(1,a0,a1,a2)
 return AddSpecialEffectTargetUnitBJ(a0,a1,a2)
 endfunction
 function h__DestroyEffect takes effect a0 returns nothing
     //hook: MemoryLeakHelper___ReleaseEffect
-    call sc___prototype181_evaluate(1,a0)
+    call sc___prototype176_evaluate(1,a0)
 call DestroyEffect(a0)
 endfunction
 function h__DestroyEffectBJ takes effect a0 returns nothing
     //hook: MemoryLeakHelper___ReleaseEffect
-    call sc___prototype181_evaluate(1,a0)
+    call sc___prototype176_evaluate(1,a0)
 call DestroyEffectBJ(a0)
 endfunction
 
@@ -2011,385 +2000,6 @@ function InitializeYD takes nothing returns nothing
 endfunction
 
 //library YDWEBase ends
-//library YDWEGeneralBounsSystem:
-//“‘œ¬∫Ø ˝ΩˆΩˆ «»√ººƒ‹ID≥ˆœ÷‘⁄¥˙¬Î¿Ô£¨≤ª»ªSLK”≈ªØ∆˜ª·…æ≥˝’‚–©ººƒ‹
-function YDWEGeneralBounsSystem___DisplayAllAbilityId takes nothing returns nothing
-    local integer aid=0
-    set aid='YDl0'
-    set aid='YDl1'
-    set aid='YDl2'
-    set aid='YDl3'
-    set aid='YDl4'
-    set aid='YDl5'
-    set aid='YDl6'
-    set aid='YDl7'
-    set aid='YDl8'
-    set aid='YDl9'
-    set aid='YDla'
-    set aid='YDlb'
-    set aid='YDlc'
-    set aid='YDld'
-    set aid='YDle'
-    set aid='YDlf'
-    set aid='YDm0'
-    set aid='YDm1'
-    set aid='YDm2'
-    set aid='YDm3'
-    set aid='YDm4'
-    set aid='YDm5'
-    set aid='YDm6'
-    set aid='YDm7'
-    set aid='YDm8'
-    set aid='YDm9'
-    set aid='YDma'
-    set aid='YDmb'
-    set aid='YDmc'
-    set aid='YDmd'
-    set aid='YDme'
-    set aid='YDmf'
-    set aid='YDc0'
-    set aid='YDc1'
-    set aid='YDc2'
-    set aid='YDc3'
-    set aid='YDc4'
-    set aid='YDc5'
-    set aid='YDc6'
-    set aid='YDc7'
-    set aid='YDc8'
-    set aid='YDc9'
-    set aid='YDca'
-    set aid='YDcb'
-    set aid='YDcc'
-    set aid='YDb0'
-    set aid='YDb1'
-    set aid='YDb2'
-    set aid='YDb3'
-    set aid='YDb4'
-    set aid='YDb5'
-    set aid='YDb6'
-    set aid='YDb7'
-    set aid='YDb8'
-    set aid='YDb9'
-    set aid='YDba'
-    set aid='YDbb'
-    set aid='YDbc'
-    set aid='YDbd'
-    set aid='YDbe'
-    set aid='YDbg'
-    set aid='YDbh'
-    set aid='YDbi'
-    set aid='YDbj'
-    set aid='YDbk'
-    set aid='YDbl'
-    set aid='YDbm'
-    set aid='YDbn'
-endfunction
-    function YDWEGeneralBounsSystem___UnitClearBonus takes unit u,integer bonusType returns nothing
-        local integer i=YDWEGeneralBounsSystem___ABILITY_COUNT[bonusType + 1] - 1
-        loop
-            exitwhen i < YDWEGeneralBounsSystem___ABILITY_COUNT[bonusType]
-            call UnitRemoveAbility(u, YDWEGeneralBounsSystem___BonusAbilitys[i])
-            set i=i - 1
-        endloop
-        call SaveInteger(YDHT, StringHash((I2S((GetHandleId((u)))) )), StringHash(( "bonusType" + I2S(bonusType) )), ( 0)) // INLINED!!
-    endfunction
-    function YDWEGeneralBounsSystem___SetUnitMaxState takes unit u,integer bonusType,real value returns boolean
-        local integer v=R2I(value)
-        local integer s=0
-        local integer o=0
-        local unitstate state
-        local integer i=YDWEGeneralBounsSystem___ABILITY_COUNT[bonusType + 1] - 2
-        local integer a=YDWEGeneralBounsSystem___ABILITY_NUM[bonusType]
-        if value > 65535 or value <= 0 then
-            return false
-        endif
-        if bonusType == 0 then
-            set state=UNIT_STATE_MAX_LIFE
-          elseif bonusType == 1 then
-            set state=UNIT_STATE_MAX_MANA
-          else
-            return false
-        endif
-        set v=v - R2I(GetUnitState(u, state))
-        call SaveInteger(YDHT, StringHash((I2S((GetHandleId((u)))) )), StringHash(( "bonusType" + I2S(bonusType) )), ( v)) // INLINED!!
-        if v > 0 then
-            set o=3
-          elseif v < 0 then
-            set o=2
-            set v=- v
-          else
-            return false
-        endif
-        loop
-            exitwhen i < YDWEGeneralBounsSystem___ABILITY_COUNT[bonusType]
-            if v >= YDWEGeneralBounsSystem___PowersOf2[i] then
-                call UnitAddAbility(u, YDWEGeneralBounsSystem___BonusAbilitys[i])
-                call SetUnitAbilityLevel(u, YDWEGeneralBounsSystem___BonusAbilitys[i], o)
-                call UnitRemoveAbility(u, YDWEGeneralBounsSystem___BonusAbilitys[i])
-                set v=v - YDWEGeneralBounsSystem___PowersOf2[i]
-            endif
-            set i=i - 1
-        endloop
-        return true
-    endfunction
-function YDWEGeneralBounsSystem___UnitSetBonus takes unit u,integer bonusType,integer ammount returns boolean
-    local integer i
-    //…Ë÷√ Ù–‘Œ™0≤ªΩ¯––Loop
-    if ammount == 0 then
-        call YDWEGeneralBounsSystem___UnitClearBonus(u , bonusType)
-        return false
-    endif
-    if ammount < YDWEGeneralBounsSystem___MinBonus[bonusType] or ammount > YDWEGeneralBounsSystem___MaxBonus[bonusType] then
-        return false
-    elseif bonusType < 0 or bonusType >= YDWEGeneralBounsSystem___BONUS_TYPES then
-        return false
-    endif
-    call SaveInteger(YDHT, StringHash((I2S((GetHandleId((u)))) )), StringHash(( "bonusType" + I2S(bonusType) )), ( ammount)) // INLINED!!
-    if ammount < 0 then
-        set ammount=YDWEGeneralBounsSystem___MaxBonus[bonusType] + ammount + 1
-        call UnitAddAbility(u, YDWEGeneralBounsSystem___BonusAbilitys[YDWEGeneralBounsSystem___ABILITY_COUNT[bonusType + 1] - 1])
-        call UnitMakeAbilityPermanent(u, true, YDWEGeneralBounsSystem___BonusAbilitys[YDWEGeneralBounsSystem___ABILITY_COUNT[bonusType + 1] - 1])
-      else
-        call UnitRemoveAbility(u, YDWEGeneralBounsSystem___BonusAbilitys[YDWEGeneralBounsSystem___ABILITY_COUNT[bonusType + 1] - 1])
-    endif
-    set i=YDWEGeneralBounsSystem___ABILITY_COUNT[bonusType + 1] - 2
-    loop
-        exitwhen i < YDWEGeneralBounsSystem___ABILITY_COUNT[bonusType]
-        if ammount >= YDWEGeneralBounsSystem___PowersOf2[i] then
-            call UnitAddAbility(u, YDWEGeneralBounsSystem___BonusAbilitys[i])
-            call UnitMakeAbilityPermanent(u, true, YDWEGeneralBounsSystem___BonusAbilitys[i])
-            set ammount=ammount - YDWEGeneralBounsSystem___PowersOf2[i]
-        else
-            call UnitRemoveAbility(u, YDWEGeneralBounsSystem___BonusAbilitys[i])
-        endif
-        set i=i - 1
-    endloop
-    return true
-endfunction
-function YDWEGeneralBounsSystem___UnitGetBonus takes unit u,integer bonusType returns integer
-    return (LoadInteger(YDHT, StringHash((I2S((GetHandleId((u)))) )), StringHash(( "bonusType" + I2S(bonusType))))) // INLINED!!
-endfunction
-function YDWEGeneralBounsSystem___AddUnitMaxState takes unit u,integer bonusType,real value returns boolean
-    local unitstate state
-    if bonusType == 0 then
-        set state=UNIT_STATE_MAX_LIFE
-      elseif bonusType == 1 then
-        set state=UNIT_STATE_MAX_MANA
-      else
-        return false
-    endif
-    return YDWEGeneralBounsSystem___SetUnitMaxState(u , bonusType , value + GetUnitState(u, state))
-endfunction
-function YDWEGeneralBounsSystem___UnitAddBonus takes unit u,integer bonusType,integer ammount returns boolean
-    return YDWEGeneralBounsSystem___UnitSetBonus(u , bonusType , (LoadInteger(YDHT, StringHash((I2S((GetHandleId(((u ))))) )), StringHash(( "bonusType" + I2S(( bonusType)))))) + ammount) // INLINED!!
-endfunction
-function YDWEUnitSetBonus takes unit u,integer bonusType,integer ammount returns nothing
-    if bonusType == 0 or bonusType == 1 then
-        call YDWEGeneralBounsSystem___SetUnitMaxState(u , bonusType , ammount)
-      else
-        call YDWEGeneralBounsSystem___UnitSetBonus(u , bonusType , ammount)
-    endif
-endfunction
-function YDWEUnitAddBonus takes unit u,integer bonusType,integer ammount returns nothing
-    if bonusType == 0 or bonusType == 1 then
-        call YDWEGeneralBounsSystem___AddUnitMaxState(u , bonusType , ammount)
-      else
-        call YDWEGeneralBounsSystem___UnitAddBonus(u , bonusType , ammount)
-    endif
-endfunction
-function YDWEGeneralBounsSystemUnitSetBonus takes unit u,integer bonusType,integer mod,integer ammount returns nothing
-    if mod == 0 then
-        call YDWEUnitAddBonus(u , bonusType , ammount)
-      elseif mod == 1 then
-        call YDWEUnitAddBonus(u , bonusType , 0 - ammount)
-      else
-        call YDWEUnitSetBonus(u , bonusType , ammount)
-    endif
-endfunction
-function YDWEGeneralBounsSystemUnitGetBonus takes unit u,integer bonusType returns integer
-    return (LoadInteger(YDHT, StringHash((I2S((GetHandleId((u)))) )), StringHash(( "bonusType" + I2S(bonusType))))) // INLINED!!
-endfunction
-//private keyword BonusAbilitys
-function YDWEGeneralBounsSystem___InitializeAbilitys takes nothing returns nothing
-    local integer i=0
-    local integer m=0
-    set YDWEGeneralBounsSystem___ABILITY_COUNT[0]=0 //life max
-set YDWEGeneralBounsSystem___ABILITY_COUNT[1]=15 //mana max
-set YDWEGeneralBounsSystem___ABILITY_COUNT[2]=30 //armor
-set YDWEGeneralBounsSystem___ABILITY_COUNT[3]=43 //attack
-set YDWEGeneralBounsSystem___ABILITY_COUNT[4]=67
-    set YDWEGeneralBounsSystem___ABILITY_NUM[0]=15
-    set YDWEGeneralBounsSystem___ABILITY_NUM[1]=15
-    set YDWEGeneralBounsSystem___ABILITY_NUM[2]=13
-    set YDWEGeneralBounsSystem___ABILITY_NUM[3]=24
-    // Bonus Mod - armor abilitys
-    loop
-        exitwhen i > 9
-        set YDWEGeneralBounsSystem___YDWEBONUS_MyChar[i]='0' + m
-        set m=m + 1
-        set i=i + 1
-    endloop
-    set m=0
-    loop
-        exitwhen i > 26
-        set YDWEGeneralBounsSystem___YDWEBONUS_MyChar[i]='a' + m
-        set m=m + 1
-        set i=i + 1
-    endloop
-    set i=0
-    set m=0
-    loop
-        exitwhen m > ( YDWEGeneralBounsSystem___ABILITY_NUM[0] - 1 )
-        set YDWEGeneralBounsSystem___BonusAbilitys[i]='YDl0' - '0' + YDWEGeneralBounsSystem___YDWEBONUS_MyChar[m] // +1
-        set i=i + 1
-        set m=m + 1
-    endloop
-    // Bonus Mod - Damage abilitys
-    set m=0
-    loop
-        exitwhen m > ( YDWEGeneralBounsSystem___ABILITY_NUM[1] - 1 )
-        set YDWEGeneralBounsSystem___BonusAbilitys[i]='YDm0' - '0' + YDWEGeneralBounsSystem___YDWEBONUS_MyChar[m] // +1
-        set i=i + 1
-        set m=m + 1
-    endloop
-    // Bonus Mod - Life MaxState abilitys
-    set m=0
-    loop
-        exitwhen m > ( YDWEGeneralBounsSystem___ABILITY_NUM[2] - 1 )
-        set YDWEGeneralBounsSystem___BonusAbilitys[i]='YDc0' - '0' + YDWEGeneralBounsSystem___YDWEBONUS_MyChar[m] // +1
-        set i=i + 1
-        set m=m + 1
-    endloop
-    // Bonus Mod - Mana MaxState abilitys
-    set m=0
-    loop
-        exitwhen m > ( YDWEGeneralBounsSystem___ABILITY_NUM[3] - 1 )
-        set YDWEGeneralBounsSystem___BonusAbilitys[i]='YDb0' - '0' + YDWEGeneralBounsSystem___YDWEBONUS_MyChar[m] // +1
-        set i=i + 1
-        set m=m + 1
-    endloop
-endfunction
-function YDWEGeneralBounsSystem___Initialize takes nothing returns nothing
-    local integer i= 1
-    local unit u
-    local integer n=0
-    local integer add=0
-    call YDWEGeneralBounsSystem___InitializeAbilitys()
-    loop
-        set i=1
-        set YDWEGeneralBounsSystem___PowersOf2[add]=1
-            loop
-                set YDWEGeneralBounsSystem___PowersOf2[add + 1]=YDWEGeneralBounsSystem___PowersOf2[add] * 2
-                set add=add + 1
-                set i=i + 1
-                exitwhen i == YDWEGeneralBounsSystem___ABILITY_NUM[n]
-            endloop
-        set YDWEGeneralBounsSystem___MaxBonus[n]=YDWEGeneralBounsSystem___PowersOf2[add] - 1
-        set YDWEGeneralBounsSystem___MinBonus[n]=- YDWEGeneralBounsSystem___PowersOf2[add]
-        set add=add + 1
-        set n=n + 1
-        exitwhen n >= 4
-    endloop
-    //‘§∂¡ººƒ‹
-    if YDWEGeneralBounsSystem___PRELOAD_ABILITYS then
-        set u=CreateUnit(Player(15), YDWEGeneralBounsSystem___PRELOAD_DUMMY_UNIT, 0, 0, 0)
-        set i=0
-        loop
-            exitwhen i == YDWEGeneralBounsSystem___ABILITY_COUNT[5]
-            call UnitAddAbility(u, YDWEGeneralBounsSystem___BonusAbilitys[i])
-            set i=i + 1
-        endloop
-        call RemoveUnit(u)
-        set u=null
-    endif
-endfunction
-function YDWELifeChange takes unit u,integer mod,integer ch,integer id returns nothing
-    local integer a
-    local integer b
-    local integer c
-    local integer d
-    local integer aid= id
-    if mod == 1 then
-        set ch=- ch
-      elseif mod == 2 then
-        set ch=ch - R2I(GetUnitState(u, UNIT_STATE_MAX_LIFE))
-    endif
-    //set YDWEADDBONUS_LIFE=YDWEADDBONUS_LIFE+ch
-    if ch > 99999 then
-        set ch=99999
-    endif
-    if ch < - 99999 then
-        set ch=- 99999
-    endif
-    if ch < 0 then
-        set a=2
-        set ch=- ch
-    else
-        set a=7
-    endif
-    set b=0
-    loop
-        exitwhen b == 5
-        set c=ch - ch / 10 * 10
-        set d=0
-        loop
-            exitwhen d == c
-            call UnitAddAbility(u, aid)
-            call SetUnitAbilityLevel(u, aid, a)
-            call UnitRemoveAbility(u, aid)
-            set d=d + 1
-        endloop
-        set ch=ch / 10
-        set a=a + 1
-        set b=b + 1
-    endloop
-endfunction
-//===========================================================================
-//–ﬁ∏ƒƒß∑®
-//===========================================================================
-function YDWEManaChange takes unit u,integer mod,integer ch,integer id returns nothing
-    local integer a
-    local integer b
-    local integer c
-    local integer d
-    local integer aid= id
-    if mod == 1 then
-        set ch=- ch
-      elseif mod == 2 then
-        set ch=ch - R2I(GetUnitState(u, UNIT_STATE_MAX_MANA))
-    endif
-    //set YDWEADDBONUS_MANA=YDWEADDBONUS_MANA+ch
-    if ch > 99999 then
-        set ch=99999
-    endif
-    if ch < - 99999 then
-        set ch=- 99999
-    endif
-    if ch < 0 then
-        set a=2
-        set ch=- ch
-    else
-        set a=7
-    endif
-    set b=0
-    loop
-        exitwhen b == 5
-        set c=ch - ch / 10 * 10
-        set d=0
-        loop
-            exitwhen d == c
-            call UnitAddAbility(u, aid)
-            call SetUnitAbilityLevel(u, aid, a)
-            call UnitRemoveAbility(u, aid)
-            set d=d + 1
-        endloop
-        set ch=ch / 10
-        set a=a + 1
-        set b=b + 1
-    endloop
-endfunction
-
-//library YDWEGeneralBounsSystem ends
 //library YDWEGetForceOfPlayerNull:
 function YDWEGetForceOfPlayerNull takes player whichPlayer returns force
     local force f= CreateForce()
@@ -4158,7 +3768,7 @@ endfunction
 // 
 //   Warcraft III map script
 //   Generated by the Warcraft III World Editor
-//   Date: Sun Aug 14 16:18:56 2016
+//   Date: Sun Aug 14 18:03:12 2016
 //   Map Author: Êú™Áü•
 // 
 //===========================================================================
@@ -4350,14 +3960,30 @@ endfunction
 //***************************************************************************
 function CreateAllItems takes nothing returns nothing
     local integer itemID
+    call CreateItem('I00K', 431.3, - 601.1)
+    call CreateItem('I00K', 293.5, - 934.0)
     call CreateItem('I00K', 24.6, - 1195.9)
+    call CreateItem('I00L', 515.3, - 611.6)
+    call CreateItem('I00L', 377.6, - 944.5)
     call CreateItem('I00L', 108.6, - 1206.5)
+    call CreateItem('I00M', 514.5, - 703.1)
     call CreateItem('I00M', 107.8, - 1298.0)
+    call CreateItem('I00M', 376.7, - 1036.0)
+    call CreateItem('I00N', 463.1, - 971.1)
+    call CreateItem('I00N', 600.8, - 638.2)
     call CreateItem('I00N', 194.2, - 1233.0)
+    call CreateItem('I00O', 670.4, - 635.3)
     call CreateItem('I00O', 263.7, - 1230.1)
+    call CreateItem('I00O', 532.6, - 968.2)
     call CreateItem('I00P', 14.8, - 1295.6)
+    call CreateItem('I00P', 421.5, - 700.8)
+    call CreateItem('I00P', 283.7, - 1033.7)
+    call CreateItem('I00Q', 684.2, - 726.9)
     call CreateItem('I00Q', 277.6, - 1321.7)
+    call CreateItem('I00Q', 546.5, - 1059.7)
     call CreateItem('I00R', 194.5, - 1324.9)
+    call CreateItem('I00R', 601.2, - 730.1)
+    call CreateItem('I00R', 463.4, - 1063.0)
 endfunction
 //***************************************************************************
 //*
@@ -4382,7 +4008,7 @@ function CreateUnitsForPlayer0 takes nothing returns nothing
     local real life
     set u=CreateUnit(p, 'Hpal', - 155.7, - 945.1, 165.602)
     set u=CreateUnit(p, 'ufro', - 224.8, - 1080.9, 103.121)
-    set u=CreateUnit(p, 'Hblm', - 519.7, - 1001.0, 306.462)
+    set u=CreateUnit(p, 'Hblm', 72.1, - 898.7, 306.462)
 endfunction
 //===========================================================================
 function CreateNeutralHostile takes nothing returns nothing
@@ -4560,6 +4186,25 @@ endfunction
 //*  Triggers
 //*
 //***************************************************************************
+//===========================================================================
+// Trigger: Â§ßËá™ÁÑ∂ÁöÑÂÖÉÁ¥†ÁêÉÁîü‰∫ß
+//===========================================================================
+function Trig____________________________uActions takes nothing returns nothing
+    call CreateItem('I00K', 0.00, 0.00)
+    call CreateItem('I00L', 0.00, 0.00)
+    call CreateItem('I00R', 0.00, 0.00)
+    call CreateItem('I00M', 0.00, 0.00)
+    call CreateItem('I00N', 0.00, 0.00)
+    call CreateItem('I00O', 0.00, 0.00)
+    call CreateItem('I00Q', 0.00, 0.00)
+    call CreateItem('I00P', 0.00, 0.00)
+endfunction
+//===========================================================================
+function InitTrig____________________________u takes nothing returns nothing
+    set gg_trg____________________________u=CreateTrigger()
+    call TriggerRegisterTimerEventPeriodic(gg_trg____________________________u, 60.00)
+    call TriggerAddAction(gg_trg____________________________u, function Trig____________________________uActions)
+endfunction
 //===========================================================================
 // Trigger: go die
 //===========================================================================
@@ -4908,7 +4553,7 @@ function Trig_elementActions takes nothing returns nothing
     set udg_e_skill='A01W'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="446"
-    set udg_e_skill='A04F'
+    set udg_e_skill='A04G'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="447"
     set udg_e_skill='A043'
@@ -10422,174 +10067,83 @@ function InitTrig_Vacuum_b takes nothing returns nothing
     call TriggerAddAction(gg_trg_Vacuum_b, function Trig_Vacuum_bActions)
 endfunction
 //===========================================================================
-// Trigger: huangChongQun
+// Trigger: A WWP
 //===========================================================================
-function Trig_huangChongQunConditions takes nothing returns boolean
-    return ( ( GetSpellAbilityId() == 'A04F' ) )
+function Trig_A_WWPConditions takes nothing returns boolean
+    return ( ( GetSpellAbilityId() == 'A04G' ) )
 endfunction
-function Trig_huangChongQunFunc011Func001Func001A takes nothing returns nothing
-    call KillUnit(GetEnumUnit())
-endfunction
-function Trig_huangChongQunFunc011Func001Func010Func002003003 takes nothing returns boolean
-    return ( ( ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_STRUCTURE) == false ) and ( IsUnitInGroup(GetFilterUnit(), LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x93FE3865)) == false ) ) and ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) == false ) and ( ( IsUnitAlly(GetFilterUnit(), GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xB95F828C))) == false ) and ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_DEAD) == false ) and ( GetUnitPointValue(GetFilterUnit()) != 999 ) ) ) ) ) )
-endfunction
-function Trig_huangChongQunFunc011Func001Func010Func003Func007T takes nothing returns nothing
-    if ( ( IsUnitAliveBJ(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3)) == true ) ) then
-        call SetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3), GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xC2FCB08E)))
-        call SetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3), GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xC2FCB08E)))
-        call IssueTargetOrder(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3), "attack", LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xC2FCB08E))
-    else
-        call YDWEGeneralBounsSystemUnitSetBonus(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xC2FCB08E) , 2 , 0 , LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3)), 0xA76C3A25))
-        call FlushChildHashtable(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3)))
-        call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
-        call DestroyTimer(GetExpiredTimer())
-    endif
-endfunction
-function Trig_huangChongQunFunc011Func001Func010Func003Func008Conditions takes nothing returns nothing
-    if ( ( IsUnitAliveBJ(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)) == true ) ) then
-        if ( ( ( EVENT_UNIT_DAMAGED == GetTriggerEventId() ) == true ) ) then
-            if ( ( GetEventDamageSource() == LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3) ) ) then
-                call h__DestroyEffect(AddSpecialEffectTarget("Abilities\\Weapons\\GargoyleMissile\\GargoyleMissile.mdl", LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xC2FCB08E), "chest"))
-                call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0xA76C3A25, ( LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)), 0xA76C3A25) + 1 ))
-                call YDWEGeneralBounsSystemUnitSetBonus(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xC2FCB08E) , 2 , 1 , 1)
-            else
-            endif
-        else
-            call KillUnit(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3))
-        endif
-    else
-        call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()))
-        call DestroyTrigger(GetTriggeringTrigger())
-    endif
-endfunction
-function Trig_huangChongQunFunc011Func001Func010A takes nothing returns nothing
-    local timer ydl_timer
-    local trigger ydl_trigger
-    call SaveLocationHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x2B2F448C, GetUnitLoc(GetEnumUnit()))
-    call SaveGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF3DA78D7, YDWEGetUnitsInRangeOfLocMatchingNull(300.00 , LoadLocationHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x2B2F448C) , Condition(function Trig_huangChongQunFunc011Func001Func010Func002003003)))
-    if ( ( IsUnitGroupEmptyBJ(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF3DA78D7)) == true ) ) then
-        call SaveLocationHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xFD4ECEBD, h__PolarProjectionBJ(LoadLocationHandle(YDHT, GetHandleId(GetEnumUnit()), 0x99D7BFC9), LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x6A7A5B61), LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC07D222F)))
-        call SetUnitX(GetEnumUnit(), (RMinBJ(RMaxBJ(((GetLocationX(LoadLocationHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xFD4ECEBD)))*1.0), yd_MapMinX), yd_MapMaxX))) // INLINED!!
-        call SetUnitY(GetEnumUnit(), (RMinBJ(RMaxBJ(((GetLocationY(LoadLocationHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xFD4ECEBD)))*1.0), yd_MapMinY), yd_MapMaxY))) // INLINED!!
-    else
-        call SaveUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3, GetEnumUnit())
-        call SaveUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xC2FCB08E, FirstOfGroup(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF3DA78D7)))
-        call GroupRemoveUnit(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x34790103), GetEnumUnit())
-        call GroupAddUnit(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x93FE3865), FirstOfGroup(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF3DA78D7)))
-        call UnitApplyTimedLife(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3), 'BTLF', LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x1D6DBFA3))
-        call UnitRemoveAbility(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3), 'Avul')
-        set ydl_timer=CreateTimer()
-        call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xC2FCB08E, LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xC2FCB08E))
-        call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xF017C0F3, LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3))
-        call TimerStart(ydl_timer, 0.10, true, function Trig_huangChongQunFunc011Func001Func010Func003Func007T)
-        set ydl_trigger=CreateTrigger()
-        call SaveUnitHandle(YDHT, GetHandleId(ydl_trigger), 0xC2FCB08E, LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xC2FCB08E))
-        call SaveUnitHandle(YDHT, GetHandleId(ydl_trigger), 0xF017C0F3, LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3))
-        call TriggerRegisterUnitEvent(ydl_trigger, LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xC2FCB08E), EVENT_UNIT_DAMAGED)
-        call TriggerRegisterUnitEvent(ydl_trigger, LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xC2FCB08E), EVENT_UNIT_DEATH)
-        call TriggerAddCondition(ydl_trigger, Condition(function Trig_huangChongQunFunc011Func001Func010Func003Func008Conditions))
-    endif
-    set ydl_timer=null
-    set ydl_trigger=null
-endfunction
-function Trig_huangChongQunFunc011T takes nothing returns nothing
-    local group ydl_group
-    local unit ydl_unit
-    local timer ydl_timer
-    local trigger ydl_trigger
-    if ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x6A7A5B61) > 3000.00 ) ) then
-        call h__ForGroupBJ(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x34790103), function Trig_huangChongQunFunc011Func001Func001A)
-        call h__RemoveLocation(LoadLocationHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x3422C093))
-        call h__RemoveLocation(LoadLocationHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xB216429B))
-        call h__RemoveLocation(LoadLocationHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x2B2F448C))
-        call h__RemoveLocation(LoadLocationHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xFD4ECEBD))
-        call h__RemoveLocation(LoadLocationHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x616FC173))
-        call h__DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x34790103))
-        call h__DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x93FE3865))
-        call h__DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF3DA78D7))
+function Trig_A_WWPFunc009T takes nothing returns nothing
+    call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x65489DBE, ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x65489DBE) - 1 ))
+    set bj_forLoopAIndex=0
+    set bj_forLoopAIndexEnd=( R2I(( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xAF6BA5AE) )) / R2I(( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xCA90CABB) )) )
+    loop
+        exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
+        call SaveUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), 'h007', GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), 0))
+        call YDWETimerPatternRushSlide(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0) , ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC723FED2) ) + ( ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xCA90CABB) ) * ( I2R(bj_forLoopAIndex) ) ) ) ) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x302A3E93) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xBB2EAA30) , 0.03 , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x9375D887) , false , false , false , "" , "" , "")
+        call SaveUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), 'h007', GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), 0))
+        call YDWETimerPatternRushSlide(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0) , ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC723FED2) ) - ( ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xCA90CABB) ) * ( I2R(bj_forLoopAIndex) ) ) ) ) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x302A3E93) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xBB2EAA30) , 0.03 , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x9375D887) , false , false , false , "" , "" , "")
+        set bj_forLoopAIndex=bj_forLoopAIndex + 1
+    endloop
+    if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x65489DBE) == 0 ) ) then
         call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
         call DestroyTimer(GetExpiredTimer())
     else
-        call h__ForGroupBJ(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x34790103), function Trig_huangChongQunFunc011Func001Func010A)
-        call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0x6A7A5B61, ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x6A7A5B61) + 12.00 ))
     endif
-    set ydl_group=null
-    set ydl_unit=null
-    set ydl_timer=null
-    set ydl_trigger=null
 endfunction
-function Trig_huangChongQunActions takes nothing returns nothing
-    local integer ydul_i
+function Trig_A_WWPActions takes nothing returns nothing
     local timer ydl_timer
     local integer ydl_localvar_step= LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
     set ydl_localvar_step=ydl_localvar_step + 3
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
-    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C, GetTriggerUnit())
-    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE, GetUnitAbilityLevel(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C), GetSpellAbilityId()))
-    call SaveLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x3422C093, GetSpellTargetLoc())
-    call SaveLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB216429B, GetUnitLoc(GetTriggerUnit()))
-    call SaveGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x34790103, CreateGroup())
-    call SaveGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x93FE3865, CreateGroup())
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6A7A5B61, 12.00)
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x1D6DBFA3, ( 4.00 + ( 4.00 * I2R(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE)) ) ))
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC07D222F, AngleBetweenPoints(LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB216429B), LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x3422C093)))
-    set ydul_i=1
-    loop
-        exitwhen ydul_i > 12
-        call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBBB40CE4, CreateUnit(GetTriggerPlayer(), 'n00X', ( GetLocationX(LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB216429B)) + GetRandomReal(- 400.00, 400.00) ), ( GetLocationY(LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB216429B)) + GetRandomReal(- 400.00, 400.00) ), LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC07D222F)))
-        call GroupAddUnit(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x34790103), LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBBB40CE4))
-        call SaveLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x616FC173, GetUnitLoc(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBBB40CE4)))
-        call SaveLocationHandle(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBBB40CE4)), 0x99D7BFC9, LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x616FC173))
-        set ydul_i=ydul_i + 1
-    endloop
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAF6BA5AE, 18.00)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xCA90CABB, 3.00)
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x65489DBE, 3)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x302A3E93, 400.00)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBB2EAA30, 3.00)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x50A7ACD0, 0.10)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9375D887, 200.00)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC723FED2, ( ( GetUnitFacing(GetSpellAbilityUnit()) ) + ( 180.00 ) ))
     set ydl_timer=CreateTimer()
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0x1D6DBFA3, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x1D6DBFA3))
-    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xB95F828C, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C))
-    call SaveGroupHandle(YDHT, GetHandleId(ydl_timer), 0x34790103, LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x34790103))
-    call SaveGroupHandle(YDHT, GetHandleId(ydl_timer), 0x93FE3865, LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x93FE3865))
-    call SaveGroupHandle(YDHT, GetHandleId(ydl_timer), 0xF3DA78D7, LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF3DA78D7))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xC07D222F, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC07D222F))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0x6A7A5B61, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6A7A5B61))
-    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xC2FCB08E, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC2FCB08E))
-    call SaveLocationHandle(YDHT, GetHandleId(ydl_timer), 0x3422C093, LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x3422C093))
-    call SaveLocationHandle(YDHT, GetHandleId(ydl_timer), 0xB216429B, LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB216429B))
-    call SaveLocationHandle(YDHT, GetHandleId(ydl_timer), 0x2B2F448C, LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B2F448C))
-    call SaveLocationHandle(YDHT, GetHandleId(ydl_timer), 0xFD4ECEBD, LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFD4ECEBD))
-    call SaveLocationHandle(YDHT, GetHandleId(ydl_timer), 0x616FC173, LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x616FC173))
-    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xF017C0F3, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF017C0F3))
-    call TimerStart(ydl_timer, 0.02, true, function Trig_huangChongQunFunc011T)
+    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xBEB144A8, GetSpellAbilityUnit())
+    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0x874856C0, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x874856C0))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0x9375D887, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9375D887))
+    call SaveInteger(YDHT, GetHandleId(ydl_timer), 0x65489DBE, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x65489DBE))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0x302A3E93, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x302A3E93))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xAF6BA5AE, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAF6BA5AE))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xBB2EAA30, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBB2EAA30))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xC723FED2, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC723FED2))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xCA90CABB, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xCA90CABB))
+    call TimerStart(ydl_timer, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x50A7ACD0), true, function Trig_A_WWPFunc009T)
     call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
     set ydl_timer=null
 endfunction
 //===========================================================================
-function InitTrig_huangChongQun takes nothing returns nothing
-    set gg_trg_huangChongQun=CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ(gg_trg_huangChongQun, EVENT_PLAYER_UNIT_SPELL_EFFECT)
-    call TriggerAddCondition(gg_trg_huangChongQun, Condition(function Trig_huangChongQunConditions))
-    call TriggerAddAction(gg_trg_huangChongQun, function Trig_huangChongQunActions)
+function InitTrig_A_WWP takes nothing returns nothing
+    set gg_trg_A_WWP=CreateTrigger()
+    call TriggerRegisterAnyUnitEventBJ(gg_trg_A_WWP, EVENT_PLAYER_UNIT_SPELL_EFFECT)
+    call TriggerAddCondition(gg_trg_A_WWP, Condition(function Trig_A_WWPConditions))
+    call TriggerAddAction(gg_trg_A_WWP, function Trig_A_WWPActions)
 endfunction
 //===========================================================================
-// Trigger: Â§ßËá™ÁÑ∂ÁöÑÂÖÉÁ¥†ÁêÉÁîü‰∫ß
+// Trigger: A WWP 1
 //===========================================================================
-function Trig____________________________uActions takes nothing returns nothing
-    call CreateItem('I00K', 0.00, 0.00)
-    call CreateItem('I00L', 0.00, 0.00)
-    call CreateItem('I00R', 0.00, 0.00)
-    call CreateItem('I00M', 0.00, 0.00)
-    call CreateItem('I00N', 0.00, 0.00)
-    call CreateItem('I00O', 0.00, 0.00)
-    call CreateItem('I00Q', 0.00, 0.00)
-    call CreateItem('I00P', 0.00, 0.00)
+function Trig_A_WWP_1Conditions takes nothing returns boolean
+    return ( ( GetUnitTypeId((bj_lastAbilityCastingUnit)) == 'h007' ) ) // INLINED!!
+endfunction
+function Trig_A_WWP_1Actions takes nothing returns nothing
+    call RemoveUnit((bj_lastAbilityCastingUnit)) // INLINED!!
 endfunction
 //===========================================================================
-function InitTrig____________________________u takes nothing returns nothing
-    set gg_trg____________________________u=CreateTrigger()
-    call TriggerRegisterTimerEventPeriodic(gg_trg____________________________u, 60.00)
-    call TriggerAddAction(gg_trg____________________________u, function Trig____________________________uActions)
+function InitTrig_A_WWP_1 takes nothing returns nothing
+    set gg_trg_A_WWP_1=CreateTrigger()
+    call YDWESyStemAbilityCastingOverRegistTrigger(gg_trg_A_WWP_1 , 6)
+    call TriggerAddCondition(gg_trg_A_WWP_1, Condition(function Trig_A_WWP_1Conditions))
+    call TriggerAddAction(gg_trg_A_WWP_1, function Trig_A_WWP_1Actions)
 endfunction
 //===========================================================================
 function InitCustomTriggers takes nothing returns nothing
+    call InitTrig____________________________u()
     call InitTrig_go_die()
     call InitTrig_element()
     call InitTrig_compute()
@@ -10660,8 +10214,8 @@ function InitCustomTriggers takes nothing returns nothing
     call InitTrig_Plasma_Field_b()
     call InitTrig_Vacuum_a()
     call InitTrig_Vacuum_b()
-    call InitTrig_huangChongQun()
-    call InitTrig____________________________u()
+    call InitTrig_A_WWP()
+    call InitTrig_A_WWP_1()
 endfunction
 //===========================================================================
 function RunInitializationTriggers takes nothing returns nothing
@@ -11162,10 +10716,9 @@ function main takes nothing returns nothing
     call CreateAllUnits()
     call InitBlizzard()
 
-call ExecuteFunc("jasshelper__initstructs21450480")
+call ExecuteFunc("jasshelper__initstructs27707212")
 call ExecuteFunc("YDTriggerSaveLoadSystem__Init")
 call ExecuteFunc("InitializeYD")
-call ExecuteFunc("YDWEGeneralBounsSystem___Initialize")
 call ExecuteFunc("MemoryLeakHelper___Init")
 call ExecuteFunc("YDWETimerPattern___Init")
 call ExecuteFunc("YDWETimerSystem___Init")
@@ -11202,21 +10755,18 @@ function config takes nothing returns nothing
     call InitCustomTeams()
     call InitAllyPriorities()
 endfunction
+//===========================================================================
+//œµÕ≥-TimerSystem
+//===========================================================================
+//library ValueIndexing initializer Init requires YDWEBase
+//===========================================================================
+//Ã¯‘æœµÕ≥ 
+//===========================================================================
 //===========================================================================  
 //===========================================================================  
 //◊‘∂®“Â ¬º˛ 
 //===========================================================================
 //===========================================================================   
-//library ValueIndexing initializer Init requires YDWEBase
-//===========================================================================
-//–ﬁ∏ƒ…˙√¸
-//===========================================================================
-//===========================================================================
-//œµÕ≥-TimerSystem
-//===========================================================================
-//===========================================================================
-//Ã¯‘æœµÕ≥ 
-//===========================================================================
 
 
 
@@ -11254,69 +10804,69 @@ local integer this=f__arg_this
             set s__YDWETimerPattern___Thread_part[this]=""
    return true
 endfunction
-function sa___prototype175_MemoryLeakHelper___GetElapsedGameTime takes nothing returns boolean
+function sa___prototype170_MemoryLeakHelper___GetElapsedGameTime takes nothing returns boolean
 
     set f__result_real= MemoryLeakHelper___GameTime + TimerGetElapsed(MemoryLeakHelper___GameTimeTimer)
     return true
 endfunction
-function sa___prototype179_MemoryLeakHelper___ReleaseLocation takes nothing returns boolean
+function sa___prototype174_MemoryLeakHelper___ReleaseLocation takes nothing returns boolean
     call MemoryLeakHelper___ReleaseLocation(f__arg_location1)
     return true
 endfunction
-function sa___prototype180_MemoryLeakHelper___CatchGroup takes nothing returns boolean
+function sa___prototype175_MemoryLeakHelper___CatchGroup takes nothing returns boolean
     call MemoryLeakHelper___CatchGroup(f__arg_group1)
     return true
 endfunction
-function sa___prototype180_MemoryLeakHelper___ReleaseGroup takes nothing returns boolean
+function sa___prototype175_MemoryLeakHelper___ReleaseGroup takes nothing returns boolean
     call MemoryLeakHelper___ReleaseGroup(f__arg_group1)
     return true
 endfunction
-function sa___prototype181_MemoryLeakHelper___ReleaseEffect takes nothing returns boolean
+function sa___prototype176_MemoryLeakHelper___ReleaseEffect takes nothing returns boolean
     call MemoryLeakHelper___ReleaseEffect(f__arg_effect1)
     return true
 endfunction
-function sa___prototype182_MemoryLeakHelper___PP takes nothing returns boolean
+function sa___prototype177_MemoryLeakHelper___PP takes nothing returns boolean
     call MemoryLeakHelper___PP(f__arg_location1,f__arg_real1,f__arg_real2)
     return true
 endfunction
-function sa___prototype183_MemoryLeakHelper___CU takes nothing returns boolean
+function sa___prototype178_MemoryLeakHelper___CU takes nothing returns boolean
     call MemoryLeakHelper___CU(f__arg_integer1,f__arg_integer2,f__arg_player1,f__arg_location1,f__arg_real1)
     return true
 endfunction
-function sa___prototype184_MemoryLeakHelper___IPO takes nothing returns boolean
+function sa___prototype179_MemoryLeakHelper___IPO takes nothing returns boolean
     call MemoryLeakHelper___IPO(f__arg_unit1,f__arg_string1,f__arg_location1)
     return true
 endfunction
-function sa___prototype185_MemoryLeakHelper___SUP takes nothing returns boolean
+function sa___prototype180_MemoryLeakHelper___SUP takes nothing returns boolean
     call MemoryLeakHelper___SUP(f__arg_unit1,f__arg_location1)
     return true
 endfunction
-function sa___prototype172_MemoryLeakHelper___SUF takes nothing returns boolean
+function sa___prototype167_MemoryLeakHelper___SUF takes nothing returns boolean
     call MemoryLeakHelper___SUF(f__arg_unit1,f__arg_location1,f__arg_real1)
     return true
 endfunction
-function sa___prototype186_MemoryLeakHelper___GUR takes nothing returns boolean
+function sa___prototype181_MemoryLeakHelper___GUR takes nothing returns boolean
     call MemoryLeakHelper___GUR(f__arg_real1,f__arg_location1,f__arg_boolexpr1)
     return true
 endfunction
-function sa___prototype187_MemoryLeakHelper___CUF takes nothing returns boolean
+function sa___prototype182_MemoryLeakHelper___CUF takes nothing returns boolean
     call MemoryLeakHelper___CUF(f__arg_integer1,f__arg_integer2,f__arg_player1,f__arg_location1,f__arg_location2)
     return true
 endfunction
-function sa___prototype188_MemoryLeakHelper___FG takes nothing returns boolean
+function sa___prototype183_MemoryLeakHelper___FG takes nothing returns boolean
     call MemoryLeakHelper___FG(f__arg_group1,f__arg_code1)
     return true
 endfunction
-function sa___prototype189_MemoryLeakHelper___ASETU takes nothing returns boolean
+function sa___prototype184_MemoryLeakHelper___ASETU takes nothing returns boolean
     call MemoryLeakHelper___ASETU(f__arg_string1,f__arg_widget1,f__arg_string2)
     return true
 endfunction
-function sa___prototype190_MemoryLeakHelper___ASE takes nothing returns boolean
+function sa___prototype185_MemoryLeakHelper___ASE takes nothing returns boolean
     call MemoryLeakHelper___ASE(f__arg_location1,f__arg_string1)
     return true
 endfunction
 
-function jasshelper__initstructs21450480 takes nothing returns nothing
+function jasshelper__initstructs27707212 takes nothing returns nothing
     set st__MemoryLeakHelper___GTable_onDestroy[2]=CreateTrigger()
     set st__MemoryLeakHelper___GTable_onDestroy[3]=st__MemoryLeakHelper___GTable_onDestroy[2]
     call TriggerAddCondition(st__MemoryLeakHelper___GTable_onDestroy[2],Condition( function sa__MemoryLeakHelper___GTable_onDestroy))
@@ -11325,51 +10875,51 @@ function jasshelper__initstructs21450480 takes nothing returns nothing
     set st__YDWETimerPattern___Thread_onDestroy[7]=st__YDWETimerPattern___Thread_onDestroy[5]
     set st__YDWETimerPattern___Thread_onDestroy[8]=st__YDWETimerPattern___Thread_onDestroy[5]
     call TriggerAddCondition(st__YDWETimerPattern___Thread_onDestroy[5],Condition( function sa__YDWETimerPattern___Thread_onDestroy))
+    set st___prototype170[1]=CreateTrigger()
+    call TriggerAddAction(st___prototype170[1],function sa___prototype170_MemoryLeakHelper___GetElapsedGameTime)
+    call TriggerAddCondition(st___prototype170[1],Condition(function sa___prototype170_MemoryLeakHelper___GetElapsedGameTime))
+    set st___prototype174[1]=CreateTrigger()
+    call TriggerAddAction(st___prototype174[1],function sa___prototype174_MemoryLeakHelper___ReleaseLocation)
+    call TriggerAddCondition(st___prototype174[1],Condition(function sa___prototype174_MemoryLeakHelper___ReleaseLocation))
     set st___prototype175[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype175[1],function sa___prototype175_MemoryLeakHelper___GetElapsedGameTime)
-    call TriggerAddCondition(st___prototype175[1],Condition(function sa___prototype175_MemoryLeakHelper___GetElapsedGameTime))
+    call TriggerAddAction(st___prototype175[1],function sa___prototype175_MemoryLeakHelper___CatchGroup)
+    call TriggerAddCondition(st___prototype175[1],Condition(function sa___prototype175_MemoryLeakHelper___CatchGroup))
+    set st___prototype175[2]=CreateTrigger()
+    call TriggerAddAction(st___prototype175[2],function sa___prototype175_MemoryLeakHelper___ReleaseGroup)
+    call TriggerAddCondition(st___prototype175[2],Condition(function sa___prototype175_MemoryLeakHelper___ReleaseGroup))
+    set st___prototype176[1]=CreateTrigger()
+    call TriggerAddAction(st___prototype176[1],function sa___prototype176_MemoryLeakHelper___ReleaseEffect)
+    call TriggerAddCondition(st___prototype176[1],Condition(function sa___prototype176_MemoryLeakHelper___ReleaseEffect))
+    set st___prototype177[1]=CreateTrigger()
+    call TriggerAddAction(st___prototype177[1],function sa___prototype177_MemoryLeakHelper___PP)
+    call TriggerAddCondition(st___prototype177[1],Condition(function sa___prototype177_MemoryLeakHelper___PP))
+    set st___prototype178[1]=CreateTrigger()
+    call TriggerAddAction(st___prototype178[1],function sa___prototype178_MemoryLeakHelper___CU)
+    call TriggerAddCondition(st___prototype178[1],Condition(function sa___prototype178_MemoryLeakHelper___CU))
     set st___prototype179[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype179[1],function sa___prototype179_MemoryLeakHelper___ReleaseLocation)
-    call TriggerAddCondition(st___prototype179[1],Condition(function sa___prototype179_MemoryLeakHelper___ReleaseLocation))
+    call TriggerAddAction(st___prototype179[1],function sa___prototype179_MemoryLeakHelper___IPO)
+    call TriggerAddCondition(st___prototype179[1],Condition(function sa___prototype179_MemoryLeakHelper___IPO))
     set st___prototype180[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype180[1],function sa___prototype180_MemoryLeakHelper___CatchGroup)
-    call TriggerAddCondition(st___prototype180[1],Condition(function sa___prototype180_MemoryLeakHelper___CatchGroup))
-    set st___prototype180[2]=CreateTrigger()
-    call TriggerAddAction(st___prototype180[2],function sa___prototype180_MemoryLeakHelper___ReleaseGroup)
-    call TriggerAddCondition(st___prototype180[2],Condition(function sa___prototype180_MemoryLeakHelper___ReleaseGroup))
+    call TriggerAddAction(st___prototype180[1],function sa___prototype180_MemoryLeakHelper___SUP)
+    call TriggerAddCondition(st___prototype180[1],Condition(function sa___prototype180_MemoryLeakHelper___SUP))
+    set st___prototype167[1]=CreateTrigger()
+    call TriggerAddAction(st___prototype167[1],function sa___prototype167_MemoryLeakHelper___SUF)
+    call TriggerAddCondition(st___prototype167[1],Condition(function sa___prototype167_MemoryLeakHelper___SUF))
     set st___prototype181[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype181[1],function sa___prototype181_MemoryLeakHelper___ReleaseEffect)
-    call TriggerAddCondition(st___prototype181[1],Condition(function sa___prototype181_MemoryLeakHelper___ReleaseEffect))
+    call TriggerAddAction(st___prototype181[1],function sa___prototype181_MemoryLeakHelper___GUR)
+    call TriggerAddCondition(st___prototype181[1],Condition(function sa___prototype181_MemoryLeakHelper___GUR))
     set st___prototype182[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype182[1],function sa___prototype182_MemoryLeakHelper___PP)
-    call TriggerAddCondition(st___prototype182[1],Condition(function sa___prototype182_MemoryLeakHelper___PP))
+    call TriggerAddAction(st___prototype182[1],function sa___prototype182_MemoryLeakHelper___CUF)
+    call TriggerAddCondition(st___prototype182[1],Condition(function sa___prototype182_MemoryLeakHelper___CUF))
     set st___prototype183[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype183[1],function sa___prototype183_MemoryLeakHelper___CU)
-    call TriggerAddCondition(st___prototype183[1],Condition(function sa___prototype183_MemoryLeakHelper___CU))
+    call TriggerAddAction(st___prototype183[1],function sa___prototype183_MemoryLeakHelper___FG)
+    call TriggerAddCondition(st___prototype183[1],Condition(function sa___prototype183_MemoryLeakHelper___FG))
     set st___prototype184[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype184[1],function sa___prototype184_MemoryLeakHelper___IPO)
-    call TriggerAddCondition(st___prototype184[1],Condition(function sa___prototype184_MemoryLeakHelper___IPO))
+    call TriggerAddAction(st___prototype184[1],function sa___prototype184_MemoryLeakHelper___ASETU)
+    call TriggerAddCondition(st___prototype184[1],Condition(function sa___prototype184_MemoryLeakHelper___ASETU))
     set st___prototype185[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype185[1],function sa___prototype185_MemoryLeakHelper___SUP)
-    call TriggerAddCondition(st___prototype185[1],Condition(function sa___prototype185_MemoryLeakHelper___SUP))
-    set st___prototype172[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype172[1],function sa___prototype172_MemoryLeakHelper___SUF)
-    call TriggerAddCondition(st___prototype172[1],Condition(function sa___prototype172_MemoryLeakHelper___SUF))
-    set st___prototype186[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype186[1],function sa___prototype186_MemoryLeakHelper___GUR)
-    call TriggerAddCondition(st___prototype186[1],Condition(function sa___prototype186_MemoryLeakHelper___GUR))
-    set st___prototype187[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype187[1],function sa___prototype187_MemoryLeakHelper___CUF)
-    call TriggerAddCondition(st___prototype187[1],Condition(function sa___prototype187_MemoryLeakHelper___CUF))
-    set st___prototype188[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype188[1],function sa___prototype188_MemoryLeakHelper___FG)
-    call TriggerAddCondition(st___prototype188[1],Condition(function sa___prototype188_MemoryLeakHelper___FG))
-    set st___prototype189[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype189[1],function sa___prototype189_MemoryLeakHelper___ASETU)
-    call TriggerAddCondition(st___prototype189[1],Condition(function sa___prototype189_MemoryLeakHelper___ASETU))
-    set st___prototype190[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype190[1],function sa___prototype190_MemoryLeakHelper___ASE)
-    call TriggerAddCondition(st___prototype190[1],Condition(function sa___prototype190_MemoryLeakHelper___ASE))
+    call TriggerAddAction(st___prototype185[1],function sa___prototype185_MemoryLeakHelper___ASE)
+    call TriggerAddCondition(st___prototype185[1],Condition(function sa___prototype185_MemoryLeakHelper___ASE))
 
 
 
