@@ -28,20 +28,20 @@ integer YDWEBase___AbilityCastingOverEventNumber= 0
 //endglobals from YDWEBase
 //globals from YDWEGetForceOfPlayerNull:
 constant boolean LIBRARY_YDWEGetForceOfPlayerNull=true
+force yd_NullTempForce
 //endglobals from YDWEGetForceOfPlayerNull
 //globals from YDWEGetPlayersByMapControlNull:
 constant boolean LIBRARY_YDWEGetPlayersByMapControlNull=true
-force yd_NullTempForce
 //endglobals from YDWEGetPlayersByMapControlNull
 //globals from YDWEGetUnitsInRangeOfLocMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsInRangeOfLocMatchingNull=true
 //endglobals from YDWEGetUnitsInRangeOfLocMatchingNull
 //globals from YDWEGetUnitsInRectMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsInRectMatchingNull=true
-group yd_NullTempGroup
 //endglobals from YDWEGetUnitsInRectMatchingNull
 //globals from YDWEGetUnitsOfPlayerMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsOfPlayerMatchingNull=true
+group yd_NullTempGroup
 //endglobals from YDWEGetUnitsOfPlayerMatchingNull
 //globals from YDWEMultiboardSetItemColorBJNull:
 constant boolean LIBRARY_YDWEMultiboardSetItemColorBJNull=true
@@ -79,92 +79,92 @@ region yd_NullTempRegion
 //endglobals from YDWETriggerRegisterEnterRectSimpleNull
 //globals from MemoryLeakHelper:
 constant boolean LIBRARY_MemoryLeakHelper=true
-constant real MemoryLeakHelper___HASH_DECAY_TIME= 500.
-constant integer MemoryLeakHelper___CLEAR_HASH_COUNT= 8190
-integer MemoryLeakHelper___HashNumber= 0
-integer array MemoryLeakHelper___HashData
-integer array MemoryLeakHelper___HashHash
-integer array MemoryLeakHelper___HashPlace
-real array MemoryLeakHelper___CreationTime
+constant real MemoryLeakHelper__HASH_DECAY_TIME= 500.
+constant integer MemoryLeakHelper__CLEAR_HASH_COUNT= 8190
+integer MemoryLeakHelper__HashNumber= 0
+integer array MemoryLeakHelper__HashData
+integer array MemoryLeakHelper__HashHash
+integer array MemoryLeakHelper__HashPlace
+real array MemoryLeakHelper__CreationTime
         
-integer MemoryLeakHelper___TempHashNumber= 0
-integer array MemoryLeakHelper___TempHashHash
-integer array MemoryLeakHelper___TempHashPlace
-integer array MemoryLeakHelper___TempHashData
-real array MemoryLeakHelper___TempCreationTime
+integer MemoryLeakHelper__TempHashNumber= 0
+integer array MemoryLeakHelper__TempHashHash
+integer array MemoryLeakHelper__TempHashPlace
+integer array MemoryLeakHelper__TempHashData
+real array MemoryLeakHelper__TempCreationTime
         
-integer MemoryLeakHelper___LastHashedValue= 0
-integer MemoryLeakHelper___LastIndex= 0
-real MemoryLeakHelper___GameTime= 0.
-timer MemoryLeakHelper___GameTimeTimer= CreateTimer()
-constant real MemoryLeakHelper___GAMETIME_TIMER_INTERVAL= 30.
-constant integer MemoryLeakHelper___key= 0
+integer MemoryLeakHelper__LastHashedValue= 0
+integer MemoryLeakHelper__LastIndex= 0
+real MemoryLeakHelper__GameTime= 0.
+timer MemoryLeakHelper__GameTimeTimer= CreateTimer()
+constant real MemoryLeakHelper__GAMETIME_TIMER_INTERVAL= 30.
+constant integer MemoryLeakHelper__key= 0
         
-constant integer MemoryLeakHelper___MAX_INSTANCES=8100
+constant integer MemoryLeakHelper__MAX_INSTANCES=8100
 
         // The system fires when you do something that creates a leak.
         // The data that cause leak are saved in a variable then.
         // And every CLEAN_UP_INTERVAL seconds those data are destroyed.
         // This shouldn't be too high, or too low.
-constant real MemoryLeakHelper___CLEAN_UP_INTERVAL= 10
+constant real MemoryLeakHelper__CLEAN_UP_INTERVAL= 10
         // If this is set to true, the system will work more slowly (but you wont notice)
         // and count, how much memory this system was able to save.
         // This value is display by the function DisplayLeaks() then.
         // WARNING: This sucks a lot of performance. I would ONLY use it when you want
         // to test, if this is useful for your map. Later set it to false.
-constant boolean MemoryLeakHelper___DISPLAY_SAVED_MEMORY= true
+constant boolean MemoryLeakHelper__DISPLAY_SAVED_MEMORY= true
         // The Data are only cleaned up, when that many handles were caught
-constant integer MemoryLeakHelper___MIN_LEAK_NUMBER= 1750
+constant integer MemoryLeakHelper__MIN_LEAK_NUMBER= 1750
         // How often are data passed to the destroyer?
         // Leaks stay for a random time between CLEAN_UP_INTERVAL and CLEAN_UP_INTERVAL+PASS_INTERVAL
         // in the game
-constant real MemoryLeakHelper___PASS_INTERVAL= 2.5
+constant real MemoryLeakHelper__PASS_INTERVAL= 2.5
         // Memory leaks occur pretty frequently. When a leak is caught it is saved in
         // an array. But the array can't have more than MAX_LEAK_INSTANCES instances, so
         // if more than MAX_LEAK_INSTANCES memory leaks occur during a destroy interval,
         // the system fails.
-constant integer MemoryLeakHelper___MAX_LEAK_INSTANCES= 60000
-integer MemoryLeakHelper___IndexData
-integer MemoryLeakHelper___IsSaved
+constant integer MemoryLeakHelper__MAX_LEAK_INSTANCES= 60000
+integer MemoryLeakHelper__IndexData
+integer MemoryLeakHelper__IsSaved
         
-integer MemoryLeakHelper___CaughtLocationLeaks= 0
-// processed:         location array MemoryLeakHelper___LocationLeakData[MemoryLeakHelper___MAX_LEAK_INSTANCES]
-integer MemoryLeakHelper___LocationDestroyCount= 0
-// processed:         location array MemoryLeakHelper___LocationDestroyData[MemoryLeakHelper___MAX_LEAK_INSTANCES]
+integer MemoryLeakHelper__CaughtLocationLeaks= 0
+// processed:         location array MemoryLeakHelper__LocationLeakData[MemoryLeakHelper__MAX_LEAK_INSTANCES]
+integer MemoryLeakHelper__LocationDestroyCount= 0
+// processed:         location array MemoryLeakHelper__LocationDestroyData[MemoryLeakHelper__MAX_LEAK_INSTANCES]
 		
-integer MemoryLeakHelper___CaughtEffectLeaks= 0
-// processed:         effect array MemoryLeakHelper___EffectLeakData[MemoryLeakHelper___MAX_LEAK_INSTANCES]
-integer MemoryLeakHelper___EffectDestroyCount= 0
-// processed:         effect array MemoryLeakHelper___EffectDestroyData[MemoryLeakHelper___MAX_LEAK_INSTANCES]
+integer MemoryLeakHelper__CaughtEffectLeaks= 0
+// processed:         effect array MemoryLeakHelper__EffectLeakData[MemoryLeakHelper__MAX_LEAK_INSTANCES]
+integer MemoryLeakHelper__EffectDestroyCount= 0
+// processed:         effect array MemoryLeakHelper__EffectDestroyData[MemoryLeakHelper__MAX_LEAK_INSTANCES]
 		
-integer MemoryLeakHelper___CaughtGroupLeaks= 0
-// processed:         group array MemoryLeakHelper___GroupLeakData[MemoryLeakHelper___MAX_LEAK_INSTANCES]
-integer MemoryLeakHelper___GroupDestroyCount= 0
-// processed:         group array MemoryLeakHelper___GroupDestroyData[MemoryLeakHelper___MAX_LEAK_INSTANCES]
+integer MemoryLeakHelper__CaughtGroupLeaks= 0
+// processed:         group array MemoryLeakHelper__GroupLeakData[MemoryLeakHelper__MAX_LEAK_INSTANCES]
+integer MemoryLeakHelper__GroupDestroyCount= 0
+// processed:         group array MemoryLeakHelper__GroupDestroyData[MemoryLeakHelper__MAX_LEAK_INSTANCES]
         
         
-integer MemoryLeakHelper___DestroyedLeaks= 0
-integer MemoryLeakHelper___CaughtLeaks= 0
-integer MemoryLeakHelper___DestroyedLeaksUser= 0
-handle MemoryLeakHelper___LastCaught
-timer MemoryLeakHelper___PassTimer= CreateTimer()
-timer MemoryLeakHelper___CleanTimer= CreateTimer()
-timer MemoryLeakHelper___DelayTimer= CreateTimer()
-boolean MemoryLeakHelper___IsDestroying= false
-real MemoryLeakHelper___SavedMemory= 0.
-real MemoryLeakHelper___LastCheckedGroupMemoryUsage= 0.
-boolean MemoryLeakHelper___DestroyThreadRunning= false
-boolean MemoryLeakHelper___Disabled= false
+integer MemoryLeakHelper__DestroyedLeaks= 0
+integer MemoryLeakHelper__CaughtLeaks= 0
+integer MemoryLeakHelper__DestroyedLeaksUser= 0
+handle MemoryLeakHelper__LastCaught
+timer MemoryLeakHelper__PassTimer= CreateTimer()
+timer MemoryLeakHelper__CleanTimer= CreateTimer()
+timer MemoryLeakHelper__DelayTimer= CreateTimer()
+boolean MemoryLeakHelper__IsDestroying= false
+real MemoryLeakHelper__SavedMemory= 0.
+real MemoryLeakHelper__LastCheckedGroupMemoryUsage= 0.
+boolean MemoryLeakHelper__DestroyThreadRunning= false
+boolean MemoryLeakHelper__Disabled= false
         
         // These values were found out in a big leak test by gekko.
-constant real MemoryLeakHelper___LOCATION_MEMORY_USAGE= 0.361
-constant real MemoryLeakHelper___GROUP_MEMORY_USAGE= 0.62
-constant real MemoryLeakHelper___GROUP_UNIT_MEMORY_USAGE= 0.040
-constant real MemoryLeakHelper___EFFECT_MEMORY_USAGE= 11.631
-constant real MemoryLeakHelper___REMOVED_EFFECT_MEMORY_USAGE= 0.066
+constant real MemoryLeakHelper__LOCATION_MEMORY_USAGE= 0.361
+constant real MemoryLeakHelper__GROUP_MEMORY_USAGE= 0.62
+constant real MemoryLeakHelper__GROUP_UNIT_MEMORY_USAGE= 0.040
+constant real MemoryLeakHelper__EFFECT_MEMORY_USAGE= 11.631
+constant real MemoryLeakHelper__REMOVED_EFFECT_MEMORY_USAGE= 0.066
         // 用于判断是否开启内存排泄帮助
-boolean MemoryLeakHelper___IsOpenMemoryLeakHelper= false
-boolean MemoryLeakHelper___IsDisplayMemoryLeakHelper= false
+boolean MemoryLeakHelper__IsOpenMemoryLeakHelper= false
+boolean MemoryLeakHelper__IsDisplayMemoryLeakHelper= false
 //endglobals from MemoryLeakHelper
 //globals from YDWEGetUnitsInRangeOfLocAllNull:
 constant boolean LIBRARY_YDWEGetUnitsInRangeOfLocAllNull=true
@@ -179,31 +179,31 @@ constant boolean LIBRARY_YDWELocalVariable=true
 //endglobals from YDWELocalVariable
 //globals from YDWETimerPattern:
 constant boolean LIBRARY_YDWETimerPattern=true
-boolexpr YDWETimerPattern___Bexpr= null
-rect YDWETimerPattern___Area= null
-integer YDWETimerPattern___tmp_data
-location YDWETimerPattern___yd_loc= Location(0.0, 0.0)
+boolexpr YDWETimerPattern__Bexpr= null
+rect YDWETimerPattern__Area= null
+integer YDWETimerPattern__tmp_data
+location YDWETimerPattern__yd_loc= Location(0.0, 0.0)
 //endglobals from YDWETimerPattern
 //globals from YDWETimerSystem:
 constant boolean LIBRARY_YDWETimerSystem=true
-integer YDWETimerSystem___CurrentTime
-integer YDWETimerSystem___CurrentIndex
-integer YDWETimerSystem___TaskListHead
-integer YDWETimerSystem___TaskListIdleHead
-integer YDWETimerSystem___TaskListIdleMax
-integer array YDWETimerSystem___TaskListIdle
-integer array YDWETimerSystem___TaskListNext
-integer array YDWETimerSystem___TaskListTime
-trigger array YDWETimerSystem___TaskListProc
-trigger YDWETimerSystem___fnRemoveUnit
-trigger YDWETimerSystem___fnDestroyTimer
-trigger YDWETimerSystem___fnRemoveItem
-trigger YDWETimerSystem___fnDestroyEffect
-trigger YDWETimerSystem___fnDestroyLightning
-trigger YDWETimerSystem___fnRunTrigger
-timer YDWETimerSystem___Timer
-integer YDWETimerSystem___TimerHandle
-integer YDWETimerSystem___TimerSystem_RunIndex= 0
+integer YDWETimerSystem__CurrentTime
+integer YDWETimerSystem__CurrentIndex
+integer YDWETimerSystem__TaskListHead
+integer YDWETimerSystem__TaskListIdleHead
+integer YDWETimerSystem__TaskListIdleMax
+integer array YDWETimerSystem__TaskListIdle
+integer array YDWETimerSystem__TaskListNext
+integer array YDWETimerSystem__TaskListTime
+trigger array YDWETimerSystem__TaskListProc
+trigger YDWETimerSystem__fnRemoveUnit
+trigger YDWETimerSystem__fnDestroyTimer
+trigger YDWETimerSystem__fnRemoveItem
+trigger YDWETimerSystem__fnDestroyEffect
+trigger YDWETimerSystem__fnDestroyLightning
+trigger YDWETimerSystem__fnRunTrigger
+timer YDWETimerSystem__Timer
+integer YDWETimerSystem__TimerHandle
+integer YDWETimerSystem__TimerSystem_RunIndex= 0
 //endglobals from YDWETimerSystem
     // User-defined
 force array udg_Play
@@ -350,6 +350,8 @@ trigger gg_trg_A_PPW_1= null
 trigger gg_trg_A_FFL= null
 trigger gg_trg_A_FFL_2= null
 trigger gg_trg_A_control= null
+trigger gg_trg_A_WWP= null
+trigger gg_trg_A_WWP_1= null
 trigger gg_trg_A_WWE= null
 trigger gg_trg_B_WWS= null
 trigger gg_trg_A_soul= null
@@ -398,8 +400,6 @@ trigger gg_trg_Plasma_Field_b= null
 trigger gg_trg_Vacuum_a= null
 trigger gg_trg_Vacuum_b= null
 trigger gg_trg_huangChongQun= null
-trigger gg_trg_A_WWP= null
-trigger gg_trg_A_WWP_1= null
 hashtable CZ_HT=InitHashtable()
 group SHSJDWZ=CreateGroup()
 constant integer CZ_PLMJ='e005'
@@ -414,108 +414,108 @@ constant integer CZ_YXJNMRXX='A03N'
 trigger l__library_init
 
 //JASSHelper struct globals:
-constant integer si__MemoryLeakHelper___Index=1
-integer si__MemoryLeakHelper___Index_F=0
-integer si__MemoryLeakHelper___Index_I=0
-integer array si__MemoryLeakHelper___Index_V
-constant integer si__MemoryLeakHelper___GTable=2
-integer si__MemoryLeakHelper___GTable_F=0
-integer si__MemoryLeakHelper___GTable_I=0
-integer array si__MemoryLeakHelper___GTable_V
-constant integer si__MemoryLeakHelper___HandleTable=3
-constant integer si__YDWETimerPattern___YDVector3=4
-integer si__YDWETimerPattern___YDVector3_F=0
-integer si__YDWETimerPattern___YDVector3_I=0
-integer array si__YDWETimerPattern___YDVector3_V
-real array s__YDWETimerPattern___YDVector3_x
-real array s__YDWETimerPattern___YDVector3_y
-real array s__YDWETimerPattern___YDVector3_z
-constant integer si__YDWETimerPattern___Thread=5
-integer si__YDWETimerPattern___Thread_F=0
-integer si__YDWETimerPattern___Thread_I=0
-integer array si__YDWETimerPattern___Thread_V
-integer array s__YDWETimerPattern___Thread_des
-integer array s__YDWETimerPattern___Thread_pos
-integer array s__YDWETimerPattern___Thread_vel
-unit array s__YDWETimerPattern___Thread_caster
-unit array s__YDWETimerPattern___Thread_source
-unit array s__YDWETimerPattern___Thread_target
-unit array s__YDWETimerPattern___Thread_obj
-real array s__YDWETimerPattern___Thread_ac
-real array s__YDWETimerPattern___Thread_bc
-real array s__YDWETimerPattern___Thread_dist
-real array s__YDWETimerPattern___Thread_step
-real array s__YDWETimerPattern___Thread_amount
-integer array s__YDWETimerPattern___Thread_switch
-integer array s__YDWETimerPattern___Thread_follow
-integer array s__YDWETimerPattern___Thread_unitid
-integer array s__YDWETimerPattern___Thread_skills
-integer array s__YDWETimerPattern___Thread_order
-integer array s__YDWETimerPattern___Thread_level
-string array s__YDWETimerPattern___Thread_dsfx
-string array s__YDWETimerPattern___Thread_gsfx
-string array s__YDWETimerPattern___Thread_wsfx
-string array s__YDWETimerPattern___Thread_part
-boolean array s__YDWETimerPattern___Thread_recycle
-boolean array s__YDWETimerPattern___Thread_killdest
-boolean array s__YDWETimerPattern___Thread_volume
-group array s__YDWETimerPattern___Thread_g
-timer array s__YDWETimerPattern___Thread_t
-constant integer si__YDWETimerPattern___Parabola=6
-constant integer si__YDWETimerPattern___Linear=7
-constant integer si__YDWETimerPattern___Deceleration=8
-location array s__MemoryLeakHelper___LocationLeakData
-location array s__2MemoryLeakHelper___LocationLeakData
-location array s__3MemoryLeakHelper___LocationLeakData
-location array s__4MemoryLeakHelper___LocationLeakData
-location array s__5MemoryLeakHelper___LocationLeakData
-location array s__6MemoryLeakHelper___LocationLeakData
-location array s__7MemoryLeakHelper___LocationLeakData
-location array s__8MemoryLeakHelper___LocationLeakData
-location array s__MemoryLeakHelper___LocationDestroyData
-location array s__2MemoryLeakHelper___LocationDestroyData
-location array s__3MemoryLeakHelper___LocationDestroyData
-location array s__4MemoryLeakHelper___LocationDestroyData
-location array s__5MemoryLeakHelper___LocationDestroyData
-location array s__6MemoryLeakHelper___LocationDestroyData
-location array s__7MemoryLeakHelper___LocationDestroyData
-location array s__8MemoryLeakHelper___LocationDestroyData
-effect array s__MemoryLeakHelper___EffectLeakData
-effect array s__2MemoryLeakHelper___EffectLeakData
-effect array s__3MemoryLeakHelper___EffectLeakData
-effect array s__4MemoryLeakHelper___EffectLeakData
-effect array s__5MemoryLeakHelper___EffectLeakData
-effect array s__6MemoryLeakHelper___EffectLeakData
-effect array s__7MemoryLeakHelper___EffectLeakData
-effect array s__8MemoryLeakHelper___EffectLeakData
-effect array s__MemoryLeakHelper___EffectDestroyData
-effect array s__2MemoryLeakHelper___EffectDestroyData
-effect array s__3MemoryLeakHelper___EffectDestroyData
-effect array s__4MemoryLeakHelper___EffectDestroyData
-effect array s__5MemoryLeakHelper___EffectDestroyData
-effect array s__6MemoryLeakHelper___EffectDestroyData
-effect array s__7MemoryLeakHelper___EffectDestroyData
-effect array s__8MemoryLeakHelper___EffectDestroyData
-group array s__MemoryLeakHelper___GroupLeakData
-group array s__2MemoryLeakHelper___GroupLeakData
-group array s__3MemoryLeakHelper___GroupLeakData
-group array s__4MemoryLeakHelper___GroupLeakData
-group array s__5MemoryLeakHelper___GroupLeakData
-group array s__6MemoryLeakHelper___GroupLeakData
-group array s__7MemoryLeakHelper___GroupLeakData
-group array s__8MemoryLeakHelper___GroupLeakData
-group array s__MemoryLeakHelper___GroupDestroyData
-group array s__2MemoryLeakHelper___GroupDestroyData
-group array s__3MemoryLeakHelper___GroupDestroyData
-group array s__4MemoryLeakHelper___GroupDestroyData
-group array s__5MemoryLeakHelper___GroupDestroyData
-group array s__6MemoryLeakHelper___GroupDestroyData
-group array s__7MemoryLeakHelper___GroupDestroyData
-group array s__8MemoryLeakHelper___GroupDestroyData
-integer array si__MemoryLeakHelper___GTable_type
-trigger array st__MemoryLeakHelper___GTable_onDestroy
-integer array si__YDWETimerPattern___Thread_type
-trigger array st__YDWETimerPattern___Thread_onDestroy
+constant integer si__MemoryLeakHelper__Index=1
+integer si__MemoryLeakHelper__Index_F=0
+integer si__MemoryLeakHelper__Index_I=0
+integer array si__MemoryLeakHelper__Index_V
+constant integer si__MemoryLeakHelper__GTable=2
+integer si__MemoryLeakHelper__GTable_F=0
+integer si__MemoryLeakHelper__GTable_I=0
+integer array si__MemoryLeakHelper__GTable_V
+constant integer si__MemoryLeakHelper__HandleTable=3
+constant integer si__YDWETimerPattern__YDVector3=4
+integer si__YDWETimerPattern__YDVector3_F=0
+integer si__YDWETimerPattern__YDVector3_I=0
+integer array si__YDWETimerPattern__YDVector3_V
+real array s__YDWETimerPattern__YDVector3_x
+real array s__YDWETimerPattern__YDVector3_y
+real array s__YDWETimerPattern__YDVector3_z
+constant integer si__YDWETimerPattern__Thread=5
+integer si__YDWETimerPattern__Thread_F=0
+integer si__YDWETimerPattern__Thread_I=0
+integer array si__YDWETimerPattern__Thread_V
+integer array s__YDWETimerPattern__Thread_des
+integer array s__YDWETimerPattern__Thread_pos
+integer array s__YDWETimerPattern__Thread_vel
+unit array s__YDWETimerPattern__Thread_caster
+unit array s__YDWETimerPattern__Thread_source
+unit array s__YDWETimerPattern__Thread_target
+unit array s__YDWETimerPattern__Thread_obj
+real array s__YDWETimerPattern__Thread_ac
+real array s__YDWETimerPattern__Thread_bc
+real array s__YDWETimerPattern__Thread_dist
+real array s__YDWETimerPattern__Thread_step
+real array s__YDWETimerPattern__Thread_amount
+integer array s__YDWETimerPattern__Thread_switch
+integer array s__YDWETimerPattern__Thread_follow
+integer array s__YDWETimerPattern__Thread_unitid
+integer array s__YDWETimerPattern__Thread_skills
+integer array s__YDWETimerPattern__Thread_order
+integer array s__YDWETimerPattern__Thread_level
+string array s__YDWETimerPattern__Thread_dsfx
+string array s__YDWETimerPattern__Thread_gsfx
+string array s__YDWETimerPattern__Thread_wsfx
+string array s__YDWETimerPattern__Thread_part
+boolean array s__YDWETimerPattern__Thread_recycle
+boolean array s__YDWETimerPattern__Thread_killdest
+boolean array s__YDWETimerPattern__Thread_volume
+group array s__YDWETimerPattern__Thread_g
+timer array s__YDWETimerPattern__Thread_t
+constant integer si__YDWETimerPattern__Parabola=6
+constant integer si__YDWETimerPattern__Linear=7
+constant integer si__YDWETimerPattern__Deceleration=8
+location array s__MemoryLeakHelper__LocationLeakData
+location array s__2MemoryLeakHelper__LocationLeakData
+location array s__3MemoryLeakHelper__LocationLeakData
+location array s__4MemoryLeakHelper__LocationLeakData
+location array s__5MemoryLeakHelper__LocationLeakData
+location array s__6MemoryLeakHelper__LocationLeakData
+location array s__7MemoryLeakHelper__LocationLeakData
+location array s__8MemoryLeakHelper__LocationLeakData
+location array s__MemoryLeakHelper__LocationDestroyData
+location array s__2MemoryLeakHelper__LocationDestroyData
+location array s__3MemoryLeakHelper__LocationDestroyData
+location array s__4MemoryLeakHelper__LocationDestroyData
+location array s__5MemoryLeakHelper__LocationDestroyData
+location array s__6MemoryLeakHelper__LocationDestroyData
+location array s__7MemoryLeakHelper__LocationDestroyData
+location array s__8MemoryLeakHelper__LocationDestroyData
+effect array s__MemoryLeakHelper__EffectLeakData
+effect array s__2MemoryLeakHelper__EffectLeakData
+effect array s__3MemoryLeakHelper__EffectLeakData
+effect array s__4MemoryLeakHelper__EffectLeakData
+effect array s__5MemoryLeakHelper__EffectLeakData
+effect array s__6MemoryLeakHelper__EffectLeakData
+effect array s__7MemoryLeakHelper__EffectLeakData
+effect array s__8MemoryLeakHelper__EffectLeakData
+effect array s__MemoryLeakHelper__EffectDestroyData
+effect array s__2MemoryLeakHelper__EffectDestroyData
+effect array s__3MemoryLeakHelper__EffectDestroyData
+effect array s__4MemoryLeakHelper__EffectDestroyData
+effect array s__5MemoryLeakHelper__EffectDestroyData
+effect array s__6MemoryLeakHelper__EffectDestroyData
+effect array s__7MemoryLeakHelper__EffectDestroyData
+effect array s__8MemoryLeakHelper__EffectDestroyData
+group array s__MemoryLeakHelper__GroupLeakData
+group array s__2MemoryLeakHelper__GroupLeakData
+group array s__3MemoryLeakHelper__GroupLeakData
+group array s__4MemoryLeakHelper__GroupLeakData
+group array s__5MemoryLeakHelper__GroupLeakData
+group array s__6MemoryLeakHelper__GroupLeakData
+group array s__7MemoryLeakHelper__GroupLeakData
+group array s__8MemoryLeakHelper__GroupLeakData
+group array s__MemoryLeakHelper__GroupDestroyData
+group array s__2MemoryLeakHelper__GroupDestroyData
+group array s__3MemoryLeakHelper__GroupDestroyData
+group array s__4MemoryLeakHelper__GroupDestroyData
+group array s__5MemoryLeakHelper__GroupDestroyData
+group array s__6MemoryLeakHelper__GroupDestroyData
+group array s__7MemoryLeakHelper__GroupDestroyData
+group array s__8MemoryLeakHelper__GroupDestroyData
+integer array si__MemoryLeakHelper__GTable_type
+trigger array st__MemoryLeakHelper__GTable_onDestroy
+integer array si__YDWETimerPattern__Thread_type
+trigger array st__YDWETimerPattern__Thread_onDestroy
 trigger array st___prototype167
 trigger array st___prototype170
 real f__result_real
@@ -551,450 +551,450 @@ integer f__arg_this
 endglobals
 
 
-function sg__MemoryLeakHelper___LocationLeakData_get takes integer i returns location
+function sg__MemoryLeakHelper__LocationLeakData_get takes integer i returns location
     if(i<8191) then
-        return s__MemoryLeakHelper___LocationLeakData[i]
+        return s__MemoryLeakHelper__LocationLeakData[i]
     elseif(i<32764) then
         if(i<16382) then
-            return s__2MemoryLeakHelper___LocationLeakData[i-8191]
+            return s__2MemoryLeakHelper__LocationLeakData[i-8191]
         elseif(i<24573) then
-            return s__3MemoryLeakHelper___LocationLeakData[i-16382]
+            return s__3MemoryLeakHelper__LocationLeakData[i-16382]
         else
-            return s__4MemoryLeakHelper___LocationLeakData[i-24573]
+            return s__4MemoryLeakHelper__LocationLeakData[i-24573]
         endif
     elseif(i<40955) then
-        return s__5MemoryLeakHelper___LocationLeakData[i-32764]
+        return s__5MemoryLeakHelper__LocationLeakData[i-32764]
     elseif(i<49146) then
-            return s__6MemoryLeakHelper___LocationLeakData[i-40955]
+            return s__6MemoryLeakHelper__LocationLeakData[i-40955]
     elseif(i<57337) then
-        return s__7MemoryLeakHelper___LocationLeakData[i-49146]
+        return s__7MemoryLeakHelper__LocationLeakData[i-49146]
     else
-        return s__8MemoryLeakHelper___LocationLeakData[i-57337]
+        return s__8MemoryLeakHelper__LocationLeakData[i-57337]
     endif
 endfunction
 
-function sg__MemoryLeakHelper___LocationLeakData_set takes integer i,location v returns nothing
+function sg__MemoryLeakHelper__LocationLeakData_set takes integer i,location v returns nothing
     if(i<8191) then
-        set s__MemoryLeakHelper___LocationLeakData[i]=v
+        set s__MemoryLeakHelper__LocationLeakData[i]=v
     elseif(i<32764) then
         if(i<16382) then
-            set s__2MemoryLeakHelper___LocationLeakData[i-8191]=v
+            set s__2MemoryLeakHelper__LocationLeakData[i-8191]=v
         elseif(i<24573) then
-            set s__3MemoryLeakHelper___LocationLeakData[i-16382]=v
+            set s__3MemoryLeakHelper__LocationLeakData[i-16382]=v
         else
-            set s__4MemoryLeakHelper___LocationLeakData[i-24573]=v
+            set s__4MemoryLeakHelper__LocationLeakData[i-24573]=v
         endif
     elseif(i<40955) then
-        set s__5MemoryLeakHelper___LocationLeakData[i-32764]=v
+        set s__5MemoryLeakHelper__LocationLeakData[i-32764]=v
     elseif(i<49146) then
-            set s__6MemoryLeakHelper___LocationLeakData[i-40955]=v
+            set s__6MemoryLeakHelper__LocationLeakData[i-40955]=v
     elseif(i<57337) then
-        set s__7MemoryLeakHelper___LocationLeakData[i-49146]=v
+        set s__7MemoryLeakHelper__LocationLeakData[i-49146]=v
     else
-        set s__8MemoryLeakHelper___LocationLeakData[i-57337]=v
+        set s__8MemoryLeakHelper__LocationLeakData[i-57337]=v
     endif
 endfunction
 
-function sg__MemoryLeakHelper___LocationDestroyData_get takes integer i returns location
+function sg__MemoryLeakHelper__LocationDestroyData_get takes integer i returns location
     if(i<8191) then
-        return s__MemoryLeakHelper___LocationDestroyData[i]
+        return s__MemoryLeakHelper__LocationDestroyData[i]
     elseif(i<32764) then
         if(i<16382) then
-            return s__2MemoryLeakHelper___LocationDestroyData[i-8191]
+            return s__2MemoryLeakHelper__LocationDestroyData[i-8191]
         elseif(i<24573) then
-            return s__3MemoryLeakHelper___LocationDestroyData[i-16382]
+            return s__3MemoryLeakHelper__LocationDestroyData[i-16382]
         else
-            return s__4MemoryLeakHelper___LocationDestroyData[i-24573]
+            return s__4MemoryLeakHelper__LocationDestroyData[i-24573]
         endif
     elseif(i<40955) then
-        return s__5MemoryLeakHelper___LocationDestroyData[i-32764]
+        return s__5MemoryLeakHelper__LocationDestroyData[i-32764]
     elseif(i<49146) then
-            return s__6MemoryLeakHelper___LocationDestroyData[i-40955]
+            return s__6MemoryLeakHelper__LocationDestroyData[i-40955]
     elseif(i<57337) then
-        return s__7MemoryLeakHelper___LocationDestroyData[i-49146]
+        return s__7MemoryLeakHelper__LocationDestroyData[i-49146]
     else
-        return s__8MemoryLeakHelper___LocationDestroyData[i-57337]
+        return s__8MemoryLeakHelper__LocationDestroyData[i-57337]
     endif
 endfunction
 
-function sg__MemoryLeakHelper___LocationDestroyData_set takes integer i,location v returns nothing
+function sg__MemoryLeakHelper__LocationDestroyData_set takes integer i,location v returns nothing
     if(i<8191) then
-        set s__MemoryLeakHelper___LocationDestroyData[i]=v
+        set s__MemoryLeakHelper__LocationDestroyData[i]=v
     elseif(i<32764) then
         if(i<16382) then
-            set s__2MemoryLeakHelper___LocationDestroyData[i-8191]=v
+            set s__2MemoryLeakHelper__LocationDestroyData[i-8191]=v
         elseif(i<24573) then
-            set s__3MemoryLeakHelper___LocationDestroyData[i-16382]=v
+            set s__3MemoryLeakHelper__LocationDestroyData[i-16382]=v
         else
-            set s__4MemoryLeakHelper___LocationDestroyData[i-24573]=v
+            set s__4MemoryLeakHelper__LocationDestroyData[i-24573]=v
         endif
     elseif(i<40955) then
-        set s__5MemoryLeakHelper___LocationDestroyData[i-32764]=v
+        set s__5MemoryLeakHelper__LocationDestroyData[i-32764]=v
     elseif(i<49146) then
-            set s__6MemoryLeakHelper___LocationDestroyData[i-40955]=v
+            set s__6MemoryLeakHelper__LocationDestroyData[i-40955]=v
     elseif(i<57337) then
-        set s__7MemoryLeakHelper___LocationDestroyData[i-49146]=v
+        set s__7MemoryLeakHelper__LocationDestroyData[i-49146]=v
     else
-        set s__8MemoryLeakHelper___LocationDestroyData[i-57337]=v
+        set s__8MemoryLeakHelper__LocationDestroyData[i-57337]=v
     endif
 endfunction
 
-function sg__MemoryLeakHelper___EffectLeakData_get takes integer i returns effect
+function sg__MemoryLeakHelper__EffectLeakData_get takes integer i returns effect
     if(i<8191) then
-        return s__MemoryLeakHelper___EffectLeakData[i]
+        return s__MemoryLeakHelper__EffectLeakData[i]
     elseif(i<32764) then
         if(i<16382) then
-            return s__2MemoryLeakHelper___EffectLeakData[i-8191]
+            return s__2MemoryLeakHelper__EffectLeakData[i-8191]
         elseif(i<24573) then
-            return s__3MemoryLeakHelper___EffectLeakData[i-16382]
+            return s__3MemoryLeakHelper__EffectLeakData[i-16382]
         else
-            return s__4MemoryLeakHelper___EffectLeakData[i-24573]
+            return s__4MemoryLeakHelper__EffectLeakData[i-24573]
         endif
     elseif(i<40955) then
-        return s__5MemoryLeakHelper___EffectLeakData[i-32764]
+        return s__5MemoryLeakHelper__EffectLeakData[i-32764]
     elseif(i<49146) then
-            return s__6MemoryLeakHelper___EffectLeakData[i-40955]
+            return s__6MemoryLeakHelper__EffectLeakData[i-40955]
     elseif(i<57337) then
-        return s__7MemoryLeakHelper___EffectLeakData[i-49146]
+        return s__7MemoryLeakHelper__EffectLeakData[i-49146]
     else
-        return s__8MemoryLeakHelper___EffectLeakData[i-57337]
+        return s__8MemoryLeakHelper__EffectLeakData[i-57337]
     endif
 endfunction
 
-function sg__MemoryLeakHelper___EffectLeakData_set takes integer i,effect v returns nothing
+function sg__MemoryLeakHelper__EffectLeakData_set takes integer i,effect v returns nothing
     if(i<8191) then
-        set s__MemoryLeakHelper___EffectLeakData[i]=v
+        set s__MemoryLeakHelper__EffectLeakData[i]=v
     elseif(i<32764) then
         if(i<16382) then
-            set s__2MemoryLeakHelper___EffectLeakData[i-8191]=v
+            set s__2MemoryLeakHelper__EffectLeakData[i-8191]=v
         elseif(i<24573) then
-            set s__3MemoryLeakHelper___EffectLeakData[i-16382]=v
+            set s__3MemoryLeakHelper__EffectLeakData[i-16382]=v
         else
-            set s__4MemoryLeakHelper___EffectLeakData[i-24573]=v
+            set s__4MemoryLeakHelper__EffectLeakData[i-24573]=v
         endif
     elseif(i<40955) then
-        set s__5MemoryLeakHelper___EffectLeakData[i-32764]=v
+        set s__5MemoryLeakHelper__EffectLeakData[i-32764]=v
     elseif(i<49146) then
-            set s__6MemoryLeakHelper___EffectLeakData[i-40955]=v
+            set s__6MemoryLeakHelper__EffectLeakData[i-40955]=v
     elseif(i<57337) then
-        set s__7MemoryLeakHelper___EffectLeakData[i-49146]=v
+        set s__7MemoryLeakHelper__EffectLeakData[i-49146]=v
     else
-        set s__8MemoryLeakHelper___EffectLeakData[i-57337]=v
+        set s__8MemoryLeakHelper__EffectLeakData[i-57337]=v
     endif
 endfunction
 
-function sg__MemoryLeakHelper___EffectDestroyData_get takes integer i returns effect
+function sg__MemoryLeakHelper__EffectDestroyData_get takes integer i returns effect
     if(i<8191) then
-        return s__MemoryLeakHelper___EffectDestroyData[i]
+        return s__MemoryLeakHelper__EffectDestroyData[i]
     elseif(i<32764) then
         if(i<16382) then
-            return s__2MemoryLeakHelper___EffectDestroyData[i-8191]
+            return s__2MemoryLeakHelper__EffectDestroyData[i-8191]
         elseif(i<24573) then
-            return s__3MemoryLeakHelper___EffectDestroyData[i-16382]
+            return s__3MemoryLeakHelper__EffectDestroyData[i-16382]
         else
-            return s__4MemoryLeakHelper___EffectDestroyData[i-24573]
+            return s__4MemoryLeakHelper__EffectDestroyData[i-24573]
         endif
     elseif(i<40955) then
-        return s__5MemoryLeakHelper___EffectDestroyData[i-32764]
+        return s__5MemoryLeakHelper__EffectDestroyData[i-32764]
     elseif(i<49146) then
-            return s__6MemoryLeakHelper___EffectDestroyData[i-40955]
+            return s__6MemoryLeakHelper__EffectDestroyData[i-40955]
     elseif(i<57337) then
-        return s__7MemoryLeakHelper___EffectDestroyData[i-49146]
+        return s__7MemoryLeakHelper__EffectDestroyData[i-49146]
     else
-        return s__8MemoryLeakHelper___EffectDestroyData[i-57337]
+        return s__8MemoryLeakHelper__EffectDestroyData[i-57337]
     endif
 endfunction
 
-function sg__MemoryLeakHelper___EffectDestroyData_set takes integer i,effect v returns nothing
+function sg__MemoryLeakHelper__EffectDestroyData_set takes integer i,effect v returns nothing
     if(i<8191) then
-        set s__MemoryLeakHelper___EffectDestroyData[i]=v
+        set s__MemoryLeakHelper__EffectDestroyData[i]=v
     elseif(i<32764) then
         if(i<16382) then
-            set s__2MemoryLeakHelper___EffectDestroyData[i-8191]=v
+            set s__2MemoryLeakHelper__EffectDestroyData[i-8191]=v
         elseif(i<24573) then
-            set s__3MemoryLeakHelper___EffectDestroyData[i-16382]=v
+            set s__3MemoryLeakHelper__EffectDestroyData[i-16382]=v
         else
-            set s__4MemoryLeakHelper___EffectDestroyData[i-24573]=v
+            set s__4MemoryLeakHelper__EffectDestroyData[i-24573]=v
         endif
     elseif(i<40955) then
-        set s__5MemoryLeakHelper___EffectDestroyData[i-32764]=v
+        set s__5MemoryLeakHelper__EffectDestroyData[i-32764]=v
     elseif(i<49146) then
-            set s__6MemoryLeakHelper___EffectDestroyData[i-40955]=v
+            set s__6MemoryLeakHelper__EffectDestroyData[i-40955]=v
     elseif(i<57337) then
-        set s__7MemoryLeakHelper___EffectDestroyData[i-49146]=v
+        set s__7MemoryLeakHelper__EffectDestroyData[i-49146]=v
     else
-        set s__8MemoryLeakHelper___EffectDestroyData[i-57337]=v
+        set s__8MemoryLeakHelper__EffectDestroyData[i-57337]=v
     endif
 endfunction
 
-function sg__MemoryLeakHelper___GroupLeakData_get takes integer i returns group
+function sg__MemoryLeakHelper__GroupLeakData_get takes integer i returns group
     if(i<8191) then
-        return s__MemoryLeakHelper___GroupLeakData[i]
+        return s__MemoryLeakHelper__GroupLeakData[i]
     elseif(i<32764) then
         if(i<16382) then
-            return s__2MemoryLeakHelper___GroupLeakData[i-8191]
+            return s__2MemoryLeakHelper__GroupLeakData[i-8191]
         elseif(i<24573) then
-            return s__3MemoryLeakHelper___GroupLeakData[i-16382]
+            return s__3MemoryLeakHelper__GroupLeakData[i-16382]
         else
-            return s__4MemoryLeakHelper___GroupLeakData[i-24573]
+            return s__4MemoryLeakHelper__GroupLeakData[i-24573]
         endif
     elseif(i<40955) then
-        return s__5MemoryLeakHelper___GroupLeakData[i-32764]
+        return s__5MemoryLeakHelper__GroupLeakData[i-32764]
     elseif(i<49146) then
-            return s__6MemoryLeakHelper___GroupLeakData[i-40955]
+            return s__6MemoryLeakHelper__GroupLeakData[i-40955]
     elseif(i<57337) then
-        return s__7MemoryLeakHelper___GroupLeakData[i-49146]
+        return s__7MemoryLeakHelper__GroupLeakData[i-49146]
     else
-        return s__8MemoryLeakHelper___GroupLeakData[i-57337]
+        return s__8MemoryLeakHelper__GroupLeakData[i-57337]
     endif
 endfunction
 
-function sg__MemoryLeakHelper___GroupLeakData_set takes integer i,group v returns nothing
+function sg__MemoryLeakHelper__GroupLeakData_set takes integer i,group v returns nothing
     if(i<8191) then
-        set s__MemoryLeakHelper___GroupLeakData[i]=v
+        set s__MemoryLeakHelper__GroupLeakData[i]=v
     elseif(i<32764) then
         if(i<16382) then
-            set s__2MemoryLeakHelper___GroupLeakData[i-8191]=v
+            set s__2MemoryLeakHelper__GroupLeakData[i-8191]=v
         elseif(i<24573) then
-            set s__3MemoryLeakHelper___GroupLeakData[i-16382]=v
+            set s__3MemoryLeakHelper__GroupLeakData[i-16382]=v
         else
-            set s__4MemoryLeakHelper___GroupLeakData[i-24573]=v
+            set s__4MemoryLeakHelper__GroupLeakData[i-24573]=v
         endif
     elseif(i<40955) then
-        set s__5MemoryLeakHelper___GroupLeakData[i-32764]=v
+        set s__5MemoryLeakHelper__GroupLeakData[i-32764]=v
     elseif(i<49146) then
-            set s__6MemoryLeakHelper___GroupLeakData[i-40955]=v
+            set s__6MemoryLeakHelper__GroupLeakData[i-40955]=v
     elseif(i<57337) then
-        set s__7MemoryLeakHelper___GroupLeakData[i-49146]=v
+        set s__7MemoryLeakHelper__GroupLeakData[i-49146]=v
     else
-        set s__8MemoryLeakHelper___GroupLeakData[i-57337]=v
+        set s__8MemoryLeakHelper__GroupLeakData[i-57337]=v
     endif
 endfunction
 
-function sg__MemoryLeakHelper___GroupDestroyData_get takes integer i returns group
+function sg__MemoryLeakHelper__GroupDestroyData_get takes integer i returns group
     if(i<8191) then
-        return s__MemoryLeakHelper___GroupDestroyData[i]
+        return s__MemoryLeakHelper__GroupDestroyData[i]
     elseif(i<32764) then
         if(i<16382) then
-            return s__2MemoryLeakHelper___GroupDestroyData[i-8191]
+            return s__2MemoryLeakHelper__GroupDestroyData[i-8191]
         elseif(i<24573) then
-            return s__3MemoryLeakHelper___GroupDestroyData[i-16382]
+            return s__3MemoryLeakHelper__GroupDestroyData[i-16382]
         else
-            return s__4MemoryLeakHelper___GroupDestroyData[i-24573]
+            return s__4MemoryLeakHelper__GroupDestroyData[i-24573]
         endif
     elseif(i<40955) then
-        return s__5MemoryLeakHelper___GroupDestroyData[i-32764]
+        return s__5MemoryLeakHelper__GroupDestroyData[i-32764]
     elseif(i<49146) then
-            return s__6MemoryLeakHelper___GroupDestroyData[i-40955]
+            return s__6MemoryLeakHelper__GroupDestroyData[i-40955]
     elseif(i<57337) then
-        return s__7MemoryLeakHelper___GroupDestroyData[i-49146]
+        return s__7MemoryLeakHelper__GroupDestroyData[i-49146]
     else
-        return s__8MemoryLeakHelper___GroupDestroyData[i-57337]
+        return s__8MemoryLeakHelper__GroupDestroyData[i-57337]
     endif
 endfunction
 
-function sg__MemoryLeakHelper___GroupDestroyData_set takes integer i,group v returns nothing
+function sg__MemoryLeakHelper__GroupDestroyData_set takes integer i,group v returns nothing
     if(i<8191) then
-        set s__MemoryLeakHelper___GroupDestroyData[i]=v
+        set s__MemoryLeakHelper__GroupDestroyData[i]=v
     elseif(i<32764) then
         if(i<16382) then
-            set s__2MemoryLeakHelper___GroupDestroyData[i-8191]=v
+            set s__2MemoryLeakHelper__GroupDestroyData[i-8191]=v
         elseif(i<24573) then
-            set s__3MemoryLeakHelper___GroupDestroyData[i-16382]=v
+            set s__3MemoryLeakHelper__GroupDestroyData[i-16382]=v
         else
-            set s__4MemoryLeakHelper___GroupDestroyData[i-24573]=v
+            set s__4MemoryLeakHelper__GroupDestroyData[i-24573]=v
         endif
     elseif(i<40955) then
-        set s__5MemoryLeakHelper___GroupDestroyData[i-32764]=v
+        set s__5MemoryLeakHelper__GroupDestroyData[i-32764]=v
     elseif(i<49146) then
-            set s__6MemoryLeakHelper___GroupDestroyData[i-40955]=v
+            set s__6MemoryLeakHelper__GroupDestroyData[i-40955]=v
     elseif(i<57337) then
-        set s__7MemoryLeakHelper___GroupDestroyData[i-49146]=v
+        set s__7MemoryLeakHelper__GroupDestroyData[i-49146]=v
     else
-        set s__8MemoryLeakHelper___GroupDestroyData[i-57337]=v
+        set s__8MemoryLeakHelper__GroupDestroyData[i-57337]=v
     endif
 endfunction
 
-//Generated allocator of MemoryLeakHelper___Index
-function s__MemoryLeakHelper___Index__allocate takes nothing returns integer
- local integer this=si__MemoryLeakHelper___Index_F
+//Generated allocator of MemoryLeakHelper__Index
+function s__MemoryLeakHelper__Index__allocate takes nothing returns integer
+ local integer this=si__MemoryLeakHelper__Index_F
     if (this!=0) then
-        set si__MemoryLeakHelper___Index_F=si__MemoryLeakHelper___Index_V[this]
+        set si__MemoryLeakHelper__Index_F=si__MemoryLeakHelper__Index_V[this]
     else
-        set si__MemoryLeakHelper___Index_I=si__MemoryLeakHelper___Index_I+1
-        set this=si__MemoryLeakHelper___Index_I
+        set si__MemoryLeakHelper__Index_I=si__MemoryLeakHelper__Index_I+1
+        set this=si__MemoryLeakHelper__Index_I
     endif
     if (this>8190) then
         return 0
     endif
 
-    set si__MemoryLeakHelper___Index_V[this]=-1
+    set si__MemoryLeakHelper__Index_V[this]=-1
  return this
 endfunction
 
-//Generated destructor of MemoryLeakHelper___Index
-function s__MemoryLeakHelper___Index_deallocate takes integer this returns nothing
+//Generated destructor of MemoryLeakHelper__Index
+function s__MemoryLeakHelper__Index_deallocate takes integer this returns nothing
     if this==null then
         return
-    elseif (si__MemoryLeakHelper___Index_V[this]!=-1) then
+    elseif (si__MemoryLeakHelper__Index_V[this]!=-1) then
         return
     endif
-    set si__MemoryLeakHelper___Index_V[this]=si__MemoryLeakHelper___Index_F
-    set si__MemoryLeakHelper___Index_F=this
+    set si__MemoryLeakHelper__Index_V[this]=si__MemoryLeakHelper__Index_F
+    set si__MemoryLeakHelper__Index_F=this
 endfunction
 
-//Generated method caller for MemoryLeakHelper___GTable.onDestroy
-function sc__MemoryLeakHelper___GTable_onDestroy takes integer this returns nothing
+//Generated method caller for MemoryLeakHelper__GTable.onDestroy
+function sc__MemoryLeakHelper__GTable_onDestroy takes integer this returns nothing
     set f__arg_this=this
-    call TriggerEvaluate(st__MemoryLeakHelper___GTable_onDestroy[2])
+    call TriggerEvaluate(st__MemoryLeakHelper__GTable_onDestroy[2])
 endfunction
 
-//Generated allocator of MemoryLeakHelper___GTable
-function s__MemoryLeakHelper___GTable__allocate takes nothing returns integer
- local integer this=si__MemoryLeakHelper___GTable_F
+//Generated allocator of MemoryLeakHelper__GTable
+function s__MemoryLeakHelper__GTable__allocate takes nothing returns integer
+ local integer this=si__MemoryLeakHelper__GTable_F
     if (this!=0) then
-        set si__MemoryLeakHelper___GTable_F=si__MemoryLeakHelper___GTable_V[this]
+        set si__MemoryLeakHelper__GTable_F=si__MemoryLeakHelper__GTable_V[this]
     else
-        set si__MemoryLeakHelper___GTable_I=si__MemoryLeakHelper___GTable_I+1
-        set this=si__MemoryLeakHelper___GTable_I
+        set si__MemoryLeakHelper__GTable_I=si__MemoryLeakHelper__GTable_I+1
+        set this=si__MemoryLeakHelper__GTable_I
     endif
     if (this>8100) then
         return 0
     endif
 
-    set si__MemoryLeakHelper___GTable_type[this]=2
-    set si__MemoryLeakHelper___GTable_V[this]=-1
+    set si__MemoryLeakHelper__GTable_type[this]=2
+    set si__MemoryLeakHelper__GTable_V[this]=-1
  return this
 endfunction
 
-//Generated destructor of MemoryLeakHelper___GTable
-function sc__MemoryLeakHelper___GTable_deallocate takes integer this returns nothing
+//Generated destructor of MemoryLeakHelper__GTable
+function sc__MemoryLeakHelper__GTable_deallocate takes integer this returns nothing
     if this==null then
         return
-    elseif (si__MemoryLeakHelper___GTable_V[this]!=-1) then
+    elseif (si__MemoryLeakHelper__GTable_V[this]!=-1) then
         return
     endif
     set f__arg_this=this
-    call TriggerEvaluate(st__MemoryLeakHelper___GTable_onDestroy[si__MemoryLeakHelper___GTable_type[this]])
-    set si__MemoryLeakHelper___GTable_V[this]=si__MemoryLeakHelper___GTable_F
-    set si__MemoryLeakHelper___GTable_F=this
+    call TriggerEvaluate(st__MemoryLeakHelper__GTable_onDestroy[si__MemoryLeakHelper__GTable_type[this]])
+    set si__MemoryLeakHelper__GTable_V[this]=si__MemoryLeakHelper__GTable_F
+    set si__MemoryLeakHelper__GTable_F=this
 endfunction
 
-//Generated allocator of MemoryLeakHelper___HandleTable
-function s__MemoryLeakHelper___HandleTable__allocate takes nothing returns integer
- local integer this=s__MemoryLeakHelper___GTable__allocate()
+//Generated allocator of MemoryLeakHelper__HandleTable
+function s__MemoryLeakHelper__HandleTable__allocate takes nothing returns integer
+ local integer this=s__MemoryLeakHelper__GTable__allocate()
  local integer kthis
     if(this==0) then
         return 0
     endif
-    set si__MemoryLeakHelper___GTable_type[this]=3
+    set si__MemoryLeakHelper__GTable_type[this]=3
     set kthis=this
 
  return this
 endfunction
 
 
-//Generated allocator of YDWETimerPattern___YDVector3
-function s__YDWETimerPattern___YDVector3__allocate takes nothing returns integer
- local integer this=si__YDWETimerPattern___YDVector3_F
+//Generated allocator of YDWETimerPattern__YDVector3
+function s__YDWETimerPattern__YDVector3__allocate takes nothing returns integer
+ local integer this=si__YDWETimerPattern__YDVector3_F
     if (this!=0) then
-        set si__YDWETimerPattern___YDVector3_F=si__YDWETimerPattern___YDVector3_V[this]
+        set si__YDWETimerPattern__YDVector3_F=si__YDWETimerPattern__YDVector3_V[this]
     else
-        set si__YDWETimerPattern___YDVector3_I=si__YDWETimerPattern___YDVector3_I+1
-        set this=si__YDWETimerPattern___YDVector3_I
+        set si__YDWETimerPattern__YDVector3_I=si__YDWETimerPattern__YDVector3_I+1
+        set this=si__YDWETimerPattern__YDVector3_I
     endif
     if (this>8190) then
         return 0
     endif
 
-    set si__YDWETimerPattern___YDVector3_V[this]=-1
+    set si__YDWETimerPattern__YDVector3_V[this]=-1
  return this
 endfunction
 
-//Generated destructor of YDWETimerPattern___YDVector3
-function s__YDWETimerPattern___YDVector3_deallocate takes integer this returns nothing
+//Generated destructor of YDWETimerPattern__YDVector3
+function s__YDWETimerPattern__YDVector3_deallocate takes integer this returns nothing
     if this==null then
         return
-    elseif (si__YDWETimerPattern___YDVector3_V[this]!=-1) then
+    elseif (si__YDWETimerPattern__YDVector3_V[this]!=-1) then
         return
     endif
-    set si__YDWETimerPattern___YDVector3_V[this]=si__YDWETimerPattern___YDVector3_F
-    set si__YDWETimerPattern___YDVector3_F=this
+    set si__YDWETimerPattern__YDVector3_V[this]=si__YDWETimerPattern__YDVector3_F
+    set si__YDWETimerPattern__YDVector3_F=this
 endfunction
 
-//Generated method caller for YDWETimerPattern___Thread.onDestroy
-function sc__YDWETimerPattern___Thread_onDestroy takes integer this returns nothing
+//Generated method caller for YDWETimerPattern__Thread.onDestroy
+function sc__YDWETimerPattern__Thread_onDestroy takes integer this returns nothing
     set f__arg_this=this
-    call TriggerEvaluate(st__YDWETimerPattern___Thread_onDestroy[5])
+    call TriggerEvaluate(st__YDWETimerPattern__Thread_onDestroy[5])
 endfunction
 
-//Generated allocator of YDWETimerPattern___Thread
-function s__YDWETimerPattern___Thread__allocate takes nothing returns integer
- local integer this=si__YDWETimerPattern___Thread_F
+//Generated allocator of YDWETimerPattern__Thread
+function s__YDWETimerPattern__Thread__allocate takes nothing returns integer
+ local integer this=si__YDWETimerPattern__Thread_F
     if (this!=0) then
-        set si__YDWETimerPattern___Thread_F=si__YDWETimerPattern___Thread_V[this]
+        set si__YDWETimerPattern__Thread_F=si__YDWETimerPattern__Thread_V[this]
     else
-        set si__YDWETimerPattern___Thread_I=si__YDWETimerPattern___Thread_I+1
-        set this=si__YDWETimerPattern___Thread_I
+        set si__YDWETimerPattern__Thread_I=si__YDWETimerPattern__Thread_I+1
+        set this=si__YDWETimerPattern__Thread_I
     endif
     if (this>8190) then
         return 0
     endif
 
-    set si__YDWETimerPattern___Thread_type[this]=5
-    set si__YDWETimerPattern___Thread_V[this]=-1
+    set si__YDWETimerPattern__Thread_type[this]=5
+    set si__YDWETimerPattern__Thread_V[this]=-1
  return this
 endfunction
 
-//Generated destructor of YDWETimerPattern___Thread
-function sc__YDWETimerPattern___Thread_deallocate takes integer this returns nothing
+//Generated destructor of YDWETimerPattern__Thread
+function sc__YDWETimerPattern__Thread_deallocate takes integer this returns nothing
     if this==null then
         return
-    elseif (si__YDWETimerPattern___Thread_V[this]!=-1) then
+    elseif (si__YDWETimerPattern__Thread_V[this]!=-1) then
         return
     endif
     set f__arg_this=this
-    call TriggerEvaluate(st__YDWETimerPattern___Thread_onDestroy[si__YDWETimerPattern___Thread_type[this]])
-    set si__YDWETimerPattern___Thread_V[this]=si__YDWETimerPattern___Thread_F
-    set si__YDWETimerPattern___Thread_F=this
+    call TriggerEvaluate(st__YDWETimerPattern__Thread_onDestroy[si__YDWETimerPattern__Thread_type[this]])
+    set si__YDWETimerPattern__Thread_V[this]=si__YDWETimerPattern__Thread_F
+    set si__YDWETimerPattern__Thread_F=this
 endfunction
 
-//Generated allocator of YDWETimerPattern___Deceleration
-function s__YDWETimerPattern___Deceleration__allocate takes nothing returns integer
- local integer this=s__YDWETimerPattern___Thread__allocate()
+//Generated allocator of YDWETimerPattern__Deceleration
+function s__YDWETimerPattern__Deceleration__allocate takes nothing returns integer
+ local integer this=s__YDWETimerPattern__Thread__allocate()
  local integer kthis
     if(this==0) then
         return 0
     endif
-    set si__YDWETimerPattern___Thread_type[this]=8
+    set si__YDWETimerPattern__Thread_type[this]=8
     set kthis=this
 
  return this
 endfunction
 
 
-//Generated allocator of YDWETimerPattern___Parabola
-function s__YDWETimerPattern___Parabola__allocate takes nothing returns integer
- local integer this=s__YDWETimerPattern___Thread__allocate()
+//Generated allocator of YDWETimerPattern__Parabola
+function s__YDWETimerPattern__Parabola__allocate takes nothing returns integer
+ local integer this=s__YDWETimerPattern__Thread__allocate()
  local integer kthis
     if(this==0) then
         return 0
     endif
-    set si__YDWETimerPattern___Thread_type[this]=6
+    set si__YDWETimerPattern__Thread_type[this]=6
     set kthis=this
 
  return this
 endfunction
 
 
-//Generated allocator of YDWETimerPattern___Linear
-function s__YDWETimerPattern___Linear__allocate takes nothing returns integer
- local integer this=s__YDWETimerPattern___Thread__allocate()
+//Generated allocator of YDWETimerPattern__Linear
+function s__YDWETimerPattern__Linear__allocate takes nothing returns integer
+ local integer this=s__YDWETimerPattern__Thread__allocate()
  local integer kthis
     if(this==0) then
         return 0
     endif
-    set si__YDWETimerPattern___Thread_type[this]=7
+    set si__YDWETimerPattern__Thread_type[this]=7
     set kthis=this
 
  return this
@@ -1195,82 +1195,82 @@ function sc___prototype185_evaluate takes integer i,location a1,string a2 return
 
 endfunction
 function h__PolarProjectionBJ takes location a0, real a1, real a2 returns location
-    //hook: MemoryLeakHelper___PP
+    //hook: MemoryLeakHelper__PP
     call sc___prototype177_evaluate(1,a0,a1,a2)
 return PolarProjectionBJ(a0,a1,a2)
 endfunction
 function h__CreateNUnitsAtLoc takes integer a0, integer a1, player a2, location a3, real a4 returns group
-    //hook: MemoryLeakHelper___CU
+    //hook: MemoryLeakHelper__CU
     call sc___prototype178_evaluate(1,a0,a1,a2,a3,a4)
 return CreateNUnitsAtLoc(a0,a1,a2,a3,a4)
 endfunction
 function h__CreateNUnitsAtLocFacingLocBJ takes integer a0, integer a1, player a2, location a3, location a4 returns group
-    //hook: MemoryLeakHelper___CUF
+    //hook: MemoryLeakHelper__CUF
     call sc___prototype182_evaluate(1,a0,a1,a2,a3,a4)
 return CreateNUnitsAtLocFacingLocBJ(a0,a1,a2,a3,a4)
 endfunction
 function h__IssuePointOrderLocBJ takes unit a0, string a1, location a2 returns boolean
-    //hook: MemoryLeakHelper___IPO
+    //hook: MemoryLeakHelper__IPO
     call sc___prototype179_evaluate(1,a0,a1,a2)
 return IssuePointOrderLocBJ(a0,a1,a2)
 endfunction
 function h__SetUnitPositionLoc takes unit a0, location a1 returns nothing
-    //hook: MemoryLeakHelper___SUP
+    //hook: MemoryLeakHelper__SUP
     call sc___prototype180_evaluate(1,a0,a1)
 call SetUnitPositionLoc(a0,a1)
 endfunction
 function h__SetUnitFacingToFaceLocTimed takes unit a0, location a1, real a2 returns nothing
-    //hook: MemoryLeakHelper___SUF
+    //hook: MemoryLeakHelper__SUF
     call sc___prototype167_evaluate(1,a0,a1,a2)
 call SetUnitFacingToFaceLocTimed(a0,a1,a2)
 endfunction
 function h__GetUnitsInRangeOfLocMatching takes real a0, location a1, boolexpr a2 returns group
-    //hook: MemoryLeakHelper___GUR
+    //hook: MemoryLeakHelper__GUR
     call sc___prototype181_evaluate(1,a0,a1,a2)
 return GetUnitsInRangeOfLocMatching(a0,a1,a2)
 endfunction
 function h__RemoveLocation takes location a0 returns nothing
-    //hook: MemoryLeakHelper___ReleaseLocation
+    //hook: MemoryLeakHelper__ReleaseLocation
     call sc___prototype174_evaluate(1,a0)
 call RemoveLocation(a0)
 endfunction
 function h__ForGroupBJ takes group a0, code a1 returns nothing
-    //hook: MemoryLeakHelper___FG
+    //hook: MemoryLeakHelper__FG
     call sc___prototype183_evaluate(1,a0,a1)
 call ForGroupBJ(a0,a1)
 endfunction
 function h__GroupPickRandomUnit takes group a0 returns unit
-    //hook: MemoryLeakHelper___CatchGroup
+    //hook: MemoryLeakHelper__CatchGroup
     call sc___prototype175_evaluate(1,a0)
 return GroupPickRandomUnit(a0)
 endfunction
 function h__CountUnitsInGroup takes group a0 returns integer
-    //hook: MemoryLeakHelper___CatchGroup
+    //hook: MemoryLeakHelper__CatchGroup
     call sc___prototype175_evaluate(1,a0)
 return CountUnitsInGroup(a0)
 endfunction
 function h__DestroyGroup takes group a0 returns nothing
-    //hook: MemoryLeakHelper___ReleaseGroup
+    //hook: MemoryLeakHelper__ReleaseGroup
     call sc___prototype175_evaluate(2,a0)
 call DestroyGroup(a0)
 endfunction
 function h__AddSpecialEffectLocBJ takes location a0, string a1 returns effect
-    //hook: MemoryLeakHelper___ASE
+    //hook: MemoryLeakHelper__ASE
     call sc___prototype185_evaluate(1,a0,a1)
 return AddSpecialEffectLocBJ(a0,a1)
 endfunction
 function h__AddSpecialEffectTargetUnitBJ takes string a0, widget a1, string a2 returns effect
-    //hook: MemoryLeakHelper___ASETU
+    //hook: MemoryLeakHelper__ASETU
     call sc___prototype184_evaluate(1,a0,a1,a2)
 return AddSpecialEffectTargetUnitBJ(a0,a1,a2)
 endfunction
 function h__DestroyEffect takes effect a0 returns nothing
-    //hook: MemoryLeakHelper___ReleaseEffect
+    //hook: MemoryLeakHelper__ReleaseEffect
     call sc___prototype176_evaluate(1,a0)
 call DestroyEffect(a0)
 endfunction
 function h__DestroyEffectBJ takes effect a0 returns nothing
-    //hook: MemoryLeakHelper___ReleaseEffect
+    //hook: MemoryLeakHelper__ReleaseEffect
     call sc___prototype176_evaluate(1,a0)
 call DestroyEffectBJ(a0)
 endfunction
@@ -1958,7 +1958,7 @@ endfunction
 //===========================================================================
 //显示版本
 function YDWEVersion_Display takes nothing returns boolean
-    call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 30, "|cFF1E90FF当前编辑器版本为： |r|cFF00FF00YDWE 1.30.2.1333")
+    call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 30, "|cFF1E90FF当前编辑器版本为： |r|cFF00FF00YDWE 1.30.0.1301")
     return false
 endfunction
 function YDWEVersion_Init takes nothing returns nothing
@@ -2298,97 +2298,97 @@ endfunction
 //library YDWETriggerRegisterEnterRectSimpleNull ends
 //library MemoryLeakHelper:
     
-    function MemoryLeakHelper___GetElapsedGameTime takes nothing returns real
-        return MemoryLeakHelper___GameTime + TimerGetElapsed(MemoryLeakHelper___GameTimeTimer)
+    function MemoryLeakHelper__GetElapsedGameTime takes nothing returns real
+        return MemoryLeakHelper__GameTime + TimerGetElapsed(MemoryLeakHelper__GameTimeTimer)
     endfunction
     
-    function MemoryLeakHelper___UpdateGameTime takes nothing returns nothing
-        set MemoryLeakHelper___GameTime=MemoryLeakHelper___GameTime + MemoryLeakHelper___GAMETIME_TIMER_INTERVAL
+    function MemoryLeakHelper__UpdateGameTime takes nothing returns nothing
+        set MemoryLeakHelper__GameTime=MemoryLeakHelper__GameTime + MemoryLeakHelper__GAMETIME_TIMER_INTERVAL
     endfunction
-  function s__MemoryLeakHelper___Index_DestroyHashes takes nothing returns nothing
+  function s__MemoryLeakHelper__Index_DestroyHashes takes nothing returns nothing
    local real gt= (1)
    local integer ind
 			
 			// Well, due to the nature of this system, the looking of the code sucks.
 			loop
-				exitwhen MemoryLeakHelper___HashNumber == 0
-				if gt - MemoryLeakHelper___CreationTime[MemoryLeakHelper___HashNumber] > MemoryLeakHelper___HASH_DECAY_TIME then
-					set ind=MemoryLeakHelper___HashHash[MemoryLeakHelper___HashNumber]
-					call s__MemoryLeakHelper___Index_deallocate(ind)
-					call RemoveSavedInteger(YDHT, (MemoryLeakHelper___key ), ( MemoryLeakHelper___HashData[MemoryLeakHelper___HashNumber])) // INLINED!!
+				exitwhen MemoryLeakHelper__HashNumber == 0
+				if gt - MemoryLeakHelper__CreationTime[MemoryLeakHelper__HashNumber] > MemoryLeakHelper__HASH_DECAY_TIME then
+					set ind=MemoryLeakHelper__HashHash[MemoryLeakHelper__HashNumber]
+					call s__MemoryLeakHelper__Index_deallocate(ind)
+					call RemoveSavedInteger(YDHT, (MemoryLeakHelper__key ), ( MemoryLeakHelper__HashData[MemoryLeakHelper__HashNumber])) // INLINED!!
 				else
-					set MemoryLeakHelper___TempHashNumber=MemoryLeakHelper___TempHashNumber + 1
-					set MemoryLeakHelper___TempHashData[MemoryLeakHelper___TempHashNumber]=MemoryLeakHelper___HashData[MemoryLeakHelper___HashNumber]
-					set MemoryLeakHelper___TempHashHash[MemoryLeakHelper___TempHashNumber]=MemoryLeakHelper___HashHash[MemoryLeakHelper___HashNumber]
-					set MemoryLeakHelper___TempHashPlace[MemoryLeakHelper___TempHashNumber]=MemoryLeakHelper___HashPlace[MemoryLeakHelper___HashNumber]
-					set MemoryLeakHelper___TempCreationTime[MemoryLeakHelper___TempHashNumber]=MemoryLeakHelper___CreationTime[MemoryLeakHelper___HashNumber]
+					set MemoryLeakHelper__TempHashNumber=MemoryLeakHelper__TempHashNumber + 1
+					set MemoryLeakHelper__TempHashData[MemoryLeakHelper__TempHashNumber]=MemoryLeakHelper__HashData[MemoryLeakHelper__HashNumber]
+					set MemoryLeakHelper__TempHashHash[MemoryLeakHelper__TempHashNumber]=MemoryLeakHelper__HashHash[MemoryLeakHelper__HashNumber]
+					set MemoryLeakHelper__TempHashPlace[MemoryLeakHelper__TempHashNumber]=MemoryLeakHelper__HashPlace[MemoryLeakHelper__HashNumber]
+					set MemoryLeakHelper__TempCreationTime[MemoryLeakHelper__TempHashNumber]=MemoryLeakHelper__CreationTime[MemoryLeakHelper__HashNumber]
 				endif
-				set MemoryLeakHelper___HashData[MemoryLeakHelper___HashNumber]=0
-				set MemoryLeakHelper___HashHash[MemoryLeakHelper___HashNumber]=0
-				set MemoryLeakHelper___HashPlace[MemoryLeakHelper___HashNumber]=0
-				set MemoryLeakHelper___CreationTime[MemoryLeakHelper___HashNumber]=0.
-				set MemoryLeakHelper___HashNumber=MemoryLeakHelper___HashNumber - 1
+				set MemoryLeakHelper__HashData[MemoryLeakHelper__HashNumber]=0
+				set MemoryLeakHelper__HashHash[MemoryLeakHelper__HashNumber]=0
+				set MemoryLeakHelper__HashPlace[MemoryLeakHelper__HashNumber]=0
+				set MemoryLeakHelper__CreationTime[MemoryLeakHelper__HashNumber]=0.
+				set MemoryLeakHelper__HashNumber=MemoryLeakHelper__HashNumber - 1
 			endloop
 			
 			loop
-				exitwhen MemoryLeakHelper___TempHashNumber == 0
-				set MemoryLeakHelper___HashNumber=MemoryLeakHelper___HashNumber + 1
-				set MemoryLeakHelper___HashData[MemoryLeakHelper___HashNumber]=MemoryLeakHelper___TempHashData[MemoryLeakHelper___TempHashNumber]
-				set MemoryLeakHelper___HashHash[MemoryLeakHelper___HashNumber]=MemoryLeakHelper___TempHashHash[MemoryLeakHelper___TempHashNumber]
-				set MemoryLeakHelper___HashPlace[MemoryLeakHelper___HashNumber]=MemoryLeakHelper___TempHashPlace[MemoryLeakHelper___TempHashNumber]
-				set MemoryLeakHelper___TempHashData[MemoryLeakHelper___TempHashNumber]=0
-				set MemoryLeakHelper___TempHashNumber=MemoryLeakHelper___TempHashNumber - 1
+				exitwhen MemoryLeakHelper__TempHashNumber == 0
+				set MemoryLeakHelper__HashNumber=MemoryLeakHelper__HashNumber + 1
+				set MemoryLeakHelper__HashData[MemoryLeakHelper__HashNumber]=MemoryLeakHelper__TempHashData[MemoryLeakHelper__TempHashNumber]
+				set MemoryLeakHelper__HashHash[MemoryLeakHelper__HashNumber]=MemoryLeakHelper__TempHashHash[MemoryLeakHelper__TempHashNumber]
+				set MemoryLeakHelper__HashPlace[MemoryLeakHelper__HashNumber]=MemoryLeakHelper__TempHashPlace[MemoryLeakHelper__TempHashNumber]
+				set MemoryLeakHelper__TempHashData[MemoryLeakHelper__TempHashNumber]=0
+				set MemoryLeakHelper__TempHashNumber=MemoryLeakHelper__TempHashNumber - 1
 			endloop
 			
   endfunction
 	
-        function s__MemoryLeakHelper___Index_GetHash takes integer value returns integer
-            local integer int= (LoadInteger(YDHT, (MemoryLeakHelper___key ), ( value))) // INLINED!!
+        function s__MemoryLeakHelper__Index_GetHash takes integer value returns integer
+            local integer int= (LoadInteger(YDHT, (MemoryLeakHelper__key ), ( value))) // INLINED!!
             
             if int == 0 then
-                set int=s__MemoryLeakHelper___Index__allocate()
-                call SaveInteger(YDHT, (MemoryLeakHelper___key ), ( value ), ( int)) // INLINED!!
+                set int=s__MemoryLeakHelper__Index__allocate()
+                call SaveInteger(YDHT, (MemoryLeakHelper__key ), ( value ), ( int)) // INLINED!!
                 
-                set MemoryLeakHelper___HashNumber=MemoryLeakHelper___HashNumber + 1
-                set MemoryLeakHelper___HashPlace[int]=MemoryLeakHelper___HashNumber
-                set MemoryLeakHelper___HashData[MemoryLeakHelper___HashNumber]=value
-                set MemoryLeakHelper___HashHash[MemoryLeakHelper___HashNumber]=int
-                set MemoryLeakHelper___CreationTime[MemoryLeakHelper___HashNumber]=(MemoryLeakHelper___GameTime + TimerGetElapsed(MemoryLeakHelper___GameTimeTimer)) // INLINED!!
+                set MemoryLeakHelper__HashNumber=MemoryLeakHelper__HashNumber + 1
+                set MemoryLeakHelper__HashPlace[int]=MemoryLeakHelper__HashNumber
+                set MemoryLeakHelper__HashData[MemoryLeakHelper__HashNumber]=value
+                set MemoryLeakHelper__HashHash[MemoryLeakHelper__HashNumber]=int
+                set MemoryLeakHelper__CreationTime[MemoryLeakHelper__HashNumber]=(MemoryLeakHelper__GameTime + TimerGetElapsed(MemoryLeakHelper__GameTimeTimer)) // INLINED!!
                 
-                if MemoryLeakHelper___HashNumber >= MemoryLeakHelper___CLEAR_HASH_COUNT then
-                    call s__MemoryLeakHelper___Index_DestroyHashes()
+                if MemoryLeakHelper__HashNumber >= MemoryLeakHelper__CLEAR_HASH_COUNT then
+                    call s__MemoryLeakHelper__Index_DestroyHashes()
                 endif
             endif
             
-            set MemoryLeakHelper___LastHashedValue=value
-            set MemoryLeakHelper___LastIndex=int
+            set MemoryLeakHelper__LastHashedValue=value
+            set MemoryLeakHelper__LastIndex=int
             
             return int
         endfunction
-        function s__MemoryLeakHelper___GTable_reset takes integer this returns nothing
+        function s__MemoryLeakHelper__GTable_reset takes integer this returns nothing
 			call FlushChildHashtable(YDHT, (0)) // INLINED!!
             call FlushChildHashtable(YDHT, ((this))) // INLINED!!
         endfunction
-        function s__MemoryLeakHelper___GTable_onDestroy takes integer this returns nothing
-            call s__MemoryLeakHelper___GTable_reset(this)
+        function s__MemoryLeakHelper__GTable_onDestroy takes integer this returns nothing
+            call s__MemoryLeakHelper__GTable_reset(this)
         endfunction
 	
-function s__MemoryLeakHelper___HandleTable__getindex takes integer this,handle l__MemoryLeakHelper___key returns integer
-            return (LoadInteger(YDHT, ((this) ), ( (GetHandleId((l__MemoryLeakHelper___key)))))) // INLINED!!
+function s__MemoryLeakHelper__HandleTable__getindex takes integer this,handle l__MemoryLeakHelper__key returns integer
+            return (LoadInteger(YDHT, ((this) ), ( (GetHandleId((l__MemoryLeakHelper__key)))))) // INLINED!!
         endfunction
-function s__MemoryLeakHelper___HandleTable__setindex takes integer this,handle l__MemoryLeakHelper___key,integer value returns nothing
-            call SaveInteger(YDHT, ((this) ), ( (GetHandleId((l__MemoryLeakHelper___key))) ), ( value)) // INLINED!!
+function s__MemoryLeakHelper__HandleTable__setindex takes integer this,handle l__MemoryLeakHelper__key,integer value returns nothing
+            call SaveInteger(YDHT, ((this) ), ( (GetHandleId((l__MemoryLeakHelper__key))) ), ( value)) // INLINED!!
         endfunction
-function s__MemoryLeakHelper___HandleTable_flush takes integer this,handle l__MemoryLeakHelper___key returns nothing
-            call RemoveSavedInteger(YDHT, ((this) ), ( (GetHandleId((l__MemoryLeakHelper___key))))) // INLINED!!
+function s__MemoryLeakHelper__HandleTable_flush takes integer this,handle l__MemoryLeakHelper__key returns nothing
+            call RemoveSavedInteger(YDHT, ((this) ), ( (GetHandleId((l__MemoryLeakHelper__key))))) // INLINED!!
         endfunction
-function s__MemoryLeakHelper___HandleTable_exists takes integer this,handle l__MemoryLeakHelper___key returns boolean
-            return (HaveSavedInteger(YDHT, ((this) ), ( (GetHandleId((l__MemoryLeakHelper___key)))))) // INLINED!!
+function s__MemoryLeakHelper__HandleTable_exists takes integer this,handle l__MemoryLeakHelper__key returns boolean
+            return (HaveSavedInteger(YDHT, ((this) ), ( (GetHandleId((l__MemoryLeakHelper__key)))))) // INLINED!!
         endfunction
-        function s__MemoryLeakHelper___HandleTable_flush2D takes string firstkey returns nothing
-            call s__MemoryLeakHelper___GTable_reset((- (StringHash((firstkey))))) // INLINED!!
+        function s__MemoryLeakHelper__HandleTable_flush2D takes string firstkey returns nothing
+            call s__MemoryLeakHelper__GTable_reset((- (StringHash((firstkey))))) // INLINED!!
         endfunction
-        function s__MemoryLeakHelper___HandleTable__staticgetindex takes string firstkey returns integer
+        function s__MemoryLeakHelper__HandleTable__staticgetindex takes string firstkey returns integer
             return (- (StringHash((firstkey)))) // INLINED!!
         endfunction
 //===========================================================================
@@ -2405,27 +2405,27 @@ function s__MemoryLeakHelper___HandleTable_exists takes integer this,handle l__M
     
     
     function YDWEMemoryLeakHelperGetLastCaughtHandle takes nothing returns handle
-        return MemoryLeakHelper___LastCaught
+        return MemoryLeakHelper__LastCaught
     endfunction
     
     function YDWEMemoryLeakHelperProtectHandle takes handle h returns nothing
-        call SaveInteger(YDHT, (((MemoryLeakHelper___IsSaved)) ), ( (GetHandleId(((h)))) ), ( ( 1))) // INLINED!!
+        call SaveInteger(YDHT, (((MemoryLeakHelper__IsSaved)) ), ( (GetHandleId(((h)))) ), ( ( 1))) // INLINED!!
     endfunction
     
     function YDWEMemoryLeakHelperProtectVariable takes handle h returns nothing
-        call SaveInteger(YDHT, (((MemoryLeakHelper___IsSaved)) ), ( (GetHandleId(((h)))) ), ( ( 1))) // INLINED!!
+        call SaveInteger(YDHT, (((MemoryLeakHelper__IsSaved)) ), ( (GetHandleId(((h)))) ), ( ( 1))) // INLINED!!
     endfunction
-    function MemoryLeakHelper___EnableMMH takes nothing returns nothing
-        set MemoryLeakHelper___Disabled=false
+    function MemoryLeakHelper__EnableMMH takes nothing returns nothing
+        set MemoryLeakHelper__Disabled=false
     endfunction
     function YDWEMemoryLeakHelperDelayMMH takes nothing returns nothing
-        set MemoryLeakHelper___Disabled=true
-        call TimerStart(MemoryLeakHelper___DelayTimer, 0.00, false, function MemoryLeakHelper___EnableMMH)
+        set MemoryLeakHelper__Disabled=true
+        call TimerStart(MemoryLeakHelper__DelayTimer, 0.00, false, function MemoryLeakHelper__EnableMMH)
     endfunction
     
     function YDWEMemoryLeakHelperDisplayLeaks takes nothing returns nothing
         local location loc=null
-        if MemoryLeakHelper___IsDisplayMemoryLeakHelper == false then
+        if MemoryLeakHelper__IsDisplayMemoryLeakHelper == false then
             call h__CreateNUnitsAtLoc(1, 'hfoo', Player(15), GetRectCenter(GetPlayableMapRect()), bj_UNIT_FACING)
             call RemoveUnit(bj_lastCreatedUnit)
             set loc=GetRectCenter(GetPlayableMapRect())
@@ -2433,219 +2433,219 @@ function s__MemoryLeakHelper___HandleTable_exists takes integer this,handle l__M
             call RemoveUnit(bj_lastCreatedUnit)
             call h__RemoveLocation(loc)
             set loc=null
-            set MemoryLeakHelper___IsDisplayMemoryLeakHelper=true
+            set MemoryLeakHelper__IsDisplayMemoryLeakHelper=true
         endif
         call ClearTextMessages()
         call BJDebugMsg("======= 自动排泄系统 =======")
-        call BJDebugMsg("排除的泄漏" + I2S(MemoryLeakHelper___DestroyedLeaks))
-        call BJDebugMsg("用户手动排除的泄漏" + I2S(MemoryLeakHelper___DestroyedLeaksUser))
-        call BJDebugMsg("系统排泄比例: " + R2S(I2R(MemoryLeakHelper___DestroyedLeaks) / I2R(MemoryLeakHelper___DestroyedLeaks + MemoryLeakHelper___DestroyedLeaksUser) * 100.) + "%")
-        call BJDebugMsg("作者排泄比例" + R2S(I2R(MemoryLeakHelper___DestroyedLeaksUser) / I2R(MemoryLeakHelper___DestroyedLeaks + MemoryLeakHelper___DestroyedLeaksUser) * 100.) + "%")
-        call BJDebugMsg("下次排除的泄漏" + I2S(MemoryLeakHelper___MIN_LEAK_NUMBER - MemoryLeakHelper___CaughtLeaks))
+        call BJDebugMsg("排除的泄漏" + I2S(MemoryLeakHelper__DestroyedLeaks))
+        call BJDebugMsg("用户手动排除的泄漏" + I2S(MemoryLeakHelper__DestroyedLeaksUser))
+        call BJDebugMsg("系统排泄比例: " + R2S(I2R(MemoryLeakHelper__DestroyedLeaks) / I2R(MemoryLeakHelper__DestroyedLeaks + MemoryLeakHelper__DestroyedLeaksUser) * 100.) + "%")
+        call BJDebugMsg("作者排泄比例" + R2S(I2R(MemoryLeakHelper__DestroyedLeaksUser) / I2R(MemoryLeakHelper__DestroyedLeaks + MemoryLeakHelper__DestroyedLeaksUser) * 100.) + "%")
+        call BJDebugMsg("下次排除的泄漏" + I2S(MemoryLeakHelper__MIN_LEAK_NUMBER - MemoryLeakHelper__CaughtLeaks))
         call BJDebugMsg(" === 待排除的泄漏 === ")
-        call BJDebugMsg("   单位组泄漏" + I2S(MemoryLeakHelper___GroupDestroyCount))
-        call BJDebugMsg("   点泄漏" + I2S(MemoryLeakHelper___LocationDestroyCount))
-        call BJDebugMsg("   特效泄漏: " + I2S(MemoryLeakHelper___EffectDestroyCount))
+        call BJDebugMsg("   单位组泄漏" + I2S(MemoryLeakHelper__GroupDestroyCount))
+        call BJDebugMsg("   点泄漏" + I2S(MemoryLeakHelper__LocationDestroyCount))
+        call BJDebugMsg("   特效泄漏: " + I2S(MemoryLeakHelper__EffectDestroyCount))
         call BJDebugMsg(" === 还未排除的泄漏=== ")
-        call BJDebugMsg("   单位组泄漏" + I2S(MemoryLeakHelper___CaughtGroupLeaks))
-        call BJDebugMsg("   点泄漏" + I2S(MemoryLeakHelper___CaughtLocationLeaks))
-        call BJDebugMsg("   特效泄漏: " + I2S(MemoryLeakHelper___CaughtEffectLeaks))
-        call BJDebugMsg("下次排泄时间: " + I2S(R2I(TimerGetRemaining(MemoryLeakHelper___PassTimer) + 0.5)) + " seconds.")
+        call BJDebugMsg("   单位组泄漏" + I2S(MemoryLeakHelper__CaughtGroupLeaks))
+        call BJDebugMsg("   点泄漏" + I2S(MemoryLeakHelper__CaughtLocationLeaks))
+        call BJDebugMsg("   特效泄漏: " + I2S(MemoryLeakHelper__CaughtEffectLeaks))
+        call BJDebugMsg("下次排泄时间: " + I2S(R2I(TimerGetRemaining(MemoryLeakHelper__PassTimer) + 0.5)) + " seconds.")
         call BJDebugMsg("======= 自动排泄系统 =======")
-        call BJDebugMsg("排除泄漏" + I2S(MemoryLeakHelper___DestroyedLeaks))
+        call BJDebugMsg("排除泄漏" + I2S(MemoryLeakHelper__DestroyedLeaks))
         //if DISPLAY_SAVED_MEMORY then
-            call BJDebugMsg("自动排泄系统释放的总内存为 " + R2S(MemoryLeakHelper___SavedMemory) + " kb.")
+            call BJDebugMsg("自动排泄系统释放的总内存为 " + R2S(MemoryLeakHelper__SavedMemory) + " kb.")
         //endif
         call BJDebugMsg("================================")
     endfunction
     
-    function MemoryLeakHelper___GroupGetMemoryUsageEnum takes nothing returns nothing
-        set MemoryLeakHelper___LastCheckedGroupMemoryUsage=MemoryLeakHelper___LastCheckedGroupMemoryUsage + MemoryLeakHelper___GROUP_UNIT_MEMORY_USAGE
+    function MemoryLeakHelper__GroupGetMemoryUsageEnum takes nothing returns nothing
+        set MemoryLeakHelper__LastCheckedGroupMemoryUsage=MemoryLeakHelper__LastCheckedGroupMemoryUsage + MemoryLeakHelper__GROUP_UNIT_MEMORY_USAGE
     endfunction
     
-    function MemoryLeakHelper___GroupGetMemoryUsage takes group g returns real
-        set MemoryLeakHelper___LastCheckedGroupMemoryUsage=0.
-        call ForGroup(g, function MemoryLeakHelper___GroupGetMemoryUsageEnum)
-        return MemoryLeakHelper___LastCheckedGroupMemoryUsage + MemoryLeakHelper___GROUP_MEMORY_USAGE
+    function MemoryLeakHelper__GroupGetMemoryUsage takes group g returns real
+        set MemoryLeakHelper__LastCheckedGroupMemoryUsage=0.
+        call ForGroup(g, function MemoryLeakHelper__GroupGetMemoryUsageEnum)
+        return MemoryLeakHelper__LastCheckedGroupMemoryUsage + MemoryLeakHelper__GROUP_MEMORY_USAGE
     endfunction
     	
- function MemoryLeakHelper___CatchLocation takes location l returns nothing
-        set MemoryLeakHelper___LastCaught=l
+ function MemoryLeakHelper__CatchLocation takes location l returns nothing
+        set MemoryLeakHelper__LastCaught=l
         
-        if MemoryLeakHelper___Disabled then
+        if MemoryLeakHelper__Disabled then
             return
-        elseif MemoryLeakHelper___CaughtLocationLeaks == MemoryLeakHelper___MAX_LEAK_INSTANCES then
+        elseif MemoryLeakHelper__CaughtLocationLeaks == MemoryLeakHelper__MAX_LEAK_INSTANCES then
             return
         endif
         
-        if (HaveSavedInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l))))))) == false then // INLINED!!
+        if (HaveSavedInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l))))))) == false then // INLINED!!
             //call BJDebugMsg("Caught Location")
-            set MemoryLeakHelper___CaughtLocationLeaks=MemoryLeakHelper___CaughtLocationLeaks + 1
-            call sg__MemoryLeakHelper___LocationLeakData_set(MemoryLeakHelper___CaughtLocationLeaks,l)
-            call SaveInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l)))) ), ( ( MemoryLeakHelper___CaughtLocationLeaks))) // INLINED!!
+            set MemoryLeakHelper__CaughtLocationLeaks=MemoryLeakHelper__CaughtLocationLeaks + 1
+            call sg__MemoryLeakHelper__LocationLeakData_set(MemoryLeakHelper__CaughtLocationLeaks,l)
+            call SaveInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l)))) ), ( ( MemoryLeakHelper__CaughtLocationLeaks))) // INLINED!!
         endif
     endfunction
     
-    function MemoryLeakHelper___AddToLocationDestroyQueue takes location l returns nothing
-        set MemoryLeakHelper___LocationDestroyCount=MemoryLeakHelper___LocationDestroyCount + 1
-        call sg__MemoryLeakHelper___LocationDestroyData_set(MemoryLeakHelper___LocationDestroyCount,l)
-        call SaveInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l)))) ), ( ( MemoryLeakHelper___LocationDestroyCount * - 1))) // Put his to negative, so we know that this is used in the DestroyQueue now. // INLINED!!
+    function MemoryLeakHelper__AddToLocationDestroyQueue takes location l returns nothing
+        set MemoryLeakHelper__LocationDestroyCount=MemoryLeakHelper__LocationDestroyCount + 1
+        call sg__MemoryLeakHelper__LocationDestroyData_set(MemoryLeakHelper__LocationDestroyCount,l)
+        call SaveInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l)))) ), ( ( MemoryLeakHelper__LocationDestroyCount * - 1))) // Put his to negative, so we know that this is used in the DestroyQueue now. // INLINED!!
 endfunction
     
-    function MemoryLeakHelper___ReleaseLocation takes location l returns nothing
+    function MemoryLeakHelper__ReleaseLocation takes location l returns nothing
         local integer index
-        if MemoryLeakHelper___IsDestroying == false and (HaveSavedInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l))))))) then // INLINED!!
-            set index=(LoadInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l))))))) // INLINED!!
+        if MemoryLeakHelper__IsDestroying == false and (HaveSavedInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l))))))) then // INLINED!!
+            set index=(LoadInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l))))))) // INLINED!!
             // If this is true, the index wasn't put to a destroy queue yet.
             if index > 0 then
-                call sg__MemoryLeakHelper___LocationLeakData_set(index,sg__MemoryLeakHelper___LocationLeakData_get(MemoryLeakHelper___CaughtLocationLeaks))
-                set MemoryLeakHelper___CaughtLocationLeaks=MemoryLeakHelper___CaughtLocationLeaks - 1
+                call sg__MemoryLeakHelper__LocationLeakData_set(index,sg__MemoryLeakHelper__LocationLeakData_get(MemoryLeakHelper__CaughtLocationLeaks))
+                set MemoryLeakHelper__CaughtLocationLeaks=MemoryLeakHelper__CaughtLocationLeaks - 1
             else
                 set index=index * - 1
-                call sg__MemoryLeakHelper___LocationDestroyData_set(index,sg__MemoryLeakHelper___LocationDestroyData_get(MemoryLeakHelper___LocationDestroyCount))
-                set MemoryLeakHelper___LocationDestroyCount=MemoryLeakHelper___LocationDestroyCount - 1
+                call sg__MemoryLeakHelper__LocationDestroyData_set(index,sg__MemoryLeakHelper__LocationDestroyData_get(MemoryLeakHelper__LocationDestroyCount))
+                set MemoryLeakHelper__LocationDestroyCount=MemoryLeakHelper__LocationDestroyCount - 1
             endif
-            call RemoveSavedInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l)))))) // INLINED!!
-            set MemoryLeakHelper___DestroyedLeaksUser=MemoryLeakHelper___DestroyedLeaksUser + 1
+            call RemoveSavedInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l)))))) // INLINED!!
+            set MemoryLeakHelper__DestroyedLeaksUser=MemoryLeakHelper__DestroyedLeaksUser + 1
         endif
     endfunction
 	
- function MemoryLeakHelper___CatchGroup takes group l returns nothing
-        set MemoryLeakHelper___LastCaught=l
+ function MemoryLeakHelper__CatchGroup takes group l returns nothing
+        set MemoryLeakHelper__LastCaught=l
         
-        if MemoryLeakHelper___Disabled then
+        if MemoryLeakHelper__Disabled then
             return
-        elseif MemoryLeakHelper___CaughtGroupLeaks == MemoryLeakHelper___MAX_LEAK_INSTANCES then
+        elseif MemoryLeakHelper__CaughtGroupLeaks == MemoryLeakHelper__MAX_LEAK_INSTANCES then
             return
         endif
         
-        if (HaveSavedInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l))))))) == false then // INLINED!!
+        if (HaveSavedInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l))))))) == false then // INLINED!!
             //call BJDebugMsg("Caught Group")
-            set MemoryLeakHelper___CaughtGroupLeaks=MemoryLeakHelper___CaughtGroupLeaks + 1
-            call sg__MemoryLeakHelper___GroupLeakData_set(MemoryLeakHelper___CaughtGroupLeaks,l)
-            call SaveInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l)))) ), ( ( MemoryLeakHelper___CaughtGroupLeaks))) // INLINED!!
+            set MemoryLeakHelper__CaughtGroupLeaks=MemoryLeakHelper__CaughtGroupLeaks + 1
+            call sg__MemoryLeakHelper__GroupLeakData_set(MemoryLeakHelper__CaughtGroupLeaks,l)
+            call SaveInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l)))) ), ( ( MemoryLeakHelper__CaughtGroupLeaks))) // INLINED!!
         endif
     endfunction
     
-    function MemoryLeakHelper___AddToGroupDestroyQueue takes group l returns nothing
-        set MemoryLeakHelper___GroupDestroyCount=MemoryLeakHelper___GroupDestroyCount + 1
-        call sg__MemoryLeakHelper___GroupDestroyData_set(MemoryLeakHelper___GroupDestroyCount,l)
-        call SaveInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l)))) ), ( ( MemoryLeakHelper___GroupDestroyCount * - 1))) // Put his to negative, so we know that this is used in the DestroyQueue now. // INLINED!!
+    function MemoryLeakHelper__AddToGroupDestroyQueue takes group l returns nothing
+        set MemoryLeakHelper__GroupDestroyCount=MemoryLeakHelper__GroupDestroyCount + 1
+        call sg__MemoryLeakHelper__GroupDestroyData_set(MemoryLeakHelper__GroupDestroyCount,l)
+        call SaveInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l)))) ), ( ( MemoryLeakHelper__GroupDestroyCount * - 1))) // Put his to negative, so we know that this is used in the DestroyQueue now. // INLINED!!
 endfunction
     
-    function MemoryLeakHelper___ReleaseGroup takes group l returns nothing
+    function MemoryLeakHelper__ReleaseGroup takes group l returns nothing
         local integer index
-        if MemoryLeakHelper___IsDestroying == false and (HaveSavedInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l))))))) then // INLINED!!
-            set index=(LoadInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l))))))) // INLINED!!
+        if MemoryLeakHelper__IsDestroying == false and (HaveSavedInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l))))))) then // INLINED!!
+            set index=(LoadInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l))))))) // INLINED!!
             // If this is true, the index wasn't put to a destroy queue yet.
             if index > 0 then
-                call sg__MemoryLeakHelper___GroupLeakData_set(index,sg__MemoryLeakHelper___GroupLeakData_get(MemoryLeakHelper___CaughtGroupLeaks))
-                set MemoryLeakHelper___CaughtGroupLeaks=MemoryLeakHelper___CaughtGroupLeaks - 1
+                call sg__MemoryLeakHelper__GroupLeakData_set(index,sg__MemoryLeakHelper__GroupLeakData_get(MemoryLeakHelper__CaughtGroupLeaks))
+                set MemoryLeakHelper__CaughtGroupLeaks=MemoryLeakHelper__CaughtGroupLeaks - 1
             else
                 set index=index * - 1
-                call sg__MemoryLeakHelper___GroupDestroyData_set(index,sg__MemoryLeakHelper___GroupDestroyData_get(MemoryLeakHelper___GroupDestroyCount))
-                set MemoryLeakHelper___GroupDestroyCount=MemoryLeakHelper___GroupDestroyCount - 1
+                call sg__MemoryLeakHelper__GroupDestroyData_set(index,sg__MemoryLeakHelper__GroupDestroyData_get(MemoryLeakHelper__GroupDestroyCount))
+                set MemoryLeakHelper__GroupDestroyCount=MemoryLeakHelper__GroupDestroyCount - 1
             endif
-            call RemoveSavedInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l)))))) // INLINED!!
-            set MemoryLeakHelper___DestroyedLeaksUser=MemoryLeakHelper___DestroyedLeaksUser + 1
+            call RemoveSavedInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l)))))) // INLINED!!
+            set MemoryLeakHelper__DestroyedLeaksUser=MemoryLeakHelper__DestroyedLeaksUser + 1
         endif
     endfunction
 	
- function MemoryLeakHelper___CatchEffect takes effect l returns nothing
-        set MemoryLeakHelper___LastCaught=l
+ function MemoryLeakHelper__CatchEffect takes effect l returns nothing
+        set MemoryLeakHelper__LastCaught=l
         
-        if MemoryLeakHelper___Disabled then
+        if MemoryLeakHelper__Disabled then
             return
-        elseif MemoryLeakHelper___CaughtEffectLeaks == MemoryLeakHelper___MAX_LEAK_INSTANCES then
+        elseif MemoryLeakHelper__CaughtEffectLeaks == MemoryLeakHelper__MAX_LEAK_INSTANCES then
             return
         endif
         
-        if (HaveSavedInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l))))))) == false then // INLINED!!
+        if (HaveSavedInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l))))))) == false then // INLINED!!
             //call BJDebugMsg("Caught Effect")
-            set MemoryLeakHelper___CaughtEffectLeaks=MemoryLeakHelper___CaughtEffectLeaks + 1
-            call sg__MemoryLeakHelper___EffectLeakData_set(MemoryLeakHelper___CaughtEffectLeaks,l)
-            call SaveInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l)))) ), ( ( MemoryLeakHelper___CaughtEffectLeaks))) // INLINED!!
+            set MemoryLeakHelper__CaughtEffectLeaks=MemoryLeakHelper__CaughtEffectLeaks + 1
+            call sg__MemoryLeakHelper__EffectLeakData_set(MemoryLeakHelper__CaughtEffectLeaks,l)
+            call SaveInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l)))) ), ( ( MemoryLeakHelper__CaughtEffectLeaks))) // INLINED!!
         endif
     endfunction
     
-    function MemoryLeakHelper___AddToEffectDestroyQueue takes effect l returns nothing
-        set MemoryLeakHelper___EffectDestroyCount=MemoryLeakHelper___EffectDestroyCount + 1
-        call sg__MemoryLeakHelper___EffectDestroyData_set(MemoryLeakHelper___EffectDestroyCount,l)
-        call SaveInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l)))) ), ( ( MemoryLeakHelper___EffectDestroyCount * - 1))) // Put his to negative, so we know that this is used in the DestroyQueue now. // INLINED!!
+    function MemoryLeakHelper__AddToEffectDestroyQueue takes effect l returns nothing
+        set MemoryLeakHelper__EffectDestroyCount=MemoryLeakHelper__EffectDestroyCount + 1
+        call sg__MemoryLeakHelper__EffectDestroyData_set(MemoryLeakHelper__EffectDestroyCount,l)
+        call SaveInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l)))) ), ( ( MemoryLeakHelper__EffectDestroyCount * - 1))) // Put his to negative, so we know that this is used in the DestroyQueue now. // INLINED!!
 endfunction
     
-    function MemoryLeakHelper___ReleaseEffect takes effect l returns nothing
+    function MemoryLeakHelper__ReleaseEffect takes effect l returns nothing
         local integer index
-        if MemoryLeakHelper___IsDestroying == false and (HaveSavedInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l))))))) then // INLINED!!
-            set index=(LoadInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l))))))) // INLINED!!
+        if MemoryLeakHelper__IsDestroying == false and (HaveSavedInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l))))))) then // INLINED!!
+            set index=(LoadInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l))))))) // INLINED!!
             // If this is true, the index wasn't put to a destroy queue yet.
             if index > 0 then
-                call sg__MemoryLeakHelper___EffectLeakData_set(index,sg__MemoryLeakHelper___EffectLeakData_get(MemoryLeakHelper___CaughtEffectLeaks))
-                set MemoryLeakHelper___CaughtEffectLeaks=MemoryLeakHelper___CaughtEffectLeaks - 1
+                call sg__MemoryLeakHelper__EffectLeakData_set(index,sg__MemoryLeakHelper__EffectLeakData_get(MemoryLeakHelper__CaughtEffectLeaks))
+                set MemoryLeakHelper__CaughtEffectLeaks=MemoryLeakHelper__CaughtEffectLeaks - 1
             else
                 set index=index * - 1
-                call sg__MemoryLeakHelper___EffectDestroyData_set(index,sg__MemoryLeakHelper___EffectDestroyData_get(MemoryLeakHelper___EffectDestroyCount))
-                set MemoryLeakHelper___EffectDestroyCount=MemoryLeakHelper___EffectDestroyCount - 1
+                call sg__MemoryLeakHelper__EffectDestroyData_set(index,sg__MemoryLeakHelper__EffectDestroyData_get(MemoryLeakHelper__EffectDestroyCount))
+                set MemoryLeakHelper__EffectDestroyCount=MemoryLeakHelper__EffectDestroyCount - 1
             endif
-            call RemoveSavedInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((l)))))) // INLINED!!
-            set MemoryLeakHelper___DestroyedLeaksUser=MemoryLeakHelper___DestroyedLeaksUser + 1
+            call RemoveSavedInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((l)))))) // INLINED!!
+            set MemoryLeakHelper__DestroyedLeaksUser=MemoryLeakHelper__DestroyedLeaksUser + 1
         endif
     endfunction
 	
-    function MemoryLeakHelper___DestroyMemoryLeaks takes nothing returns nothing
-        set MemoryLeakHelper___IsDestroying=true
+    function MemoryLeakHelper__DestroyMemoryLeaks takes nothing returns nothing
+        set MemoryLeakHelper__IsDestroying=true
         
-		set MemoryLeakHelper___DestroyedLeaks=MemoryLeakHelper___DestroyedLeaks + MemoryLeakHelper___GroupDestroyCount
+		set MemoryLeakHelper__DestroyedLeaks=MemoryLeakHelper__DestroyedLeaks + MemoryLeakHelper__GroupDestroyCount
         loop
-            exitwhen MemoryLeakHelper___GroupDestroyCount == 0
+            exitwhen MemoryLeakHelper__GroupDestroyCount == 0
             
-            if MemoryLeakHelper___DISPLAY_SAVED_MEMORY then
-                set MemoryLeakHelper___SavedMemory=MemoryLeakHelper___SavedMemory + MemoryLeakHelper___GroupGetMemoryUsage(sg__MemoryLeakHelper___GroupDestroyData_get(MemoryLeakHelper___GroupDestroyCount))
+            if MemoryLeakHelper__DISPLAY_SAVED_MEMORY then
+                set MemoryLeakHelper__SavedMemory=MemoryLeakHelper__SavedMemory + MemoryLeakHelper__GroupGetMemoryUsage(sg__MemoryLeakHelper__GroupDestroyData_get(MemoryLeakHelper__GroupDestroyCount))
             endif
             
-            call h__DestroyGroup(sg__MemoryLeakHelper___GroupDestroyData_get(MemoryLeakHelper___GroupDestroyCount))
-            call RemoveSavedInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((sg__MemoryLeakHelper___GroupDestroyData_get(MemoryLeakHelper___GroupDestroyCount))))))) // INLINED!!
-            set MemoryLeakHelper___GroupDestroyCount=MemoryLeakHelper___GroupDestroyCount - 1
+            call h__DestroyGroup(sg__MemoryLeakHelper__GroupDestroyData_get(MemoryLeakHelper__GroupDestroyCount))
+            call RemoveSavedInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((sg__MemoryLeakHelper__GroupDestroyData_get(MemoryLeakHelper__GroupDestroyCount))))))) // INLINED!!
+            set MemoryLeakHelper__GroupDestroyCount=MemoryLeakHelper__GroupDestroyCount - 1
         endloop
 		
-		set MemoryLeakHelper___DestroyedLeaks=MemoryLeakHelper___DestroyedLeaks + MemoryLeakHelper___LocationDestroyCount
+		set MemoryLeakHelper__DestroyedLeaks=MemoryLeakHelper__DestroyedLeaks + MemoryLeakHelper__LocationDestroyCount
         loop
-            exitwhen MemoryLeakHelper___LocationDestroyCount == 0
+            exitwhen MemoryLeakHelper__LocationDestroyCount == 0
             
-            if MemoryLeakHelper___DISPLAY_SAVED_MEMORY then
-                set MemoryLeakHelper___SavedMemory=MemoryLeakHelper___SavedMemory + MemoryLeakHelper___LOCATION_MEMORY_USAGE
+            if MemoryLeakHelper__DISPLAY_SAVED_MEMORY then
+                set MemoryLeakHelper__SavedMemory=MemoryLeakHelper__SavedMemory + MemoryLeakHelper__LOCATION_MEMORY_USAGE
             endif
             
-            call h__RemoveLocation(sg__MemoryLeakHelper___LocationDestroyData_get(MemoryLeakHelper___LocationDestroyCount))
-            call RemoveSavedInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((sg__MemoryLeakHelper___LocationDestroyData_get(MemoryLeakHelper___LocationDestroyCount))))))) // INLINED!!
-            set MemoryLeakHelper___LocationDestroyCount=MemoryLeakHelper___LocationDestroyCount - 1
+            call h__RemoveLocation(sg__MemoryLeakHelper__LocationDestroyData_get(MemoryLeakHelper__LocationDestroyCount))
+            call RemoveSavedInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((sg__MemoryLeakHelper__LocationDestroyData_get(MemoryLeakHelper__LocationDestroyCount))))))) // INLINED!!
+            set MemoryLeakHelper__LocationDestroyCount=MemoryLeakHelper__LocationDestroyCount - 1
         endloop
 		
-		set MemoryLeakHelper___DestroyedLeaks=MemoryLeakHelper___DestroyedLeaks + MemoryLeakHelper___EffectDestroyCount
+		set MemoryLeakHelper__DestroyedLeaks=MemoryLeakHelper__DestroyedLeaks + MemoryLeakHelper__EffectDestroyCount
         loop
-            exitwhen MemoryLeakHelper___EffectDestroyCount == 0
+            exitwhen MemoryLeakHelper__EffectDestroyCount == 0
             
-            if MemoryLeakHelper___DISPLAY_SAVED_MEMORY then
-                set MemoryLeakHelper___SavedMemory=MemoryLeakHelper___SavedMemory + MemoryLeakHelper___EFFECT_MEMORY_USAGE
+            if MemoryLeakHelper__DISPLAY_SAVED_MEMORY then
+                set MemoryLeakHelper__SavedMemory=MemoryLeakHelper__SavedMemory + MemoryLeakHelper__EFFECT_MEMORY_USAGE
             endif
             
-            call h__DestroyEffect(sg__MemoryLeakHelper___EffectDestroyData_get(MemoryLeakHelper___EffectDestroyCount))
-            call RemoveSavedInteger(YDHT, (((MemoryLeakHelper___IndexData)) ), ( (GetHandleId(((sg__MemoryLeakHelper___EffectDestroyData_get(MemoryLeakHelper___EffectDestroyCount))))))) // INLINED!!
-            set MemoryLeakHelper___EffectDestroyCount=MemoryLeakHelper___EffectDestroyCount - 1
+            call h__DestroyEffect(sg__MemoryLeakHelper__EffectDestroyData_get(MemoryLeakHelper__EffectDestroyCount))
+            call RemoveSavedInteger(YDHT, (((MemoryLeakHelper__IndexData)) ), ( (GetHandleId(((sg__MemoryLeakHelper__EffectDestroyData_get(MemoryLeakHelper__EffectDestroyCount))))))) // INLINED!!
+            set MemoryLeakHelper__EffectDestroyCount=MemoryLeakHelper__EffectDestroyCount - 1
         endloop
 		
-        set MemoryLeakHelper___IsDestroying=false
-        set MemoryLeakHelper___DestroyThreadRunning=false
+        set MemoryLeakHelper__IsDestroying=false
+        set MemoryLeakHelper__DestroyThreadRunning=false
         //call StartPassTimer.execute() // Strange. This causes bugs sometimes and the function isn't called
         // This is slower, but safe.
         call ExecuteFunc("YDWEMemoryLeakStartPassTimer")
     endfunction
     
-    function MemoryLeakHelper___StartDestroyThread takes nothing returns nothing
-        if MemoryLeakHelper___DestroyThreadRunning == false then
-            set MemoryLeakHelper___DestroyThreadRunning=true
-            call TimerStart(MemoryLeakHelper___CleanTimer, MemoryLeakHelper___CLEAN_UP_INTERVAL, false, function MemoryLeakHelper___DestroyMemoryLeaks)
-            call PauseTimer(MemoryLeakHelper___PassTimer)
+    function MemoryLeakHelper__StartDestroyThread takes nothing returns nothing
+        if MemoryLeakHelper__DestroyThreadRunning == false then
+            set MemoryLeakHelper__DestroyThreadRunning=true
+            call TimerStart(MemoryLeakHelper__CleanTimer, MemoryLeakHelper__CLEAN_UP_INTERVAL, false, function MemoryLeakHelper__DestroyMemoryLeaks)
+            call PauseTimer(MemoryLeakHelper__PassTimer)
         endif
     endfunction
     
@@ -2658,45 +2658,45 @@ endfunction
     // Having two kinds of variables is simply easier and more efficient than having another variable that refers to
     // how many times the handle passed the timer; If it isn't passed/cleared in the Interval then, we can't loop
     // that easily through the data and we'd have to fix gaps later; That would suck a lot of performacne.
-    function MemoryLeakHelper___PassMemoryLeaks takes nothing returns nothing
-		set MemoryLeakHelper___CaughtLeaks=MemoryLeakHelper___CaughtLeaks + MemoryLeakHelper___CaughtGroupLeaks
+    function MemoryLeakHelper__PassMemoryLeaks takes nothing returns nothing
+		set MemoryLeakHelper__CaughtLeaks=MemoryLeakHelper__CaughtLeaks + MemoryLeakHelper__CaughtGroupLeaks
         loop
-            exitwhen MemoryLeakHelper___CaughtGroupLeaks < 1
-            if (HaveSavedInteger(YDHT, (((MemoryLeakHelper___IsSaved)) ), ( (GetHandleId(((sg__MemoryLeakHelper___GroupLeakData_get(MemoryLeakHelper___CaughtGroupLeaks)))))))) == false and sg__MemoryLeakHelper___GroupLeakData_get(MemoryLeakHelper___CaughtGroupLeaks) != null then // INLINED!!
-                call MemoryLeakHelper___AddToGroupDestroyQueue(sg__MemoryLeakHelper___GroupLeakData_get(MemoryLeakHelper___CaughtGroupLeaks))
+            exitwhen MemoryLeakHelper__CaughtGroupLeaks < 1
+            if (HaveSavedInteger(YDHT, (((MemoryLeakHelper__IsSaved)) ), ( (GetHandleId(((sg__MemoryLeakHelper__GroupLeakData_get(MemoryLeakHelper__CaughtGroupLeaks)))))))) == false and sg__MemoryLeakHelper__GroupLeakData_get(MemoryLeakHelper__CaughtGroupLeaks) != null then // INLINED!!
+                call MemoryLeakHelper__AddToGroupDestroyQueue(sg__MemoryLeakHelper__GroupLeakData_get(MemoryLeakHelper__CaughtGroupLeaks))
             endif
-            call sg__MemoryLeakHelper___GroupLeakData_set(MemoryLeakHelper___CaughtGroupLeaks,null)
-            set MemoryLeakHelper___CaughtGroupLeaks=MemoryLeakHelper___CaughtGroupLeaks - 1
+            call sg__MemoryLeakHelper__GroupLeakData_set(MemoryLeakHelper__CaughtGroupLeaks,null)
+            set MemoryLeakHelper__CaughtGroupLeaks=MemoryLeakHelper__CaughtGroupLeaks - 1
         endloop
 		
-		set MemoryLeakHelper___CaughtLeaks=MemoryLeakHelper___CaughtLeaks + MemoryLeakHelper___CaughtLocationLeaks
+		set MemoryLeakHelper__CaughtLeaks=MemoryLeakHelper__CaughtLeaks + MemoryLeakHelper__CaughtLocationLeaks
         loop
-            exitwhen MemoryLeakHelper___CaughtLocationLeaks < 1
-            if (HaveSavedInteger(YDHT, (((MemoryLeakHelper___IsSaved)) ), ( (GetHandleId(((sg__MemoryLeakHelper___LocationLeakData_get(MemoryLeakHelper___CaughtLocationLeaks)))))))) == false and sg__MemoryLeakHelper___LocationLeakData_get(MemoryLeakHelper___CaughtLocationLeaks) != null then // INLINED!!
-                call MemoryLeakHelper___AddToLocationDestroyQueue(sg__MemoryLeakHelper___LocationLeakData_get(MemoryLeakHelper___CaughtLocationLeaks))
+            exitwhen MemoryLeakHelper__CaughtLocationLeaks < 1
+            if (HaveSavedInteger(YDHT, (((MemoryLeakHelper__IsSaved)) ), ( (GetHandleId(((sg__MemoryLeakHelper__LocationLeakData_get(MemoryLeakHelper__CaughtLocationLeaks)))))))) == false and sg__MemoryLeakHelper__LocationLeakData_get(MemoryLeakHelper__CaughtLocationLeaks) != null then // INLINED!!
+                call MemoryLeakHelper__AddToLocationDestroyQueue(sg__MemoryLeakHelper__LocationLeakData_get(MemoryLeakHelper__CaughtLocationLeaks))
             endif
-            call sg__MemoryLeakHelper___LocationLeakData_set(MemoryLeakHelper___CaughtLocationLeaks,null)
-            set MemoryLeakHelper___CaughtLocationLeaks=MemoryLeakHelper___CaughtLocationLeaks - 1
+            call sg__MemoryLeakHelper__LocationLeakData_set(MemoryLeakHelper__CaughtLocationLeaks,null)
+            set MemoryLeakHelper__CaughtLocationLeaks=MemoryLeakHelper__CaughtLocationLeaks - 1
         endloop
 		
-		set MemoryLeakHelper___CaughtLeaks=MemoryLeakHelper___CaughtLeaks + MemoryLeakHelper___CaughtEffectLeaks
+		set MemoryLeakHelper__CaughtLeaks=MemoryLeakHelper__CaughtLeaks + MemoryLeakHelper__CaughtEffectLeaks
         loop
-            exitwhen MemoryLeakHelper___CaughtEffectLeaks < 1
-            if (HaveSavedInteger(YDHT, (((MemoryLeakHelper___IsSaved)) ), ( (GetHandleId(((sg__MemoryLeakHelper___EffectLeakData_get(MemoryLeakHelper___CaughtEffectLeaks)))))))) == false and sg__MemoryLeakHelper___EffectLeakData_get(MemoryLeakHelper___CaughtEffectLeaks) != null then // INLINED!!
-                call MemoryLeakHelper___AddToEffectDestroyQueue(sg__MemoryLeakHelper___EffectLeakData_get(MemoryLeakHelper___CaughtEffectLeaks))
+            exitwhen MemoryLeakHelper__CaughtEffectLeaks < 1
+            if (HaveSavedInteger(YDHT, (((MemoryLeakHelper__IsSaved)) ), ( (GetHandleId(((sg__MemoryLeakHelper__EffectLeakData_get(MemoryLeakHelper__CaughtEffectLeaks)))))))) == false and sg__MemoryLeakHelper__EffectLeakData_get(MemoryLeakHelper__CaughtEffectLeaks) != null then // INLINED!!
+                call MemoryLeakHelper__AddToEffectDestroyQueue(sg__MemoryLeakHelper__EffectLeakData_get(MemoryLeakHelper__CaughtEffectLeaks))
             endif
-            call sg__MemoryLeakHelper___EffectLeakData_set(MemoryLeakHelper___CaughtEffectLeaks,null)
-            set MemoryLeakHelper___CaughtEffectLeaks=MemoryLeakHelper___CaughtEffectLeaks - 1
+            call sg__MemoryLeakHelper__EffectLeakData_set(MemoryLeakHelper__CaughtEffectLeaks,null)
+            set MemoryLeakHelper__CaughtEffectLeaks=MemoryLeakHelper__CaughtEffectLeaks - 1
         endloop
 		
-        if MemoryLeakHelper___CaughtLeaks > MemoryLeakHelper___MIN_LEAK_NUMBER then
-            set MemoryLeakHelper___CaughtLeaks=0
+        if MemoryLeakHelper__CaughtLeaks > MemoryLeakHelper__MIN_LEAK_NUMBER then
+            set MemoryLeakHelper__CaughtLeaks=0
             //call BJDebugMsg("Caught Leaks: "+I2S(MIN_LEAK_NUMBER))
             //call BJDebugMsg("Now start Destroy Timer")
-            set MemoryLeakHelper___DestroyThreadRunning=true
-            call TimerStart(MemoryLeakHelper___CleanTimer, MemoryLeakHelper___CLEAN_UP_INTERVAL, false, function MemoryLeakHelper___DestroyMemoryLeaks)
+            set MemoryLeakHelper__DestroyThreadRunning=true
+            call TimerStart(MemoryLeakHelper__CleanTimer, MemoryLeakHelper__CLEAN_UP_INTERVAL, false, function MemoryLeakHelper__DestroyMemoryLeaks)
             // We have to pause this timer a bit; Otherwise it would break the CLEAN_UP_INTERVAL rule.
-            call PauseTimer(MemoryLeakHelper___PassTimer)
+            call PauseTimer(MemoryLeakHelper__PassTimer)
         endif
         
     endfunction
@@ -2705,104 +2705,104 @@ endfunction
     // ============= Usage =============
     // =================================
     
-    function MemoryLeakHelper___PP takes location source,real dist,real angle returns nothing
-        call MemoryLeakHelper___CatchLocation(source)
+    function MemoryLeakHelper__PP takes location source,real dist,real angle returns nothing
+        call MemoryLeakHelper__CatchLocation(source)
     endfunction
     
-    function MemoryLeakHelper___CU takes integer count,integer unitId,player p,location l,real face returns nothing
-        call MemoryLeakHelper___CatchLocation(l)
+    function MemoryLeakHelper__CU takes integer count,integer unitId,player p,location l,real face returns nothing
+        call MemoryLeakHelper__CatchLocation(l)
     endfunction
     
-    function MemoryLeakHelper___IPO takes unit k,string order,location l returns nothing
-        call MemoryLeakHelper___CatchLocation(l)
+    function MemoryLeakHelper__IPO takes unit k,string order,location l returns nothing
+        call MemoryLeakHelper__CatchLocation(l)
     endfunction
     
-    function MemoryLeakHelper___SUP takes unit who,location l returns nothing
-        call MemoryLeakHelper___CatchLocation(l)
+    function MemoryLeakHelper__SUP takes unit who,location l returns nothing
+        call MemoryLeakHelper__CatchLocation(l)
     endfunction
     
-    function MemoryLeakHelper___SUF takes unit who,location l,real dur returns nothing
-        call MemoryLeakHelper___CatchLocation(l)
+    function MemoryLeakHelper__SUF takes unit who,location l,real dur returns nothing
+        call MemoryLeakHelper__CatchLocation(l)
     endfunction
     
-    function MemoryLeakHelper___GUR takes real radius,location l,boolexpr filter returns nothing
-        call MemoryLeakHelper___CatchLocation(l)
+    function MemoryLeakHelper__GUR takes real radius,location l,boolexpr filter returns nothing
+        call MemoryLeakHelper__CatchLocation(l)
     endfunction
     
-    function MemoryLeakHelper___CUF takes integer count,integer unitId,player whichPlayer,location loc,location lookAt returns nothing
-        call MemoryLeakHelper___CatchLocation(loc)
-        call MemoryLeakHelper___CatchLocation(lookAt)
+    function MemoryLeakHelper__CUF takes integer count,integer unitId,player whichPlayer,location loc,location lookAt returns nothing
+        call MemoryLeakHelper__CatchLocation(loc)
+        call MemoryLeakHelper__CatchLocation(lookAt)
     endfunction
     
-//processed hook:     hook PolarProjectionBJ MemoryLeakHelper___PP
-//processed hook:     hook CreateNUnitsAtLoc MemoryLeakHelper___CU
-//processed hook:     hook CreateNUnitsAtLocFacingLocBJ MemoryLeakHelper___CUF
-//processed hook:     hook IssuePointOrderLocBJ MemoryLeakHelper___IPO
-//processed hook:     hook SetUnitPositionLoc MemoryLeakHelper___SUP
-//processed hook:     hook SetUnitFacingToFaceLocTimed MemoryLeakHelper___SUF
-//processed hook:     hook GetUnitsInRangeOfLocMatching MemoryLeakHelper___GUR
-//processed hook:     hook RemoveLocation MemoryLeakHelper___ReleaseLocation
-    function MemoryLeakHelper___FG takes group g,code callback returns nothing
-        call MemoryLeakHelper___CatchGroup(g)
+//processed hook:     hook PolarProjectionBJ MemoryLeakHelper__PP
+//processed hook:     hook CreateNUnitsAtLoc MemoryLeakHelper__CU
+//processed hook:     hook CreateNUnitsAtLocFacingLocBJ MemoryLeakHelper__CUF
+//processed hook:     hook IssuePointOrderLocBJ MemoryLeakHelper__IPO
+//processed hook:     hook SetUnitPositionLoc MemoryLeakHelper__SUP
+//processed hook:     hook SetUnitFacingToFaceLocTimed MemoryLeakHelper__SUF
+//processed hook:     hook GetUnitsInRangeOfLocMatching MemoryLeakHelper__GUR
+//processed hook:     hook RemoveLocation MemoryLeakHelper__ReleaseLocation
+    function MemoryLeakHelper__FG takes group g,code callback returns nothing
+        call MemoryLeakHelper__CatchGroup(g)
     endfunction
     
-//processed hook:     hook ForGroupBJ MemoryLeakHelper___FG // :D This should catch all GUI usages for groups.
-//processed hook: hook GroupPickRandomUnit MemoryLeakHelper___CatchGroup
-//processed hook:     hook CountUnitsInGroup MemoryLeakHelper___CatchGroup
+//processed hook:     hook ForGroupBJ MemoryLeakHelper__FG // :D This should catch all GUI usages for groups.
+//processed hook: hook GroupPickRandomUnit MemoryLeakHelper__CatchGroup
+//processed hook:     hook CountUnitsInGroup MemoryLeakHelper__CatchGroup
     
-//processed hook:     hook DestroyGroup MemoryLeakHelper___ReleaseGroup
+//processed hook:     hook DestroyGroup MemoryLeakHelper__ReleaseGroup
     
-    function MemoryLeakHelper___ASETU takes string bla,widget d,string blu returns nothing
+    function MemoryLeakHelper__ASETU takes string bla,widget d,string blu returns nothing
         // We can not catch THIS effect, but the effect that was created before.
         // So we can destroy all SpecialEffects excpet one.
-        call MemoryLeakHelper___CatchEffect(GetLastCreatedEffectBJ())
+        call MemoryLeakHelper__CatchEffect(GetLastCreatedEffectBJ())
     endfunction
     
-    function MemoryLeakHelper___ASE takes location where,string modelName returns nothing
-        call MemoryLeakHelper___CatchLocation(where)
-        call MemoryLeakHelper___CatchEffect(GetLastCreatedEffectBJ())
+    function MemoryLeakHelper__ASE takes location where,string modelName returns nothing
+        call MemoryLeakHelper__CatchLocation(where)
+        call MemoryLeakHelper__CatchEffect(GetLastCreatedEffectBJ())
     endfunction
-//processed hook:     hook AddSpecialEffectLocBJ MemoryLeakHelper___ASE
-//processed hook:     hook AddSpecialEffectTargetUnitBJ MemoryLeakHelper___ASETU
-//processed hook:     hook DestroyEffect MemoryLeakHelper___ReleaseEffect
-//processed hook:     hook DestroyEffectBJ MemoryLeakHelper___ReleaseEffect
+//processed hook:     hook AddSpecialEffectLocBJ MemoryLeakHelper__ASE
+//processed hook:     hook AddSpecialEffectTargetUnitBJ MemoryLeakHelper__ASETU
+//processed hook:     hook DestroyEffect MemoryLeakHelper__ReleaseEffect
+//processed hook:     hook DestroyEffectBJ MemoryLeakHelper__ReleaseEffect
     
     // When I want to make the timer run the PassMemoryLeaks things, I have to use an .execute command which requires an extra func.
     function YDWEMemoryLeakStartPassTimer takes nothing returns nothing
         //call BJDebugMsg("Restarting PassTimer")
-        call TimerStart(MemoryLeakHelper___PassTimer, MemoryLeakHelper___PASS_INTERVAL, true, function MemoryLeakHelper___PassMemoryLeaks)
+        call TimerStart(MemoryLeakHelper__PassTimer, MemoryLeakHelper__PASS_INTERVAL, true, function MemoryLeakHelper__PassMemoryLeaks)
     endfunction
     
 	// 开启接口函数
     function YDWEMemoryLeakHelperMapIsOpenMemoryLeakHelper takes boolean IsOpenMemoryLeak returns nothing
-        set MemoryLeakHelper___IsOpenMemoryLeakHelper=IsOpenMemoryLeak
-        call PauseTimer(MemoryLeakHelper___PassTimer)
+        set MemoryLeakHelper__IsOpenMemoryLeakHelper=IsOpenMemoryLeak
+        call PauseTimer(MemoryLeakHelper__PassTimer)
         if ( IsOpenMemoryLeak ) then
-            call TimerStart(MemoryLeakHelper___PassTimer, MemoryLeakHelper___PASS_INTERVAL, true, function MemoryLeakHelper___PassMemoryLeaks) // INLINED!!
+            call TimerStart(MemoryLeakHelper__PassTimer, MemoryLeakHelper__PASS_INTERVAL, true, function MemoryLeakHelper__PassMemoryLeaks) // INLINED!!
         endif
     endfunction
     
     function YDWEMemoryLeakHelperProtectLastCaughtHandle takes nothing returns nothing
-        call SaveInteger(YDHT, (((MemoryLeakHelper___IsSaved)) ), ( (GetHandleId(((((MemoryLeakHelper___LastCaught)))))) ), ( ( 1))) // INLINED!!
+        call SaveInteger(YDHT, (((MemoryLeakHelper__IsSaved)) ), ( (GetHandleId(((((MemoryLeakHelper__LastCaught)))))) ), ( ( 1))) // INLINED!!
     endfunction
     
     function YDWEMemoryLeakHelperProtectLocation takes location loc returns nothing
-        call SaveInteger(YDHT, (((MemoryLeakHelper___IsSaved)) ), ( (GetHandleId((((loc))))) ), ( ( 1))) // INLINED!!
+        call SaveInteger(YDHT, (((MemoryLeakHelper__IsSaved)) ), ( (GetHandleId((((loc))))) ), ( ( 1))) // INLINED!!
     endfunction
     function YDWEMemoryLeakHelperProtectGroup takes group g returns nothing
-        call SaveInteger(YDHT, (((MemoryLeakHelper___IsSaved)) ), ( (GetHandleId((((g))))) ), ( ( 1))) // INLINED!!
+        call SaveInteger(YDHT, (((MemoryLeakHelper__IsSaved)) ), ( (GetHandleId((((g))))) ), ( ( 1))) // INLINED!!
     endfunction
     
     function YDWEMemoryLeakHelperProtectEffect takes effect e returns nothing
-        call SaveInteger(YDHT, (((MemoryLeakHelper___IsSaved)) ), ( (GetHandleId((((e))))) ), ( ( 1))) // INLINED!!
+        call SaveInteger(YDHT, (((MemoryLeakHelper__IsSaved)) ), ( (GetHandleId((((e))))) ), ( ( 1))) // INLINED!!
     endfunction
         
-    function MemoryLeakHelper___Init takes nothing returns nothing
-        set MemoryLeakHelper___IndexData=s__MemoryLeakHelper___HandleTable__allocate()
-        set MemoryLeakHelper___IsSaved=s__MemoryLeakHelper___HandleTable__allocate()
+    function MemoryLeakHelper__Init takes nothing returns nothing
+        set MemoryLeakHelper__IndexData=s__MemoryLeakHelper__HandleTable__allocate()
+        set MemoryLeakHelper__IsSaved=s__MemoryLeakHelper__HandleTable__allocate()
         
         //call YDWEMemoryLeakStartPassTimer()
-        call TimerStart(MemoryLeakHelper___GameTimeTimer, MemoryLeakHelper___GAMETIME_TIMER_INTERVAL, true, function MemoryLeakHelper___UpdateGameTime)
+        call TimerStart(MemoryLeakHelper__GameTimeTimer, MemoryLeakHelper__GAMETIME_TIMER_INTERVAL, true, function MemoryLeakHelper__UpdateGameTime)
     endfunction
     
 
@@ -3190,7 +3190,7 @@ endfunction
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     //                                       Timer Pattern Union                                              //
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    function YDWETimerPattern___SingleMagic takes unit sour,unit targ,real x,real y,real h,integer uid,integer aid,integer lv,integer order returns nothing
+    function YDWETimerPattern__SingleMagic takes unit sour,unit targ,real x,real y,real h,integer uid,integer aid,integer lv,integer order returns nothing
         local unit dummy= CreateUnit(GetOwningPlayer(sour), uid, x, y, GetUnitFacing(sour))
         call UnitApplyTimedLife(dummy, 'BHwe', 1.0)
         call UnitAddAbility(dummy, aid)
@@ -3200,34 +3200,34 @@ endfunction
         //debug call BJDebugMsg("Target order")
         set dummy=null
     endfunction
-    function YDWETimerPattern___GetUnitZ takes unit u returns real
-        call MoveLocation(YDWETimerPattern___yd_loc, GetUnitX(u), GetUnitY(u))
-        return GetUnitFlyHeight(u) + GetLocationZ(YDWETimerPattern___yd_loc)
+    function YDWETimerPattern__GetUnitZ takes unit u returns real
+        call MoveLocation(YDWETimerPattern__yd_loc, GetUnitX(u), GetUnitY(u))
+        return GetUnitFlyHeight(u) + GetLocationZ(YDWETimerPattern__yd_loc)
     endfunction
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     //                                            Filter Funcs                                                //
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-    function YDWETimerPattern___EnemyFilter takes unit u,unit caster returns boolean
+    function YDWETimerPattern__EnemyFilter takes unit u,unit caster returns boolean
         return IsUnitType(u, UNIT_TYPE_MAGIC_IMMUNE) == false and IsUnitType(u, UNIT_TYPE_RESISTANT) == false and IsUnitType(u, UNIT_TYPE_SLEEPING) == false and GetUnitState(u, UNIT_STATE_LIFE) > 0.405 and IsUnitType(u, UNIT_TYPE_STRUCTURE) == false and IsUnitIllusion(u) == false and IsUnitHidden(u) == false and IsUnitEnemy(u, GetOwningPlayer(caster)) and IsUnitVisible(u, GetOwningPlayer(caster))
     endfunction
-    function YDWETimerPattern___TreeFilter takes nothing returns boolean
+    function YDWETimerPattern__TreeFilter takes nothing returns boolean
         local integer id= GetDestructableTypeId(GetFilterDestructable())
         return id == 'LTlt' or id == 'ATtr' or id == 'BTtw' or id == 'KTtw' or id == 'YTft' or id == 'JTct' or id == 'YTst' or id == 'YTct' or id == 'YTwt' or id == 'JTtw' or id == 'DTsh' or id == 'FTtw' or id == 'CTtr' or id == 'ITtw' or id == 'NTtw' or id == 'OTtw' or id == 'ZTtw' or id == 'WTst' or id == 'GTsh' or id == 'VTlt' or id == 'WTtw' or id == 'ATtc' or id == 'BTtc' or id == 'CTtc' or id == 'ITtc' or id == 'NTtc' or id == 'ZTtc'
     endfunction
-    function YDWETimerPattern___DamageFilter takes nothing returns boolean
+    function YDWETimerPattern__DamageFilter takes nothing returns boolean
         local unit u= GetFilterUnit()
-        local integer d= YDWETimerPattern___tmp_data
-        if not ( IsUnitInGroup(u, s__YDWETimerPattern___Thread_g[d]) ) and s__YDWETimerPattern___Thread_switch[d] != 0 and YDWETimerPattern___EnemyFilter(u , s__YDWETimerPattern___Thread_caster[d]) then
-            call UnitDamageTarget(s__YDWETimerPattern___Thread_caster[d], u, s__YDWETimerPattern___Thread_amount[d], true, true, bj_lastSetAttackType, bj_lastSetDamageType, bj_lastSetWeaponType)
-            call h__DestroyEffect(AddSpecialEffectTarget(s__YDWETimerPattern___Thread_dsfx[d], u, s__YDWETimerPattern___Thread_part[d]))
-            if s__YDWETimerPattern___Thread_skills[d] > '0000' and s__YDWETimerPattern___Thread_skills[d] != null and s__YDWETimerPattern___Thread_order[d] > 0 and s__YDWETimerPattern___Thread_order[d] != null then
-                call YDWETimerPattern___SingleMagic(s__YDWETimerPattern___Thread_caster[d] , u , s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[d]] , s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[d]] , GetUnitFlyHeight(s__YDWETimerPattern___Thread_obj[d]) , s__YDWETimerPattern___Thread_unitid[d] , s__YDWETimerPattern___Thread_skills[d] , s__YDWETimerPattern___Thread_level[d] , s__YDWETimerPattern___Thread_order[d])
+        local integer d= YDWETimerPattern__tmp_data
+        if not ( IsUnitInGroup(u, s__YDWETimerPattern__Thread_g[d]) ) and s__YDWETimerPattern__Thread_switch[d] != 0 and YDWETimerPattern__EnemyFilter(u , s__YDWETimerPattern__Thread_caster[d]) then
+            call UnitDamageTarget(s__YDWETimerPattern__Thread_caster[d], u, s__YDWETimerPattern__Thread_amount[d], true, true, bj_lastSetAttackType, bj_lastSetDamageType, bj_lastSetWeaponType)
+            call h__DestroyEffect(AddSpecialEffectTarget(s__YDWETimerPattern__Thread_dsfx[d], u, s__YDWETimerPattern__Thread_part[d]))
+            if s__YDWETimerPattern__Thread_skills[d] > '0000' and s__YDWETimerPattern__Thread_skills[d] != null and s__YDWETimerPattern__Thread_order[d] > 0 and s__YDWETimerPattern__Thread_order[d] != null then
+                call YDWETimerPattern__SingleMagic(s__YDWETimerPattern__Thread_caster[d] , u , s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[d]] , s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[d]] , GetUnitFlyHeight(s__YDWETimerPattern__Thread_obj[d]) , s__YDWETimerPattern__Thread_unitid[d] , s__YDWETimerPattern__Thread_skills[d] , s__YDWETimerPattern__Thread_level[d] , s__YDWETimerPattern__Thread_order[d])
             endif
-            if not ( s__YDWETimerPattern___Thread_recycle[d] ) then
+            if not ( s__YDWETimerPattern__Thread_recycle[d] ) then
                 //debug call BJDebugMsg("|cff00ff00[YDWE] Timer Pattern : |r A one-time.")
-                set s__YDWETimerPattern___Thread_switch[d]=0
+                set s__YDWETimerPattern__Thread_switch[d]=0
             endif
-            set s__YDWETimerPattern___Thread_target[d]=u
+            set s__YDWETimerPattern__Thread_target[d]=u
             //call GroupAddUnit(d.g, u)
             set u=null
             return true
@@ -3235,7 +3235,7 @@ endfunction
         set u=null
         return false
     endfunction
-    function YDWETimerPattern___TreeKill takes nothing returns nothing
+    function YDWETimerPattern__TreeKill takes nothing returns nothing
         local destructable d= GetEnumDestructable()
         if GetWidgetLife(d) > 0.405 then
             call KillDestructable(d)
@@ -3245,266 +3245,266 @@ endfunction
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     //                                         Major Structure Code                                           //
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-        function s__YDWETimerPattern___Thread__staticgetindex takes handle h returns integer
+        function s__YDWETimerPattern__Thread__staticgetindex takes handle h returns integer
             return (LoadInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId((h)))))))) // INLINED!!
         endfunction
-        function s__YDWETimerPattern___Thread__staticsetindex takes handle h,integer value returns nothing
+        function s__YDWETimerPattern__Thread__staticsetindex takes handle h,integer value returns nothing
             call SaveInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId((h)))) )), ( value)) // INLINED!!
         endfunction
-        function s__YDWETimerPattern___Thread_flush takes handle h returns nothing
+        function s__YDWETimerPattern__Thread_flush takes handle h returns nothing
             call RemoveSavedInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId((h))))))) // INLINED!!
         endfunction
-        function s__YDWETimerPattern___Thread__set_x takes integer this,real value returns nothing
-            set s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]]=value
-            call SetUnitX(s__YDWETimerPattern___Thread_obj[this], value)
+        function s__YDWETimerPattern__Thread__set_x takes integer this,real value returns nothing
+            set s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]]=value
+            call SetUnitX(s__YDWETimerPattern__Thread_obj[this], value)
         endfunction
-        function s__YDWETimerPattern___Thread__set_y takes integer this,real value returns nothing
-            set s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]]=value
-            call SetUnitY(s__YDWETimerPattern___Thread_obj[this], value)
+        function s__YDWETimerPattern__Thread__set_y takes integer this,real value returns nothing
+            set s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]]=value
+            call SetUnitY(s__YDWETimerPattern__Thread_obj[this], value)
         endfunction
-        function s__YDWETimerPattern___Thread__set_z takes integer this,real value returns nothing
-            set s__YDWETimerPattern___YDVector3_z[s__YDWETimerPattern___Thread_pos[this]]=value
-            call MoveLocation(YDWETimerPattern___yd_loc, s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]], s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]])
-            call SetUnitFlyHeight(s__YDWETimerPattern___Thread_obj[this], value - GetLocationZ(YDWETimerPattern___yd_loc), 0)
+        function s__YDWETimerPattern__Thread__set_z takes integer this,real value returns nothing
+            set s__YDWETimerPattern__YDVector3_z[s__YDWETimerPattern__Thread_pos[this]]=value
+            call MoveLocation(YDWETimerPattern__yd_loc, s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]], s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]])
+            call SetUnitFlyHeight(s__YDWETimerPattern__Thread_obj[this], value - GetLocationZ(YDWETimerPattern__yd_loc), 0)
         endfunction
-        function s__YDWETimerPattern___Thread_onDestroy takes integer this returns nothing
+        function s__YDWETimerPattern__Thread_onDestroy takes integer this returns nothing
             //debug call BJDebugMsg("|cff00ff00[YDWE] Timer Pattern : |r Knockback stopped!")
-            call RemoveSavedInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern___Thread_obj[this])))))))) // INLINED!!
-            call RemoveSavedInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern___Thread_t[this])))))))) // INLINED!!
-            call GroupClear(s__YDWETimerPattern___Thread_g[this])
-            call h__DestroyGroup(s__YDWETimerPattern___Thread_g[this])
-            call PauseTimer(s__YDWETimerPattern___Thread_t[this])
-            call DestroyTimer(s__YDWETimerPattern___Thread_t[this])
-            call s__YDWETimerPattern___YDVector3_deallocate(s__YDWETimerPattern___Thread_des[this])
-            call s__YDWETimerPattern___YDVector3_deallocate(s__YDWETimerPattern___Thread_pos[this])
-            call s__YDWETimerPattern___YDVector3_deallocate(s__YDWETimerPattern___Thread_vel[this])
-            set s__YDWETimerPattern___Thread_caster[this]=null
-            set s__YDWETimerPattern___Thread_target[this]=null
-            set s__YDWETimerPattern___Thread_obj[this]=null
-            set s__YDWETimerPattern___Thread_g[this]=null
-            set s__YDWETimerPattern___Thread_t[this]=null
-            set s__YDWETimerPattern___Thread_amount[this]=0
-            set s__YDWETimerPattern___Thread_skills[this]=0
-            set s__YDWETimerPattern___Thread_order[this]=0
-            set s__YDWETimerPattern___Thread_dsfx[this]=""
-            set s__YDWETimerPattern___Thread_gsfx[this]=""
-            set s__YDWETimerPattern___Thread_wsfx[this]=""
-            set s__YDWETimerPattern___Thread_part[this]=""
+            call RemoveSavedInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern__Thread_obj[this])))))))) // INLINED!!
+            call RemoveSavedInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern__Thread_t[this])))))))) // INLINED!!
+            call GroupClear(s__YDWETimerPattern__Thread_g[this])
+            call h__DestroyGroup(s__YDWETimerPattern__Thread_g[this])
+            call PauseTimer(s__YDWETimerPattern__Thread_t[this])
+            call DestroyTimer(s__YDWETimerPattern__Thread_t[this])
+            call s__YDWETimerPattern__YDVector3_deallocate(s__YDWETimerPattern__Thread_des[this])
+            call s__YDWETimerPattern__YDVector3_deallocate(s__YDWETimerPattern__Thread_pos[this])
+            call s__YDWETimerPattern__YDVector3_deallocate(s__YDWETimerPattern__Thread_vel[this])
+            set s__YDWETimerPattern__Thread_caster[this]=null
+            set s__YDWETimerPattern__Thread_target[this]=null
+            set s__YDWETimerPattern__Thread_obj[this]=null
+            set s__YDWETimerPattern__Thread_g[this]=null
+            set s__YDWETimerPattern__Thread_t[this]=null
+            set s__YDWETimerPattern__Thread_amount[this]=0
+            set s__YDWETimerPattern__Thread_skills[this]=0
+            set s__YDWETimerPattern__Thread_order[this]=0
+            set s__YDWETimerPattern__Thread_dsfx[this]=""
+            set s__YDWETimerPattern__Thread_gsfx[this]=""
+            set s__YDWETimerPattern__Thread_wsfx[this]=""
+            set s__YDWETimerPattern__Thread_part[this]=""
         endfunction
-        function s__YDWETimerPattern___Parabola_move takes nothing returns nothing
+        function s__YDWETimerPattern__Parabola_move takes nothing returns nothing
             local integer this= (LoadInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((GetExpiredTimer()))))))))) // INLINED!!
             //local real vx = .des.x - .pos.x
             //local real vy = .des.y - .pos.y
             //local real vz = .des.z - .pos.z
             //if vx * vx + vy * vy + vz * vz > 900.0 then
-                call s__YDWETimerPattern___Thread__set_x(this,GetUnitX(s__YDWETimerPattern___Thread_obj[this]) + s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_vel[this]]) //.pos.x + .vel.x
-call s__YDWETimerPattern___Thread__set_y(this,GetUnitY(s__YDWETimerPattern___Thread_obj[this]) + s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_vel[this]]) //.pos.y + .vel.y
-call s__YDWETimerPattern___Thread__set_z(this,YDWETimerPattern___GetUnitZ(s__YDWETimerPattern___Thread_obj[this]) + s__YDWETimerPattern___Thread_ac[this] * s__YDWETimerPattern___Thread_step[this] * 2 + s__YDWETimerPattern___Thread_ac[this] * s__YDWETimerPattern___Thread_dist[this] + s__YDWETimerPattern___Thread_bc[this]) //.pos.z + .ac * .step * 2 + .ac * .dist + .bc
-set s__YDWETimerPattern___Thread_step[this]=s__YDWETimerPattern___Thread_step[this] + s__YDWETimerPattern___Thread_dist[this]
+                call s__YDWETimerPattern__Thread__set_x(this,GetUnitX(s__YDWETimerPattern__Thread_obj[this]) + s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_vel[this]]) //.pos.x + .vel.x
+call s__YDWETimerPattern__Thread__set_y(this,GetUnitY(s__YDWETimerPattern__Thread_obj[this]) + s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_vel[this]]) //.pos.y + .vel.y
+call s__YDWETimerPattern__Thread__set_z(this,YDWETimerPattern__GetUnitZ(s__YDWETimerPattern__Thread_obj[this]) + s__YDWETimerPattern__Thread_ac[this] * s__YDWETimerPattern__Thread_step[this] * 2 + s__YDWETimerPattern__Thread_ac[this] * s__YDWETimerPattern__Thread_dist[this] + s__YDWETimerPattern__Thread_bc[this]) //.pos.z + .ac * .step * 2 + .ac * .dist + .bc
+set s__YDWETimerPattern__Thread_step[this]=s__YDWETimerPattern__Thread_step[this] + s__YDWETimerPattern__Thread_dist[this]
                 //debug call BJDebugMsg("|cff00ff00[YDWE] Timer Pattern : |r high = ." + R2S(GetLocationZ(yd_loc)))
-                if (RMinBJ(RMaxBJ(((s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]])*1.0), yd_MapMinX), yd_MapMaxX)) != s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]] or (RMinBJ(RMaxBJ(((s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]])*1.0), yd_MapMinY), yd_MapMaxY)) != s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]] or s__YDWETimerPattern___YDVector3_z[s__YDWETimerPattern___Thread_pos[this]] <= GetLocationZ(YDWETimerPattern___yd_loc) then // INLINED!!
-                    set s__YDWETimerPattern___Thread_switch[this]=0
+                if (RMinBJ(RMaxBJ(((s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]])*1.0), yd_MapMinX), yd_MapMaxX)) != s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]] or (RMinBJ(RMaxBJ(((s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]])*1.0), yd_MapMinY), yd_MapMaxY)) != s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]] or s__YDWETimerPattern__YDVector3_z[s__YDWETimerPattern__Thread_pos[this]] <= GetLocationZ(YDWETimerPattern__yd_loc) then // INLINED!!
+                    set s__YDWETimerPattern__Thread_switch[this]=0
                 endif
-                if s__YDWETimerPattern___Thread_amount[this] > 0.0 then
+                if s__YDWETimerPattern__Thread_amount[this] > 0.0 then
                     //call this.damage(.caster, .pos.x + .vel.x, .pos.y + .vel.y, GetUnitZ(.obj), false, false)
-                    set YDWETimerPattern___tmp_data=(this)
-                    call GroupEnumUnitsInRange(s__YDWETimerPattern___Thread_g[this], s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]] + s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_vel[this]], s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]] + s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_vel[this]], 120.0, Condition(function YDWETimerPattern___DamageFilter))
+                    set YDWETimerPattern__tmp_data=(this)
+                    call GroupEnumUnitsInRange(s__YDWETimerPattern__Thread_g[this], s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]] + s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_vel[this]], s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]] + s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_vel[this]], 120.0, Condition(function YDWETimerPattern__DamageFilter))
                     //debug call BJDebugMsg("|cff00ff00[YDWE] Timer Pattern : |r Area damage.")
                 endif
             //else
                 //set .switch = 0
             //endif
-            if s__YDWETimerPattern___Thread_switch[this] == 0 then
-                call SetUnitFlyHeight(s__YDWETimerPattern___Thread_obj[this], GetUnitDefaultFlyHeight(s__YDWETimerPattern___Thread_obj[this]), 200.0)
-                call SetUnitTimeScale(s__YDWETimerPattern___Thread_obj[this], 1)
+            if s__YDWETimerPattern__Thread_switch[this] == 0 then
+                call SetUnitFlyHeight(s__YDWETimerPattern__Thread_obj[this], GetUnitDefaultFlyHeight(s__YDWETimerPattern__Thread_obj[this]), 200.0)
+                call SetUnitTimeScale(s__YDWETimerPattern__Thread_obj[this], 1)
                 //YDWETriggerEvent
-                call YDWESyStemAbilityCastingOverTriggerAction(s__YDWETimerPattern___Thread_obj[this] , 7)
-                call sc__YDWETimerPattern___Thread_deallocate(this)
+                call YDWESyStemAbilityCastingOverTriggerAction(s__YDWETimerPattern__Thread_obj[this] , 7)
+                call sc__YDWETimerPattern__Thread_deallocate(this)
             endif
         endfunction
-        function s__YDWETimerPattern___Parabola_create takes unit source,unit object,real angle,real distance,real time,real interval,real high,real damage,string attach,string deff returns integer
-            local integer this= s__YDWETimerPattern___Parabola__allocate()
+        function s__YDWETimerPattern__Parabola_create takes unit source,unit object,real angle,real distance,real time,real interval,real high,real damage,string attach,string deff returns integer
+            local integer this= s__YDWETimerPattern__Parabola__allocate()
             local real vx= 0.0
             local real vy= 0.0
             local real vz= 0.0
-            set s__YDWETimerPattern___Thread_des[this]=s__YDWETimerPattern___YDVector3__allocate()
-            set s__YDWETimerPattern___Thread_pos[this]=s__YDWETimerPattern___YDVector3__allocate()
-            set s__YDWETimerPattern___Thread_vel[this]=s__YDWETimerPattern___YDVector3__allocate()
-            set s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]]=GetUnitX(object)
-            set s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]]=GetUnitY(object)
-            set s__YDWETimerPattern___YDVector3_z[s__YDWETimerPattern___Thread_pos[this]]=YDWETimerPattern___GetUnitZ(object)
-            set s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_des[this]]=s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]] + distance * Cos(angle)
-            set s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_des[this]]=s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]] + distance * Sin(angle)
-            call MoveLocation(YDWETimerPattern___yd_loc, s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_des[this]], s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_des[this]])
-            set s__YDWETimerPattern___YDVector3_z[s__YDWETimerPattern___Thread_des[this]]=GetLocationZ(YDWETimerPattern___yd_loc)
-            if s__YDWETimerPattern___YDVector3_z[s__YDWETimerPattern___Thread_pos[this]] > s__YDWETimerPattern___YDVector3_z[s__YDWETimerPattern___Thread_des[this]] then
-                set high=high + s__YDWETimerPattern___YDVector3_z[s__YDWETimerPattern___Thread_pos[this]]
+            set s__YDWETimerPattern__Thread_des[this]=s__YDWETimerPattern__YDVector3__allocate()
+            set s__YDWETimerPattern__Thread_pos[this]=s__YDWETimerPattern__YDVector3__allocate()
+            set s__YDWETimerPattern__Thread_vel[this]=s__YDWETimerPattern__YDVector3__allocate()
+            set s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]]=GetUnitX(object)
+            set s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]]=GetUnitY(object)
+            set s__YDWETimerPattern__YDVector3_z[s__YDWETimerPattern__Thread_pos[this]]=YDWETimerPattern__GetUnitZ(object)
+            set s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_des[this]]=s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]] + distance * Cos(angle)
+            set s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_des[this]]=s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]] + distance * Sin(angle)
+            call MoveLocation(YDWETimerPattern__yd_loc, s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_des[this]], s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_des[this]])
+            set s__YDWETimerPattern__YDVector3_z[s__YDWETimerPattern__Thread_des[this]]=GetLocationZ(YDWETimerPattern__yd_loc)
+            if s__YDWETimerPattern__YDVector3_z[s__YDWETimerPattern__Thread_pos[this]] > s__YDWETimerPattern__YDVector3_z[s__YDWETimerPattern__Thread_des[this]] then
+                set high=high + s__YDWETimerPattern__YDVector3_z[s__YDWETimerPattern__Thread_pos[this]]
             else
-                set high=high + s__YDWETimerPattern___YDVector3_z[s__YDWETimerPattern___Thread_des[this]]
+                set high=high + s__YDWETimerPattern__YDVector3_z[s__YDWETimerPattern__Thread_des[this]]
             endif
-            set s__YDWETimerPattern___Thread_ac[this]=( 2 * ( s__YDWETimerPattern___YDVector3_z[s__YDWETimerPattern___Thread_pos[this]] + s__YDWETimerPattern___YDVector3_z[s__YDWETimerPattern___Thread_des[this]] ) - 4 * high ) / ( distance * distance )
-            set s__YDWETimerPattern___Thread_bc[this]=( s__YDWETimerPattern___YDVector3_z[s__YDWETimerPattern___Thread_des[this]] - s__YDWETimerPattern___YDVector3_z[s__YDWETimerPattern___Thread_pos[this]] - s__YDWETimerPattern___Thread_ac[this] * distance * distance ) / distance
-            set s__YDWETimerPattern___Thread_dist[this]=distance * interval / time
-            set s__YDWETimerPattern___Thread_ac[this]=s__YDWETimerPattern___Thread_ac[this] * s__YDWETimerPattern___Thread_dist[this]
-            set s__YDWETimerPattern___Thread_bc[this]=s__YDWETimerPattern___Thread_bc[this] * s__YDWETimerPattern___Thread_dist[this]
-            set s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_vel[this]]=s__YDWETimerPattern___Thread_dist[this] * Cos(angle)
-            set s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_vel[this]]=s__YDWETimerPattern___Thread_dist[this] * Sin(angle)
-            set s__YDWETimerPattern___Thread_step[this]=0.0
-            set s__YDWETimerPattern___Thread_caster[this]=source
-            set s__YDWETimerPattern___Thread_obj[this]=object
-            set s__YDWETimerPattern___Thread_amount[this]=damage
-            set s__YDWETimerPattern___Thread_dsfx[this]=deff
-            set s__YDWETimerPattern___Thread_part[this]=attach
-            set s__YDWETimerPattern___Thread_switch[this]=1
-            set s__YDWETimerPattern___Thread_recycle[this]=true
-            set s__YDWETimerPattern___Thread_t[this]=CreateTimer()
-            set s__YDWETimerPattern___Thread_g[this]=CreateGroup()
-            call UnitAddAbility(s__YDWETimerPattern___Thread_obj[this], 'Amrf')
-            call UnitRemoveAbility(s__YDWETimerPattern___Thread_obj[this], 'Amrf')
-            call TimerStart(s__YDWETimerPattern___Thread_t[this], interval, true, function s__YDWETimerPattern___Parabola_move)
-            call GroupAddUnit(s__YDWETimerPattern___Thread_g[this], object)
+            set s__YDWETimerPattern__Thread_ac[this]=( 2 * ( s__YDWETimerPattern__YDVector3_z[s__YDWETimerPattern__Thread_pos[this]] + s__YDWETimerPattern__YDVector3_z[s__YDWETimerPattern__Thread_des[this]] ) - 4 * high ) / ( distance * distance )
+            set s__YDWETimerPattern__Thread_bc[this]=( s__YDWETimerPattern__YDVector3_z[s__YDWETimerPattern__Thread_des[this]] - s__YDWETimerPattern__YDVector3_z[s__YDWETimerPattern__Thread_pos[this]] - s__YDWETimerPattern__Thread_ac[this] * distance * distance ) / distance
+            set s__YDWETimerPattern__Thread_dist[this]=distance * interval / time
+            set s__YDWETimerPattern__Thread_ac[this]=s__YDWETimerPattern__Thread_ac[this] * s__YDWETimerPattern__Thread_dist[this]
+            set s__YDWETimerPattern__Thread_bc[this]=s__YDWETimerPattern__Thread_bc[this] * s__YDWETimerPattern__Thread_dist[this]
+            set s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_vel[this]]=s__YDWETimerPattern__Thread_dist[this] * Cos(angle)
+            set s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_vel[this]]=s__YDWETimerPattern__Thread_dist[this] * Sin(angle)
+            set s__YDWETimerPattern__Thread_step[this]=0.0
+            set s__YDWETimerPattern__Thread_caster[this]=source
+            set s__YDWETimerPattern__Thread_obj[this]=object
+            set s__YDWETimerPattern__Thread_amount[this]=damage
+            set s__YDWETimerPattern__Thread_dsfx[this]=deff
+            set s__YDWETimerPattern__Thread_part[this]=attach
+            set s__YDWETimerPattern__Thread_switch[this]=1
+            set s__YDWETimerPattern__Thread_recycle[this]=true
+            set s__YDWETimerPattern__Thread_t[this]=CreateTimer()
+            set s__YDWETimerPattern__Thread_g[this]=CreateGroup()
+            call UnitAddAbility(s__YDWETimerPattern__Thread_obj[this], 'Amrf')
+            call UnitRemoveAbility(s__YDWETimerPattern__Thread_obj[this], 'Amrf')
+            call TimerStart(s__YDWETimerPattern__Thread_t[this], interval, true, function s__YDWETimerPattern__Parabola_move)
+            call GroupAddUnit(s__YDWETimerPattern__Thread_g[this], object)
             call SaveInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((object))))) )), ( ( (this)))) // INLINED!!
-            call SaveInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern___Thread_t[this]))))) )), ( ( (this)))) // INLINED!!
+            call SaveInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern__Thread_t[this]))))) )), ( ( (this)))) // INLINED!!
             return this
         endfunction
     // uniform speed
-        function s__YDWETimerPattern___Linear_move takes nothing returns nothing
+        function s__YDWETimerPattern__Linear_move takes nothing returns nothing
             local integer this= (LoadInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((GetExpiredTimer()))))))))) // INLINED!!
-            if s__YDWETimerPattern___Thread_step[this] > s__YDWETimerPattern___Thread_dist[this] then
-                call s__YDWETimerPattern___Thread__set_x(this,GetUnitX(s__YDWETimerPattern___Thread_obj[this]) + s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_vel[this]]) //.pos.x + .vel.x
-call s__YDWETimerPattern___Thread__set_y(this,GetUnitY(s__YDWETimerPattern___Thread_obj[this]) + s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_vel[this]]) //.pos.y + .vel.y
+            if s__YDWETimerPattern__Thread_step[this] > s__YDWETimerPattern__Thread_dist[this] then
+                call s__YDWETimerPattern__Thread__set_x(this,GetUnitX(s__YDWETimerPattern__Thread_obj[this]) + s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_vel[this]]) //.pos.x + .vel.x
+call s__YDWETimerPattern__Thread__set_y(this,GetUnitY(s__YDWETimerPattern__Thread_obj[this]) + s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_vel[this]]) //.pos.y + .vel.y
 //set .pos.z = GetUnitZ(.obj)
-set s__YDWETimerPattern___Thread_step[this]=s__YDWETimerPattern___Thread_step[this] - s__YDWETimerPattern___Thread_dist[this]
+set s__YDWETimerPattern__Thread_step[this]=s__YDWETimerPattern__Thread_step[this] - s__YDWETimerPattern__Thread_dist[this]
                 //call this.damage(.caster, .pos.x, .pos.y, .pos.z, true, true)
-                set YDWETimerPattern___tmp_data=(this)
-                call GroupEnumUnitsInRange(s__YDWETimerPattern___Thread_g[this], s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]] + s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_vel[this]], s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]] + s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_vel[this]], 120.0, Condition(function YDWETimerPattern___DamageFilter))
-                if (RMinBJ(RMaxBJ(((s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]])*1.0), yd_MapMinX), yd_MapMaxX)) != s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]] or (RMinBJ(RMaxBJ(((s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]])*1.0), yd_MapMinY), yd_MapMaxY)) != s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]] then // INLINED!!
-                    set s__YDWETimerPattern___Thread_switch[this]=0
+                set YDWETimerPattern__tmp_data=(this)
+                call GroupEnumUnitsInRange(s__YDWETimerPattern__Thread_g[this], s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]] + s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_vel[this]], s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]] + s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_vel[this]], 120.0, Condition(function YDWETimerPattern__DamageFilter))
+                if (RMinBJ(RMaxBJ(((s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]])*1.0), yd_MapMinX), yd_MapMaxX)) != s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]] or (RMinBJ(RMaxBJ(((s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]])*1.0), yd_MapMinY), yd_MapMaxY)) != s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]] then // INLINED!!
+                    set s__YDWETimerPattern__Thread_switch[this]=0
                 endif
             else
-                set s__YDWETimerPattern___Thread_switch[this]=0
+                set s__YDWETimerPattern__Thread_switch[this]=0
             endif
-            if s__YDWETimerPattern___Thread_switch[this] == 0 then
+            if s__YDWETimerPattern__Thread_switch[this] == 0 then
                 // YDWETriggerEvent
-                if s__YDWETimerPattern___Thread_target[this] != null then
+                if s__YDWETimerPattern__Thread_target[this] != null then
                     //debug call BJDebugMsg("|cff00ff00[YDWE] Timer Pattern : |r  |cffff0000" + GetUnitName(.target) + "|r was hit!!!")
                     //call YDWESaveUnitByString(I2S(YDWEH2I(.caster)), "MoonPriestessArrow", .target)
-                    set bj_lastAbilityTargetUnit=s__YDWETimerPattern___Thread_target[this]
-                    call YDWESyStemAbilityCastingOverTriggerAction(s__YDWETimerPattern___Thread_caster[this] , 8)
+                    set bj_lastAbilityTargetUnit=s__YDWETimerPattern__Thread_target[this]
+                    call YDWESyStemAbilityCastingOverTriggerAction(s__YDWETimerPattern__Thread_caster[this] , 8)
                 else
-                    call YDWESyStemAbilityCastingOverTriggerAction(s__YDWETimerPattern___Thread_caster[this] , 9)
+                    call YDWESyStemAbilityCastingOverTriggerAction(s__YDWETimerPattern__Thread_caster[this] , 9)
                 endif
                 //call KillUnit(.obj)
-                call RemoveUnit(s__YDWETimerPattern___Thread_obj[this])
-                call sc__YDWETimerPattern___Thread_deallocate(this)
+                call RemoveUnit(s__YDWETimerPattern__Thread_obj[this])
+                call sc__YDWETimerPattern__Thread_deallocate(this)
             endif
         endfunction
-        function s__YDWETimerPattern___Linear_create takes unit source,unit object,real angle,real distance,real time,real interval,integer uid,integer aid,integer lv,integer orderid,string attach,string sfx returns integer
-            local integer this= s__YDWETimerPattern___Linear__allocate()
-            set s__YDWETimerPattern___Thread_des[this]=s__YDWETimerPattern___YDVector3__allocate()
-            set s__YDWETimerPattern___Thread_pos[this]=s__YDWETimerPattern___YDVector3__allocate()
-            set s__YDWETimerPattern___Thread_vel[this]=s__YDWETimerPattern___YDVector3__allocate()
-            set s__YDWETimerPattern___Thread_step[this]=distance
-            set s__YDWETimerPattern___Thread_dist[this]=distance * interval / time
-            set s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_vel[this]]=s__YDWETimerPattern___Thread_dist[this] * Cos(angle)
-            set s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_vel[this]]=s__YDWETimerPattern___Thread_dist[this] * Sin(angle)
-            set s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]]=GetUnitX(object)
-            set s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]]=GetUnitY(object)
-            set s__YDWETimerPattern___Thread_caster[this]=source
-            set s__YDWETimerPattern___Thread_obj[this]=object
-            set s__YDWETimerPattern___Thread_unitid[this]=uid
-            set s__YDWETimerPattern___Thread_skills[this]=aid
-            set s__YDWETimerPattern___Thread_level[this]=lv
-            set s__YDWETimerPattern___Thread_order[this]=orderid
-            set s__YDWETimerPattern___Thread_part[this]=attach
-            set s__YDWETimerPattern___Thread_gsfx[this]=sfx
-            set s__YDWETimerPattern___Thread_switch[this]=1
-            set s__YDWETimerPattern___Thread_recycle[this]=false
-            set s__YDWETimerPattern___Thread_t[this]=CreateTimer()
-            set s__YDWETimerPattern___Thread_g[this]=CreateGroup()
-            call TimerStart(s__YDWETimerPattern___Thread_t[this], interval, true, function s__YDWETimerPattern___Linear_move)
-            call SaveInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern___Thread_t[this]))))) )), ( ( (this)))) // INLINED!!
+        function s__YDWETimerPattern__Linear_create takes unit source,unit object,real angle,real distance,real time,real interval,integer uid,integer aid,integer lv,integer orderid,string attach,string sfx returns integer
+            local integer this= s__YDWETimerPattern__Linear__allocate()
+            set s__YDWETimerPattern__Thread_des[this]=s__YDWETimerPattern__YDVector3__allocate()
+            set s__YDWETimerPattern__Thread_pos[this]=s__YDWETimerPattern__YDVector3__allocate()
+            set s__YDWETimerPattern__Thread_vel[this]=s__YDWETimerPattern__YDVector3__allocate()
+            set s__YDWETimerPattern__Thread_step[this]=distance
+            set s__YDWETimerPattern__Thread_dist[this]=distance * interval / time
+            set s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_vel[this]]=s__YDWETimerPattern__Thread_dist[this] * Cos(angle)
+            set s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_vel[this]]=s__YDWETimerPattern__Thread_dist[this] * Sin(angle)
+            set s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]]=GetUnitX(object)
+            set s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]]=GetUnitY(object)
+            set s__YDWETimerPattern__Thread_caster[this]=source
+            set s__YDWETimerPattern__Thread_obj[this]=object
+            set s__YDWETimerPattern__Thread_unitid[this]=uid
+            set s__YDWETimerPattern__Thread_skills[this]=aid
+            set s__YDWETimerPattern__Thread_level[this]=lv
+            set s__YDWETimerPattern__Thread_order[this]=orderid
+            set s__YDWETimerPattern__Thread_part[this]=attach
+            set s__YDWETimerPattern__Thread_gsfx[this]=sfx
+            set s__YDWETimerPattern__Thread_switch[this]=1
+            set s__YDWETimerPattern__Thread_recycle[this]=false
+            set s__YDWETimerPattern__Thread_t[this]=CreateTimer()
+            set s__YDWETimerPattern__Thread_g[this]=CreateGroup()
+            call TimerStart(s__YDWETimerPattern__Thread_t[this], interval, true, function s__YDWETimerPattern__Linear_move)
+            call SaveInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern__Thread_t[this]))))) )), ( ( (this)))) // INLINED!!
             return this
         endfunction
     // Uniform deceleration
-        function s__YDWETimerPattern___Deceleration_move takes nothing returns nothing
+        function s__YDWETimerPattern__Deceleration_move takes nothing returns nothing
             local integer this= (LoadInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((GetExpiredTimer()))))))))) // INLINED!!
-            local real xp= GetUnitX(s__YDWETimerPattern___Thread_obj[this]) + s__YDWETimerPattern___Thread_dist[this] * s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_vel[this]]
-            local real yp= GetUnitY(s__YDWETimerPattern___Thread_obj[this]) + s__YDWETimerPattern___Thread_dist[this] * s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_vel[this]]
-            if s__YDWETimerPattern___Thread_volume[this] == false then
+            local real xp= GetUnitX(s__YDWETimerPattern__Thread_obj[this]) + s__YDWETimerPattern__Thread_dist[this] * s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_vel[this]]
+            local real yp= GetUnitY(s__YDWETimerPattern__Thread_obj[this]) + s__YDWETimerPattern__Thread_dist[this] * s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_vel[this]]
+            if s__YDWETimerPattern__Thread_volume[this] == false then
                 //debug call BJDebugMsg("|cff00ff00[YDWE] Timer Pattern : |rPathable without terrain.")
                 if IsTerrainPathable(xp, yp, PATHING_TYPE_WALKABILITY) then
-                    set s__YDWETimerPattern___Thread_switch[this]=0
+                    set s__YDWETimerPattern__Thread_switch[this]=0
                 else
-                    call s__YDWETimerPattern___Thread__set_x(this,xp)
-                    call s__YDWETimerPattern___Thread__set_y(this,yp)
+                    call s__YDWETimerPattern__Thread__set_x(this,xp)
+                    call s__YDWETimerPattern__Thread__set_y(this,yp)
                 endif
             else
-                call s__YDWETimerPattern___Thread__set_x(this,xp)
-                call s__YDWETimerPattern___Thread__set_y(this,yp)
+                call s__YDWETimerPattern__Thread__set_x(this,xp)
+                call s__YDWETimerPattern__Thread__set_y(this,yp)
             endif
-            if s__YDWETimerPattern___Thread_follow[this] == 0 then
-                if GetUnitFlyHeight(s__YDWETimerPattern___Thread_obj[this]) < 5. then
-                    if IsTerrainPathable(s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]], s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]], PATHING_TYPE_FLOATABILITY) then
-                        call h__DestroyEffect(AddSpecialEffect(s__YDWETimerPattern___Thread_gsfx[this], s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]], s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]]))
+            if s__YDWETimerPattern__Thread_follow[this] == 0 then
+                if GetUnitFlyHeight(s__YDWETimerPattern__Thread_obj[this]) < 5. then
+                    if IsTerrainPathable(s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]], s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]], PATHING_TYPE_FLOATABILITY) then
+                        call h__DestroyEffect(AddSpecialEffect(s__YDWETimerPattern__Thread_gsfx[this], s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]], s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]]))
                     else
-                        call h__DestroyEffect(AddSpecialEffect(s__YDWETimerPattern___Thread_wsfx[this], s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]], s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]]))
+                        call h__DestroyEffect(AddSpecialEffect(s__YDWETimerPattern__Thread_wsfx[this], s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]], s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]]))
                     endif
                 endif
             endif
-            set s__YDWETimerPattern___Thread_follow[this]=s__YDWETimerPattern___Thread_follow[this] + 1
-            if s__YDWETimerPattern___Thread_follow[this] == 2 then
-                set s__YDWETimerPattern___Thread_follow[this]=0
+            set s__YDWETimerPattern__Thread_follow[this]=s__YDWETimerPattern__Thread_follow[this] + 1
+            if s__YDWETimerPattern__Thread_follow[this] == 2 then
+                set s__YDWETimerPattern__Thread_follow[this]=0
             endif
-            if s__YDWETimerPattern___Thread_killdest[this] then
-                call MoveRectTo(YDWETimerPattern___Area, s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]], s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]])
-                call EnumDestructablesInRect(YDWETimerPattern___Area, YDWETimerPattern___Bexpr, function YDWETimerPattern___TreeKill)
+            if s__YDWETimerPattern__Thread_killdest[this] then
+                call MoveRectTo(YDWETimerPattern__Area, s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]], s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]])
+                call EnumDestructablesInRect(YDWETimerPattern__Area, YDWETimerPattern__Bexpr, function YDWETimerPattern__TreeKill)
             endif
-            if s__YDWETimerPattern___Thread_amount[this] > 0.0 then
+            if s__YDWETimerPattern__Thread_amount[this] > 0.0 then
                 //call this.damage(.caster, .pos.x, .pos.y, 0.0, false, .recycle)
-                set YDWETimerPattern___tmp_data=(this)
-                call GroupEnumUnitsInRange(s__YDWETimerPattern___Thread_g[this], s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]], s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]], 120.0, Condition(function YDWETimerPattern___DamageFilter))
+                set YDWETimerPattern__tmp_data=(this)
+                call GroupEnumUnitsInRange(s__YDWETimerPattern__Thread_g[this], s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]], s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]], 120.0, Condition(function YDWETimerPattern__DamageFilter))
             endif
-            set s__YDWETimerPattern___Thread_dist[this]=s__YDWETimerPattern___Thread_dist[this] - s__YDWETimerPattern___Thread_step[this]
-            if s__YDWETimerPattern___Thread_dist[this] <= 0.0 or (RMinBJ(RMaxBJ(((s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]])*1.0), yd_MapMinX), yd_MapMaxX)) != s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]] or (RMinBJ(RMaxBJ(((s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]])*1.0), yd_MapMinY), yd_MapMaxY)) != s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]] then // INLINED!!
-                set s__YDWETimerPattern___Thread_switch[this]=0
+            set s__YDWETimerPattern__Thread_dist[this]=s__YDWETimerPattern__Thread_dist[this] - s__YDWETimerPattern__Thread_step[this]
+            if s__YDWETimerPattern__Thread_dist[this] <= 0.0 or (RMinBJ(RMaxBJ(((s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]])*1.0), yd_MapMinX), yd_MapMaxX)) != s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]] or (RMinBJ(RMaxBJ(((s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]])*1.0), yd_MapMinY), yd_MapMaxY)) != s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]] then // INLINED!!
+                set s__YDWETimerPattern__Thread_switch[this]=0
             endif
-            if s__YDWETimerPattern___Thread_switch[this] == 0 then
-                call SetUnitFlyHeight(s__YDWETimerPattern___Thread_obj[this], GetUnitDefaultFlyHeight(s__YDWETimerPattern___Thread_obj[this]), 200.0)
-                call SetUnitTimeScale(s__YDWETimerPattern___Thread_obj[this], 1)
+            if s__YDWETimerPattern__Thread_switch[this] == 0 then
+                call SetUnitFlyHeight(s__YDWETimerPattern__Thread_obj[this], GetUnitDefaultFlyHeight(s__YDWETimerPattern__Thread_obj[this]), 200.0)
+                call SetUnitTimeScale(s__YDWETimerPattern__Thread_obj[this], 1)
                 // YDWETriggerEvent
-                call YDWESyStemAbilityCastingOverTriggerAction(s__YDWETimerPattern___Thread_obj[this] , 6)
-                call sc__YDWETimerPattern___Thread_deallocate(this)
+                call YDWESyStemAbilityCastingOverTriggerAction(s__YDWETimerPattern__Thread_obj[this] , 6)
+                call sc__YDWETimerPattern__Thread_deallocate(this)
             endif
         endfunction
-        function s__YDWETimerPattern___Deceleration_create takes unit source,unit object,real angle,real distance,real time,real interval,real damage,boolean killtrees,boolean cycle,boolean path,string part,string geff,string weff returns integer
-            local integer this= s__YDWETimerPattern___Deceleration__allocate()
+        function s__YDWETimerPattern__Deceleration_create takes unit source,unit object,real angle,real distance,real time,real interval,real damage,boolean killtrees,boolean cycle,boolean path,string part,string geff,string weff returns integer
+            local integer this= s__YDWETimerPattern__Deceleration__allocate()
 local real vx= 0.0
             local real vy= 0.0
             local real l= 0.0
-            set s__YDWETimerPattern___Thread_des[this]=s__YDWETimerPattern___YDVector3__allocate()
-            set s__YDWETimerPattern___Thread_pos[this]=s__YDWETimerPattern___YDVector3__allocate()
-            set s__YDWETimerPattern___Thread_vel[this]=s__YDWETimerPattern___YDVector3__allocate()
-            set s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_vel[this]]=Cos(angle)
-            set s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_vel[this]]=Sin(angle)
-            set s__YDWETimerPattern___Thread_dist[this]=2 * distance * interval / time
-            set s__YDWETimerPattern___Thread_step[this]=s__YDWETimerPattern___Thread_dist[this] * interval / time
-            set s__YDWETimerPattern___YDVector3_x[s__YDWETimerPattern___Thread_pos[this]]=GetUnitX(object)
-            set s__YDWETimerPattern___YDVector3_y[s__YDWETimerPattern___Thread_pos[this]]=GetUnitY(object)
-            set s__YDWETimerPattern___Thread_caster[this]=source
-            set s__YDWETimerPattern___Thread_obj[this]=object
-            set s__YDWETimerPattern___Thread_amount[this]=damage
-            set s__YDWETimerPattern___Thread_killdest[this]=killtrees
-            set s__YDWETimerPattern___Thread_recycle[this]=cycle
-            set s__YDWETimerPattern___Thread_volume[this]=path
-            set s__YDWETimerPattern___Thread_gsfx[this]=geff
-            set s__YDWETimerPattern___Thread_wsfx[this]=weff
-            set s__YDWETimerPattern___Thread_switch[this]=1
-            set s__YDWETimerPattern___Thread_follow[this]=0
-            set s__YDWETimerPattern___Thread_g[this]=CreateGroup()
-            set s__YDWETimerPattern___Thread_t[this]=CreateTimer()
-            call TimerStart(s__YDWETimerPattern___Thread_t[this], interval, true, function s__YDWETimerPattern___Deceleration_move)
-            call SaveInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern___Thread_t[this]))))) )), ( ( (this)))) // INLINED!!
+            set s__YDWETimerPattern__Thread_des[this]=s__YDWETimerPattern__YDVector3__allocate()
+            set s__YDWETimerPattern__Thread_pos[this]=s__YDWETimerPattern__YDVector3__allocate()
+            set s__YDWETimerPattern__Thread_vel[this]=s__YDWETimerPattern__YDVector3__allocate()
+            set s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_vel[this]]=Cos(angle)
+            set s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_vel[this]]=Sin(angle)
+            set s__YDWETimerPattern__Thread_dist[this]=2 * distance * interval / time
+            set s__YDWETimerPattern__Thread_step[this]=s__YDWETimerPattern__Thread_dist[this] * interval / time
+            set s__YDWETimerPattern__YDVector3_x[s__YDWETimerPattern__Thread_pos[this]]=GetUnitX(object)
+            set s__YDWETimerPattern__YDVector3_y[s__YDWETimerPattern__Thread_pos[this]]=GetUnitY(object)
+            set s__YDWETimerPattern__Thread_caster[this]=source
+            set s__YDWETimerPattern__Thread_obj[this]=object
+            set s__YDWETimerPattern__Thread_amount[this]=damage
+            set s__YDWETimerPattern__Thread_killdest[this]=killtrees
+            set s__YDWETimerPattern__Thread_recycle[this]=cycle
+            set s__YDWETimerPattern__Thread_volume[this]=path
+            set s__YDWETimerPattern__Thread_gsfx[this]=geff
+            set s__YDWETimerPattern__Thread_wsfx[this]=weff
+            set s__YDWETimerPattern__Thread_switch[this]=1
+            set s__YDWETimerPattern__Thread_follow[this]=0
+            set s__YDWETimerPattern__Thread_g[this]=CreateGroup()
+            set s__YDWETimerPattern__Thread_t[this]=CreateTimer()
+            call TimerStart(s__YDWETimerPattern__Thread_t[this], interval, true, function s__YDWETimerPattern__Deceleration_move)
+            call SaveInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern__Thread_t[this]))))) )), ( ( (this)))) // INLINED!!
             return this
         endfunction
     // Jump Attack PUI
@@ -3513,7 +3513,7 @@ local real vx= 0.0
             //debug call BJDebugMsg("|cff00ff00[YDWE] Timer Pattern : |r No object!")
             return
         endif
-        call s__YDWETimerPattern___Parabola_create(u , u , Deg2Rad(face) , RMaxBJ(dis, 0) , RMaxBJ(lasttime, 0) , RMaxBJ(timeout, 0) , high , damage , part , dsfx)
+        call s__YDWETimerPattern__Parabola_create(u , u , Deg2Rad(face) , RMaxBJ(dis, 0) , RMaxBJ(lasttime, 0) , RMaxBJ(timeout, 0) , high , damage , part , dsfx)
     endfunction
     // Moon Priestess Arrow PUI
     function YDWETimerPatternMoonPriestessArrow takes unit u,real face,real dis,real lasttime,real timeout,integer lv,integer aid,integer uid,string order,string part,string dsfx returns nothing
@@ -3526,7 +3526,7 @@ local real vx= 0.0
         if sour == null then
             set sour=u
         endif
-        call s__YDWETimerPattern___Linear_create(sour , u , Deg2Rad(face) , RMaxBJ(dis, 0) , RMaxBJ(lasttime, 0) , RMaxBJ(timeout, 0) , uid , aid , IMaxBJ(lv, 1) , OrderId(order) , part , dsfx)
+        call s__YDWETimerPattern__Linear_create(sour , u , Deg2Rad(face) , RMaxBJ(dis, 0) , RMaxBJ(lasttime, 0) , RMaxBJ(timeout, 0) , uid , aid , IMaxBJ(lv, 1) , OrderId(order) , part , dsfx)
         //call YDWEFlushMissionByString(I2S(YDWEH2I(u)))
         set sour=null
     endfunction
@@ -3536,46 +3536,46 @@ local real vx= 0.0
             //debug call BJDebugMsg("|cff00ff00[YDWE] Timer Pattern : |r No object!")
             return
         endif
-        call s__YDWETimerPattern___Deceleration_create(u , u , Deg2Rad(face) , RMaxBJ(dis, 0) , RMaxBJ(lasttime, 0) , RMaxBJ(timeout, 0) , damage , killtrees , cycle , path , part , gsfx , wsfx)
+        call s__YDWETimerPattern__Deceleration_create(u , u , Deg2Rad(face) , RMaxBJ(dis, 0) , RMaxBJ(lasttime, 0) , RMaxBJ(timeout, 0) , damage , killtrees , cycle , path , part , gsfx , wsfx)
     endfunction
-    function YDWETimerPattern___Init takes nothing returns nothing
-        set YDWETimerPattern___Area=Rect(- 120.0, - 120.0, 120.0, 120.0)
-        set YDWETimerPattern___Bexpr=Filter(function YDWETimerPattern___TreeFilter)
+    function YDWETimerPattern__Init takes nothing returns nothing
+        set YDWETimerPattern__Area=Rect(- 120.0, - 120.0, 120.0, 120.0)
+        set YDWETimerPattern__Bexpr=Filter(function YDWETimerPattern__TreeFilter)
     endfunction
 
 //library YDWETimerPattern ends
 //library YDWETimerSystem:
-function YDWETimerSystem___NewTaskIndex takes nothing returns integer
- local integer h= YDWETimerSystem___TaskListIdleHead
-	if YDWETimerSystem___TaskListIdleHead < 0 then
-		if YDWETimerSystem___TaskListIdleMax >= 8000 then
+function YDWETimerSystem__NewTaskIndex takes nothing returns integer
+ local integer h= YDWETimerSystem__TaskListIdleHead
+	if YDWETimerSystem__TaskListIdleHead < 0 then
+		if YDWETimerSystem__TaskListIdleMax >= 8000 then
 			return 8100
 		else
-			set YDWETimerSystem___TaskListIdleMax=YDWETimerSystem___TaskListIdleMax + 1
-			return YDWETimerSystem___TaskListIdleMax
+			set YDWETimerSystem__TaskListIdleMax=YDWETimerSystem__TaskListIdleMax + 1
+			return YDWETimerSystem__TaskListIdleMax
 		endif
 	endif
-	set YDWETimerSystem___TaskListIdleHead=YDWETimerSystem___TaskListIdle[h]
+	set YDWETimerSystem__TaskListIdleHead=YDWETimerSystem__TaskListIdle[h]
 	return h
 endfunction
-function YDWETimerSystem___DeleteTaskIndex takes integer index returns nothing
-	set YDWETimerSystem___TaskListIdle[index]=YDWETimerSystem___TaskListIdleHead
-	set YDWETimerSystem___TaskListIdleHead=index
+function YDWETimerSystem__DeleteTaskIndex takes integer index returns nothing
+	set YDWETimerSystem__TaskListIdle[index]=YDWETimerSystem__TaskListIdleHead
+	set YDWETimerSystem__TaskListIdleHead=index
 endfunction
 //�ú������д���
-function YDWETimerSystem___NewTask takes real time,trigger proc returns integer
- local integer index= YDWETimerSystem___NewTaskIndex()
- local integer h= YDWETimerSystem___TaskListHead
- local integer t= R2I(100. * time) + YDWETimerSystem___CurrentTime
+function YDWETimerSystem__NewTask takes real time,trigger proc returns integer
+ local integer index= YDWETimerSystem__NewTaskIndex()
+ local integer h= YDWETimerSystem__TaskListHead
+ local integer t= R2I(100. * time) + YDWETimerSystem__CurrentTime
  local integer p
-	set YDWETimerSystem___TaskListProc[index]=proc
-	set YDWETimerSystem___TaskListTime[index]=t
+	set YDWETimerSystem__TaskListProc[index]=proc
+	set YDWETimerSystem__TaskListTime[index]=t
 	loop
-		set p=YDWETimerSystem___TaskListNext[h]
-		if p < 0 or YDWETimerSystem___TaskListTime[p] >= t then
+		set p=YDWETimerSystem__TaskListNext[h]
+		if p < 0 or YDWETimerSystem__TaskListTime[p] >= t then
 		//	call BJDebugMsg("NewTask:"+I2S(index))
-			set YDWETimerSystem___TaskListNext[h]=index
-			set YDWETimerSystem___TaskListNext[index]=p
+			set YDWETimerSystem__TaskListNext[h]=index
+			set YDWETimerSystem__TaskListNext[index]=p
 			return index
 		endif
 		set h=p
@@ -3583,59 +3583,59 @@ function YDWETimerSystem___NewTask takes real time,trigger proc returns integer
 	return index
 endfunction
 function YDWETimerSystemNewTask takes real time,trigger proc returns integer
-	return YDWETimerSystem___NewTask(time , proc)
+	return YDWETimerSystem__NewTask(time , proc)
 endfunction
 function YDWETimerSystemGetCurrentTask takes nothing returns integer
-	return YDWETimerSystem___CurrentIndex
+	return YDWETimerSystem__CurrentIndex
 endfunction
 //ɾ����λ
-function YDWETimerSystem___RemoveUnit_CallBack takes nothing returns nothing
-    call RemoveUnit(LoadUnitHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___CurrentIndex))
-    call RemoveSavedHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___CurrentIndex)
+function YDWETimerSystem__RemoveUnit_CallBack takes nothing returns nothing
+    call RemoveUnit(LoadUnitHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__CurrentIndex))
+    call RemoveSavedHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__CurrentIndex)
 endfunction
 function YDWETimerRemoveUnit takes real time,unit u returns nothing
-    call SaveUnitHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___NewTask(time , YDWETimerSystem___fnRemoveUnit), u)
+    call SaveUnitHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__NewTask(time , YDWETimerSystem__fnRemoveUnit), u)
 endfunction
 //�ݻټ�ʱ��
-function YDWETimerSystem___DestroyTimer_CallBack takes nothing returns nothing
-    call DestroyTimer(LoadTimerHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___CurrentIndex))
-    call RemoveSavedHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___CurrentIndex)
+function YDWETimerSystem__DestroyTimer_CallBack takes nothing returns nothing
+    call DestroyTimer(LoadTimerHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__CurrentIndex))
+    call RemoveSavedHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__CurrentIndex)
 endfunction
 function YDWETimerDestroyTimer takes real time,timer t returns nothing
-    call SaveTimerHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___NewTask(time , YDWETimerSystem___fnDestroyTimer), t)
+    call SaveTimerHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__NewTask(time , YDWETimerSystem__fnDestroyTimer), t)
 endfunction
 //ɾ����Ʒ
-function YDWETimerSystem___RemoveItem_CallBack takes nothing returns nothing
-    call RemoveItem(LoadItemHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___CurrentIndex))
-    call RemoveSavedHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___CurrentIndex)
+function YDWETimerSystem__RemoveItem_CallBack takes nothing returns nothing
+    call RemoveItem(LoadItemHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__CurrentIndex))
+    call RemoveSavedHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__CurrentIndex)
 endfunction
 function YDWETimerRemoveItem takes real time,item it returns nothing
-    call SaveItemHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___NewTask(time , YDWETimerSystem___fnRemoveItem), it)
+    call SaveItemHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__NewTask(time , YDWETimerSystem__fnRemoveItem), it)
 endfunction
 //ɾ����Ч
-function YDWETimerSystem___DestroyEffect_CallBack takes nothing returns nothing
-    call h__DestroyEffect(LoadEffectHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___CurrentIndex))
-    call RemoveSavedHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___CurrentIndex)
+function YDWETimerSystem__DestroyEffect_CallBack takes nothing returns nothing
+    call h__DestroyEffect(LoadEffectHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__CurrentIndex))
+    call RemoveSavedHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__CurrentIndex)
 endfunction
 function YDWETimerDestroyEffect takes real time,effect e returns nothing
-    call SaveEffectHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___NewTask(time , YDWETimerSystem___fnDestroyEffect), e)
+    call SaveEffectHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__NewTask(time , YDWETimerSystem__fnDestroyEffect), e)
 endfunction
 //ɾ��������Ч
-function YDWETimerSystem___DestroyLightning_CallBack takes nothing returns nothing
-    call DestroyLightning(LoadLightningHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___CurrentIndex))
-    call RemoveSavedHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___CurrentIndex)
+function YDWETimerSystem__DestroyLightning_CallBack takes nothing returns nothing
+    call DestroyLightning(LoadLightningHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__CurrentIndex))
+    call RemoveSavedHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__CurrentIndex)
 endfunction
 function YDWETimerDestroyLightning takes real time,lightning lt returns nothing
- local integer i= YDWETimerSystem___NewTask(time , YDWETimerSystem___fnDestroyLightning)
-    call SaveLightningHandle(YDHT, YDWETimerSystem___TimerHandle, i, lt)
+ local integer i= YDWETimerSystem__NewTask(time , YDWETimerSystem__fnDestroyLightning)
+    call SaveLightningHandle(YDHT, YDWETimerSystem__TimerHandle, i, lt)
 endfunction
 //���д�����
-function YDWETimerSystem___RunTrigger_CallBack takes nothing returns nothing
-    call TriggerExecute(LoadTriggerHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___CurrentIndex))
-    call RemoveSavedHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___CurrentIndex)
+function YDWETimerSystem__RunTrigger_CallBack takes nothing returns nothing
+    call TriggerExecute(LoadTriggerHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__CurrentIndex))
+    call RemoveSavedHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__CurrentIndex)
 endfunction
 function YDWETimerRunTrigger takes real time,trigger trg returns nothing
-    call SaveTriggerHandle(YDHT, YDWETimerSystem___TimerHandle, YDWETimerSystem___NewTask(time , YDWETimerSystem___fnRunTrigger), trg)
+    call SaveTriggerHandle(YDHT, YDWETimerSystem__TimerHandle, YDWETimerSystem__NewTask(time , YDWETimerSystem__fnRunTrigger), trg)
 endfunction
 //ɾ��Ư������
 function YDWETimerDestroyTextTag takes real time,texttag tt returns nothing
@@ -3649,50 +3649,50 @@ function YDWETimerDestroyTextTag takes real time,texttag tt returns nothing
     call SetTextTagFadepoint(tt, time)
 endfunction
 //���ļ�ʱ��������
-function YDWETimerSystem___Main takes nothing returns nothing
- local integer h= YDWETimerSystem___TaskListHead
+function YDWETimerSystem__Main takes nothing returns nothing
+ local integer h= YDWETimerSystem__TaskListHead
  local integer p
 	loop
-		set YDWETimerSystem___CurrentIndex=YDWETimerSystem___TaskListNext[h]
-		exitwhen YDWETimerSystem___CurrentIndex < 0 or YDWETimerSystem___CurrentTime < YDWETimerSystem___TaskListTime[YDWETimerSystem___CurrentIndex]
+		set YDWETimerSystem__CurrentIndex=YDWETimerSystem__TaskListNext[h]
+		exitwhen YDWETimerSystem__CurrentIndex < 0 or YDWETimerSystem__CurrentTime < YDWETimerSystem__TaskListTime[YDWETimerSystem__CurrentIndex]
 		//call BJDebugMsg("Task:"+I2S(CurrentIndex))
-		call TriggerEvaluate(YDWETimerSystem___TaskListProc[YDWETimerSystem___CurrentIndex])
-		call YDWETimerSystem___DeleteTaskIndex(YDWETimerSystem___CurrentIndex)
-		set YDWETimerSystem___TaskListNext[h]=YDWETimerSystem___TaskListNext[YDWETimerSystem___CurrentIndex]
+		call TriggerEvaluate(YDWETimerSystem__TaskListProc[YDWETimerSystem__CurrentIndex])
+		call YDWETimerSystem__DeleteTaskIndex(YDWETimerSystem__CurrentIndex)
+		set YDWETimerSystem__TaskListNext[h]=YDWETimerSystem__TaskListNext[YDWETimerSystem__CurrentIndex]
 	endloop
-	set YDWETimerSystem___CurrentTime=YDWETimerSystem___CurrentTime + 1
+	set YDWETimerSystem__CurrentTime=YDWETimerSystem__CurrentTime + 1
 endfunction
 //��ʼ������
-function YDWETimerSystem___Init takes nothing returns nothing
-    set YDWETimerSystem___Timer=CreateTimer()
-	set YDWETimerSystem___TimerHandle=GetHandleId(YDWETimerSystem___Timer)
-	set YDWETimerSystem___CurrentTime=0
-	set YDWETimerSystem___TaskListHead=0
-	set YDWETimerSystem___TaskListNext[0]=- 1
-	set YDWETimerSystem___TaskListIdleHead=1
-	set YDWETimerSystem___TaskListIdleMax=1
-	set YDWETimerSystem___TaskListIdle[1]=- 1
+function YDWETimerSystem__Init takes nothing returns nothing
+    set YDWETimerSystem__Timer=CreateTimer()
+	set YDWETimerSystem__TimerHandle=GetHandleId(YDWETimerSystem__Timer)
+	set YDWETimerSystem__CurrentTime=0
+	set YDWETimerSystem__TaskListHead=0
+	set YDWETimerSystem__TaskListNext[0]=- 1
+	set YDWETimerSystem__TaskListIdleHead=1
+	set YDWETimerSystem__TaskListIdleMax=1
+	set YDWETimerSystem__TaskListIdle[1]=- 1
 	
-	set YDWETimerSystem___fnRemoveUnit=CreateTrigger()
-	set YDWETimerSystem___fnDestroyTimer=CreateTrigger()
-	set YDWETimerSystem___fnRemoveItem=CreateTrigger()
-	set YDWETimerSystem___fnDestroyEffect=CreateTrigger()
-	set YDWETimerSystem___fnDestroyLightning=CreateTrigger()
-	set YDWETimerSystem___fnRunTrigger=CreateTrigger()
-	call TriggerAddCondition(YDWETimerSystem___fnRemoveUnit, Condition(function YDWETimerSystem___RemoveUnit_CallBack))
-	call TriggerAddCondition(YDWETimerSystem___fnDestroyTimer, Condition(function YDWETimerSystem___DestroyTimer_CallBack))
-	call TriggerAddCondition(YDWETimerSystem___fnRemoveItem, Condition(function YDWETimerSystem___RemoveItem_CallBack))
-	call TriggerAddCondition(YDWETimerSystem___fnDestroyEffect, Condition(function YDWETimerSystem___DestroyEffect_CallBack))
-	call TriggerAddCondition(YDWETimerSystem___fnDestroyLightning, Condition(function YDWETimerSystem___DestroyLightning_CallBack))
-	call TriggerAddCondition(YDWETimerSystem___fnRunTrigger, Condition(function YDWETimerSystem___RunTrigger_CallBack))
+	set YDWETimerSystem__fnRemoveUnit=CreateTrigger()
+	set YDWETimerSystem__fnDestroyTimer=CreateTrigger()
+	set YDWETimerSystem__fnRemoveItem=CreateTrigger()
+	set YDWETimerSystem__fnDestroyEffect=CreateTrigger()
+	set YDWETimerSystem__fnDestroyLightning=CreateTrigger()
+	set YDWETimerSystem__fnRunTrigger=CreateTrigger()
+	call TriggerAddCondition(YDWETimerSystem__fnRemoveUnit, Condition(function YDWETimerSystem__RemoveUnit_CallBack))
+	call TriggerAddCondition(YDWETimerSystem__fnDestroyTimer, Condition(function YDWETimerSystem__DestroyTimer_CallBack))
+	call TriggerAddCondition(YDWETimerSystem__fnRemoveItem, Condition(function YDWETimerSystem__RemoveItem_CallBack))
+	call TriggerAddCondition(YDWETimerSystem__fnDestroyEffect, Condition(function YDWETimerSystem__DestroyEffect_CallBack))
+	call TriggerAddCondition(YDWETimerSystem__fnDestroyLightning, Condition(function YDWETimerSystem__DestroyLightning_CallBack))
+	call TriggerAddCondition(YDWETimerSystem__fnRunTrigger, Condition(function YDWETimerSystem__RunTrigger_CallBack))
 	
-    call TimerStart(YDWETimerSystem___Timer, 0.01, true, function YDWETimerSystem___Main)
+    call TimerStart(YDWETimerSystem__Timer, 0.01, true, function YDWETimerSystem__Main)
 endfunction
 //ѭ�������ö�����ʱ��
 function YDWETimerSystemGetRunIndex takes nothing returns integer
-    return YDWETimerSystem___TimerSystem_RunIndex
+    return YDWETimerSystem__TimerSystem_RunIndex
 endfunction
-function YDWETimerSystem___RunPeriodicTriggerFunction takes nothing returns nothing
+function YDWETimerSystem__RunPeriodicTriggerFunction takes nothing returns nothing
     local integer tid= GetHandleId(GetExpiredTimer())
     local trigger trg= LoadTriggerHandle(YDHT, tid, $D0001)
 	call SaveInteger(YDHT, StringHash(I2S(GetHandleId(trg))), StringHash("RunIndex"), LoadInteger(YDHT, tid, $D0002))
@@ -3701,7 +3701,7 @@ function YDWETimerSystem___RunPeriodicTriggerFunction takes nothing returns noth
     endif
     set trg=null
 endfunction
-function YDWETimerSystem___RunPeriodicTriggerFunctionByTimes takes nothing returns nothing
+function YDWETimerSystem__RunPeriodicTriggerFunctionByTimes takes nothing returns nothing
     local integer tid= GetHandleId(GetExpiredTimer())
     local trigger trg= LoadTriggerHandle(YDHT, tid, $D0001)
     local integer times= LoadInteger(YDHT, tid, $D0003)
@@ -3728,9 +3728,9 @@ function YDWETimerRunPeriodicTrigger takes real timeout,trigger trg,boolean b,in
         set t=CreateTimer()
 		set tid=GetHandleId(t)
     endif
-    set YDWETimerSystem___TimerSystem_RunIndex=YDWETimerSystem___TimerSystem_RunIndex + 1
+    set YDWETimerSystem__TimerSystem_RunIndex=YDWETimerSystem__TimerSystem_RunIndex + 1
 	call SaveTriggerHandle(YDHT, tid, $D0001, trg)
-	call SaveInteger(YDHT, tid, $D0002, YDWETimerSystem___TimerSystem_RunIndex)
+	call SaveInteger(YDHT, tid, $D0002, YDWETimerSystem__TimerSystem_RunIndex)
 	set index=LoadInteger(YDHT, GetHandleId(trg), 'YDTS' + data)
     set index=index + 1
 	call SaveInteger(YDHT, GetHandleId(trg), 'YDTS' + data, index)
@@ -3738,9 +3738,9 @@ function YDWETimerRunPeriodicTrigger takes real timeout,trigger trg,boolean b,in
 	
     if b == false then
 		call SaveInteger(YDHT, tid, $D0003, times)
-        call TimerStart(t, timeout, true, function YDWETimerSystem___RunPeriodicTriggerFunctionByTimes)
+        call TimerStart(t, timeout, true, function YDWETimerSystem__RunPeriodicTriggerFunctionByTimes)
       else
-        call TimerStart(t, timeout, true, function YDWETimerSystem___RunPeriodicTriggerFunction)
+        call TimerStart(t, timeout, true, function YDWETimerSystem__RunPeriodicTriggerFunction)
     endif
     set t=null
 endfunction
@@ -3768,7 +3768,7 @@ endfunction
 // 
 //   Warcraft III map script
 //   Generated by the Warcraft III World Editor
-//   Date: Sun Aug 14 18:03:12 2016
+//   Date: Sun Aug 14 21:10:57 2016
 //   Map Author: 未知
 // 
 //===========================================================================
@@ -4553,7 +4553,7 @@ function Trig_elementActions takes nothing returns nothing
     set udg_e_skill='A01W'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="446"
-    set udg_e_skill='A04G'
+    set udg_e_skill='A041'
     call TriggerExecute(gg_trg_compute)
     set udg_e_string="447"
     set udg_e_skill='A043'
@@ -7914,6 +7914,190 @@ function InitTrig_A_control takes nothing returns nothing
     call TriggerAddAction(gg_trg_A_control, function Trig_A_controlActions)
 endfunction
 //===========================================================================
+// Trigger: A WWP
+//===========================================================================
+function Trig_A_WWPConditions takes nothing returns boolean
+    return ( ( GetSpellAbilityId() == 'A041' ) )
+endfunction
+function Trig_A_WWPFunc016T takes nothing returns nothing
+    call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x65489DBE, ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x65489DBE) - 1 ))
+    call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC723FED2, ( ( GetUnitFacing(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)) ) + ( 180.00 ) ))
+    set bj_forLoopAIndex=0
+    set bj_forLoopAIndexEnd=( R2I(( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xAF6BA5AE) )) / R2I(( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xCA90CABB) )) )
+    loop
+        exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
+        call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0xA99320FA, GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xB95F828C)))
+        call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0xFDF65382, GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xB95F828C)))
+        call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0xA99320FA, ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xA99320FA) + ( 30.00 * CosBJ(LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC723FED2)) ) ))
+        call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0xFDF65382, ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xFDF65382) + ( 30.00 * SinBJ(LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC723FED2)) ) ))
+        call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0xF3922E4D, ( 0.80 + ( 0.08 * I2R(LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x65489DBE)) ) ))
+        call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0x514E6458, ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x302A3E93) + ( 40.00 * I2R(LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x65489DBE)) ) ))
+        call SaveUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), 'h007', LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xFDF65382), 0))
+        call GroupAddUnit(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x214C62CC), LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0))
+        call SetUnitVertexColor(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0), 255, 255, 255, 100)
+        call UnitApplyTimedLife(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0), 'BHwe', LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xF3922E4D))
+        call YDWETimerPatternRushSlide(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0) , ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC723FED2) ) + ( ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xCA90CABB) ) * ( I2R(bj_forLoopAIndex) ) ) ) ) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x514E6458) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xBB2EAA30) , 0.02 , 0.00 , false , false , false , "" , "" , "")
+        call SaveUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), 'h007', LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xFDF65382), 0))
+        call GroupAddUnit(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x214C62CC), LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0))
+        call SetUnitVertexColor(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0), 255, 255, 255, 100)
+        call YDWETimerPatternRushSlide(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0) , ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC723FED2) ) - ( ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xCA90CABB) ) * ( I2R(bj_forLoopAIndex) ) ) ) ) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x514E6458) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xBB2EAA30) , 0.02 , 0.00 , false , false , false , "" , "" , "")
+        call UnitApplyTimedLife(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0), 'BHwe', LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xF3922E4D))
+        set bj_forLoopAIndex=bj_forLoopAIndex + 1
+    endloop
+    if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x65489DBE) == 0 ) ) then
+        call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
+        call DestroyTimer(GetExpiredTimer())
+    else
+    endif
+endfunction
+function Trig_A_WWPFunc017Func001Func005Func002Func002003003 takes nothing returns boolean
+    return ( ( ( ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_STRUCTURE) == false ) and ( IsUnitType(GetFilterUnit(), UNIT_TYPE_MAGIC_IMMUNE) == false ) ) and ( IsUnitInGroup(GetFilterUnit(), LoadGroupHandle(YDHT, GetHandleId(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x214C62CC)), 0x93FE3865)) == false ) ) and ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_MECHANICAL) == false ) and ( ( IsUnitAlly(GetFilterUnit(), GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB95F828C))) == false ) and ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_DEAD) == false ) and ( GetUnitUserData(GetFilterUnit()) != 999 ) ) ) ) ) )
+endfunction
+function Trig_A_WWPFunc017Func001Func005Func002Func003Func004T takes nothing returns nothing
+    call GroupRemoveUnitSimple(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3), LoadGroupHandle(YDHT, GetHandleId(LoadGroupHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x214C62CC)), 0x93FE3865))
+    call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
+    call DestroyTimer(GetExpiredTimer())
+endfunction
+function Trig_A_WWPFunc017Func001Func005Func002Func003Func012T takes nothing returns nothing
+    if ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xBFD4FC36) >= 0.00 ) ) then
+        call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0xBFD4FC36, ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xBFD4FC36) - ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xA1614B4D) * LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x312C4181) ) ))
+        call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0x4D554656, ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xBFD4FC36) * LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x312C4181) ))
+        call YDWETimerPatternRushSlide(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xF017C0F3) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC95D9591) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x4D554656) , 0.01 , 0.01 , 0 , false , false , false , "origin" , "" , "")
+    else
+        call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
+        call DestroyTimer(GetExpiredTimer())
+    endif
+endfunction
+function Trig_A_WWPFunc017Func001Func005Func002Func003A takes nothing returns nothing
+    local timer ydl_timer
+    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3, GetEnumUnit())
+    call UnitDamageTargetBJ(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB95F828C), GetEnumUnit(), LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x9720DBE0), ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC)
+    call GroupAddUnit(LoadGroupHandle(YDHT, GetHandleId(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x214C62CC)), 0x93FE3865), GetEnumUnit())
+    set ydl_timer=CreateTimer()
+    call SaveGroupHandle(YDHT, GetHandleId(ydl_timer), 0x214C62CC, LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x214C62CC))
+    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xF017C0F3, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3))
+    call TimerStart(ydl_timer, 1.00, false, function Trig_A_WWPFunc017Func001Func005Func002Func003Func004T)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x06770AC9, GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)))
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x08BB65A1, GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3)))
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x9CD60476, SquareRoot(( Pow(( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xA99320FA) - LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x06770AC9) ), 2.00) + Pow(( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xFDF65382) - LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x08BB65A1) ), 2.00) )))
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xC95D9591, Atan2BJ(( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x08BB65A1) - LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xFDF65382) ), ( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x06770AC9) - LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xA99320FA) )))
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xBFD4FC36, ( 10000.00 / ( Pow(LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x9CD60476), 0.50) + 4.00 ) ))
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xA1614B4D, 300.00)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x312C4181, 0.01)
+    set ydl_timer=CreateTimer()
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xA1614B4D, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xA1614B4D))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0x4D554656, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x4D554656))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xC95D9591, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xC95D9591))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0x312C4181, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0x312C4181))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xBFD4FC36, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xBFD4FC36))
+    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xF017C0F3, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF017C0F3))
+    call TimerStart(ydl_timer, 0.01, true, function Trig_A_WWPFunc017Func001Func005Func002Func003Func012T)
+    set ydl_timer=null
+endfunction
+function Trig_A_WWPFunc017Func001Func005A takes nothing returns nothing
+    local group ydl_group
+    local unit ydl_unit
+    local timer ydl_timer
+    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xB8F332A5, GetEnumUnit())
+    if ( ( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD0CB9912) > 0.02 ) ) then
+        call SaveLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x32A9E4C8, Location(GetUnitX(GetEnumUnit()), GetUnitY(GetEnumUnit())))
+        call SaveGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7, YDWEGetUnitsInRangeOfLocMatchingNull(40.00 , LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x32A9E4C8) , Condition(function Trig_A_WWPFunc017Func001Func005Func002Func002003003)))
+        call h__ForGroupBJ(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7), function Trig_A_WWPFunc017Func001Func005Func002Func003A)
+        call h__RemoveLocation(LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x32A9E4C8))
+        call h__DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xF3DA78D7))
+    else
+    endif
+    set ydl_group=null
+    set ydl_unit=null
+    set ydl_timer=null
+endfunction
+function Trig_A_WWPFunc017Conditions takes nothing returns nothing
+    local group ydl_group
+    local unit ydl_unit
+    local timer ydl_timer
+    if ( ( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD0CB9912) < 1.20 ) ) then
+        call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD0CB9912, ( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()), 0xD0CB9912) + 0.02 ))
+        call h__ForGroupBJ(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x214C62CC), function Trig_A_WWPFunc017Func001Func005A)
+    else
+        call h__DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x214C62CC)), 0x93FE3865))
+        call h__DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x214C62CC))
+        call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()))
+        call DestroyTrigger(GetTriggeringTrigger())
+    endif
+    set ydl_group=null
+    set ydl_unit=null
+    set ydl_timer=null
+endfunction
+function Trig_A_WWPActions takes nothing returns nothing
+    local timer ydl_timer
+    local trigger ydl_trigger
+    local integer ydl_localvar_step= LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+    set ydl_localvar_step=ydl_localvar_step + 3
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+    call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C, GetTriggerUnit())
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE, GetUnitAbilityLevel(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C), GetSpellAbilityId()))
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x324AE96A, GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C)))
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x058682B9, GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C)))
+    call SaveGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x214C62CC, CreateGroup())
+    call SaveGroupHandle(YDHT, GetHandleId(LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x214C62CC)), 0x93FE3865, CreateGroup())
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD0CB9912, 0.00)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAF6BA5AE, 27.00)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xCA90CABB, 9.00)
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x65489DBE, 8)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x302A3E93, 240.00)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBB2EAA30, 0.90)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x50A7ACD0, 0.04)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9720DBE0, 50.00)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC723FED2, ( ( GetUnitFacing(GetSpellAbilityUnit()) ) + ( 180.00 ) ))
+    set ydl_timer=CreateTimer()
+    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xBEB144A8, GetSpellAbilityUnit())
+    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xB95F828C, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C))
+    call SaveGroupHandle(YDHT, GetHandleId(ydl_timer), 0x214C62CC, LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x214C62CC))
+    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0x874856C0, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x874856C0))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xA99320FA, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xFDF65382, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382))
+    call SaveInteger(YDHT, GetHandleId(ydl_timer), 0x65489DBE, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x65489DBE))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0x302A3E93, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x302A3E93))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0x514E6458, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x514E6458))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xAF6BA5AE, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAF6BA5AE))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xBB2EAA30, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBB2EAA30))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xF3922E4D, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF3922E4D))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xC723FED2, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC723FED2))
+    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xCA90CABB, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xCA90CABB))
+    call TimerStart(ydl_timer, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x50A7ACD0), true, function Trig_A_WWPFunc016T)
+    set ydl_trigger=CreateTrigger()
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0xA1614B4D, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA1614B4D))
+    call SaveUnitHandle(YDHT, GetHandleId(ydl_trigger), 0xB95F828C, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0x9CD60476, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9CD60476))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0x4D554656, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x4D554656))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0xC95D9591, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC95D9591))
+    call SaveGroupHandle(YDHT, GetHandleId(ydl_trigger), 0x214C62CC, LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x214C62CC))
+    call SaveGroupHandle(YDHT, GetHandleId(ydl_trigger), 0xF3DA78D7, LoadGroupHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF3DA78D7))
+    call SaveLocationHandle(YDHT, GetHandleId(ydl_trigger), 0x32A9E4C8, LoadLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x32A9E4C8))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0x9720DBE0, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9720DBE0))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0xD0CB9912, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD0CB9912))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0x312C4181, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x312C4181))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0xBFD4FC36, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBFD4FC36))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0xA99320FA, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0x06770AC9, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x06770AC9))
+    call SaveUnitHandle(YDHT, GetHandleId(ydl_trigger), 0xF017C0F3, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF017C0F3))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0xFDF65382, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382))
+    call SaveReal(YDHT, GetHandleId(ydl_trigger), 0x08BB65A1, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x08BB65A1))
+    call TriggerRegisterTimerEventPeriodic(ydl_trigger, 0.02)
+    call TriggerAddCondition(ydl_trigger, Condition(function Trig_A_WWPFunc017Conditions))
+    call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+    set ydl_timer=null
+    set ydl_trigger=null
+endfunction
+//===========================================================================
+function InitTrig_A_WWP takes nothing returns nothing
+    set gg_trg_A_WWP=CreateTrigger()
+    call TriggerRegisterAnyUnitEventBJ(gg_trg_A_WWP, EVENT_PLAYER_UNIT_SPELL_EFFECT)
+    call TriggerAddCondition(gg_trg_A_WWP, Condition(function Trig_A_WWPConditions))
+    call TriggerAddAction(gg_trg_A_WWP, function Trig_A_WWPActions)
+endfunction
+//===========================================================================
 // Trigger: A WWE
 //===========================================================================
 function Trig_A_WWEConditions takes nothing returns boolean
@@ -8739,7 +8923,7 @@ function Trig_A_III_1Conditions takes nothing returns boolean
     return ( ( GetSpellAbilityId() == 'A022' ) )
 endfunction
 function Trig_A_III_1Actions takes nothing returns nothing
-    call YDWESetLocalVariableInteger("RunIndex" , (YDWETimerSystem___TimerSystem_RunIndex)) // INLINED!!
+    call YDWESetLocalVariableInteger("RunIndex" , (YDWETimerSystem__TimerSystem_RunIndex)) // INLINED!!
     call YDWESetLocalVariableInteger("RunIndex" , ( YDWEGetLocalVariableInteger("RunIndex") + 1 ))
     call YDWESetLocalVariableUnit("Source" , GetSpellAbilityUnit())
     call YDWESetLocalVariableUnit("Target" , GetSpellTargetUnit())
@@ -9834,7 +10018,7 @@ function Trig_Diabolic_Edict_aConditions takes nothing returns boolean
     return ( ( GetSpellAbilityId() == 'A00X' ) )
 endfunction
 function Trig_Diabolic_Edict_aActions takes nothing returns nothing
-    call YDWESetLocalVariableInteger("RunIndex" , (YDWETimerSystem___TimerSystem_RunIndex)) // INLINED!!
+    call YDWESetLocalVariableInteger("RunIndex" , (YDWETimerSystem__TimerSystem_RunIndex)) // INLINED!!
     call YDWESetLocalVariableInteger("RunIndex" , ( YDWEGetLocalVariableInteger("RunIndex") + 1 ))
     call YDWESetLocalVariableUnit("Source" , GetSpellAbilityUnit())
     call SaveUnitHandle(YDHT, StringHash((I2S(YDWEGetLocalVariableInteger("RunIndex")) )), StringHash(( "Source" )), ( YDWEGetLocalVariableUnit("Source"))) // INLINED!!
@@ -9893,7 +10077,7 @@ function Trig_Plasma_Field_aConditions takes nothing returns boolean
     return ( ( GetSpellAbilityId() == 'A00I' ) )
 endfunction
 function Trig_Plasma_Field_aActions takes nothing returns nothing
-    call YDWESetLocalVariableInteger("RunIndex" , (YDWETimerSystem___TimerSystem_RunIndex)) // INLINED!!
+    call YDWESetLocalVariableInteger("RunIndex" , (YDWETimerSystem__TimerSystem_RunIndex)) // INLINED!!
     call YDWESetLocalVariableInteger("RunIndex" , ( YDWEGetLocalVariableInteger("RunIndex") + 1 ))
     call YDWESetLocalVariableUnit("Source" , GetSpellAbilityUnit())
     call h__DestroyEffect(AddSpecialEffectTarget("war3mapImported\\razor's_plasma_field_fx.mdx", YDWEGetLocalVariableUnit("Source"), "origin"))
@@ -9998,7 +10182,7 @@ endfunction
 function Trig_Vacuum_aActions takes nothing returns nothing
     local group ydl_group
     local unit ydl_unit
-    call YDWESetLocalVariableInteger("RunIndex" , (YDWETimerSystem___TimerSystem_RunIndex)) // INLINED!!
+    call YDWESetLocalVariableInteger("RunIndex" , (YDWETimerSystem__TimerSystem_RunIndex)) // INLINED!!
     call YDWESetLocalVariableInteger("RunIndex" , ( YDWEGetLocalVariableInteger("RunIndex") + 1 ))
     call YDWESetLocalVariableUnit("Source" , GetSpellAbilityUnit())
     call YDWESetLocalVariableLocation("Fxpoint" , GetSpellTargetLoc())
@@ -10067,81 +10251,6 @@ function InitTrig_Vacuum_b takes nothing returns nothing
     call TriggerAddAction(gg_trg_Vacuum_b, function Trig_Vacuum_bActions)
 endfunction
 //===========================================================================
-// Trigger: A WWP
-//===========================================================================
-function Trig_A_WWPConditions takes nothing returns boolean
-    return ( ( GetSpellAbilityId() == 'A04G' ) )
-endfunction
-function Trig_A_WWPFunc009T takes nothing returns nothing
-    call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x65489DBE, ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x65489DBE) - 1 ))
-    set bj_forLoopAIndex=0
-    set bj_forLoopAIndexEnd=( R2I(( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xAF6BA5AE) )) / R2I(( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xCA90CABB) )) )
-    loop
-        exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
-        call SaveUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), 'h007', GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), 0))
-        call YDWETimerPatternRushSlide(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0) , ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC723FED2) ) + ( ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xCA90CABB) ) * ( I2R(bj_forLoopAIndex) ) ) ) ) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x302A3E93) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xBB2EAA30) , 0.03 , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x9375D887) , false , false , false , "" , "" , "")
-        call SaveUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), 'h007', GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBEB144A8)), 0))
-        call YDWETimerPatternRushSlide(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x874856C0) , ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xC723FED2) ) - ( ( ( LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xCA90CABB) ) * ( I2R(bj_forLoopAIndex) ) ) ) ) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x302A3E93) , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0xBB2EAA30) , 0.03 , LoadReal(YDHT, GetHandleId(GetExpiredTimer()), 0x9375D887) , false , false , false , "" , "" , "")
-        set bj_forLoopAIndex=bj_forLoopAIndex + 1
-    endloop
-    if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x65489DBE) == 0 ) ) then
-        call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
-        call DestroyTimer(GetExpiredTimer())
-    else
-    endif
-endfunction
-function Trig_A_WWPActions takes nothing returns nothing
-    local timer ydl_timer
-    local integer ydl_localvar_step= LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
-    set ydl_localvar_step=ydl_localvar_step + 3
-    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
-    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAF6BA5AE, 18.00)
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xCA90CABB, 3.00)
-    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x65489DBE, 3)
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x302A3E93, 400.00)
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBB2EAA30, 3.00)
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x50A7ACD0, 0.10)
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9375D887, 200.00)
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC723FED2, ( ( GetUnitFacing(GetSpellAbilityUnit()) ) + ( 180.00 ) ))
-    set ydl_timer=CreateTimer()
-    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xBEB144A8, GetSpellAbilityUnit())
-    call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0x874856C0, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x874856C0))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0x9375D887, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9375D887))
-    call SaveInteger(YDHT, GetHandleId(ydl_timer), 0x65489DBE, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x65489DBE))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0x302A3E93, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x302A3E93))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xAF6BA5AE, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAF6BA5AE))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xBB2EAA30, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBB2EAA30))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xC723FED2, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC723FED2))
-    call SaveReal(YDHT, GetHandleId(ydl_timer), 0xCA90CABB, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xCA90CABB))
-    call TimerStart(ydl_timer, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x50A7ACD0), true, function Trig_A_WWPFunc009T)
-    call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
-    set ydl_timer=null
-endfunction
-//===========================================================================
-function InitTrig_A_WWP takes nothing returns nothing
-    set gg_trg_A_WWP=CreateTrigger()
-    call TriggerRegisterAnyUnitEventBJ(gg_trg_A_WWP, EVENT_PLAYER_UNIT_SPELL_EFFECT)
-    call TriggerAddCondition(gg_trg_A_WWP, Condition(function Trig_A_WWPConditions))
-    call TriggerAddAction(gg_trg_A_WWP, function Trig_A_WWPActions)
-endfunction
-//===========================================================================
-// Trigger: A WWP 1
-//===========================================================================
-function Trig_A_WWP_1Conditions takes nothing returns boolean
-    return ( ( GetUnitTypeId((bj_lastAbilityCastingUnit)) == 'h007' ) ) // INLINED!!
-endfunction
-function Trig_A_WWP_1Actions takes nothing returns nothing
-    call RemoveUnit((bj_lastAbilityCastingUnit)) // INLINED!!
-endfunction
-//===========================================================================
-function InitTrig_A_WWP_1 takes nothing returns nothing
-    set gg_trg_A_WWP_1=CreateTrigger()
-    call YDWESyStemAbilityCastingOverRegistTrigger(gg_trg_A_WWP_1 , 6)
-    call TriggerAddCondition(gg_trg_A_WWP_1, Condition(function Trig_A_WWP_1Conditions))
-    call TriggerAddAction(gg_trg_A_WWP_1, function Trig_A_WWP_1Actions)
-endfunction
-//===========================================================================
 function InitCustomTriggers takes nothing returns nothing
     call InitTrig____________________________u()
     call InitTrig_go_die()
@@ -10183,6 +10292,7 @@ function InitCustomTriggers takes nothing returns nothing
     call InitTrig_A_FFL()
     call InitTrig_A_FFL_2()
     call InitTrig_A_control()
+    call InitTrig_A_WWP()
     call InitTrig_A_WWE()
     call InitTrig_B_WWS()
     call InitTrig_A_soul()
@@ -10214,8 +10324,6 @@ function InitCustomTriggers takes nothing returns nothing
     call InitTrig_Plasma_Field_b()
     call InitTrig_Vacuum_a()
     call InitTrig_Vacuum_b()
-    call InitTrig_A_WWP()
-    call InitTrig_A_WWP_1()
 endfunction
 //===========================================================================
 function RunInitializationTriggers takes nothing returns nothing
@@ -10716,12 +10824,12 @@ function main takes nothing returns nothing
     call CreateAllUnits()
     call InitBlizzard()
 
-call ExecuteFunc("jasshelper__initstructs27707212")
+call ExecuteFunc("jasshelper__initstructs139061031")
 call ExecuteFunc("YDTriggerSaveLoadSystem__Init")
 call ExecuteFunc("InitializeYD")
-call ExecuteFunc("MemoryLeakHelper___Init")
-call ExecuteFunc("YDWETimerPattern___Init")
-call ExecuteFunc("YDWETimerSystem___Init")
+call ExecuteFunc("MemoryLeakHelper__Init")
+call ExecuteFunc("YDWETimerPattern__Init")
+call ExecuteFunc("YDWETimerSystem__Init")
 
     call InitGlobals()
     call InitCustomTriggers()
@@ -10755,18 +10863,18 @@ function config takes nothing returns nothing
     call InitCustomTeams()
     call InitAllyPriorities()
 endfunction
-//===========================================================================
-//ϵͳ-TimerSystem
-//===========================================================================
-//library ValueIndexing initializer Init requires YDWEBase
-//===========================================================================
-//��Ծϵͳ 
-//===========================================================================
 //===========================================================================  
 //===========================================================================  
 //�Զ����¼� 
 //===========================================================================
 //===========================================================================   
+//library ValueIndexing initializer Init requires YDWEBase
+//===========================================================================
+//��Ծϵͳ 
+//===========================================================================
+//===========================================================================
+//ϵͳ-TimerSystem
+//===========================================================================
 
 
 
@@ -10774,152 +10882,152 @@ endfunction
 //Struct method generated initializers/callers:
 
 //Functions for BigArrays:
-function sa__MemoryLeakHelper___GTable_onDestroy takes nothing returns boolean
+function sa__MemoryLeakHelper__GTable_onDestroy takes nothing returns boolean
 local integer this=f__arg_this
-            call s__MemoryLeakHelper___GTable_reset(this)
+            call s__MemoryLeakHelper__GTable_reset(this)
    return true
 endfunction
-function sa__YDWETimerPattern___Thread_onDestroy takes nothing returns boolean
+function sa__YDWETimerPattern__Thread_onDestroy takes nothing returns boolean
 local integer this=f__arg_this
-            call RemoveSavedInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern___Thread_obj[this])))))))) // INLINED!!
-            call RemoveSavedInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern___Thread_t[this])))))))) // INLINED!!
-            call GroupClear(s__YDWETimerPattern___Thread_g[this])
-            call h__DestroyGroup(s__YDWETimerPattern___Thread_g[this])
-            call PauseTimer(s__YDWETimerPattern___Thread_t[this])
-            call DestroyTimer(s__YDWETimerPattern___Thread_t[this])
-            call s__YDWETimerPattern___YDVector3_deallocate(s__YDWETimerPattern___Thread_des[this])
-            call s__YDWETimerPattern___YDVector3_deallocate(s__YDWETimerPattern___Thread_pos[this])
-            call s__YDWETimerPattern___YDVector3_deallocate(s__YDWETimerPattern___Thread_vel[this])
-            set s__YDWETimerPattern___Thread_caster[this]=null
-            set s__YDWETimerPattern___Thread_target[this]=null
-            set s__YDWETimerPattern___Thread_obj[this]=null
-            set s__YDWETimerPattern___Thread_g[this]=null
-            set s__YDWETimerPattern___Thread_t[this]=null
-            set s__YDWETimerPattern___Thread_amount[this]=0
-            set s__YDWETimerPattern___Thread_skills[this]=0
-            set s__YDWETimerPattern___Thread_order[this]=0
-            set s__YDWETimerPattern___Thread_dsfx[this]=""
-            set s__YDWETimerPattern___Thread_gsfx[this]=""
-            set s__YDWETimerPattern___Thread_wsfx[this]=""
-            set s__YDWETimerPattern___Thread_part[this]=""
+            call RemoveSavedInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern__Thread_obj[this])))))))) // INLINED!!
+            call RemoveSavedInteger(YDHT, StringHash(("YDWETimerPattern." )), StringHash(( I2S((GetHandleId(((s__YDWETimerPattern__Thread_t[this])))))))) // INLINED!!
+            call GroupClear(s__YDWETimerPattern__Thread_g[this])
+            call h__DestroyGroup(s__YDWETimerPattern__Thread_g[this])
+            call PauseTimer(s__YDWETimerPattern__Thread_t[this])
+            call DestroyTimer(s__YDWETimerPattern__Thread_t[this])
+            call s__YDWETimerPattern__YDVector3_deallocate(s__YDWETimerPattern__Thread_des[this])
+            call s__YDWETimerPattern__YDVector3_deallocate(s__YDWETimerPattern__Thread_pos[this])
+            call s__YDWETimerPattern__YDVector3_deallocate(s__YDWETimerPattern__Thread_vel[this])
+            set s__YDWETimerPattern__Thread_caster[this]=null
+            set s__YDWETimerPattern__Thread_target[this]=null
+            set s__YDWETimerPattern__Thread_obj[this]=null
+            set s__YDWETimerPattern__Thread_g[this]=null
+            set s__YDWETimerPattern__Thread_t[this]=null
+            set s__YDWETimerPattern__Thread_amount[this]=0
+            set s__YDWETimerPattern__Thread_skills[this]=0
+            set s__YDWETimerPattern__Thread_order[this]=0
+            set s__YDWETimerPattern__Thread_dsfx[this]=""
+            set s__YDWETimerPattern__Thread_gsfx[this]=""
+            set s__YDWETimerPattern__Thread_wsfx[this]=""
+            set s__YDWETimerPattern__Thread_part[this]=""
    return true
 endfunction
-function sa___prototype170_MemoryLeakHelper___GetElapsedGameTime takes nothing returns boolean
+function sa___prototype170_MemoryLeakHelper__GetElapsedGameTime takes nothing returns boolean
 
-    set f__result_real= MemoryLeakHelper___GameTime + TimerGetElapsed(MemoryLeakHelper___GameTimeTimer)
+    set f__result_real= MemoryLeakHelper__GameTime + TimerGetElapsed(MemoryLeakHelper__GameTimeTimer)
     return true
 endfunction
-function sa___prototype174_MemoryLeakHelper___ReleaseLocation takes nothing returns boolean
-    call MemoryLeakHelper___ReleaseLocation(f__arg_location1)
+function sa___prototype174_MemoryLeakHelper__ReleaseLocation takes nothing returns boolean
+    call MemoryLeakHelper__ReleaseLocation(f__arg_location1)
     return true
 endfunction
-function sa___prototype175_MemoryLeakHelper___CatchGroup takes nothing returns boolean
-    call MemoryLeakHelper___CatchGroup(f__arg_group1)
+function sa___prototype175_MemoryLeakHelper__CatchGroup takes nothing returns boolean
+    call MemoryLeakHelper__CatchGroup(f__arg_group1)
     return true
 endfunction
-function sa___prototype175_MemoryLeakHelper___ReleaseGroup takes nothing returns boolean
-    call MemoryLeakHelper___ReleaseGroup(f__arg_group1)
+function sa___prototype175_MemoryLeakHelper__ReleaseGroup takes nothing returns boolean
+    call MemoryLeakHelper__ReleaseGroup(f__arg_group1)
     return true
 endfunction
-function sa___prototype176_MemoryLeakHelper___ReleaseEffect takes nothing returns boolean
-    call MemoryLeakHelper___ReleaseEffect(f__arg_effect1)
+function sa___prototype176_MemoryLeakHelper__ReleaseEffect takes nothing returns boolean
+    call MemoryLeakHelper__ReleaseEffect(f__arg_effect1)
     return true
 endfunction
-function sa___prototype177_MemoryLeakHelper___PP takes nothing returns boolean
-    call MemoryLeakHelper___PP(f__arg_location1,f__arg_real1,f__arg_real2)
+function sa___prototype177_MemoryLeakHelper__PP takes nothing returns boolean
+    call MemoryLeakHelper__PP(f__arg_location1,f__arg_real1,f__arg_real2)
     return true
 endfunction
-function sa___prototype178_MemoryLeakHelper___CU takes nothing returns boolean
-    call MemoryLeakHelper___CU(f__arg_integer1,f__arg_integer2,f__arg_player1,f__arg_location1,f__arg_real1)
+function sa___prototype178_MemoryLeakHelper__CU takes nothing returns boolean
+    call MemoryLeakHelper__CU(f__arg_integer1,f__arg_integer2,f__arg_player1,f__arg_location1,f__arg_real1)
     return true
 endfunction
-function sa___prototype179_MemoryLeakHelper___IPO takes nothing returns boolean
-    call MemoryLeakHelper___IPO(f__arg_unit1,f__arg_string1,f__arg_location1)
+function sa___prototype179_MemoryLeakHelper__IPO takes nothing returns boolean
+    call MemoryLeakHelper__IPO(f__arg_unit1,f__arg_string1,f__arg_location1)
     return true
 endfunction
-function sa___prototype180_MemoryLeakHelper___SUP takes nothing returns boolean
-    call MemoryLeakHelper___SUP(f__arg_unit1,f__arg_location1)
+function sa___prototype180_MemoryLeakHelper__SUP takes nothing returns boolean
+    call MemoryLeakHelper__SUP(f__arg_unit1,f__arg_location1)
     return true
 endfunction
-function sa___prototype167_MemoryLeakHelper___SUF takes nothing returns boolean
-    call MemoryLeakHelper___SUF(f__arg_unit1,f__arg_location1,f__arg_real1)
+function sa___prototype167_MemoryLeakHelper__SUF takes nothing returns boolean
+    call MemoryLeakHelper__SUF(f__arg_unit1,f__arg_location1,f__arg_real1)
     return true
 endfunction
-function sa___prototype181_MemoryLeakHelper___GUR takes nothing returns boolean
-    call MemoryLeakHelper___GUR(f__arg_real1,f__arg_location1,f__arg_boolexpr1)
+function sa___prototype181_MemoryLeakHelper__GUR takes nothing returns boolean
+    call MemoryLeakHelper__GUR(f__arg_real1,f__arg_location1,f__arg_boolexpr1)
     return true
 endfunction
-function sa___prototype182_MemoryLeakHelper___CUF takes nothing returns boolean
-    call MemoryLeakHelper___CUF(f__arg_integer1,f__arg_integer2,f__arg_player1,f__arg_location1,f__arg_location2)
+function sa___prototype182_MemoryLeakHelper__CUF takes nothing returns boolean
+    call MemoryLeakHelper__CUF(f__arg_integer1,f__arg_integer2,f__arg_player1,f__arg_location1,f__arg_location2)
     return true
 endfunction
-function sa___prototype183_MemoryLeakHelper___FG takes nothing returns boolean
-    call MemoryLeakHelper___FG(f__arg_group1,f__arg_code1)
+function sa___prototype183_MemoryLeakHelper__FG takes nothing returns boolean
+    call MemoryLeakHelper__FG(f__arg_group1,f__arg_code1)
     return true
 endfunction
-function sa___prototype184_MemoryLeakHelper___ASETU takes nothing returns boolean
-    call MemoryLeakHelper___ASETU(f__arg_string1,f__arg_widget1,f__arg_string2)
+function sa___prototype184_MemoryLeakHelper__ASETU takes nothing returns boolean
+    call MemoryLeakHelper__ASETU(f__arg_string1,f__arg_widget1,f__arg_string2)
     return true
 endfunction
-function sa___prototype185_MemoryLeakHelper___ASE takes nothing returns boolean
-    call MemoryLeakHelper___ASE(f__arg_location1,f__arg_string1)
+function sa___prototype185_MemoryLeakHelper__ASE takes nothing returns boolean
+    call MemoryLeakHelper__ASE(f__arg_location1,f__arg_string1)
     return true
 endfunction
 
-function jasshelper__initstructs27707212 takes nothing returns nothing
-    set st__MemoryLeakHelper___GTable_onDestroy[2]=CreateTrigger()
-    set st__MemoryLeakHelper___GTable_onDestroy[3]=st__MemoryLeakHelper___GTable_onDestroy[2]
-    call TriggerAddCondition(st__MemoryLeakHelper___GTable_onDestroy[2],Condition( function sa__MemoryLeakHelper___GTable_onDestroy))
-    set st__YDWETimerPattern___Thread_onDestroy[5]=CreateTrigger()
-    set st__YDWETimerPattern___Thread_onDestroy[6]=st__YDWETimerPattern___Thread_onDestroy[5]
-    set st__YDWETimerPattern___Thread_onDestroy[7]=st__YDWETimerPattern___Thread_onDestroy[5]
-    set st__YDWETimerPattern___Thread_onDestroy[8]=st__YDWETimerPattern___Thread_onDestroy[5]
-    call TriggerAddCondition(st__YDWETimerPattern___Thread_onDestroy[5],Condition( function sa__YDWETimerPattern___Thread_onDestroy))
+function jasshelper__initstructs139061031 takes nothing returns nothing
+    set st__MemoryLeakHelper__GTable_onDestroy[2]=CreateTrigger()
+    set st__MemoryLeakHelper__GTable_onDestroy[3]=st__MemoryLeakHelper__GTable_onDestroy[2]
+    call TriggerAddCondition(st__MemoryLeakHelper__GTable_onDestroy[2],Condition( function sa__MemoryLeakHelper__GTable_onDestroy))
+    set st__YDWETimerPattern__Thread_onDestroy[5]=CreateTrigger()
+    set st__YDWETimerPattern__Thread_onDestroy[6]=st__YDWETimerPattern__Thread_onDestroy[5]
+    set st__YDWETimerPattern__Thread_onDestroy[7]=st__YDWETimerPattern__Thread_onDestroy[5]
+    set st__YDWETimerPattern__Thread_onDestroy[8]=st__YDWETimerPattern__Thread_onDestroy[5]
+    call TriggerAddCondition(st__YDWETimerPattern__Thread_onDestroy[5],Condition( function sa__YDWETimerPattern__Thread_onDestroy))
     set st___prototype170[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype170[1],function sa___prototype170_MemoryLeakHelper___GetElapsedGameTime)
-    call TriggerAddCondition(st___prototype170[1],Condition(function sa___prototype170_MemoryLeakHelper___GetElapsedGameTime))
+    call TriggerAddAction(st___prototype170[1],function sa___prototype170_MemoryLeakHelper__GetElapsedGameTime)
+    call TriggerAddCondition(st___prototype170[1],Condition(function sa___prototype170_MemoryLeakHelper__GetElapsedGameTime))
     set st___prototype174[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype174[1],function sa___prototype174_MemoryLeakHelper___ReleaseLocation)
-    call TriggerAddCondition(st___prototype174[1],Condition(function sa___prototype174_MemoryLeakHelper___ReleaseLocation))
+    call TriggerAddAction(st___prototype174[1],function sa___prototype174_MemoryLeakHelper__ReleaseLocation)
+    call TriggerAddCondition(st___prototype174[1],Condition(function sa___prototype174_MemoryLeakHelper__ReleaseLocation))
     set st___prototype175[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype175[1],function sa___prototype175_MemoryLeakHelper___CatchGroup)
-    call TriggerAddCondition(st___prototype175[1],Condition(function sa___prototype175_MemoryLeakHelper___CatchGroup))
+    call TriggerAddAction(st___prototype175[1],function sa___prototype175_MemoryLeakHelper__CatchGroup)
+    call TriggerAddCondition(st___prototype175[1],Condition(function sa___prototype175_MemoryLeakHelper__CatchGroup))
     set st___prototype175[2]=CreateTrigger()
-    call TriggerAddAction(st___prototype175[2],function sa___prototype175_MemoryLeakHelper___ReleaseGroup)
-    call TriggerAddCondition(st___prototype175[2],Condition(function sa___prototype175_MemoryLeakHelper___ReleaseGroup))
+    call TriggerAddAction(st___prototype175[2],function sa___prototype175_MemoryLeakHelper__ReleaseGroup)
+    call TriggerAddCondition(st___prototype175[2],Condition(function sa___prototype175_MemoryLeakHelper__ReleaseGroup))
     set st___prototype176[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype176[1],function sa___prototype176_MemoryLeakHelper___ReleaseEffect)
-    call TriggerAddCondition(st___prototype176[1],Condition(function sa___prototype176_MemoryLeakHelper___ReleaseEffect))
+    call TriggerAddAction(st___prototype176[1],function sa___prototype176_MemoryLeakHelper__ReleaseEffect)
+    call TriggerAddCondition(st___prototype176[1],Condition(function sa___prototype176_MemoryLeakHelper__ReleaseEffect))
     set st___prototype177[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype177[1],function sa___prototype177_MemoryLeakHelper___PP)
-    call TriggerAddCondition(st___prototype177[1],Condition(function sa___prototype177_MemoryLeakHelper___PP))
+    call TriggerAddAction(st___prototype177[1],function sa___prototype177_MemoryLeakHelper__PP)
+    call TriggerAddCondition(st___prototype177[1],Condition(function sa___prototype177_MemoryLeakHelper__PP))
     set st___prototype178[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype178[1],function sa___prototype178_MemoryLeakHelper___CU)
-    call TriggerAddCondition(st___prototype178[1],Condition(function sa___prototype178_MemoryLeakHelper___CU))
+    call TriggerAddAction(st___prototype178[1],function sa___prototype178_MemoryLeakHelper__CU)
+    call TriggerAddCondition(st___prototype178[1],Condition(function sa___prototype178_MemoryLeakHelper__CU))
     set st___prototype179[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype179[1],function sa___prototype179_MemoryLeakHelper___IPO)
-    call TriggerAddCondition(st___prototype179[1],Condition(function sa___prototype179_MemoryLeakHelper___IPO))
+    call TriggerAddAction(st___prototype179[1],function sa___prototype179_MemoryLeakHelper__IPO)
+    call TriggerAddCondition(st___prototype179[1],Condition(function sa___prototype179_MemoryLeakHelper__IPO))
     set st___prototype180[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype180[1],function sa___prototype180_MemoryLeakHelper___SUP)
-    call TriggerAddCondition(st___prototype180[1],Condition(function sa___prototype180_MemoryLeakHelper___SUP))
+    call TriggerAddAction(st___prototype180[1],function sa___prototype180_MemoryLeakHelper__SUP)
+    call TriggerAddCondition(st___prototype180[1],Condition(function sa___prototype180_MemoryLeakHelper__SUP))
     set st___prototype167[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype167[1],function sa___prototype167_MemoryLeakHelper___SUF)
-    call TriggerAddCondition(st___prototype167[1],Condition(function sa___prototype167_MemoryLeakHelper___SUF))
+    call TriggerAddAction(st___prototype167[1],function sa___prototype167_MemoryLeakHelper__SUF)
+    call TriggerAddCondition(st___prototype167[1],Condition(function sa___prototype167_MemoryLeakHelper__SUF))
     set st___prototype181[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype181[1],function sa___prototype181_MemoryLeakHelper___GUR)
-    call TriggerAddCondition(st___prototype181[1],Condition(function sa___prototype181_MemoryLeakHelper___GUR))
+    call TriggerAddAction(st___prototype181[1],function sa___prototype181_MemoryLeakHelper__GUR)
+    call TriggerAddCondition(st___prototype181[1],Condition(function sa___prototype181_MemoryLeakHelper__GUR))
     set st___prototype182[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype182[1],function sa___prototype182_MemoryLeakHelper___CUF)
-    call TriggerAddCondition(st___prototype182[1],Condition(function sa___prototype182_MemoryLeakHelper___CUF))
+    call TriggerAddAction(st___prototype182[1],function sa___prototype182_MemoryLeakHelper__CUF)
+    call TriggerAddCondition(st___prototype182[1],Condition(function sa___prototype182_MemoryLeakHelper__CUF))
     set st___prototype183[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype183[1],function sa___prototype183_MemoryLeakHelper___FG)
-    call TriggerAddCondition(st___prototype183[1],Condition(function sa___prototype183_MemoryLeakHelper___FG))
+    call TriggerAddAction(st___prototype183[1],function sa___prototype183_MemoryLeakHelper__FG)
+    call TriggerAddCondition(st___prototype183[1],Condition(function sa___prototype183_MemoryLeakHelper__FG))
     set st___prototype184[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype184[1],function sa___prototype184_MemoryLeakHelper___ASETU)
-    call TriggerAddCondition(st___prototype184[1],Condition(function sa___prototype184_MemoryLeakHelper___ASETU))
+    call TriggerAddAction(st___prototype184[1],function sa___prototype184_MemoryLeakHelper__ASETU)
+    call TriggerAddCondition(st___prototype184[1],Condition(function sa___prototype184_MemoryLeakHelper__ASETU))
     set st___prototype185[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype185[1],function sa___prototype185_MemoryLeakHelper___ASE)
-    call TriggerAddCondition(st___prototype185[1],Condition(function sa___prototype185_MemoryLeakHelper___ASE))
+    call TriggerAddAction(st___prototype185[1],function sa___prototype185_MemoryLeakHelper__ASE)
+    call TriggerAddCondition(st___prototype185[1],Condition(function sa___prototype185_MemoryLeakHelper__ASE))
 
 
 
