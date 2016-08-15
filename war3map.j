@@ -28,10 +28,10 @@ integer YDWEBase__AbilityCastingOverEventNumber= 0
 //endglobals from YDWEBase
 //globals from YDWEGetForceOfPlayerNull:
 constant boolean LIBRARY_YDWEGetForceOfPlayerNull=true
+force yd_NullTempForce
 //endglobals from YDWEGetForceOfPlayerNull
 //globals from YDWEGetPlayersByMapControlNull:
 constant boolean LIBRARY_YDWEGetPlayersByMapControlNull=true
-force yd_NullTempForce
 //endglobals from YDWEGetPlayersByMapControlNull
 //globals from YDWEGetUnitsInRangeOfLocMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsInRangeOfLocMatchingNull=true
@@ -64,14 +64,14 @@ constant boolean LIBRARY_YDWESetUnitFacingToFaceLocTimedNull=true
 //globals from YDWETriggerEvent:
 constant boolean LIBRARY_YDWETriggerEvent=true
 trigger yd_DamageEventTrigger= null
-trigger array YDWETriggerEvent___DamageEventQueue
-integer YDWETriggerEvent___DamageEventNumber= 0
+trigger array YDWETriggerEvent__DamageEventQueue
+integer YDWETriggerEvent__DamageEventNumber= 0
 	
 item bj_lastMovedItemInItemSlot= null
 	
-trigger YDWETriggerEvent___MoveItemEventTrigger= null
-trigger array YDWETriggerEvent___MoveItemEventQueue
-integer YDWETriggerEvent___MoveItemEventNumber= 0
+trigger YDWETriggerEvent__MoveItemEventTrigger= null
+trigger array YDWETriggerEvent__MoveItemEventQueue
+integer YDWETriggerEvent__MoveItemEventNumber= 0
 //endglobals from YDWETriggerEvent
 //globals from YDWETriggerRegisterEnterRectSimpleNull:
 constant boolean LIBRARY_YDWETriggerRegisterEnterRectSimpleNull=true
@@ -1961,7 +1961,7 @@ endfunction
 //===========================================================================
 //æ˜¾ç¤ºç‰ˆæœ¬
 function YDWEVersion_Display takes nothing returns boolean
-    call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 30, "|cFF1E90FFå½“å‰ç¼–è¾‘å™¨ç‰ˆæœ¬ä¸ºï¼š |r|cFF00FF00YDWE 1.30.0.1301")
+    call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 30, "|cFF1E90FFå½“å‰ç¼–è¾‘å™¨ç‰ˆæœ¬ä¸ºï¼š |r|cFF00FF00YDWE 1.30.2.1333")
     return false
 endfunction
 function YDWEVersion_Init takes nothing returns nothing
@@ -2213,9 +2213,9 @@ function YDWEAnyUnitDamagedTriggerAction takes nothing returns nothing
     local integer i= 0
     
     loop
-        exitwhen i >= YDWETriggerEvent___DamageEventNumber
-        if YDWETriggerEvent___DamageEventQueue[i] != null and IsTriggerEnabled(YDWETriggerEvent___DamageEventQueue[i]) and TriggerEvaluate(YDWETriggerEvent___DamageEventQueue[i]) then
-            call TriggerExecute(YDWETriggerEvent___DamageEventQueue[i])
+        exitwhen i >= YDWETriggerEvent__DamageEventNumber
+        if YDWETriggerEvent__DamageEventQueue[i] != null and IsTriggerEnabled(YDWETriggerEvent__DamageEventQueue[i]) and TriggerEvaluate(YDWETriggerEvent__DamageEventQueue[i]) then
+            call TriggerExecute(YDWETriggerEvent__DamageEventQueue[i])
         endif
         set i=i + 1
     endloop
@@ -2244,14 +2244,14 @@ function YDWESyStemAnyUnitDamagedRegistTrigger takes trigger trg returns nothing
         return
     endif
         
-    if YDWETriggerEvent___DamageEventNumber == 0 then
+    if YDWETriggerEvent__DamageEventNumber == 0 then
         set yd_DamageEventTrigger=CreateTrigger()
         call TriggerAddAction(yd_DamageEventTrigger, function YDWEAnyUnitDamagedTriggerAction)
         call YDWEAnyUnitDamagedEnumUnit()
     endif
     
-    set YDWETriggerEvent___DamageEventQueue[YDWETriggerEvent___DamageEventNumber]=trg
-    set YDWETriggerEvent___DamageEventNumber=YDWETriggerEvent___DamageEventNumber + 1
+    set YDWETriggerEvent__DamageEventQueue[YDWETriggerEvent__DamageEventNumber]=trg
+    set YDWETriggerEvent__DamageEventNumber=YDWETriggerEvent__DamageEventNumber + 1
 endfunction
 //===========================================================================  
 //ÒÆ¶¯ÎïÆ·ÊÂ¼þ 
@@ -2262,9 +2262,9 @@ function YDWESyStemItemUnmovableTriggerAction takes nothing returns nothing
     if GetIssuedOrderId() >= 852002 and GetIssuedOrderId() <= 852007 then
 		set bj_lastMovedItemInItemSlot=GetOrderTargetItem()
     	loop
-        	exitwhen i >= YDWETriggerEvent___MoveItemEventNumber
-        	if YDWETriggerEvent___MoveItemEventQueue[i] != null and IsTriggerEnabled(YDWETriggerEvent___MoveItemEventQueue[i]) and TriggerEvaluate(YDWETriggerEvent___MoveItemEventQueue[i]) then
-        	    call TriggerExecute(YDWETriggerEvent___MoveItemEventQueue[i])
+        	exitwhen i >= YDWETriggerEvent__MoveItemEventNumber
+        	if YDWETriggerEvent__MoveItemEventQueue[i] != null and IsTriggerEnabled(YDWETriggerEvent__MoveItemEventQueue[i]) and TriggerEvaluate(YDWETriggerEvent__MoveItemEventQueue[i]) then
+        	    call TriggerExecute(YDWETriggerEvent__MoveItemEventQueue[i])
         	endif
         	set i=i + 1
     	endloop
@@ -2275,14 +2275,14 @@ function YDWESyStemItemUnmovableRegistTrigger takes trigger trg returns nothing
         return
     endif
         
-    if YDWETriggerEvent___MoveItemEventNumber == 0 then
-        set YDWETriggerEvent___MoveItemEventTrigger=CreateTrigger()
-        call TriggerAddAction(YDWETriggerEvent___MoveItemEventTrigger, function YDWESyStemItemUnmovableTriggerAction)
-        call TriggerRegisterAnyUnitEventBJ(YDWETriggerEvent___MoveItemEventTrigger, EVENT_PLAYER_UNIT_ISSUED_TARGET_ORDER)
+    if YDWETriggerEvent__MoveItemEventNumber == 0 then
+        set YDWETriggerEvent__MoveItemEventTrigger=CreateTrigger()
+        call TriggerAddAction(YDWETriggerEvent__MoveItemEventTrigger, function YDWESyStemItemUnmovableTriggerAction)
+        call TriggerRegisterAnyUnitEventBJ(YDWETriggerEvent__MoveItemEventTrigger, EVENT_PLAYER_UNIT_ISSUED_TARGET_ORDER)
     endif
     
-    set YDWETriggerEvent___MoveItemEventQueue[YDWETriggerEvent___MoveItemEventNumber]=trg
-    set YDWETriggerEvent___MoveItemEventNumber=YDWETriggerEvent___MoveItemEventNumber + 1
+    set YDWETriggerEvent__MoveItemEventQueue[YDWETriggerEvent__MoveItemEventNumber]=trg
+    set YDWETriggerEvent__MoveItemEventNumber=YDWETriggerEvent__MoveItemEventNumber + 1
 endfunction
 function GetLastMovedItemInItemSlot takes nothing returns item
     return bj_lastMovedItemInItemSlot
@@ -3771,7 +3771,7 @@ endfunction
 // 
 //   Warcraft III map script
 //   Generated by the Warcraft III World Editor
-//   Date: Mon Aug 15 09:47:56 2016
+//   Date: Mon Aug 15 14:09:33 2016
 //   Map Author: æœªçŸ¥
 // 
 //===========================================================================
@@ -4018,6 +4018,266 @@ function CreateUnitsForPlayer0 takes nothing returns nothing
     set u=CreateUnit(p, 'Hblm', 72.1, - 898.7, 306.462)
 endfunction
 //===========================================================================
+function CreateUnitsForPlayer1 takes nothing returns nothing
+    local player p= Player(1)
+    local unit u
+    local integer unitID
+    local trigger t
+    local real life
+    set u=CreateUnit(p, 'hpea', 557.2, - 1852.2, 139.553)
+    set u=CreateUnit(p, 'hpea', 576.1, - 1899.4, 349.013)
+    set u=CreateUnit(p, 'hpea', 596.2, - 1940.4, 330.204)
+    set u=CreateUnit(p, 'hpea', 613.8, - 1971.0, 107.461)
+    set u=CreateUnit(p, 'hpea', 642.3, - 2017.0, 228.786)
+    set u=CreateUnit(p, 'hpea', 671.8, - 2072.4, 45.639)
+    set u=CreateUnit(p, 'hpea', 693.1, - 2115.4, 105.725)
+    set u=CreateUnit(p, 'hpea', 706.9, - 2144.7, 332.621)
+    set u=CreateUnit(p, 'hpea', 642.6, - 2057.1, 110.559)
+    set u=CreateUnit(p, 'hpea', 543.8, - 1909.1, 278.754)
+    set u=CreateUnit(p, 'hpea', 541.9, - 1957.0, 249.035)
+    set u=CreateUnit(p, 'hpea', 564.7, - 2017.0, 94.244)
+    set u=CreateUnit(p, 'hpea', 576.8, - 2050.5, 167.206)
+    set u=CreateUnit(p, 'hpea', 599.8, - 2098.4, 196.233)
+    set u=CreateUnit(p, 'hpea', 634.5, - 2148.8, 184.005)
+    set u=CreateUnit(p, 'hpea', 659.3, - 2183.5, 325.040)
+    set u=CreateUnit(p, 'hpea', 680.1, - 2211.4, 38.772)
+    set u=CreateUnit(p, 'hpea', 641.2, - 2109.0, 249.156)
+    set u=CreateUnit(p, 'hpea', 609.2, - 2023.7, 39.475)
+    set u=CreateUnit(p, 'hpea', 512.3, - 1852.2, 142.750)
+    set u=CreateUnit(p, 'hpea', 707.4, - 2229.0, 178.929)
+    set u=CreateUnit(p, 'hpea', 735.5, - 2271.3, 230.226)
+    set u=CreateUnit(p, 'hpea', 658.9, - 1984.9, 348.871)
+    set u=CreateUnit(p, 'hpea', 624.2, - 1909.1, 359.945)
+    set u=CreateUnit(p, 'hpea', 608.4, - 1879.7, 93.804)
+    set u=CreateUnit(p, 'hpea', 751.8, - 2181.4, 282.181)
+    set u=CreateUnit(p, 'hpea', 776.2, - 2225.1, 238.059)
+    set u=CreateUnit(p, 'hpea', 795.0, - 2261.8, 8.976)
+    set u=CreateUnit(p, 'hpea', 808.5, - 2295.6, 167.008)
+    set u=CreateUnit(p, 'hpea', 734.4, - 2104.8, 157.428)
+    set u=CreateUnit(p, 'hpea', 673.9, - 1954.6, 153.967)
+    set u=CreateUnit(p, 'hpea', 645.0, - 1864.7, 212.922)
+    set u=CreateUnit(p, 'hpea', 627.1, - 1829.3, 246.629)
+    set u=CreateUnit(p, 'hpea', 728.4, - 2050.5, 186.334)
+    set u=CreateUnit(p, 'hpea', 764.2, - 2125.9, 105.900)
+    set u=CreateUnit(p, 'hpea', 792.3, - 2171.3, 115.580)
+    set u=CreateUnit(p, 'hpea', 821.4, - 2215.3, 356.990)
+    set u=CreateUnit(p, 'hpea', 848.2, - 2252.2, 43.562)
+    set u=CreateUnit(p, 'hpea', 709.0, - 2003.3, 310.494)
+    set u=CreateUnit(p, 'hpea', 847.9, - 2330.4, 165.481)
+    set u=CreateUnit(p, 'hpea', 865.3, - 2362.6, 314.878)
+    set u=CreateUnit(p, 'hpea', 747.5, - 2317.7, 240.938)
+    set u=CreateUnit(p, 'hpea', 803.7, - 2385.3, 295.673)
+    set u=CreateUnit(p, 'hpea', 824.5, - 2414.4, 79.862)
+    set u=CreateUnit(p, 'hpea', 865.2, - 2446.2, 75.665)
+    set u=CreateUnit(p, 'hpea', 916.4, - 2470.8, 264.537)
+    set u=CreateUnit(p, 'hpea', 936.6, - 2442.9, 252.056)
+    set u=CreateUnit(p, 'hpea', 907.0, - 2351.9, 117.458)
+    set u=CreateUnit(p, 'hpea', 877.8, - 2286.3, 86.915)
+    set u=CreateUnit(p, 'hpea', 660.6, - 1894.5, 148.188)
+    set u=CreateUnit(p, 'hpea', 933.2, - 2383.6, 15.074)
+    set u=CreateUnit(p, 'hpea', 973.4, - 2426.2, 47.528)
+    set u=CreateUnit(p, 'hpea', 1004.6, - 2465.9, 264.680)
+    set u=CreateUnit(p, 'hpea', 1033.9, - 2490.1, 273.271)
+    set u=CreateUnit(p, 'hpea', 1015.9, - 2429.6, 320.129)
+    set u=CreateUnit(p, 'hpea', 971.9, - 2343.0, 232.752)
+    set u=CreateUnit(p, 'hpea', 933.4, - 2284.4, 81.565)
+    set u=CreateUnit(p, 'hpea', 911.3, - 2250.3, 260.296)
+    set u=CreateUnit(p, 'hpea', 876.8, - 2211.4, 217.448)
+    set u=CreateUnit(p, 'hpea', 831.1, - 2167.3, 121.315)
+    set u=CreateUnit(p, 'hpea', 808.1, - 2136.3, 51.703)
+    set u=CreateUnit(p, 'hpea', 1038.0, - 2524.7, 109.361)
+    set u=CreateUnit(p, 'hpea', 1018.2, - 2630.8, 28.060)
+    set u=CreateUnit(p, 'hpea', 926.0, - 2550.9, 24.555)
+    set u=CreateUnit(p, 'hpea', 855.8, - 2485.3, 352.760)
+    set u=CreateUnit(p, 'hpea', 821.9, - 2451.2, 76.907)
+    set u=CreateUnit(p, 'hpea', 771.8, - 2376.4, 257.868)
+    set u=CreateUnit(p, 'hpea', 943.3, - 2508.1, 176.633)
+    set u=CreateUnit(p, 'hpea', 987.7, - 2554.2, 168.612)
+    set u=CreateUnit(p, 'hpea', 1010.7, - 2584.1, 205.055)
+    set u=CreateUnit(p, 'hpea', 976.8, - 2499.3, 270.755)
+    set u=CreateUnit(p, 'hpea', 900.6, - 2384.1, 200.287)
+    set u=CreateUnit(p, 'hpea', 988.6, - 2608.5, 223.612)
+    set u=CreateUnit(p, 'hpea', 1039.9, - 2788.4, 279.676)
+    set u=CreateUnit(p, 'hpea', 1047.8, - 2924.1, 12.118)
+    set u=CreateUnit(p, 'hpea', 1046.8, - 3049.0, 200.309)
+    set u=CreateUnit(p, 'hpea', 1013.1, - 3089.5, 82.257)
+    set u=CreateUnit(p, 'hpea', 941.8, - 2924.4, 164.855)
+    set u=CreateUnit(p, 'hpea', 909.0, - 2778.4, 114.261)
+    set u=CreateUnit(p, 'hpea', 912.3, - 2719.0, 81.027)
+    set u=CreateUnit(p, 'hpea', 916.2, - 2672.7, 158.505)
+    set u=CreateUnit(p, 'hpea', 938.3, - 2631.9, 152.407)
+    set u=CreateUnit(p, 'hpea', 1059.5, - 2659.2, 53.879)
+    set u=CreateUnit(p, 'hpea', 1152.8, - 2761.7, 131.455)
+    set u=CreateUnit(p, 'hpea', 1169.6, - 2797.0, 257.538)
+    set u=CreateUnit(p, 'hpea', 1127.0, - 2699.3, 62.910)
+    set u=CreateUnit(p, 'hpea', 1047.6, - 2578.0, 52.802)
+    set u=CreateUnit(p, 'hpea', 1199.7, - 2749.0, 317.712)
+    set u=CreateUnit(p, 'hpea', 1228.7, - 2774.3, 207.263)
+    set u=CreateUnit(p, 'hpea', 1148.9, - 2561.2, 331.852)
+    set u=CreateUnit(p, 'hpea', 1102.5, - 2497.2, 335.192)
+    set u=CreateUnit(p, 'hpea', 1069.1, - 2469.3, 77.456)
+    set u=CreateUnit(p, 'hpea', 1087.2, - 2566.0, 149.166)
+    set u=CreateUnit(p, 'hpea', 1181.5, - 2679.4, 285.752)
+    set u=CreateUnit(p, 'hpea', 1300.7, - 2753.2, 345.344)
+    set u=CreateUnit(p, 'hpea', 1347.8, - 2780.5, 118.151)
+    set u=CreateUnit(p, 'hpea', 1121.0, - 2643.3, 357.869)
+    set u=CreateUnit(p, 'hpea', 1214.6, - 2708.1, 301.892)
+    set u=CreateUnit(p, 'hpea', 1175.9, - 2647.9, 50.088)
+    set u=CreateUnit(p, 'hpea', 1251.7, - 2833.5, 78.873)
+    set u=CreateUnit(p, 'hpea', 1093.6, - 2703.7, 65.964)
+    set u=CreateUnit(p, 'hpea', 1017.5, - 2701.5, 26.829)
+    set u=CreateUnit(p, 'hpea', 1085.5, - 2782.6, 220.777)
+    set u=CreateUnit(p, 'hpea', 1155.1, - 2839.5, 268.690)
+    set u=CreateUnit(p, 'hpea', 1203.2, - 2876.8, 140.838)
+    set u=CreateUnit(p, 'hpea', 948.1, - 2587.5, 316.954)
+    set u=CreateUnit(p, 'hpea', 883.2, - 2514.7, 311.021)
+    set u=CreateUnit(p, 'hpea', 1267.2, - 2768.0, 348.420)
+    set u=CreateUnit(p, 'hpea', 1290.6, - 2790.9, 62.393)
+    set u=CreateUnit(p, 'hpea', 1252.3, - 2727.6, 232.302)
+    set u=CreateUnit(p, 'hpea', 1165.4, - 2611.0, 116.920)
+    set u=CreateUnit(p, 'hpea', 1242.4, - 2677.2, 278.094)
+    set u=CreateUnit(p, 'hpea', 1183.5, - 2570.8, 47.243)
+    set u=CreateUnit(p, 'hpea', 1339.2, - 2734.1, 309.121)
+    set u=CreateUnit(p, 'hpea', 1392.6, - 2778.4, 22.237)
+    set u=CreateUnit(p, 'hpea', 1479.8, - 2703.7, 120.139)
+    set u=CreateUnit(p, 'hpea', 1394.7, - 2611.0, 115.986)
+    set u=CreateUnit(p, 'hpea', 1370.6, - 2589.9, 159.065)
+    set u=CreateUnit(p, 'hpea', 1287.4, - 2601.7, 190.190)
+    set u=CreateUnit(p, 'hpea', 1253.1, - 2641.0, 252.452)
+    set u=CreateUnit(p, 'hpea', 1407.9, - 2839.5, 311.076)
+    set u=CreateUnit(p, 'hpea', 1348.8, - 2831.5, 125.819)
+    set u=CreateUnit(p, 'hpea', 1023.8, - 2892.2, 247.277)
+    set u=CreateUnit(p, 'hpea', 1138.0, - 2894.1, 217.745)
+    set u=CreateUnit(p, 'hpea', 1113.3, - 2833.5, 272.162)
+    set u=CreateUnit(p, 'hpea', 1084.9, - 2912.7, 110.548)
+    set u=CreateUnit(p, 'hpea', 1148.7, - 3024.1, 102.198)
+    set u=CreateUnit(p, 'hpea', 1196.5, - 3050.6, 95.936)
+    set u=CreateUnit(p, 'hpea', 1280.3, - 3014.5, 4.472)
+    set u=CreateUnit(p, 'hpea', 1313.8, - 2910.6, 54.736)
+    set u=CreateUnit(p, 'hpea', 1144.6, - 2945.4, 218.821)
+    set u=CreateUnit(p, 'hpea', 1286.1, - 2722.6, 240.245)
+    set u=CreateUnit(p, 'hpea', 965.6, - 2977.4, 79.247)
+    set u=CreateUnit(p, 'hpea', 1253.7, - 2910.6, 286.565)
+    set u=CreateUnit(p, 'hpea', 1007.7, - 2775.9, 218.393)
+    set u=CreateUnit(p, 'hpea', 1096.3, - 3014.5, 135.246)
+    set u=CreateUnit(p, 'hpea', 1168.6, - 2997.0, 150.891)
+    set u=CreateUnit(p, 'hpea', 944.8, - 2778.2, 116.107)
+    set u=CreateUnit(p, 'hpea', 974.0, - 2900.2, 180.247)
+    set u=CreateUnit(p, 'hpea', 1004.7, - 2935.3, 117.436)
+    set u=CreateUnit(p, 'hpea', 1042.8, - 2741.3, 46.364)
+    set u=CreateUnit(p, 'hpea', 991.7, - 2809.6, 11.097)
+    set u=CreateUnit(p, 'hpea', 855.6, - 2908.5, 70.963)
+    set u=CreateUnit(p, 'hpea', 896.0, - 2999.0, 52.703)
+    set u=CreateUnit(p, 'hpea', 1256.1, - 2973.4, 58.207)
+    set u=CreateUnit(p, 'hpea', 1379.6, - 2862.1, 106.010)
+    set u=CreateUnit(p, 'hpea', 1334.5, - 2647.7, 261.285)
+    set u=CreateUnit(p, 'hpea', 904.7, - 2632.7, 96.518)
+    set u=CreateUnit(p, 'hpea', 873.3, - 2727.3, 126.830)
+    set u=CreateUnit(p, 'hpea', 1392.7, - 2902.3, 332.984)
+    set u=CreateUnit(p, 'hpea', 1489.2, - 2802.9, 183.137)
+    set u=CreateUnit(p, 'hpea', 1482.7, - 2746.0, 329.578)
+    set u=CreateUnit(p, 'hpea', 1322.6, - 2607.5, 341.685)
+    set u=CreateUnit(p, 'hpea', 1309.1, - 2961.5, 9.503)
+    set u=CreateUnit(p, 'hpea', 1427.9, - 2904.3, 226.699)
+    set u=CreateUnit(p, 'hpea', 1457.3, - 2833.9, 344.003)
+    set u=CreateUnit(p, 'hpea', 1380.4, - 2652.6, 126.039)
+    set u=CreateUnit(p, 'hpea', 1258.3, - 2542.7, 344.388)
+    set u=CreateUnit(p, 'hpea', 1193.6, - 2513.3, 191.124)
+    set u=CreateUnit(p, 'hpea', 1135.1, - 2513.3, 137.817)
+    set u=CreateUnit(p, 'hpea', 1424.0, - 2736.7, 315.141)
+    set u=CreateUnit(p, 'hpea', 1428.1, - 2703.6, 72.721)
+    set u=CreateUnit(p, 'hpea', 1412.6, - 2657.5, 263.262)
+    set u=CreateUnit(p, 'hpea', 1533.6, - 2755.3, 217.360)
+    set u=CreateUnit(p, 'hpea', 1515.2, - 2667.4, 330.677)
+    set u=CreateUnit(p, 'hpea', 1411.8, - 2563.7, 127.896)
+    set u=CreateUnit(p, 'hpea', 1282.2, - 2516.0, 224.578)
+    set u=CreateUnit(p, 'hpea', 1252.4, - 2602.4, 89.102)
+    set u=CreateUnit(p, 'hpea', 1200.9, - 2612.6, 61.866)
+    set u=CreateUnit(p, 'hpea', 1232.8, - 2568.9, 25.918)
+    set u=CreateUnit(p, 'hpea', 995.9, - 2734.3, 260.362)
+    set u=CreateUnit(p, 'hpea', 977.9, - 2689.2, 329.512)
+    set u=CreateUnit(p, 'hpea', 950.0, - 2874.9, 9.800)
+    set u=CreateUnit(p, 'hpea', 957.9, - 2840.4, 69.622)
+    set u=CreateUnit(p, 'hpea', 892.4, - 2902.3, 310.373)
+    set u=CreateUnit(p, 'hpea', 885.4, - 2963.5, 178.292)
+    set u=CreateUnit(p, 'hpea', 895.7, - 2864.2, 219.349)
+    set u=CreateUnit(p, 'hpea', 867.3, - 2811.9, 345.816)
+    set u=CreateUnit(p, 'hpea', 1100.3, - 2883.4, 91.398)
+    set u=CreateUnit(p, 'hpea', 1057.6, - 2825.1, 164.064)
+    set u=CreateUnit(p, 'hpea', 1065.7, - 2991.2, 201.188)
+    set u=CreateUnit(p, 'hpea', 1069.4, - 2955.5, 310.143)
+    set u=CreateUnit(p, 'hpea', 990.5, - 3010.6, 309.384)
+    set u=CreateUnit(p, 'hpea', 995.0, - 3061.7, 251.199)
+    set u=CreateUnit(p, 'hpea', 1118.4, - 3080.2, 212.152)
+    set u=CreateUnit(p, 'hpea', 1277.3, - 3069.2, 190.750)
+    set u=CreateUnit(p, 'hpea', 1303.2, - 3043.0, 349.299)
+    set u=CreateUnit(p, 'hpea', 1063.5, - 3083.9, 71.699)
+    set u=CreateUnit(p, 'hpea', 1137.2, - 3116.4, 346.673)
+    set u=CreateUnit(p, 'hpea', 1377.0, - 2989.2, 249.991)
+    set u=CreateUnit(p, 'hpea', 1341.6, - 2864.2, 150.704)
+    set u=CreateUnit(p, 'hpea', 1475.2, - 2664.9, 160.911)
+    set u=CreateUnit(p, 'hpea', 1453.1, - 2581.9, 95.507)
+    set u=CreateUnit(p, 'hpea', 1378.0, - 2505.1, 31.224)
+    set u=CreateUnit(p, 'hpea', 1332.4, - 2494.3, 160.449)
+    set u=CreateUnit(p, 'hpea', 1447.6, - 2625.2, 270.898)
+    set u=CreateUnit(p, 'hpea', 1315.3, - 2455.6, 288.686)
+    set u=CreateUnit(p, 'hpea', 1239.3, - 2455.6, 290.103)
+    set u=CreateUnit(p, 'hpea', 1157.2, - 2455.6, 249.925)
+    set u=CreateUnit(p, 'hpea', 1116.1, - 2455.6, 44.309)
+    set u=CreateUnit(p, 'hpea', 1096.6, - 2529.4, 329.984)
+    set u=CreateUnit(p, 'hpea', 1282.5, - 2483.3, 99.913)
+    set u=CreateUnit(p, 'hpea', 1361.7, - 2547.9, 9.361)
+    set u=CreateUnit(p, 'hpea', 1313.5, - 2836.1, 281.742)
+    set u=CreateUnit(p, 'hpea', 1205.0, - 2959.5, 62.448)
+    set u=CreateUnit(p, 'hpea', 1196.6, - 2920.9, 55.351)
+    set u=CreateUnit(p, 'hpea', 1228.5, - 2999.0, 164.998)
+    set u=CreateUnit(p, 'hpea', 1201.1, - 2833.9, 347.816)
+    set u=CreateUnit(p, 'hpea', 1102.7, - 2746.0, 16.304)
+    set u=CreateUnit(p, 'hpea', 1089.4, - 2620.2, 222.755)
+    set u=CreateUnit(p, 'hpea', 1119.3, - 2589.6, 22.446)
+    set u=CreateUnit(p, 'hpea', 1303.8, - 2547.9, 152.308)
+    set u=CreateUnit(p, 'hpea', 1224.5, - 2502.4, 291.212)
+    set u=CreateUnit(p, 'hpea', 948.2, - 2715.5, 221.074)
+    set u=CreateUnit(p, 'hpea', 925.0, - 2836.1, 323.634)
+    set u=CreateUnit(p, 'hpea', 1008.7, - 2849.1, 104.879)
+    set u=CreateUnit(p, 'hpea', 1033.2, - 3006.8, 335.346)
+    set u=CreateUnit(p, 'hpea', 1014.0, - 2979.4, 88.487)
+    set u=CreateUnit(p, 'hpea', 932.8, - 2977.4, 112.459)
+    set u=CreateUnit(p, 'hpea', 950.1, - 3026.0, 204.780)
+    set u=CreateUnit(p, 'hpea', 1121.2, - 2971.5, 148.463)
+    set u=CreateUnit(p, 'hpea', 1243.6, - 3050.6, 316.899)
+    set u=CreateUnit(p, 'hpea', 1176.6, - 3080.2, 205.725)
+    set u=CreateUnit(p, 'hpea', 1359.9, - 3018.3, 103.923)
+    set u=CreateUnit(p, 'hpea', 1372.0, - 2943.4, 139.992)
+    set u=CreateUnit(p, 'hpea', 1345.6, - 2977.4, 196.969)
+    set u=CreateUnit(p, 'hpea', 1343.4, - 2898.1, 89.047)
+    set u=CreateUnit(p, 'hpea', 1275.2, - 2862.1, 226.007)
+    set u=CreateUnit(p, 'hpea', 1451.8, - 2766.8, 76.313)
+    set u=CreateUnit(p, 'hpea', 1384.7, - 2701.2, 132.400)
+    set u=CreateUnit(p, 'hpea', 1382.1, - 2741.3, 307.703)
+    set u=CreateUnit(p, 'hpea', 1285.3, - 2684.4, 285.499)
+    set u=CreateUnit(p, 'hpea', 1316.9, - 2694.0, 296.288)
+    set u=CreateUnit(p, 'hpea', 1178.9, - 2715.5, 36.454)
+    set u=CreateUnit(p, 'hpea', 1453.9, - 2870.6, 249.320)
+    set u=CreateUnit(p, 'hpea', 1417.7, - 2941.4, 29.181)
+    set u=CreateUnit(p, 'hpea', 1458.5, - 2961.5, 166.997)
+    set u=CreateUnit(p, 'hpea', 1494.9, - 2906.4, 254.253)
+    set u=CreateUnit(p, 'hpea', 1506.8, - 2842.6, 54.054)
+    set u=CreateUnit(p, 'hpea', 1532.5, - 2796.2, 285.730)
+    set u=CreateUnit(p, 'hpea', 1417.5, - 2995.1, 288.037)
+    set u=CreateUnit(p, 'hpea', 1277.7, - 2941.4, 277.325)
+    set u=CreateUnit(p, 'hpea', 1237.0, - 2868.5, 9.965)
+    set u=CreateUnit(p, 'hpea', 1431.1, - 2811.9, 195.431)
+    set u=CreateUnit(p, 'hpea', 1062.9, - 2859.9, 114.877)
+    set u=CreateUnit(p, 'hpea', 1061.7, - 2713.1, 26.225)
+    set u=CreateUnit(p, 'hpea', 1027.3, - 2664.9, 243.816)
+    set u=CreateUnit(p, 'hpea', 974.7, - 2637.7, 318.481)
+    set u=CreateUnit(p, 'hpea', 1162.1, - 2491.5, 282.753)
+    set u=CreateUnit(p, 'hpea', 1172.5, - 2537.4, 281.127)
+    set u=CreateUnit(p, 'hpea', 1187.5, - 2466.8, 320.261)
+    set u=CreateUnit(p, 'hpea', 1060.4, - 2547.9, 123.633)
+endfunction
+//===========================================================================
 function CreateNeutralHostile takes nothing returns nothing
     local player p= Player(PLAYER_NEUTRAL_AGGRESSIVE)
     local unit u
@@ -4144,12 +4404,13 @@ endfunction
 //===========================================================================
 function CreatePlayerUnits takes nothing returns nothing
     call CreateUnitsForPlayer0()
+    call CreateUnitsForPlayer1()
 endfunction
 //===========================================================================
 function CreateAllUnits takes nothing returns nothing
     call CreateBuildingsForPlayer0() // INLINED!!
     call CreateNeutralHostile()
-    call CreateUnitsForPlayer0() // INLINED!!
+    call CreatePlayerUnits()
 endfunction
 //***************************************************************************
 //*
@@ -5455,7 +5716,7 @@ function Trig_control______uFunc001003001001001002 takes nothing returns boolean
     return ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_HERO) == true ) )
 endfunction
 function Trig_control______uActions takes nothing returns nothing
-    call SetCameraFieldForPlayer(GetLocalPlayer(), CAMERA_FIELD_ROTATION, ( GetUnitFacing(FirstOfGroup(YDWEGetUnitsOfPlayerMatchingNull(GetLocalPlayer() , Condition(function Trig_control______uFunc001003001001001002)))) ), 1.00)
+    call SetCameraFieldForPlayer(GetLocalPlayer(), CAMERA_FIELD_ROTATION, ( GetUnitFacing(FirstOfGroup(YDWEGetUnitsOfPlayerMatchingNull(GetLocalPlayer() , Condition(function Trig_control______uFunc001003001001001002)))) ), 0.50)
 endfunction
 //===========================================================================
 function InitTrig_control______u takes nothing returns nothing
@@ -10868,7 +11129,7 @@ function main takes nothing returns nothing
     call CreateAllUnits()
     call InitBlizzard()
 
-call ExecuteFunc("jasshelper__initstructs184479453")
+call ExecuteFunc("jasshelper__initstructs14462119")
 call ExecuteFunc("YDTriggerSaveLoadSystem___Init")
 call ExecuteFunc("InitializeYD")
 call ExecuteFunc("MemoryLeakHelper__Init")
@@ -10907,6 +11168,11 @@ function config takes nothing returns nothing
     call InitCustomTeams()
     call InitAllyPriorities()
 endfunction
+//===========================================================================  
+//===========================================================================  
+//×Ô¶¨ÒåÊÂ¼þ 
+//===========================================================================
+//===========================================================================   
 //===========================================================================
 //ÏµÍ³-TimerSystem
 //===========================================================================
@@ -10914,11 +11180,6 @@ endfunction
 //===========================================================================
 //ÌøÔ¾ÏµÍ³ 
 //===========================================================================
-//===========================================================================  
-//===========================================================================  
-//×Ô¶¨ÒåÊÂ¼þ 
-//===========================================================================
-//===========================================================================   
 
 
 
@@ -11018,7 +11279,7 @@ function sa___prototype185_MemoryLeakHelper__ASE takes nothing returns boolean
     return true
 endfunction
 
-function jasshelper__initstructs184479453 takes nothing returns nothing
+function jasshelper__initstructs14462119 takes nothing returns nothing
     set st__MemoryLeakHelper__GTable_onDestroy[2]=CreateTrigger()
     set st__MemoryLeakHelper__GTable_onDestroy[3]=st__MemoryLeakHelper__GTable_onDestroy[2]
     call TriggerAddCondition(st__MemoryLeakHelper__GTable_onDestroy[2],Condition( function sa__MemoryLeakHelper__GTable_onDestroy))
