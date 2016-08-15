@@ -28,17 +28,17 @@ integer YDWEBase__AbilityCastingOverEventNumber= 0
 //endglobals from YDWEBase
 //globals from YDWEGetForceOfPlayerNull:
 constant boolean LIBRARY_YDWEGetForceOfPlayerNull=true
-force yd_NullTempForce
 //endglobals from YDWEGetForceOfPlayerNull
 //globals from YDWEGetPlayersByMapControlNull:
 constant boolean LIBRARY_YDWEGetPlayersByMapControlNull=true
+force yd_NullTempForce
 //endglobals from YDWEGetPlayersByMapControlNull
 //globals from YDWEGetUnitsInRangeOfLocMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsInRangeOfLocMatchingNull=true
+group yd_NullTempGroup
 //endglobals from YDWEGetUnitsInRangeOfLocMatchingNull
 //globals from YDWEGetUnitsInRectMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsInRectMatchingNull=true
-group yd_NullTempGroup
 //endglobals from YDWEGetUnitsInRectMatchingNull
 //globals from YDWEGetUnitsOfPlayerMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsOfPlayerMatchingNull=true
@@ -64,14 +64,14 @@ constant boolean LIBRARY_YDWESetUnitFacingToFaceLocTimedNull=true
 //globals from YDWETriggerEvent:
 constant boolean LIBRARY_YDWETriggerEvent=true
 trigger yd_DamageEventTrigger= null
-trigger array YDWETriggerEvent__DamageEventQueue
-integer YDWETriggerEvent__DamageEventNumber= 0
+trigger array YDWETriggerEvent___DamageEventQueue
+integer YDWETriggerEvent___DamageEventNumber= 0
 	
 item bj_lastMovedItemInItemSlot= null
 	
-trigger YDWETriggerEvent__MoveItemEventTrigger= null
-trigger array YDWETriggerEvent__MoveItemEventQueue
-integer YDWETriggerEvent__MoveItemEventNumber= 0
+trigger YDWETriggerEvent___MoveItemEventTrigger= null
+trigger array YDWETriggerEvent___MoveItemEventQueue
+integer YDWETriggerEvent___MoveItemEventNumber= 0
 //endglobals from YDWETriggerEvent
 //globals from YDWETriggerRegisterEnterRectSimpleNull:
 constant boolean LIBRARY_YDWETriggerRegisterEnterRectSimpleNull=true
@@ -325,6 +325,8 @@ trigger gg_trg_Hsharen1= null
 trigger gg_trg_Hsharen2= null
 trigger gg_trg_Hjifen2= null
 trigger gg_trg_Hjifen1= null
+trigger gg_trg__________jt= null
+trigger gg_trg_control______u= null
 trigger gg_trg_use_element= null
 trigger gg_trg_use_skill= null
 trigger gg_trg_e_orbit= null
@@ -401,8 +403,6 @@ trigger gg_trg_Plasma_Field_b= null
 trigger gg_trg_Vacuum_a= null
 trigger gg_trg_Vacuum_b= null
 trigger gg_trg_huangChongQun= null
-trigger gg_trg_control______u= null
-trigger gg_trg__________jt= null
 hashtable CZ_HT=InitHashtable()
 group SHSJDWZ=CreateGroup()
 constant integer CZ_PLMJ='e005'
@@ -1961,7 +1961,7 @@ endfunction
 //===========================================================================
 //显示版本
 function YDWEVersion_Display takes nothing returns boolean
-    call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 30, "|cFF1E90FF当前编辑器版本为： |r|cFF00FF00YDWE 1.30.2.1333")
+    call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 30, "|cFF1E90FF当前编辑器版本为： |r|cFF00FF00YDWE 1.30.0.1301")
     return false
 endfunction
 function YDWEVersion_Init takes nothing returns nothing
@@ -2213,9 +2213,9 @@ function YDWEAnyUnitDamagedTriggerAction takes nothing returns nothing
     local integer i= 0
     
     loop
-        exitwhen i >= YDWETriggerEvent__DamageEventNumber
-        if YDWETriggerEvent__DamageEventQueue[i] != null and IsTriggerEnabled(YDWETriggerEvent__DamageEventQueue[i]) and TriggerEvaluate(YDWETriggerEvent__DamageEventQueue[i]) then
-            call TriggerExecute(YDWETriggerEvent__DamageEventQueue[i])
+        exitwhen i >= YDWETriggerEvent___DamageEventNumber
+        if YDWETriggerEvent___DamageEventQueue[i] != null and IsTriggerEnabled(YDWETriggerEvent___DamageEventQueue[i]) and TriggerEvaluate(YDWETriggerEvent___DamageEventQueue[i]) then
+            call TriggerExecute(YDWETriggerEvent___DamageEventQueue[i])
         endif
         set i=i + 1
     endloop
@@ -2244,14 +2244,14 @@ function YDWESyStemAnyUnitDamagedRegistTrigger takes trigger trg returns nothing
         return
     endif
         
-    if YDWETriggerEvent__DamageEventNumber == 0 then
+    if YDWETriggerEvent___DamageEventNumber == 0 then
         set yd_DamageEventTrigger=CreateTrigger()
         call TriggerAddAction(yd_DamageEventTrigger, function YDWEAnyUnitDamagedTriggerAction)
         call YDWEAnyUnitDamagedEnumUnit()
     endif
     
-    set YDWETriggerEvent__DamageEventQueue[YDWETriggerEvent__DamageEventNumber]=trg
-    set YDWETriggerEvent__DamageEventNumber=YDWETriggerEvent__DamageEventNumber + 1
+    set YDWETriggerEvent___DamageEventQueue[YDWETriggerEvent___DamageEventNumber]=trg
+    set YDWETriggerEvent___DamageEventNumber=YDWETriggerEvent___DamageEventNumber + 1
 endfunction
 //===========================================================================  
 //�ƶ���Ʒ�¼� 
@@ -2262,9 +2262,9 @@ function YDWESyStemItemUnmovableTriggerAction takes nothing returns nothing
     if GetIssuedOrderId() >= 852002 and GetIssuedOrderId() <= 852007 then
 		set bj_lastMovedItemInItemSlot=GetOrderTargetItem()
     	loop
-        	exitwhen i >= YDWETriggerEvent__MoveItemEventNumber
-        	if YDWETriggerEvent__MoveItemEventQueue[i] != null and IsTriggerEnabled(YDWETriggerEvent__MoveItemEventQueue[i]) and TriggerEvaluate(YDWETriggerEvent__MoveItemEventQueue[i]) then
-        	    call TriggerExecute(YDWETriggerEvent__MoveItemEventQueue[i])
+        	exitwhen i >= YDWETriggerEvent___MoveItemEventNumber
+        	if YDWETriggerEvent___MoveItemEventQueue[i] != null and IsTriggerEnabled(YDWETriggerEvent___MoveItemEventQueue[i]) and TriggerEvaluate(YDWETriggerEvent___MoveItemEventQueue[i]) then
+        	    call TriggerExecute(YDWETriggerEvent___MoveItemEventQueue[i])
         	endif
         	set i=i + 1
     	endloop
@@ -2275,14 +2275,14 @@ function YDWESyStemItemUnmovableRegistTrigger takes trigger trg returns nothing
         return
     endif
         
-    if YDWETriggerEvent__MoveItemEventNumber == 0 then
-        set YDWETriggerEvent__MoveItemEventTrigger=CreateTrigger()
-        call TriggerAddAction(YDWETriggerEvent__MoveItemEventTrigger, function YDWESyStemItemUnmovableTriggerAction)
-        call TriggerRegisterAnyUnitEventBJ(YDWETriggerEvent__MoveItemEventTrigger, EVENT_PLAYER_UNIT_ISSUED_TARGET_ORDER)
+    if YDWETriggerEvent___MoveItemEventNumber == 0 then
+        set YDWETriggerEvent___MoveItemEventTrigger=CreateTrigger()
+        call TriggerAddAction(YDWETriggerEvent___MoveItemEventTrigger, function YDWESyStemItemUnmovableTriggerAction)
+        call TriggerRegisterAnyUnitEventBJ(YDWETriggerEvent___MoveItemEventTrigger, EVENT_PLAYER_UNIT_ISSUED_TARGET_ORDER)
     endif
     
-    set YDWETriggerEvent__MoveItemEventQueue[YDWETriggerEvent__MoveItemEventNumber]=trg
-    set YDWETriggerEvent__MoveItemEventNumber=YDWETriggerEvent__MoveItemEventNumber + 1
+    set YDWETriggerEvent___MoveItemEventQueue[YDWETriggerEvent___MoveItemEventNumber]=trg
+    set YDWETriggerEvent___MoveItemEventNumber=YDWETriggerEvent___MoveItemEventNumber + 1
 endfunction
 function GetLastMovedItemInItemSlot takes nothing returns item
     return bj_lastMovedItemInItemSlot
@@ -3771,7 +3771,7 @@ endfunction
 // 
 //   Warcraft III map script
 //   Generated by the Warcraft III World Editor
-//   Date: Mon Aug 15 01:33:22 2016
+//   Date: Mon Aug 15 09:47:56 2016
 //   Map Author: 未知
 // 
 //===========================================================================
@@ -5435,6 +5435,35 @@ function InitTrig_Hjifen1 takes nothing returns nothing
     call TriggerAddAction(gg_trg_Hjifen1, function Trig_Hjifen1Actions)
 endfunction
 //===========================================================================
+// Trigger: 初始化jt
+//===========================================================================
+function Trig__________jtFunc001002001002 takes nothing returns boolean
+    return ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_HERO) == true ) )
+endfunction
+function Trig__________jtActions takes nothing returns nothing
+    call SetCameraTargetControllerNoZForPlayer(GetLocalPlayer(), FirstOfGroup(YDWEGetUnitsOfPlayerMatchingNull(GetLocalPlayer() , Condition(function Trig__________jtFunc001002001002))), 0, 0, false)
+endfunction
+//===========================================================================
+function InitTrig__________jt takes nothing returns nothing
+    set gg_trg__________jt=CreateTrigger()
+    call TriggerAddAction(gg_trg__________jt, function Trig__________jtActions)
+endfunction
+//===========================================================================
+// Trigger: control视角
+//===========================================================================
+function Trig_control______uFunc001003001001001002 takes nothing returns boolean
+    return ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_HERO) == true ) )
+endfunction
+function Trig_control______uActions takes nothing returns nothing
+    call SetCameraFieldForPlayer(GetLocalPlayer(), CAMERA_FIELD_ROTATION, ( GetUnitFacing(FirstOfGroup(YDWEGetUnitsOfPlayerMatchingNull(GetLocalPlayer() , Condition(function Trig_control______uFunc001003001001001002)))) ), 1.00)
+endfunction
+//===========================================================================
+function InitTrig_control______u takes nothing returns nothing
+    set gg_trg_control______u=CreateTrigger()
+    call TriggerRegisterTimerEventPeriodic(gg_trg_control______u, 0.40)
+    call TriggerAddAction(gg_trg_control______u, function Trig_control______uActions)
+endfunction
+//===========================================================================
 // Trigger: use element
 //===========================================================================
 function Trig_use_elementConditions takes nothing returns boolean
@@ -5989,7 +6018,7 @@ function Trig_A_IIPFunc017T takes nothing returns nothing
     call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xD0CB9912, ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xD0CB9912) + 5 ))
     if ( ( UnitHasBuffBJ(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xC2FCB08E), 'B00J') == true ) ) then
         if ( ( ModuloInteger(LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xD0CB9912), 120) == 0 ) ) then
-            call UnitDamageTargetBJ(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xB95F828C), LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xC2FCB08E), 15.00, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC)
+            call UnitDamageTargetBJ(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xB95F828C), LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xC2FCB08E), ( 5.00 + ( 5.00 * I2R(LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x683BAEBE)) ) ), ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC)
         else
         endif
         call SaveReal(YDHT, GetHandleId(GetExpiredTimer()), 0x2392447A, GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xC2FCB08E)))
@@ -6023,7 +6052,7 @@ function Trig_A_IIPActions takes nothing returns nothing
     call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC2FCB08E, GetSpellTargetUnit())
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB0A9479A, 'A04C')
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE08EC4DF, 'A04E')
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6EA533B2, ( 0.25 + ( 0.15 * I2R(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE)) ) ))
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6EA533B2, ( 0.20 + ( 0.10 * I2R(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE)) ) ))
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD0CB9912, 0)
     call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA, GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC2FCB08E)))
     call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382, GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC2FCB08E)))
@@ -6036,6 +6065,7 @@ function Trig_A_IIPActions takes nothing returns nothing
     call UnitApplyTimedLife(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x90BB9840), 'BHwe', 10.00)
     set ydl_timer=CreateTimer()
     call SaveReal(YDHT, GetHandleId(ydl_timer), 0x6A7A5B61, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6A7A5B61))
+    call SaveInteger(YDHT, GetHandleId(ydl_timer), 0x683BAEBE, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE))
     call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0xB95F828C, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C))
     call SaveUnitHandle(YDHT, GetHandleId(ydl_timer), 0x90BB9840, LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x90BB9840))
     call SaveReal(YDHT, GetHandleId(ydl_timer), 0x7BC190FC, LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7BC190FC))
@@ -7396,7 +7426,7 @@ function Trig_A_PPPActions takes nothing returns nothing
     call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C, GetTriggerUnit())
     call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC2FCB08E, GetSpellTargetUnit())
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE, GetUnitAbilityLevel(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C), GetSpellAbilityId()))
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9720DBE0, ( 0.00 + ( 100.00 * I2R(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE)) ) ))
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9720DBE0, ( 0.00 + ( 60.00 * I2R(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE)) ) ))
     call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA, GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C)))
     call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382, GetUnitY(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C)))
     call SaveLocationHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x32A9E4C8, GetUnitLoc(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC2FCB08E)))
@@ -8974,7 +9004,7 @@ function Trig_A_III_2Actions takes nothing returns nothing
         call YDWESetLocalVariableLocation("point" , Location(GetUnitX(YDWEGetLocalVariableUnit("Caster")), GetUnitY(YDWEGetLocalVariableUnit("Caster"))))
         call YDWESetLocalVariableUnit("Nuker" , CreateUnit(GetOwningPlayer(YDWEGetLocalVariableUnit("Source")), 'u019', GetUnitX(YDWEGetLocalVariableUnit("Target")), GetUnitY(YDWEGetLocalVariableUnit("Target")), 0))
         call YDWESetLocalVariableGroup("Frost" , YDWEGetUnitsInRangeOfLocMatchingNull(400.00 , YDWEGetLocalVariableLocation("point") , Condition(function Trig_A_III_2Func009Func003002003)))
-        call UnitDamageTargetBJ(YDWEGetLocalVariableUnit("Source"), YDWEGetLocalVariableUnit("Target"), ( 50.00 + ( 25.00 * I2R(YDWEGetLocalVariableInteger("dengji")) ) ), ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC)
+        call UnitDamageTargetBJ(YDWEGetLocalVariableUnit("Source"), YDWEGetLocalVariableUnit("Target"), 0.00, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC)
         call UnitAddAbility(YDWEGetLocalVariableUnit("Nuker"), 'A024')
         call IssueTargetOrder(YDWEGetLocalVariableUnit("Nuker"), "frostnova", YDWEGetLocalVariableUnit("Target"))
         call h__DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Undead\\FrostNova\\FrostNovaTarget.mdl", YDWEGetLocalVariableUnit("Target"), "origin"))
@@ -9108,7 +9138,7 @@ function Trig_B_IIS_2Actions takes nothing returns nothing
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
     call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C, GetTriggerUnit())
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE, GetUnitAbilityLevel(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C), GetSpellAbilityId()))
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9720DBE0, 10.00)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC54D1CBF, ( 25.00 + ( 25.00 * I2R(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE)) ) ))
     call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6A7A5B61, 18.00)
     call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7BC190FC, 0.00)
     call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA, GetUnitX(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C)))
@@ -9263,7 +9293,7 @@ function Trig_A_IIF_FFIActions takes nothing returns nothing
     call SaveUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x90BB9840, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB95F828C)), 'n001', LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x324AE96A), LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x058682B9), LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC07D222F)))
     call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6A7A5B61, 25.00)
     call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7BC190FC, SquareRoot(( Pow(( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA) - LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x324AE96A) ), 2.00) + Pow(( LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382) - LoadReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x058682B9) ), 2.00) )))
-    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC54D1CBF, 80.00)
+    call SaveReal(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC54D1CBF, ( 40.00 + ( 40.00 * I2R(LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x683BAEBE)) ) ))
     set ydl_timer=CreateTimer()
     call SaveInteger(YDHT, GetHandleId(ydl_timer), 0xA9CA38BB, GetSpellAbilityId())
     call SaveInteger(YDHT, GetHandleId(ydl_timer), 0xB0A9479A, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB0A9479A))
@@ -10262,35 +10292,6 @@ function InitTrig_Vacuum_b takes nothing returns nothing
     call TriggerAddAction(gg_trg_Vacuum_b, function Trig_Vacuum_bActions)
 endfunction
 //===========================================================================
-// Trigger: control视角
-//===========================================================================
-function Trig_control______uFunc001003001001001002 takes nothing returns boolean
-    return ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_HERO) == true ) )
-endfunction
-function Trig_control______uActions takes nothing returns nothing
-    call SetCameraFieldForPlayer(GetLocalPlayer(), CAMERA_FIELD_ROTATION, ( GetUnitFacing(FirstOfGroup(YDWEGetUnitsOfPlayerMatchingNull(GetLocalPlayer() , Condition(function Trig_control______uFunc001003001001001002)))) ), 1.00)
-endfunction
-//===========================================================================
-function InitTrig_control______u takes nothing returns nothing
-    set gg_trg_control______u=CreateTrigger()
-    call TriggerRegisterTimerEventPeriodic(gg_trg_control______u, 0.40)
-    call TriggerAddAction(gg_trg_control______u, function Trig_control______uActions)
-endfunction
-//===========================================================================
-// Trigger: 初始化jt
-//===========================================================================
-function Trig__________jtFunc001002001002 takes nothing returns boolean
-    return ( ( IsUnitType(GetFilterUnit(), UNIT_TYPE_HERO) == true ) )
-endfunction
-function Trig__________jtActions takes nothing returns nothing
-    call SetCameraTargetControllerNoZForPlayer(GetLocalPlayer(), FirstOfGroup(YDWEGetUnitsOfPlayerMatchingNull(GetLocalPlayer() , Condition(function Trig__________jtFunc001002001002))), 0, 0, false)
-endfunction
-//===========================================================================
-function InitTrig__________jt takes nothing returns nothing
-    set gg_trg__________jt=CreateTrigger()
-    call TriggerAddAction(gg_trg__________jt, function Trig__________jtActions)
-endfunction
-//===========================================================================
 function InitCustomTriggers takes nothing returns nothing
     call InitTrig____________________________u()
     call InitTrig_go_die()
@@ -10308,6 +10309,8 @@ function InitCustomTriggers takes nothing returns nothing
     call InitTrig_Hsharen2()
     call InitTrig_Hjifen2()
     call InitTrig_Hjifen1()
+    call InitTrig__________jt()
+    call InitTrig_control______u()
     call InitTrig_use_element()
     call InitTrig_use_skill()
     call InitTrig_A_FFF()
@@ -10364,8 +10367,6 @@ function InitCustomTriggers takes nothing returns nothing
     call InitTrig_Plasma_Field_b()
     call InitTrig_Vacuum_a()
     call InitTrig_Vacuum_b()
-    call InitTrig_control______u()
-    call InitTrig__________jt()
 endfunction
 //===========================================================================
 function RunInitializationTriggers takes nothing returns nothing
@@ -10867,7 +10868,7 @@ function main takes nothing returns nothing
     call CreateAllUnits()
     call InitBlizzard()
 
-call ExecuteFunc("jasshelper__initstructs24800695")
+call ExecuteFunc("jasshelper__initstructs184479453")
 call ExecuteFunc("YDTriggerSaveLoadSystem___Init")
 call ExecuteFunc("InitializeYD")
 call ExecuteFunc("MemoryLeakHelper__Init")
@@ -10906,18 +10907,18 @@ function config takes nothing returns nothing
     call InitCustomTeams()
     call InitAllyPriorities()
 endfunction
+//===========================================================================
+//ϵͳ-TimerSystem
+//===========================================================================
+//library ValueIndexing initializer Init requires YDWEBase
+//===========================================================================
+//��Ծϵͳ 
+//===========================================================================
 //===========================================================================  
 //===========================================================================  
 //�Զ����¼� 
 //===========================================================================
 //===========================================================================   
-//library ValueIndexing initializer Init requires YDWEBase
-//===========================================================================
-//��Ծϵͳ 
-//===========================================================================
-//===========================================================================
-//ϵͳ-TimerSystem
-//===========================================================================
 
 
 
@@ -11017,7 +11018,7 @@ function sa___prototype185_MemoryLeakHelper__ASE takes nothing returns boolean
     return true
 endfunction
 
-function jasshelper__initstructs24800695 takes nothing returns nothing
+function jasshelper__initstructs184479453 takes nothing returns nothing
     set st__MemoryLeakHelper__GTable_onDestroy[2]=CreateTrigger()
     set st__MemoryLeakHelper__GTable_onDestroy[3]=st__MemoryLeakHelper__GTable_onDestroy[2]
     call TriggerAddCondition(st__MemoryLeakHelper__GTable_onDestroy[2],Condition( function sa__MemoryLeakHelper__GTable_onDestroy))
