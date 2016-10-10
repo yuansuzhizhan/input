@@ -43,15 +43,12 @@ integer array YDWEGeneralBounsSystem__MinBonus
 constant boolean LIBRARY_YDWEGetForceOfPlayerNull=true
 force yd_NullTempForce
 //endglobals from YDWEGetForceOfPlayerNull
-//globals from YDWEGetPlayersByMapControlNull:
-constant boolean LIBRARY_YDWEGetPlayersByMapControlNull=true
-//endglobals from YDWEGetPlayersByMapControlNull
 //globals from YDWEGetUnitsInRangeOfLocMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsInRangeOfLocMatchingNull=true
-group yd_NullTempGroup
 //endglobals from YDWEGetUnitsInRangeOfLocMatchingNull
 //globals from YDWEGetUnitsInRectMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsInRectMatchingNull=true
+group yd_NullTempGroup
 //endglobals from YDWEGetUnitsInRectMatchingNull
 //globals from YDWEGetUnitsOfPlayerMatchingNull:
 constant boolean LIBRARY_YDWEGetUnitsOfPlayerMatchingNull=true
@@ -261,36 +258,11 @@ integer array udg_e_skill_array
 string udg_e_string
 hashtable udg_E_A_duiying= null
 integer udg_E_count= 0
+force array udg_P_duiwu
+unit array udg_P_yingxiong
     // Generated
-rect gg_rct_GA0= null
-rect gg_rct_GA1= null
-rect gg_rct_GA2= null
-rect gg_rct_GB0= null
-rect gg_rct_GB1= null
-rect gg_rct_GB2= null
-rect gg_rct_GD0= null
-rect gg_rct_GD1= null
-rect gg_rct_GD2= null
-rect gg_rct_GE0= null
-rect gg_rct_GE1= null
-rect gg_rct_GE2= null
-rect gg_rct_GF0= null
-rect gg_rct_GF1= null
-rect gg_rct_GF2= null
-rect gg_rct______________001________5= null
-rect gg_rct______________012= null
-rect gg_rct______________012_______u= null
-rect gg_rct______________012________3= null
-rect gg_rct______________012________4= null
-rect gg_rct______________012________5= null
-rect gg_rct______________012________6= null
-rect gg_rct______________012________7= null
-rect gg_rct_GG1= null
-rect gg_rct_GG2= null
-rect gg_rct_GG3= null
-rect gg_rct_GH0= null
-rect gg_rct_GH1= null
-rect gg_rct_GH2= null
+rect gg_rct_CS____1= null
+rect gg_rct_CS_______1= null
 sound gg_snd_dominating= null
 sound gg_snd_double_kill= null
 sound gg_snd_firstblood= null
@@ -310,17 +282,13 @@ sound gg_snd_unstoppable= null
 sound gg_snd_whickedsick= null
 sound gg_snd_MagicLariatLoop1= null
 sound gg_snd_pi= null
-trigger gg_trg____________________________u= null
 trigger gg_trg_go_die= null
-trigger gg_trg_element= null
 trigger gg_trg_compute= null
 trigger gg_trg_1______u= null
 trigger gg_trg_begin= null
-trigger gg_trg_team= null
 trigger gg_trg_roundtime_0= null
 trigger gg_trg_roundtime_2= null
 trigger gg_trg____________________001= null
-trigger gg_trg_dialog= null
 trigger gg_trg_DMB1= null
 trigger gg_trg_DMB0= null
 trigger gg_trg_DMB2= null
@@ -328,8 +296,6 @@ trigger gg_trg_Hsharen1= null
 trigger gg_trg_Hsharen2= null
 trigger gg_trg_Hjifen2= null
 trigger gg_trg_Hjifen1= null
-trigger gg_trg__________jt= null
-trigger gg_trg_control______u= null
 trigger gg_trg_use_element= null
 trigger gg_trg_use_skill= null
 trigger gg_trg_use_skill_______u= null
@@ -393,12 +359,11 @@ trigger gg_trg_Vacuum_b= null
 trigger gg_trg_Skill01_____________u= null
 trigger gg_trg_Skill02_____________u= null
 trigger gg_trg_Skill03_____________u= null
-trigger gg_trg_A_WWP_1= null
-trigger gg_trg_C_archane= null
-trigger gg_trg_C_destroy= null
-trigger gg_trg_C_phoenix= null
+trigger gg_trg_MAP__________u= null
 trigger gg_trg_MAP_E___A____________1= null
 trigger gg_trg_MAP_____________2= null
+trigger gg_trg_P____________3= null
+trigger gg_trg_H__________________4= null
 hashtable CZ_HT=InitHashtable()
 group SHSJDWZ=CreateGroup()
 constant integer CZ_PLMJ='e005'
@@ -515,9 +480,10 @@ integer array si__MemoryLeakHelper__GTable_type
 trigger array st__MemoryLeakHelper__GTable_onDestroy
 integer array si__YDWETimerPattern__Thread_type
 trigger array st__YDWETimerPattern__Thread_onDestroy
-trigger array st___prototype172
-trigger array st___prototype175
+trigger array st___prototype171
+trigger array st___prototype174
 real f__result_real
+trigger array st___prototype178
 trigger array st___prototype179
 trigger array st___prototype180
 trigger array st___prototype181
@@ -529,7 +495,6 @@ trigger array st___prototype186
 trigger array st___prototype187
 trigger array st___prototype188
 trigger array st___prototype189
-trigger array st___prototype190
 unit f__arg_unit1
 location f__arg_location1
 location f__arg_location2
@@ -999,278 +964,278 @@ function s__YDWETimerPattern__Linear__allocate takes nothing returns integer
  return this
 endfunction
 
-function sc___prototype172_execute takes integer i,unit a1,location a2,real a3 returns nothing
+function sc___prototype171_execute takes integer i,unit a1,location a2,real a3 returns nothing
     set f__arg_unit1=a1
     set f__arg_location1=a2
     set f__arg_real1=a3
 
-    call TriggerExecute(st___prototype172[i])
+    call TriggerExecute(st___prototype171[i])
 endfunction
-function sc___prototype172_evaluate takes integer i,unit a1,location a2,real a3 returns nothing
+function sc___prototype171_evaluate takes integer i,unit a1,location a2,real a3 returns nothing
     set f__arg_unit1=a1
     set f__arg_location1=a2
     set f__arg_real1=a3
 
-    call TriggerEvaluate(st___prototype172[i])
+    call TriggerEvaluate(st___prototype171[i])
 
 endfunction
-function sc___prototype175_execute takes integer i returns nothing
+function sc___prototype174_execute takes integer i returns nothing
 
-    call TriggerExecute(st___prototype175[i])
+    call TriggerExecute(st___prototype174[i])
 endfunction
-function sc___prototype175_evaluate takes integer i returns real
+function sc___prototype174_evaluate takes integer i returns real
 
-    call TriggerEvaluate(st___prototype175[i])
+    call TriggerEvaluate(st___prototype174[i])
  return f__result_real
 endfunction
-function sc___prototype179_execute takes integer i,location a1 returns nothing
+function sc___prototype178_execute takes integer i,location a1 returns nothing
     set f__arg_location1=a1
+
+    call TriggerExecute(st___prototype178[i])
+endfunction
+function sc___prototype178_evaluate takes integer i,location a1 returns nothing
+    set f__arg_location1=a1
+
+    call TriggerEvaluate(st___prototype178[i])
+
+endfunction
+function sc___prototype179_execute takes integer i,group a1 returns nothing
+    set f__arg_group1=a1
 
     call TriggerExecute(st___prototype179[i])
 endfunction
-function sc___prototype179_evaluate takes integer i,location a1 returns nothing
-    set f__arg_location1=a1
+function sc___prototype179_evaluate takes integer i,group a1 returns nothing
+    set f__arg_group1=a1
 
     call TriggerEvaluate(st___prototype179[i])
 
 endfunction
-function sc___prototype180_execute takes integer i,group a1 returns nothing
-    set f__arg_group1=a1
+function sc___prototype180_execute takes integer i,effect a1 returns nothing
+    set f__arg_effect1=a1
 
     call TriggerExecute(st___prototype180[i])
 endfunction
-function sc___prototype180_evaluate takes integer i,group a1 returns nothing
-    set f__arg_group1=a1
+function sc___prototype180_evaluate takes integer i,effect a1 returns nothing
+    set f__arg_effect1=a1
 
     call TriggerEvaluate(st___prototype180[i])
 
 endfunction
-function sc___prototype181_execute takes integer i,effect a1 returns nothing
-    set f__arg_effect1=a1
+function sc___prototype181_execute takes integer i,location a1,real a2,real a3 returns nothing
+    set f__arg_location1=a1
+    set f__arg_real1=a2
+    set f__arg_real2=a3
 
     call TriggerExecute(st___prototype181[i])
 endfunction
-function sc___prototype181_evaluate takes integer i,effect a1 returns nothing
-    set f__arg_effect1=a1
+function sc___prototype181_evaluate takes integer i,location a1,real a2,real a3 returns nothing
+    set f__arg_location1=a1
+    set f__arg_real1=a2
+    set f__arg_real2=a3
 
     call TriggerEvaluate(st___prototype181[i])
 
 endfunction
-function sc___prototype182_execute takes integer i,location a1,real a2,real a3 returns nothing
-    set f__arg_location1=a1
-    set f__arg_real1=a2
-    set f__arg_real2=a3
+function sc___prototype182_execute takes integer i,integer a1,integer a2,player a3,location a4,real a5 returns nothing
+    set f__arg_integer1=a1
+    set f__arg_integer2=a2
+    set f__arg_player1=a3
+    set f__arg_location1=a4
+    set f__arg_real1=a5
 
     call TriggerExecute(st___prototype182[i])
 endfunction
-function sc___prototype182_evaluate takes integer i,location a1,real a2,real a3 returns nothing
-    set f__arg_location1=a1
-    set f__arg_real1=a2
-    set f__arg_real2=a3
+function sc___prototype182_evaluate takes integer i,integer a1,integer a2,player a3,location a4,real a5 returns nothing
+    set f__arg_integer1=a1
+    set f__arg_integer2=a2
+    set f__arg_player1=a3
+    set f__arg_location1=a4
+    set f__arg_real1=a5
 
     call TriggerEvaluate(st___prototype182[i])
 
 endfunction
-function sc___prototype183_execute takes integer i,integer a1,integer a2,player a3,location a4,real a5 returns nothing
-    set f__arg_integer1=a1
-    set f__arg_integer2=a2
-    set f__arg_player1=a3
-    set f__arg_location1=a4
-    set f__arg_real1=a5
+function sc___prototype183_execute takes integer i,unit a1,string a2,location a3 returns nothing
+    set f__arg_unit1=a1
+    set f__arg_string1=a2
+    set f__arg_location1=a3
 
     call TriggerExecute(st___prototype183[i])
 endfunction
-function sc___prototype183_evaluate takes integer i,integer a1,integer a2,player a3,location a4,real a5 returns nothing
-    set f__arg_integer1=a1
-    set f__arg_integer2=a2
-    set f__arg_player1=a3
-    set f__arg_location1=a4
-    set f__arg_real1=a5
+function sc___prototype183_evaluate takes integer i,unit a1,string a2,location a3 returns nothing
+    set f__arg_unit1=a1
+    set f__arg_string1=a2
+    set f__arg_location1=a3
 
     call TriggerEvaluate(st___prototype183[i])
 
 endfunction
-function sc___prototype184_execute takes integer i,unit a1,string a2,location a3 returns nothing
+function sc___prototype184_execute takes integer i,unit a1,location a2 returns nothing
     set f__arg_unit1=a1
-    set f__arg_string1=a2
-    set f__arg_location1=a3
+    set f__arg_location1=a2
 
     call TriggerExecute(st___prototype184[i])
 endfunction
-function sc___prototype184_evaluate takes integer i,unit a1,string a2,location a3 returns nothing
+function sc___prototype184_evaluate takes integer i,unit a1,location a2 returns nothing
     set f__arg_unit1=a1
-    set f__arg_string1=a2
-    set f__arg_location1=a3
+    set f__arg_location1=a2
 
     call TriggerEvaluate(st___prototype184[i])
 
 endfunction
-function sc___prototype185_execute takes integer i,unit a1,location a2 returns nothing
-    set f__arg_unit1=a1
+function sc___prototype185_execute takes integer i,real a1,location a2,boolexpr a3 returns nothing
+    set f__arg_real1=a1
     set f__arg_location1=a2
+    set f__arg_boolexpr1=a3
 
     call TriggerExecute(st___prototype185[i])
 endfunction
-function sc___prototype185_evaluate takes integer i,unit a1,location a2 returns nothing
-    set f__arg_unit1=a1
+function sc___prototype185_evaluate takes integer i,real a1,location a2,boolexpr a3 returns nothing
+    set f__arg_real1=a1
     set f__arg_location1=a2
+    set f__arg_boolexpr1=a3
 
     call TriggerEvaluate(st___prototype185[i])
 
 endfunction
-function sc___prototype186_execute takes integer i,real a1,location a2,boolexpr a3 returns nothing
-    set f__arg_real1=a1
-    set f__arg_location1=a2
-    set f__arg_boolexpr1=a3
+function sc___prototype186_execute takes integer i,integer a1,integer a2,player a3,location a4,location a5 returns nothing
+    set f__arg_integer1=a1
+    set f__arg_integer2=a2
+    set f__arg_player1=a3
+    set f__arg_location1=a4
+    set f__arg_location2=a5
 
     call TriggerExecute(st___prototype186[i])
 endfunction
-function sc___prototype186_evaluate takes integer i,real a1,location a2,boolexpr a3 returns nothing
-    set f__arg_real1=a1
-    set f__arg_location1=a2
-    set f__arg_boolexpr1=a3
+function sc___prototype186_evaluate takes integer i,integer a1,integer a2,player a3,location a4,location a5 returns nothing
+    set f__arg_integer1=a1
+    set f__arg_integer2=a2
+    set f__arg_player1=a3
+    set f__arg_location1=a4
+    set f__arg_location2=a5
 
     call TriggerEvaluate(st___prototype186[i])
 
 endfunction
-function sc___prototype187_execute takes integer i,integer a1,integer a2,player a3,location a4,location a5 returns nothing
-    set f__arg_integer1=a1
-    set f__arg_integer2=a2
-    set f__arg_player1=a3
-    set f__arg_location1=a4
-    set f__arg_location2=a5
+function sc___prototype187_execute takes integer i,group a1,code a2 returns nothing
+    set f__arg_group1=a1
+    set f__arg_code1=a2
 
     call TriggerExecute(st___prototype187[i])
 endfunction
-function sc___prototype187_evaluate takes integer i,integer a1,integer a2,player a3,location a4,location a5 returns nothing
-    set f__arg_integer1=a1
-    set f__arg_integer2=a2
-    set f__arg_player1=a3
-    set f__arg_location1=a4
-    set f__arg_location2=a5
+function sc___prototype187_evaluate takes integer i,group a1,code a2 returns nothing
+    set f__arg_group1=a1
+    set f__arg_code1=a2
 
     call TriggerEvaluate(st___prototype187[i])
 
 endfunction
-function sc___prototype188_execute takes integer i,group a1,code a2 returns nothing
-    set f__arg_group1=a1
-    set f__arg_code1=a2
+function sc___prototype188_execute takes integer i,string a1,widget a2,string a3 returns nothing
+    set f__arg_string1=a1
+    set f__arg_widget1=a2
+    set f__arg_string2=a3
 
     call TriggerExecute(st___prototype188[i])
 endfunction
-function sc___prototype188_evaluate takes integer i,group a1,code a2 returns nothing
-    set f__arg_group1=a1
-    set f__arg_code1=a2
+function sc___prototype188_evaluate takes integer i,string a1,widget a2,string a3 returns nothing
+    set f__arg_string1=a1
+    set f__arg_widget1=a2
+    set f__arg_string2=a3
 
     call TriggerEvaluate(st___prototype188[i])
 
 endfunction
-function sc___prototype189_execute takes integer i,string a1,widget a2,string a3 returns nothing
-    set f__arg_string1=a1
-    set f__arg_widget1=a2
-    set f__arg_string2=a3
+function sc___prototype189_execute takes integer i,location a1,string a2 returns nothing
+    set f__arg_location1=a1
+    set f__arg_string1=a2
 
     call TriggerExecute(st___prototype189[i])
 endfunction
-function sc___prototype189_evaluate takes integer i,string a1,widget a2,string a3 returns nothing
-    set f__arg_string1=a1
-    set f__arg_widget1=a2
-    set f__arg_string2=a3
+function sc___prototype189_evaluate takes integer i,location a1,string a2 returns nothing
+    set f__arg_location1=a1
+    set f__arg_string1=a2
 
     call TriggerEvaluate(st___prototype189[i])
 
 endfunction
-function sc___prototype190_execute takes integer i,location a1,string a2 returns nothing
-    set f__arg_location1=a1
-    set f__arg_string1=a2
-
-    call TriggerExecute(st___prototype190[i])
-endfunction
-function sc___prototype190_evaluate takes integer i,location a1,string a2 returns nothing
-    set f__arg_location1=a1
-    set f__arg_string1=a2
-
-    call TriggerEvaluate(st___prototype190[i])
-
-endfunction
 function h__PolarProjectionBJ takes location a0, real a1, real a2 returns location
     //hook: MemoryLeakHelper__PP
-    call sc___prototype182_evaluate(1,a0,a1,a2)
+    call sc___prototype181_evaluate(1,a0,a1,a2)
 return PolarProjectionBJ(a0,a1,a2)
 endfunction
 function h__CreateNUnitsAtLoc takes integer a0, integer a1, player a2, location a3, real a4 returns group
     //hook: MemoryLeakHelper__CU
-    call sc___prototype183_evaluate(1,a0,a1,a2,a3,a4)
+    call sc___prototype182_evaluate(1,a0,a1,a2,a3,a4)
 return CreateNUnitsAtLoc(a0,a1,a2,a3,a4)
 endfunction
 function h__CreateNUnitsAtLocFacingLocBJ takes integer a0, integer a1, player a2, location a3, location a4 returns group
     //hook: MemoryLeakHelper__CUF
-    call sc___prototype187_evaluate(1,a0,a1,a2,a3,a4)
+    call sc___prototype186_evaluate(1,a0,a1,a2,a3,a4)
 return CreateNUnitsAtLocFacingLocBJ(a0,a1,a2,a3,a4)
 endfunction
 function h__IssuePointOrderLocBJ takes unit a0, string a1, location a2 returns boolean
     //hook: MemoryLeakHelper__IPO
-    call sc___prototype184_evaluate(1,a0,a1,a2)
+    call sc___prototype183_evaluate(1,a0,a1,a2)
 return IssuePointOrderLocBJ(a0,a1,a2)
 endfunction
 function h__SetUnitPositionLoc takes unit a0, location a1 returns nothing
     //hook: MemoryLeakHelper__SUP
-    call sc___prototype185_evaluate(1,a0,a1)
+    call sc___prototype184_evaluate(1,a0,a1)
 call SetUnitPositionLoc(a0,a1)
 endfunction
 function h__SetUnitFacingToFaceLocTimed takes unit a0, location a1, real a2 returns nothing
     //hook: MemoryLeakHelper__SUF
-    call sc___prototype172_evaluate(1,a0,a1,a2)
+    call sc___prototype171_evaluate(1,a0,a1,a2)
 call SetUnitFacingToFaceLocTimed(a0,a1,a2)
 endfunction
 function h__GetUnitsInRangeOfLocMatching takes real a0, location a1, boolexpr a2 returns group
     //hook: MemoryLeakHelper__GUR
-    call sc___prototype186_evaluate(1,a0,a1,a2)
+    call sc___prototype185_evaluate(1,a0,a1,a2)
 return GetUnitsInRangeOfLocMatching(a0,a1,a2)
 endfunction
 function h__RemoveLocation takes location a0 returns nothing
     //hook: MemoryLeakHelper__ReleaseLocation
-    call sc___prototype179_evaluate(1,a0)
+    call sc___prototype178_evaluate(1,a0)
 call RemoveLocation(a0)
 endfunction
 function h__ForGroupBJ takes group a0, code a1 returns nothing
     //hook: MemoryLeakHelper__FG
-    call sc___prototype188_evaluate(1,a0,a1)
+    call sc___prototype187_evaluate(1,a0,a1)
 call ForGroupBJ(a0,a1)
 endfunction
 function h__GroupPickRandomUnit takes group a0 returns unit
     //hook: MemoryLeakHelper__CatchGroup
-    call sc___prototype180_evaluate(1,a0)
+    call sc___prototype179_evaluate(1,a0)
 return GroupPickRandomUnit(a0)
 endfunction
 function h__CountUnitsInGroup takes group a0 returns integer
     //hook: MemoryLeakHelper__CatchGroup
-    call sc___prototype180_evaluate(1,a0)
+    call sc___prototype179_evaluate(1,a0)
 return CountUnitsInGroup(a0)
 endfunction
 function h__DestroyGroup takes group a0 returns nothing
     //hook: MemoryLeakHelper__ReleaseGroup
-    call sc___prototype180_evaluate(2,a0)
+    call sc___prototype179_evaluate(2,a0)
 call DestroyGroup(a0)
 endfunction
 function h__AddSpecialEffectLocBJ takes location a0, string a1 returns effect
     //hook: MemoryLeakHelper__ASE
-    call sc___prototype190_evaluate(1,a0,a1)
+    call sc___prototype189_evaluate(1,a0,a1)
 return AddSpecialEffectLocBJ(a0,a1)
 endfunction
 function h__AddSpecialEffectTargetUnitBJ takes string a0, widget a1, string a2 returns effect
     //hook: MemoryLeakHelper__ASETU
-    call sc___prototype189_evaluate(1,a0,a1,a2)
+    call sc___prototype188_evaluate(1,a0,a1,a2)
 return AddSpecialEffectTargetUnitBJ(a0,a1,a2)
 endfunction
 function h__DestroyEffect takes effect a0 returns nothing
     //hook: MemoryLeakHelper__ReleaseEffect
-    call sc___prototype181_evaluate(1,a0)
+    call sc___prototype180_evaluate(1,a0)
 call DestroyEffect(a0)
 endfunction
 function h__DestroyEffectBJ takes effect a0 returns nothing
     //hook: MemoryLeakHelper__ReleaseEffect
-    call sc___prototype181_evaluate(1,a0)
+    call sc___prototype180_evaluate(1,a0)
 call DestroyEffectBJ(a0)
 endfunction
 
@@ -1957,7 +1922,7 @@ endfunction
 //===========================================================================
 //显示版本
 function YDWEVersion_Display takes nothing returns boolean
-    call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 30, "|cFF1E90FF当前编辑器版本为： |r|cFF00FF00YDWE 1.30.2.1333")
+    call DisplayTimedTextToPlayer(GetTriggerPlayer(), 0, 0, 30, "|cFF1E90FF当前编辑器版本为： |r|cFF00FF00YDWE 1.30.3.1382")
     return false
 endfunction
 function YDWEVersion_Init takes nothing returns nothing
@@ -2388,27 +2353,6 @@ function YDWEGetForceOfPlayerNull takes player whichPlayer returns force
 endfunction
 
 //library YDWEGetForceOfPlayerNull ends
-//library YDWEGetPlayersByMapControlNull:
-function YDWEGetPlayersByMapControlNull takes mapcontrol whichControl returns force
-    local force f= CreateForce()
-    local integer playerIndex
-    local player indexPlayer
-    set playerIndex=0
-    loop
-        set indexPlayer=Player(playerIndex)
-        if GetPlayerController(indexPlayer) == whichControl then
-            call ForceAddPlayer(f, indexPlayer)
-        endif
-        set playerIndex=playerIndex + 1
-        exitwhen playerIndex == bj_MAX_PLAYER_SLOTS
-    endloop
-    set indexPlayer=null
-    set yd_NullTempForce=f
-    set f=null
-    return yd_NullTempForce
-endfunction
-
-//library YDWEGetPlayersByMapControlNull ends
 //library YDWEGetUnitsInRangeOfLocMatchingNull:
 function YDWEGetUnitsInRangeOfLocMatchingNull takes real radius,location whichLocation,boolexpr filter returns group
     local group g= CreateGroup()
@@ -4146,7 +4090,7 @@ endfunction
 // 
 //   Warcraft III map script
 //   Generated by the Warcraft III World Editor
-//   Date: Mon Oct 10 02:51:06 2016
+//   Date: Tue Oct 11 02:00:07 2016
 //   Map Author: 闪电、吞噬￠、jianmos等
 // 
 //===========================================================================
@@ -4234,6 +4178,12 @@ function InitGlobals takes nothing returns nothing
     set udg_e_third=0
     set udg_e_string=""
     set udg_E_count=0
+    set i=0
+    loop
+        exitwhen ( i > 4 )
+        set udg_P_duiwu[i]=CreateForce()
+        set i=i + 1
+    endloop
 endfunction
 //***************************************************************************
 //*
@@ -4578,28 +4528,48 @@ function CreateNeutralHostile takes nothing returns nothing
     set u=CreateUnit(p, 'hpea', 1792.5, - 1256.5, 69.743)
 endfunction
 //===========================================================================
+function CreateNeutralPassiveBuildings takes nothing returns nothing
+    local player p= Player(PLAYER_NEUTRAL_PASSIVE)
+    local unit u
+    local integer unitID
+    local trigger t
+    local real life
+    set u=CreateUnit(p, 'ncp3', 8640.0, - 5952.0, 270.000)
+    set u=CreateUnit(p, 'ncp3', - 3136.0, 3584.0, 270.000)
+    set u=CreateUnit(p, 'ncp3', 5760.0, - 7936.0, 270.000)
+    set u=CreateUnit(p, 'ncp3', 960.0, 4416.0, 270.000)
+    set u=CreateUnit(p, 'ncp3', 8832.0, - 2240.0, 270.000)
+    set u=CreateUnit(p, 'ncp3', - 4544.0, 1024.0, 270.000)
+    set u=CreateUnit(p, 'ncp3', - 1920.0, - 7616.0, 270.000)
+    set u=CreateUnit(p, 'ncp3', - 4352.0, - 5632.0, 270.000)
+    set u=CreateUnit(p, 'ncp3', - 5184.0, - 2112.0, 270.000)
+    set u=CreateUnit(p, 'ncp3', 1920.0, - 8384.0, 270.000)
+    set u=CreateUnit(p, 'ncp3', 5056.0, 3584.0, 270.000)
+    set u=CreateUnit(p, 'ncp3', 7872.0, 1472.0, 270.000)
+endfunction
+//===========================================================================
 function CreateNeutralPassive takes nothing returns nothing
     local player p= Player(PLAYER_NEUTRAL_PASSIVE)
     local unit u
     local integer unitID
     local trigger t
     local real life
-    set u=CreateUnit(p, 'E009', 8789.6, - 9498.9, 118.667)
-    set u=CreateUnit(p, 'E00A', 9027.0, - 9489.3, 84.191)
-    set u=CreateUnit(p, 'E00B', 9298.3, - 9513.3, 184.433)
-    set u=CreateUnit(p, 'E00C', 9577.5, - 9455.3, 92.244)
-    set u=CreateUnit(p, 'H008', 8775.3, - 9765.5, 44.188)
-    set u=CreateUnit(p, 'H009', 9027.8, - 9783.0, 222.700)
-    set u=CreateUnit(p, 'H00A', 9301.2, - 9769.9, 233.895)
-    set u=CreateUnit(p, 'H00B', 9566.2, - 9787.4, 297.475)
-    set u=CreateUnit(p, 'O003', 8807.2, - 10069.0, 147.815)
-    set u=CreateUnit(p, 'O004', 9073.2, - 10069.0, 39.772)
-    set u=CreateUnit(p, 'O005', 9332.1, - 10076.8, 144.595)
-    set u=CreateUnit(p, 'O006', 9612.4, - 10065.0, 350.233)
-    set u=CreateUnit(p, 'U01R', 8810.1, - 10345.2, 354.891)
-    set u=CreateUnit(p, 'U01S', 9068.8, - 10334.5, 95.782)
-    set u=CreateUnit(p, 'U01T', 9324.7, - 10341.6, 81.587)
-    set u=CreateUnit(p, 'U01U', 9560.4, - 10348.7, 207.285)
+    set u=CreateUnit(p, 'E009', 8789.6, - 9498.9, 270.000)
+    set u=CreateUnit(p, 'E00A', 9027.0, - 9489.3, 270.000)
+    set u=CreateUnit(p, 'E00B', 9298.3, - 9513.3, 270.000)
+    set u=CreateUnit(p, 'E00C', 9577.5, - 9455.3, 270.000)
+    set u=CreateUnit(p, 'H008', 8775.3, - 9765.5, 270.000)
+    set u=CreateUnit(p, 'H009', 9027.8, - 9783.0, 270.000)
+    set u=CreateUnit(p, 'H00A', 9301.2, - 9769.9, 270.000)
+    set u=CreateUnit(p, 'H00B', 9566.2, - 9787.4, 270.000)
+    set u=CreateUnit(p, 'O003', 8807.2, - 10069.0, 270.000)
+    set u=CreateUnit(p, 'O004', 9073.2, - 10069.0, 270.000)
+    set u=CreateUnit(p, 'O005', 9332.1, - 10076.8, 270.000)
+    set u=CreateUnit(p, 'O006', 9612.4, - 10065.0, 270.000)
+    set u=CreateUnit(p, 'U01R', 8810.1, - 10345.2, 270.000)
+    set u=CreateUnit(p, 'U01S', 9068.8, - 10334.5, 270.000)
+    set u=CreateUnit(p, 'U01T', 9324.7, - 10341.6, 270.000)
+    set u=CreateUnit(p, 'U01U', 9560.4, - 10348.7, 270.000)
 endfunction
 //===========================================================================
 function CreatePlayerBuildings takes nothing returns nothing
@@ -4612,6 +4582,7 @@ function CreatePlayerUnits takes nothing returns nothing
 endfunction
 //===========================================================================
 function CreateAllUnits takes nothing returns nothing
+    call CreateNeutralPassiveBuildings()
     call CreateBuildingsForPlayer0() // INLINED!!
     call CreateNeutralHostile()
     call CreateNeutralPassive()
@@ -4624,35 +4595,8 @@ endfunction
 //***************************************************************************
 function CreateRegions takes nothing returns nothing
     local weathereffect we
-    set gg_rct_GA0=Rect(3296.0, 32.0, 3328.0, 64.0)
-    set gg_rct_GA1=Rect(3360.0, - 96.0, 3392.0, - 64.0)
-    set gg_rct_GA2=Rect(3200.0, - 96.0, 3232.0, - 64.0)
-    set gg_rct_GB0=Rect(3328.0, - 1056.0, 3360.0, - 1024.0)
-    set gg_rct_GB1=Rect(3392.0, - 896.0, 3424.0, - 864.0)
-    set gg_rct_GB2=Rect(3232.0, - 896.0, 3264.0, - 864.0)
-    set gg_rct_GD0=Rect(- 1888.0, - 544.0, - 1856.0, - 512.0)
-    set gg_rct_GD1=Rect(- 1728.0, - 608.0, - 1696.0, - 576.0)
-    set gg_rct_GD2=Rect(- 1728.0, - 448.0, - 1696.0, - 416.0)
-    set gg_rct_GE0=Rect(- 288.0, - 2656.0, - 256.0, - 2624.0)
-    set gg_rct_GE1=Rect(- 352.0, - 2464.0, - 320.0, - 2432.0)
-    set gg_rct_GE2=Rect(- 480.0, - 2592.0, - 448.0, - 2560.0)
-    set gg_rct_GF0=Rect(3552.0, 3040.0, 3584.0, 3072.0)
-    set gg_rct_GF1=Rect(3392.0, 2944.0, 3424.0, 2976.0)
-    set gg_rct_GF2=Rect(3552.0, 2880.0, 3584.0, 2912.0)
-    set gg_rct______________001________5=Rect(352.0, - 2944.0, 1056.0, - 2176.0)
-    set gg_rct______________012=Rect(2912.0, - 384.0, 3680.0, 384.0)
-    set gg_rct______________012_______u=Rect(2944.0, - 1344.0, 3712.0, - 576.0)
-    set gg_rct______________012________3=Rect(- 2176.0, - 896.0, - 1408.0, - 128.0)
-    set gg_rct______________012________4=Rect(3136.0, 2624.0, 3904.0, 3392.0)
-    set gg_rct______________012________5=Rect(- 3936.0, 2656.0, - 3168.0, 3424.0)
-    set gg_rct______________012________6=Rect(- 3904.0, - 4448.0, - 3136.0, - 3680.0)
-    set gg_rct______________012________7=Rect(- 736.0, - 2944.0, 32.0, - 2176.0)
-    set gg_rct_GG1=Rect(- 3616.0, 3040.0, - 3584.0, 3072.0)
-    set gg_rct_GG2=Rect(- 3616.0, 2848.0, - 3584.0, 2880.0)
-    set gg_rct_GG3=Rect(- 3456.0, 3008.0, - 3424.0, 3040.0)
-    set gg_rct_GH0=Rect(- 3712.0, - 4192.0, - 3680.0, - 4160.0)
-    set gg_rct_GH1=Rect(- 3648.0, - 4000.0, - 3616.0, - 3968.0)
-    set gg_rct_GH2=Rect(- 3488.0, - 4128.0, - 3456.0, - 4096.0)
+    set gg_rct_CS____1=Rect(6752.0, - 1248.0, 6976.0, - 896.0)
+    set gg_rct_CS_______1=Rect(7040.0, - 1248.0, 7264.0, - 896.0)
 endfunction
 //***************************************************************************
 //*
@@ -4706,25 +4650,6 @@ endfunction
 //*
 //***************************************************************************
 //===========================================================================
-// Trigger: 大自然的元素球生产
-//===========================================================================
-function Trig____________________________uActions takes nothing returns nothing
-    call CreateItem('I00K', 0.00, 0.00)
-    call CreateItem('I00L', 0.00, 0.00)
-    call CreateItem('I00R', 0.00, 0.00)
-    call CreateItem('I00M', 0.00, 0.00)
-    call CreateItem('I00N', 0.00, 0.00)
-    call CreateItem('I00O', 0.00, 0.00)
-    call CreateItem('I00T', 0.00, 0.00)
-    call CreateItem('I00P', 0.00, 0.00)
-endfunction
-//===========================================================================
-function InitTrig____________________________u takes nothing returns nothing
-    set gg_trg____________________________u=CreateTrigger()
-    call TriggerRegisterTimerEventPeriodic(gg_trg____________________________u, 120.00)
-    call TriggerAddAction(gg_trg____________________________u, function Trig____________________________uActions)
-endfunction
-//===========================================================================
 // Trigger: go die
 //===========================================================================
 function Trig_go_dieActions takes nothing returns nothing
@@ -4747,404 +4672,6 @@ function InitTrig_go_die takes nothing returns nothing
     set gg_trg_go_die=CreateTrigger()
     call TriggerRegisterAnyUnitEventBJ(gg_trg_go_die, EVENT_PLAYER_UNIT_DEATH)
     call TriggerAddAction(gg_trg_go_die, function Trig_go_dieActions)
-endfunction
-//===========================================================================
-// Trigger: element
-//
-// 0 精E  1 暗D  2 土S  3 冰I 4 风W  5 光L  6 毒P 7 火F
-//===========================================================================
-function Trig_elementActions takes nothing returns nothing
-    // 设置元素种类数
-    set udg_elementCount=8
-    set bj_forLoopAIndex=0
-    set bj_forLoopAIndexEnd=164
-    loop
-        exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
-        set udg_e_skill_array[bj_forLoopAIndex]='AEsh'
-        set bj_forLoopAIndex=bj_forLoopAIndex + 1
-    endloop
-    call SaveInteger(YDHT, 'I00T', 0x901AF455, 'u01E')
-    call SaveInteger(YDHT, 'I00K', 0x901AF455, 'u01F')
-    call SaveInteger(YDHT, 'I00P', 0x901AF455, 'u01D')
-    call SaveInteger(YDHT, 'I00L', 0x901AF455, 'u01B')
-    call SaveInteger(YDHT, 'I00M', 0x901AF455, 'u01C')
-    call SaveInteger(YDHT, 'I00N', 0x901AF455, 'u01G')
-    call SaveInteger(YDHT, 'I00R', 0x901AF455, 'u01H')
-    call SaveInteger(YDHT, 'I00O', 0x901AF455, 'u01A')
-    call SaveInteger(YDHT, 'u01E', 0x901AF455, 0)
-    call SaveInteger(YDHT, 'u01F', 0x901AF455, 1)
-    call SaveInteger(YDHT, 'u01D', 0x901AF455, 2)
-    call SaveInteger(YDHT, 'u01B', 0x901AF455, 3)
-    call SaveInteger(YDHT, 'u01C', 0x901AF455, 4)
-    call SaveInteger(YDHT, 'u01G', 0x901AF455, 5)
-    call SaveInteger(YDHT, 'u01H', 0x901AF455, 6)
-    call SaveInteger(YDHT, 'u01A', 0x901AF455, 7)
-    // XXX
-    set udg_e_string="000"
-    set udg_e_skill='A028'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="111"
-    set udg_e_skill='A025'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="222"
-    set udg_e_skill='A029'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="333"
-    set udg_e_skill='A022'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="444"
-    set udg_e_skill='A012'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="555"
-    set udg_e_skill='A00M'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="666"
-    set udg_e_skill='A044'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="777"
-    set udg_e_skill='A023'
-    call TriggerExecute(gg_trg_compute)
-    // XYZ
-    set udg_e_string="012"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="013"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="014"
-    set udg_e_skill='A03P'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="015"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="016"
-    set udg_e_skill='A02Q'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="017"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="023"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="024"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="025"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="026"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="027"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="034"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="035"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="036"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="037"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="045"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="046"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="047"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="056"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="057"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="067"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="123"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="124"
-    set udg_e_skill='A03A'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="125"
-    set udg_e_skill='A04I'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="126"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="127"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="134"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="135"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="136"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="137"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="145"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="146"
-    set udg_e_skill='A04F'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="147"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="156"
-    set udg_e_skill='A02R'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="157"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="167"
-    set udg_e_skill='A03N'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="234"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="235"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="236"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="237"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="245"
-    set udg_e_skill='A035'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="246"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="247"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="256"
-    set udg_e_skill='A040'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="257"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="267"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="345"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="346"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="347"
-    set udg_e_skill='A026'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="356"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="357"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="367"
-    set udg_e_skill='A02P'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="456"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="457"
-    set udg_e_skill='A03L'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="467"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="567"
-    // XXY------------------------------------------------------------------------------------------
-    set udg_e_string="001"
-    set udg_e_skill='A03M'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="002"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="003"
-    set udg_e_skill='A03X'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="004"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="005"
-    set udg_e_skill='A03W'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="006"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="007"
-    set udg_e_skill='A042'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="110"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="112"
-    set udg_e_skill='A02Y'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="113"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="114"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="115"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="116"
-    set udg_e_skill='A037'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="117"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="220"
-    set udg_e_skill='A03G'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="221"
-    set udg_e_skill='A03H'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="223"
-    set udg_e_skill='A030'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="224"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="225"
-    set udg_e_skill='A02S'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="226"
-    set udg_e_skill='A02J'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="227"
-    set udg_e_skill='A02T'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="330"
-    set udg_e_skill='A02M'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="331"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="332"
-    set udg_e_skill='A02I'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="334"
-    set udg_e_skill='A02O'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="335"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="336"
-    set udg_e_skill='A02N'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="337"
-    set udg_e_skill='A02B'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="440"
-    set udg_e_skill='A03C'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="441"
-    set udg_e_skill='A03B'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="442"
-    set udg_e_skill='A03E'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="443"
-    set udg_e_skill='A03D'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="445"
-    set udg_e_skill='A01W'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="446"
-    set udg_e_skill='A041'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="447"
-    set udg_e_skill='A043'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="550"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="551"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="552"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="553"
-    set udg_e_skill='A02C'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="554"
-    set udg_e_skill='A02E'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="556"
-    set udg_e_skill='A03V'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="557"
-    set udg_e_skill='A021'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="660"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="661"
-    set udg_e_skill='A04K'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="662"
-    set udg_e_skill='A02H'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="664"
-    set udg_e_skill='A02Z'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="665"
-    set udg_e_skill='A04B'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="667"
-    set udg_e_skill='A03Q'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="770"
-    set udg_e_skill='A033'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="771"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="772"
-    set udg_e_skill='AEsh'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="774"
-    set udg_e_skill='A02A'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="775"
-    set udg_e_skill='A046'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="776"
-    set udg_e_skill='A02U'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="663"
-    set udg_e_skill='A03R'
-    call TriggerExecute(gg_trg_compute)
-    set udg_e_string="773"
-    set udg_e_skill='A02V'
-    call TriggerExecute(gg_trg_compute)
-endfunction
-//===========================================================================
-function InitTrig_element takes nothing returns nothing
-    set gg_trg_element=CreateTrigger()
-    call TriggerAddAction(gg_trg_element, function Trig_elementActions)
 endfunction
 //===========================================================================
 // Trigger: compute
@@ -5263,175 +4790,6 @@ endfunction
 function InitTrig_begin takes nothing returns nothing
     set gg_trg_begin=CreateTrigger()
     call TriggerAddAction(gg_trg_begin, function Trig_beginActions)
-endfunction
-//===========================================================================
-// Trigger: team
-//===========================================================================
-function Trig_teamFunc003Func001A takes nothing returns nothing
-    call ForceRemovePlayerSimple(GetEnumPlayer(), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x31078F97))
-    call SetForceAllianceStateBJ(YDWEGetForceOfPlayerNull(GetEnumPlayer()), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x31078F97), bj_ALLIANCE_UNALLIED)
-    call ForceAddPlayerSimple(GetEnumPlayer(), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x31078F97))
-endfunction
-function Trig_teamFunc003Func004Func001Func005Func001Func006T takes nothing returns nothing
-    call DisplayTextToPlayer(LoadPlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x48656946), 0, 0, "TRIGSTR_909")
-    call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
-    call DestroyTimer(GetExpiredTimer())
-endfunction
-function Trig_teamFunc003Func004Func001Func005Func001Func011T takes nothing returns nothing
-    call DisplayTextToPlayer(LoadPlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x48656946), 0, 0, "TRIGSTR_910")
-    call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
-    call DestroyTimer(GetExpiredTimer())
-endfunction
-function Trig_teamFunc003Func004Func001Func005Func001Func016T takes nothing returns nothing
-    call DisplayTextToPlayer(LoadPlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x48656946), 0, 0, "TRIGSTR_911")
-    call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
-    call DestroyTimer(GetExpiredTimer())
-endfunction
-function Trig_teamFunc003Func004Func001Func005Func001Func021T takes nothing returns nothing
-    call DisplayTextToPlayer(LoadPlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x48656946), 0, 0, "TRIGSTR_912")
-    call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
-    call DestroyTimer(GetExpiredTimer())
-endfunction
-function Trig_teamFunc003Func004Func004Func001Func006T takes nothing returns nothing
-    call DisplayTextToPlayer(LoadPlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x48656946), 0, 0, "TRIGSTR_907")
-    call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
-    call DestroyTimer(GetExpiredTimer())
-endfunction
-function Trig_teamFunc003Func004Func004Func001Func010T takes nothing returns nothing
-    call DisplayTextToPlayer(LoadPlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x48656946), 0, 0, "TRIGSTR_908")
-    call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
-    call DestroyTimer(GetExpiredTimer())
-endfunction
-function Trig_teamActions takes nothing returns nothing
-    local timer ydl_timer
-    local integer ydl_localvar_step= LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
-    set ydl_localvar_step=ydl_localvar_step + 3
-    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
-    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
-    call SaveForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52, YDWEGetPlayersByMapControlNull(MAP_CONTROL_USER))
-    call SaveForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x31078F97, YDWEGetPlayersByMapControlNull(MAP_CONTROL_USER))
-    if ( ( udg_teamnb == 0 ) ) then
-        call ForForce(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52), function Trig_teamFunc003Func001A)
-        call DisplayTextToForce(GetPlayersAll(), "TRIGSTR_905")
-        call ConditionalTriggerExecute(gg_trg_DMB0)
-    else
-        if ( ( udg_teamnb == 2 ) ) then
-            call SaveForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFAD24066, CreateForce())
-            call SaveForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x4F17DB0B, CreateForce())
-            set bj_forLoopAIndex=1
-            set bj_forLoopAIndexEnd=6
-            loop
-                exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
-                if ( ( CountPlayersInForceBJ(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52)) == 0 ) ) then
-                    call DoNothing()
- exitwhen true //(  )
-                else
-                    call SavePlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946, ForcePickRandomPlayer(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52)))
-                    call ForceAddPlayerSimple(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFAD24066))
-                    call DisplayTextToForce(GetPlayersAll(), ( ( ( udg_Stringcolor[GetConvertedPlayerId(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946))] + GetPlayerName(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946)) ) + "|R被分入了第一阵营！" ) + "                                                     " ))
-                    call ForceRemovePlayerSimple(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52))
-                    set ydl_timer=CreateTimer()
-                    call SavePlayerHandle(YDHT, GetHandleId(ydl_timer), 0x48656946, LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946))
-                    call TimerStart(ydl_timer, 1.00, false, function Trig_teamFunc003Func004Func004Func001Func006T)
-                    call SavePlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946, ForcePickRandomPlayer(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52)))
-                    call ForceAddPlayerSimple(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x4F17DB0B))
-                    call DisplayTextToForce(GetPlayersAll(), ( ( ( udg_Stringcolor[GetConvertedPlayerId(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946))] + GetPlayerName(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946)) ) + "|R被分入了第二阵营！" ) + "                                                     " ))
-                    set ydl_timer=CreateTimer()
-                    call SavePlayerHandle(YDHT, GetHandleId(ydl_timer), 0x48656946, LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946))
-                    call TimerStart(ydl_timer, 1.00, false, function Trig_teamFunc003Func004Func004Func001Func010T)
-                    call ForceRemovePlayerSimple(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52))
-                endif
-                set bj_forLoopAIndex=bj_forLoopAIndex + 1
-            endloop
-            set udg_team[1]=LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFAD24066)
-            set udg_team[2]=LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x4F17DB0B)
-            call ConditionalTriggerExecute(gg_trg_DMB1)
-            call SetForceAllianceStateBJ(udg_team[1], udg_team[1], bj_ALLIANCE_ALLIED_VISION)
-            call SetForceAllianceStateBJ(udg_team[2], udg_team[2], bj_ALLIANCE_ALLIED_VISION)
-            call SetForceAllianceStateBJ(udg_team[2], udg_team[1], bj_ALLIANCE_UNALLIED)
-            call SetForceAllianceStateBJ(udg_team[1], udg_team[2], bj_ALLIANCE_UNALLIED)
-        else
-            if ( ( udg_teamnb == 4 ) ) then
-                call SaveForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFAD24066, CreateForce())
-                call SaveForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x4F17DB0B, CreateForce())
-                call SaveForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD36730BC, CreateForce())
-                call SaveForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB7013ECD, CreateForce())
-                set bj_forLoopAIndex=1
-                set bj_forLoopAIndexEnd=3
-                loop
-                    exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
-                    if ( ( CountPlayersInForceBJ(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52)) == 0 ) ) then
-                        call DoNothing()
- exitwhen true //(  )
-                    else
-                        call SavePlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946, ForcePickRandomPlayer(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52)))
-                        call ForceAddPlayerSimple(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFAD24066))
-                        call ForceRemovePlayerSimple(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52))
-                        call DisplayTextToForce(GetPlayersAll(), ( ( ( udg_Stringcolor[GetConvertedPlayerId(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946))] + GetPlayerName(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946)) ) + "|R被分入了第一阵营！" ) + "                                                     " ))
-                        set ydl_timer=CreateTimer()
-                        call SavePlayerHandle(YDHT, GetHandleId(ydl_timer), 0x48656946, LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946))
-                        call TimerStart(ydl_timer, 1.00, false, function Trig_teamFunc003Func004Func001Func005Func001Func006T)
-                        call SavePlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946, ForcePickRandomPlayer(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52)))
-                        call ForceAddPlayerSimple(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x4F17DB0B))
-                        call ForceRemovePlayerSimple(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52))
-                        call DisplayTextToForce(GetPlayersAll(), ( ( ( udg_Stringcolor[GetConvertedPlayerId(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946))] + GetPlayerName(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946)) ) + "|R被分入了第二阵营！" ) + "                                                     " ))
-                        set ydl_timer=CreateTimer()
-                        call SavePlayerHandle(YDHT, GetHandleId(ydl_timer), 0x48656946, LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946))
-                        call TimerStart(ydl_timer, 1.00, false, function Trig_teamFunc003Func004Func001Func005Func001Func011T)
-                        call SavePlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946, ForcePickRandomPlayer(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52)))
-                        call ForceAddPlayerSimple(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD36730BC))
-                        call ForceRemovePlayerSimple(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52))
-                        call DisplayTextToForce(GetPlayersAll(), ( ( ( udg_Stringcolor[GetConvertedPlayerId(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946))] + GetPlayerName(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946)) ) + "|R被分入了第三阵营！" ) + "                                                     " ))
-                        set ydl_timer=CreateTimer()
-                        call SavePlayerHandle(YDHT, GetHandleId(ydl_timer), 0x48656946, LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946))
-                        call TimerStart(ydl_timer, 1.00, false, function Trig_teamFunc003Func004Func001Func005Func001Func016T)
-                        call SavePlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946, ForcePickRandomPlayer(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52)))
-                        call ForceAddPlayerSimple(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB7013ECD))
-                        call ForceRemovePlayerSimple(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946), LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52))
-                        call DisplayTextToForce(GetPlayersAll(), ( ( ( udg_Stringcolor[GetConvertedPlayerId(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946))] + GetPlayerName(LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946)) ) + "|R被分入了第四阵营！" ) + "                                                     " ))
-                        set ydl_timer=CreateTimer()
-                        call SavePlayerHandle(YDHT, GetHandleId(ydl_timer), 0x48656946, LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48656946))
-                        call TimerStart(ydl_timer, 1.00, false, function Trig_teamFunc003Func004Func001Func005Func001Func021T)
-                    endif
-                    set bj_forLoopAIndex=bj_forLoopAIndex + 1
-                endloop
-                set udg_team[1]=LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFAD24066)
-                set udg_team[2]=LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x4F17DB0B)
-                set udg_team[3]=LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD36730BC)
-                set udg_team[4]=LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB7013ECD)
-                call ConditionalTriggerExecute(gg_trg_DMB2)
-                call SetForceAllianceStateBJ(udg_team[1], udg_team[1], bj_ALLIANCE_ALLIED_VISION)
-                call SetForceAllianceStateBJ(udg_team[2], udg_team[2], bj_ALLIANCE_ALLIED_VISION)
-                call SetForceAllianceStateBJ(udg_team[3], udg_team[3], bj_ALLIANCE_ALLIED_VISION)
-                call SetForceAllianceStateBJ(udg_team[4], udg_team[4], bj_ALLIANCE_ALLIED_VISION)
-                call SetForceAllianceStateBJ(udg_team[1], udg_team[2], bj_ALLIANCE_UNALLIED)
-                call SetForceAllianceStateBJ(udg_team[1], udg_team[3], bj_ALLIANCE_UNALLIED)
-                call SetForceAllianceStateBJ(udg_team[1], udg_team[4], bj_ALLIANCE_UNALLIED)
-                call SetForceAllianceStateBJ(udg_team[2], udg_team[1], bj_ALLIANCE_UNALLIED)
-                call SetForceAllianceStateBJ(udg_team[2], udg_team[3], bj_ALLIANCE_UNALLIED)
-                call SetForceAllianceStateBJ(udg_team[2], udg_team[4], bj_ALLIANCE_UNALLIED)
-                call SetForceAllianceStateBJ(udg_team[4], udg_team[3], bj_ALLIANCE_UNALLIED)
-                call SetForceAllianceStateBJ(udg_team[4], udg_team[2], bj_ALLIANCE_UNALLIED)
-                call SetForceAllianceStateBJ(udg_team[4], udg_team[1], bj_ALLIANCE_UNALLIED)
-                call SetForceAllianceStateBJ(udg_team[3], udg_team[1], bj_ALLIANCE_UNALLIED)
-                call SetForceAllianceStateBJ(udg_team[3], udg_team[2], bj_ALLIANCE_UNALLIED)
-                call SetForceAllianceStateBJ(udg_team[3], udg_team[4], bj_ALLIANCE_UNALLIED)
-            else
-            endif
-        endif
-    endif
-    call ForceClear(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52))
-    call ForceClear(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x31078F97))
-    call DestroyForce(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x31078F97))
-    call DestroyForce(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xAEB50F52))
-    call DestroyTrigger(GetTriggeringTrigger())
-    call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
-    set ydl_timer=null
-endfunction
-//===========================================================================
-function InitTrig_team takes nothing returns nothing
-    set gg_trg_team=CreateTrigger()
-    call TriggerAddAction(gg_trg_team, function Trig_teamActions)
 endfunction
 //===========================================================================
 // Trigger: roundtime 0
@@ -10930,6 +10288,18 @@ function InitTrig_Skill03_____________u takes nothing returns nothing
     call TriggerAddAction(gg_trg_Skill03_____________u, function Trig_Skill03_____________uActions)
 endfunction
 //===========================================================================
+// Trigger: MAP_初始化
+//===========================================================================
+function Trig_MAP__________uActions takes nothing returns nothing
+    call PanCameraToTimed(9159.00, - 9851.00, 0)
+endfunction
+//===========================================================================
+function InitTrig_MAP__________u takes nothing returns nothing
+    set gg_trg_MAP__________u=CreateTrigger()
+    call TriggerRegisterTimerEventSingle(gg_trg_MAP__________u, 0.01)
+    call TriggerAddAction(gg_trg_MAP__________u, function Trig_MAP__________uActions)
+endfunction
+//===========================================================================
 // Trigger: MAP_E和A对应关系1
 //===========================================================================
 function Trig_MAP_E___A____________1Actions takes nothing returns nothing
@@ -11022,9 +10392,132 @@ function InitTrig_MAP_E___A____________1 takes nothing returns nothing
     call TriggerAddAction(gg_trg_MAP_E___A____________1, function Trig_MAP_E___A____________1Actions)
 endfunction
 //===========================================================================
-// Trigger: MAP_选择难度2
+// Trigger: MAP_选择队伍2
 //===========================================================================
+function Trig_MAP_____________2Func008Conditions takes nothing returns nothing
+    if ( ( GetClickedButtonBJ() == LoadButtonHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x8FB938DC) ) ) then
+        call SaveInteger(YDHT, GetHandleId(LoadTriggerHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x71545966)), 0x8FB938DC, ( LoadInteger(YDHT, GetHandleId(LoadTriggerHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x71545966)), 0x8FB938DC) + 1 ))
+    else
+    endif
+    if ( ( GetClickedButtonBJ() == LoadButtonHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCBDA761D) ) ) then
+        call SaveInteger(YDHT, GetHandleId(LoadTriggerHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x71545966)), 0xCBDA761D, ( LoadInteger(YDHT, GetHandleId(LoadTriggerHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x71545966)), 0xCBDA761D) + 1 ))
+    else
+    endif
+    if ( ( GetClickedButtonBJ() == LoadButtonHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0xBC859EFF) ) ) then
+        call SaveInteger(YDHT, GetHandleId(LoadTriggerHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x71545966)), 0xBC859EFF, ( LoadInteger(YDHT, GetHandleId(LoadTriggerHandle(YDHT, GetHandleId(GetTriggeringTrigger()), 0x71545966)), 0xBC859EFF) + 1 ))
+    else
+    endif
+endfunction
+function Trig_MAP_____________2Func009T takes nothing returns nothing
+    local integer ydul_GbfFGtTdVXbE
+    call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x8FB938DC, LoadInteger(YDHT, GetHandleId(LoadTriggerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x71545966)), 0x8FB938DC))
+    call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xCBDA761D, LoadInteger(YDHT, GetHandleId(LoadTriggerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x71545966)), 0xCBDA761D))
+    call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xBC859EFF, LoadInteger(YDHT, GetHandleId(LoadTriggerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x71545966)), 0xBC859EFF))
+    call FlushChildHashtable(YDHT, GetHandleId(LoadTriggerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x71545966)))
+    call DestroyTrigger(LoadTriggerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x71545966))
+    set bj_forLoopAIndex=1
+    set bj_forLoopAIndexEnd=12
+    loop
+        exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
+        call DialogDisplay(ConvertedPlayer(bj_forLoopAIndex), LoadDialogHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBAA6702B), false)
+        set bj_forLoopAIndex=bj_forLoopAIndex + 1
+    endloop
+    call DialogClear(LoadDialogHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBAA6702B))
+    call DialogDestroy(LoadDialogHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xBAA6702B))
+    if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x8FB938DC) > LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xCBDA761D) ) ) then
+        if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x8FB938DC) > LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xBC859EFF) ) ) then
+            call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77, 2)
+        else
+            if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x8FB938DC) == LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xBC859EFF) ) ) then
+                call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77, ( GetRandomInt(0, 1) * 2 ))
+            else
+                call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77, 0)
+            endif
+        endif
+    else
+        if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x8FB938DC) == LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xCBDA761D) ) ) then
+            if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x8FB938DC) > LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xBC859EFF) ) ) then
+                call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77, ( GetRandomInt(1, 2) * 2 ))
+            else
+                if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x8FB938DC) == LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xBC859EFF) ) ) then
+                    call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77, ( GetRandomInt(0, 2) * 2 ))
+                else
+                    call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77, 0)
+                endif
+            endif
+        else
+            if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xCBDA761D) > LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xBC859EFF) ) ) then
+                call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77, 4)
+            else
+                if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xCBDA761D) == LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0xBC859EFF) ) ) then
+                    call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77, ( GetRandomInt(0, 1) * 4 ))
+                else
+                    call SaveInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77, 0)
+                endif
+            endif
+        endif
+    endif
+    call DisplayTextToForce(GetPlayersAll(), ( "游戏队伍数为：" + I2S(LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77)) ))
+    if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77) == 0 ) ) then
+        call SetForceAllianceStateBJ(GetPlayersAll(), GetPlayersAll(), bj_ALLIANCE_UNALLIED)
+    else
+        set bj_forLoopAIndex=1
+        set bj_forLoopAIndexEnd=12
+        loop
+            exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
+            if ( ( GetPlayerSlotState(ConvertedPlayer(bj_forLoopAIndex)) == PLAYER_SLOT_STATE_PLAYING ) ) then
+                call ForceAddPlayer(udg_P_duiwu[GetRandomInt(1, LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77))], ConvertedPlayer(bj_forLoopAIndex))
+            else
+            endif
+            set bj_forLoopAIndex=bj_forLoopAIndex + 1
+        endloop
+        set bj_forLoopAIndex=1
+        set bj_forLoopAIndexEnd=LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77)
+        loop
+            exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
+            set bj_forLoopBIndex=bj_forLoopAIndex
+            set bj_forLoopBIndexEnd=LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x88E0AC77)
+            loop
+                exitwhen bj_forLoopBIndex > bj_forLoopBIndexEnd
+                if ( ( CountPlayersInForceBJ(udg_P_duiwu[bj_forLoopAIndex]) > ( CountPlayersInForceBJ(udg_P_duiwu[bj_forLoopBIndex]) + 1 ) ) ) then
+                    set ydul_GbfFGtTdVXbE=1
+                    loop
+                        exitwhen ydul_GbfFGtTdVXbE > ( ( CountPlayersInForceBJ(udg_P_duiwu[bj_forLoopAIndex]) - CountPlayersInForceBJ(udg_P_duiwu[bj_forLoopBIndex]) ) / 2 )
+                        call SavePlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x48E3E75F, ForcePickRandomPlayer(udg_P_duiwu[bj_forLoopAIndex]))
+                        call ForceRemovePlayer(udg_P_duiwu[bj_forLoopAIndex], LoadPlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x48E3E75F))
+                        call ForceAddPlayer(udg_P_duiwu[bj_forLoopBIndex], LoadPlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x48E3E75F))
+                        set ydul_GbfFGtTdVXbE=ydul_GbfFGtTdVXbE + 1
+                    endloop
+                else
+                    if ( ( CountPlayersInForceBJ(udg_P_duiwu[bj_forLoopAIndex]) < ( CountPlayersInForceBJ(udg_P_duiwu[bj_forLoopBIndex]) - 1 ) ) ) then
+                        set ydul_GbfFGtTdVXbE=1
+                        loop
+                            exitwhen ydul_GbfFGtTdVXbE > ( ( CountPlayersInForceBJ(udg_P_duiwu[bj_forLoopBIndex]) - CountPlayersInForceBJ(udg_P_duiwu[bj_forLoopAIndex]) ) / 2 )
+                            call SavePlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x48E3E75F, ForcePickRandomPlayer(udg_P_duiwu[bj_forLoopBIndex]))
+                            call ForceRemovePlayer(udg_P_duiwu[bj_forLoopBIndex], LoadPlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x48E3E75F))
+                            call ForceAddPlayer(udg_P_duiwu[bj_forLoopAIndex], LoadPlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0x48E3E75F))
+                            set ydul_GbfFGtTdVXbE=ydul_GbfFGtTdVXbE + 1
+                        endloop
+                    else
+                    endif
+                endif
+                if ( ( bj_forLoopAIndex == bj_forLoopBIndex ) ) then
+                    call SetForceAllianceStateBJ(udg_P_duiwu[bj_forLoopAIndex], udg_P_duiwu[bj_forLoopBIndex], bj_ALLIANCE_ALLIED_VISION)
+                else
+                    call SetForceAllianceStateBJ(udg_P_duiwu[bj_forLoopAIndex], udg_P_duiwu[bj_forLoopBIndex], bj_ALLIANCE_UNALLIED)
+                endif
+                set bj_forLoopBIndex=bj_forLoopBIndex + 1
+            endloop
+            set bj_forLoopAIndex=bj_forLoopAIndex + 1
+        endloop
+    endif
+    call EnableTrigger(gg_trg_P____________3)
+    call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
+    call DestroyTimer(GetExpiredTimer())
+endfunction
 function Trig_MAP_____________2Actions takes nothing returns nothing
+    local trigger ydl_trigger
+    local timer ydl_timer
     local integer ydl_localvar_step= LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
     set ydl_localvar_step=ydl_localvar_step + 3
     call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
@@ -11034,7 +10527,33 @@ function Trig_MAP_____________2Actions takes nothing returns nothing
     call SaveButtonHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x8FB938DC, DialogAddButton(LoadDialogHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBAA6702B), "TRIGSTR_2202", 0))
     call SaveButtonHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xCBDA761D, DialogAddButton(LoadDialogHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBAA6702B), "TRIGSTR_2205", 0))
     call SaveButtonHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBC859EFF, DialogAddButton(LoadDialogHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBAA6702B), "TRIGSTR_2208", 0))
+    call SaveTriggerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x71545966, CreateTrigger())
+    set bj_forLoopAIndex=1
+    set bj_forLoopAIndexEnd=12
+    loop
+        exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
+        call DialogDisplay(ConvertedPlayer(bj_forLoopAIndex), LoadDialogHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBAA6702B), true)
+        set bj_forLoopAIndex=bj_forLoopAIndex + 1
+    endloop
+    set ydl_trigger=LoadTriggerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x71545966)
+    call SaveButtonHandle(YDHT, GetHandleId(ydl_trigger), 0x8FB938DC, LoadButtonHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x8FB938DC))
+    call SaveButtonHandle(YDHT, GetHandleId(ydl_trigger), 0xBC859EFF, LoadButtonHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBC859EFF))
+    call SaveButtonHandle(YDHT, GetHandleId(ydl_trigger), 0xCBDA761D, LoadButtonHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xCBDA761D))
+    call SaveTriggerHandle(YDHT, GetHandleId(ydl_trigger), 0x71545966, LoadTriggerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x71545966))
+    call TriggerRegisterDialogEvent(ydl_trigger, LoadDialogHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBAA6702B))
+    call TriggerAddCondition(ydl_trigger, Condition(function Trig_MAP_____________2Func008Conditions))
+    set ydl_timer=CreateTimer()
+    call SaveInteger(YDHT, GetHandleId(ydl_timer), 0x8FB938DC, 0)
+    call SaveInteger(YDHT, GetHandleId(ydl_timer), 0xCBDA761D, 0)
+    call SaveInteger(YDHT, GetHandleId(ydl_timer), 0xBC859EFF, 0)
+    call SaveTriggerHandle(YDHT, GetHandleId(ydl_timer), 0x71545966, LoadTriggerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x71545966))
+    call SaveDialogHandle(YDHT, GetHandleId(ydl_timer), 0xBAA6702B, LoadDialogHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBAA6702B))
+    call SavePlayerHandle(YDHT, GetHandleId(ydl_timer), 0x48E3E75F, LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x48E3E75F))
+    call SaveInteger(YDHT, GetHandleId(ydl_timer), 0x88E0AC77, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x88E0AC77))
+    call TimerStart(ydl_timer, 10.00, false, function Trig_MAP_____________2Func009T)
     call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+    set ydl_trigger=null
+    set ydl_timer=null
 endfunction
 //===========================================================================
 function InitTrig_MAP_____________2 takes nothing returns nothing
@@ -11044,14 +10563,96 @@ function InitTrig_MAP_____________2 takes nothing returns nothing
     call TriggerAddAction(gg_trg_MAP_____________2, function Trig_MAP_____________2Actions)
 endfunction
 //===========================================================================
+// Trigger: P选择英雄3
+//===========================================================================
+function Trig_P____________3Conditions takes nothing returns boolean
+    return ( ( GetOwningPlayer(GetTriggerUnit()) == Player(PLAYER_NEUTRAL_PASSIVE) ) and ( GetOwningPlayer(udg_P_yingxiong[GetPlayerId(GetTriggerPlayer())]) != GetTriggerPlayer() ) )
+endfunction
+function Trig_P____________3Func003Func012T takes nothing returns nothing
+    if ( ( LoadInteger(YDHT, GetHandleId(GetExpiredTimer()), 0x5FD7D016) == LoadInteger(YDHT, GetHandleId(LoadPlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xB56278FC)), 0x5FD7D016) ) ) then
+        set udg_P_yingxiong[GetPlayerId(LoadPlayerHandle(YDHT, GetHandleId(GetExpiredTimer()), 0xB56278FC))]=null
+    else
+    endif
+    call FlushChildHashtable(YDHT, GetHandleId(GetExpiredTimer()))
+    call DestroyTimer(GetExpiredTimer())
+endfunction
+function Trig_P____________3Actions takes nothing returns nothing
+    local timer ydl_timer
+    local integer ydl_localvar_step= LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+    set ydl_localvar_step=ydl_localvar_step + 3
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+    call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+    if ( ( ( udg_P_yingxiong[GetPlayerId(GetTriggerPlayer())] == null ) or ( udg_P_yingxiong[GetPlayerId(GetTriggerPlayer())] != GetTriggerUnit() ) ) ) then
+        call SaveForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7C23C9D2, YDWEGetForceOfPlayerNull(GetTriggerPlayer()))
+        call ClearTextMessagesBJ(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7C23C9D2))
+        call DestroyForce(LoadForceHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7C23C9D2))
+        call DisplayTextToPlayer(GetTriggerPlayer(), 0, 0, LoadStr(YDHT, GetUnitTypeId(GetTriggerUnit()), 0x6945FB09))
+        set udg_P_yingxiong[GetPlayerId(GetTriggerPlayer())]=GetTriggerUnit()
+        call SaveInteger(YDHT, GetHandleId(GetTriggerPlayer()), 0x5FD7D016, ( LoadInteger(YDHT, GetHandleId(GetTriggerPlayer()), 0x5FD7D016) + 1 ))
+        call SaveInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x5FD7D016, LoadInteger(YDHT, GetHandleId(GetTriggerPlayer()), 0x5FD7D016))
+        call SavePlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB56278FC, GetTriggerPlayer())
+        set ydl_timer=CreateTimer()
+        call SaveInteger(YDHT, GetHandleId(ydl_timer), 0x5FD7D016, LoadInteger(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x5FD7D016))
+        call SavePlayerHandle(YDHT, GetHandleId(ydl_timer), 0xB56278FC, LoadPlayerHandle(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB56278FC))
+        call TimerStart(ydl_timer, 0.50, false, function Trig_P____________3Func003Func012T)
+    else
+        call SetUnitOwner(GetTriggerUnit(), GetTriggerPlayer(), true)
+        call RemoveSavedInteger(YDHT, GetHandleId(GetTriggerPlayer()), 0x5FD7D016)
+    endif
+    call FlushChildHashtable(YDHT, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+    set ydl_timer=null
+endfunction
+//===========================================================================
+function InitTrig_P____________3 takes nothing returns nothing
+    set gg_trg_P____________3=CreateTrigger()
+    call DisableTrigger(gg_trg_P____________3)
+    call TriggerRegisterPlayerSelectionEventBJ(gg_trg_P____________3, Player(0), true)
+    call TriggerRegisterPlayerSelectionEventBJ(gg_trg_P____________3, Player(1), true)
+    call TriggerRegisterPlayerSelectionEventBJ(gg_trg_P____________3, Player(2), true)
+    call TriggerRegisterPlayerSelectionEventBJ(gg_trg_P____________3, Player(3), true)
+    call TriggerRegisterPlayerSelectionEventBJ(gg_trg_P____________3, Player(4), true)
+    call TriggerRegisterPlayerSelectionEventBJ(gg_trg_P____________3, Player(5), true)
+    call TriggerRegisterPlayerSelectionEventBJ(gg_trg_P____________3, Player(6), true)
+    call TriggerRegisterPlayerSelectionEventBJ(gg_trg_P____________3, Player(7), true)
+    call TriggerRegisterPlayerSelectionEventBJ(gg_trg_P____________3, Player(8), true)
+    call TriggerRegisterPlayerSelectionEventBJ(gg_trg_P____________3, Player(9), true)
+    call TriggerRegisterPlayerSelectionEventBJ(gg_trg_P____________3, Player(10), true)
+    call TriggerRegisterPlayerSelectionEventBJ(gg_trg_P____________3, Player(11), true)
+    call TriggerAddCondition(gg_trg_P____________3, Condition(function Trig_P____________3Conditions))
+    call TriggerAddAction(gg_trg_P____________3, function Trig_P____________3Actions)
+endfunction
+//===========================================================================
+// Trigger: H英雄对应文本4
+//===========================================================================
+function Trig_H__________________4Actions takes nothing returns nothing
+    call SaveStr(YDHT, 'E009', 0x6945FB09, "")
+    call SaveStr(YDHT, 'E00A', 0x6945FB09, "")
+    call SaveStr(YDHT, 'E00B', 0x6945FB09, "")
+    call SaveStr(YDHT, 'E00C', 0x6945FB09, "")
+    call SaveStr(YDHT, 'H008', 0x6945FB09, "")
+    call SaveStr(YDHT, 'H009', 0x6945FB09, "")
+    call SaveStr(YDHT, 'H00A', 0x6945FB09, "")
+    call SaveStr(YDHT, 'H00B', 0x6945FB09, "")
+    call SaveStr(YDHT, 'O003', 0x6945FB09, "")
+    call SaveStr(YDHT, 'O004', 0x6945FB09, "")
+    call SaveStr(YDHT, 'O005', 0x6945FB09, "")
+    call SaveStr(YDHT, 'O006', 0x6945FB09, "")
+    call SaveStr(YDHT, 'U01R', 0x6945FB09, "")
+    call SaveStr(YDHT, 'U01S', 0x6945FB09, "")
+    call SaveStr(YDHT, 'U01T', 0x6945FB09, "")
+    call SaveStr(YDHT, 'U01U', 0x6945FB09, "")
+endfunction
+//===========================================================================
+function InitTrig_H__________________4 takes nothing returns nothing
+    set gg_trg_H__________________4=CreateTrigger()
+    call TriggerAddAction(gg_trg_H__________________4, function Trig_H__________________4Actions)
+endfunction
+//===========================================================================
 function InitCustomTriggers takes nothing returns nothing
-    call InitTrig____________________________u()
     call InitTrig_go_die()
-    call InitTrig_element()
     call InitTrig_compute()
     call InitTrig_1______u()
     call InitTrig_begin()
-    call InitTrig_team()
     call InitTrig_roundtime_0()
     call InitTrig_roundtime_2()
     call InitTrig_DMB1()
@@ -11123,14 +10724,17 @@ function InitCustomTriggers takes nothing returns nothing
     call InitTrig_Skill01_____________u()
     call InitTrig_Skill02_____________u()
     call InitTrig_Skill03_____________u()
+    call InitTrig_MAP__________u()
     call InitTrig_MAP_E___A____________1()
     call InitTrig_MAP_____________2()
+    call InitTrig_P____________3()
+    call InitTrig_H__________________4()
 endfunction
 //===========================================================================
 function RunInitializationTriggers takes nothing returns nothing
-    call ConditionalTriggerExecute(gg_trg_element)
     call ConditionalTriggerExecute(gg_trg_begin)
     call ConditionalTriggerExecute(gg_trg_MAP_E___A____________1)
+    call ConditionalTriggerExecute(gg_trg_H__________________4)
 endfunction
 //***************************************************************************
 //*
@@ -11226,255 +10830,321 @@ endfunction
 function InitCustomTeams takes nothing returns nothing
     // Force: TRIGSTR_2092
     call SetPlayerTeam(Player(0), 0)
-    call SetPlayerState(Player(0), PLAYER_STATE_ALLIED_VICTORY, 1)
     call SetPlayerTeam(Player(1), 0)
-    call SetPlayerState(Player(1), PLAYER_STATE_ALLIED_VICTORY, 1)
     call SetPlayerTeam(Player(2), 0)
-    call SetPlayerState(Player(2), PLAYER_STATE_ALLIED_VICTORY, 1)
     call SetPlayerTeam(Player(3), 0)
-    call SetPlayerState(Player(3), PLAYER_STATE_ALLIED_VICTORY, 1)
+    call SetPlayerTeam(Player(4), 0)
+    call SetPlayerTeam(Player(5), 0)
+    call SetPlayerTeam(Player(6), 0)
+    call SetPlayerTeam(Player(7), 0)
+    call SetPlayerTeam(Player(8), 0)
+    call SetPlayerTeam(Player(9), 0)
+    call SetPlayerTeam(Player(10), 0)
+    call SetPlayerTeam(Player(11), 0)
     //   Allied
     call SetPlayerAllianceStateAllyBJ(Player(0), Player(1), true)
     call SetPlayerAllianceStateAllyBJ(Player(0), Player(2), true)
     call SetPlayerAllianceStateAllyBJ(Player(0), Player(3), true)
+    call SetPlayerAllianceStateAllyBJ(Player(0), Player(4), true)
+    call SetPlayerAllianceStateAllyBJ(Player(0), Player(5), true)
+    call SetPlayerAllianceStateAllyBJ(Player(0), Player(6), true)
+    call SetPlayerAllianceStateAllyBJ(Player(0), Player(7), true)
+    call SetPlayerAllianceStateAllyBJ(Player(0), Player(8), true)
+    call SetPlayerAllianceStateAllyBJ(Player(0), Player(9), true)
+    call SetPlayerAllianceStateAllyBJ(Player(0), Player(10), true)
+    call SetPlayerAllianceStateAllyBJ(Player(0), Player(11), true)
     call SetPlayerAllianceStateAllyBJ(Player(1), Player(0), true)
     call SetPlayerAllianceStateAllyBJ(Player(1), Player(2), true)
     call SetPlayerAllianceStateAllyBJ(Player(1), Player(3), true)
+    call SetPlayerAllianceStateAllyBJ(Player(1), Player(4), true)
+    call SetPlayerAllianceStateAllyBJ(Player(1), Player(5), true)
+    call SetPlayerAllianceStateAllyBJ(Player(1), Player(6), true)
+    call SetPlayerAllianceStateAllyBJ(Player(1), Player(7), true)
+    call SetPlayerAllianceStateAllyBJ(Player(1), Player(8), true)
+    call SetPlayerAllianceStateAllyBJ(Player(1), Player(9), true)
+    call SetPlayerAllianceStateAllyBJ(Player(1), Player(10), true)
+    call SetPlayerAllianceStateAllyBJ(Player(1), Player(11), true)
     call SetPlayerAllianceStateAllyBJ(Player(2), Player(0), true)
     call SetPlayerAllianceStateAllyBJ(Player(2), Player(1), true)
     call SetPlayerAllianceStateAllyBJ(Player(2), Player(3), true)
+    call SetPlayerAllianceStateAllyBJ(Player(2), Player(4), true)
+    call SetPlayerAllianceStateAllyBJ(Player(2), Player(5), true)
+    call SetPlayerAllianceStateAllyBJ(Player(2), Player(6), true)
+    call SetPlayerAllianceStateAllyBJ(Player(2), Player(7), true)
+    call SetPlayerAllianceStateAllyBJ(Player(2), Player(8), true)
+    call SetPlayerAllianceStateAllyBJ(Player(2), Player(9), true)
+    call SetPlayerAllianceStateAllyBJ(Player(2), Player(10), true)
+    call SetPlayerAllianceStateAllyBJ(Player(2), Player(11), true)
     call SetPlayerAllianceStateAllyBJ(Player(3), Player(0), true)
     call SetPlayerAllianceStateAllyBJ(Player(3), Player(1), true)
     call SetPlayerAllianceStateAllyBJ(Player(3), Player(2), true)
-    //   Shared Vision
-    call SetPlayerAllianceStateVisionBJ(Player(0), Player(1), true)
-    call SetPlayerAllianceStateVisionBJ(Player(0), Player(2), true)
-    call SetPlayerAllianceStateVisionBJ(Player(0), Player(3), true)
-    call SetPlayerAllianceStateVisionBJ(Player(1), Player(0), true)
-    call SetPlayerAllianceStateVisionBJ(Player(1), Player(2), true)
-    call SetPlayerAllianceStateVisionBJ(Player(1), Player(3), true)
-    call SetPlayerAllianceStateVisionBJ(Player(2), Player(0), true)
-    call SetPlayerAllianceStateVisionBJ(Player(2), Player(1), true)
-    call SetPlayerAllianceStateVisionBJ(Player(2), Player(3), true)
-    call SetPlayerAllianceStateVisionBJ(Player(3), Player(0), true)
-    call SetPlayerAllianceStateVisionBJ(Player(3), Player(1), true)
-    call SetPlayerAllianceStateVisionBJ(Player(3), Player(2), true)
-    // Force: TRIGSTR_2093
-    call SetPlayerTeam(Player(4), 1)
-    call SetPlayerState(Player(4), PLAYER_STATE_ALLIED_VICTORY, 1)
-    call SetPlayerTeam(Player(5), 1)
-    call SetPlayerState(Player(5), PLAYER_STATE_ALLIED_VICTORY, 1)
-    call SetPlayerTeam(Player(6), 1)
-    call SetPlayerState(Player(6), PLAYER_STATE_ALLIED_VICTORY, 1)
-    call SetPlayerTeam(Player(7), 1)
-    call SetPlayerState(Player(7), PLAYER_STATE_ALLIED_VICTORY, 1)
-    //   Allied
+    call SetPlayerAllianceStateAllyBJ(Player(3), Player(4), true)
+    call SetPlayerAllianceStateAllyBJ(Player(3), Player(5), true)
+    call SetPlayerAllianceStateAllyBJ(Player(3), Player(6), true)
+    call SetPlayerAllianceStateAllyBJ(Player(3), Player(7), true)
+    call SetPlayerAllianceStateAllyBJ(Player(3), Player(8), true)
+    call SetPlayerAllianceStateAllyBJ(Player(3), Player(9), true)
+    call SetPlayerAllianceStateAllyBJ(Player(3), Player(10), true)
+    call SetPlayerAllianceStateAllyBJ(Player(3), Player(11), true)
+    call SetPlayerAllianceStateAllyBJ(Player(4), Player(0), true)
+    call SetPlayerAllianceStateAllyBJ(Player(4), Player(1), true)
+    call SetPlayerAllianceStateAllyBJ(Player(4), Player(2), true)
+    call SetPlayerAllianceStateAllyBJ(Player(4), Player(3), true)
     call SetPlayerAllianceStateAllyBJ(Player(4), Player(5), true)
     call SetPlayerAllianceStateAllyBJ(Player(4), Player(6), true)
     call SetPlayerAllianceStateAllyBJ(Player(4), Player(7), true)
+    call SetPlayerAllianceStateAllyBJ(Player(4), Player(8), true)
+    call SetPlayerAllianceStateAllyBJ(Player(4), Player(9), true)
+    call SetPlayerAllianceStateAllyBJ(Player(4), Player(10), true)
+    call SetPlayerAllianceStateAllyBJ(Player(4), Player(11), true)
+    call SetPlayerAllianceStateAllyBJ(Player(5), Player(0), true)
+    call SetPlayerAllianceStateAllyBJ(Player(5), Player(1), true)
+    call SetPlayerAllianceStateAllyBJ(Player(5), Player(2), true)
+    call SetPlayerAllianceStateAllyBJ(Player(5), Player(3), true)
     call SetPlayerAllianceStateAllyBJ(Player(5), Player(4), true)
     call SetPlayerAllianceStateAllyBJ(Player(5), Player(6), true)
     call SetPlayerAllianceStateAllyBJ(Player(5), Player(7), true)
+    call SetPlayerAllianceStateAllyBJ(Player(5), Player(8), true)
+    call SetPlayerAllianceStateAllyBJ(Player(5), Player(9), true)
+    call SetPlayerAllianceStateAllyBJ(Player(5), Player(10), true)
+    call SetPlayerAllianceStateAllyBJ(Player(5), Player(11), true)
+    call SetPlayerAllianceStateAllyBJ(Player(6), Player(0), true)
+    call SetPlayerAllianceStateAllyBJ(Player(6), Player(1), true)
+    call SetPlayerAllianceStateAllyBJ(Player(6), Player(2), true)
+    call SetPlayerAllianceStateAllyBJ(Player(6), Player(3), true)
     call SetPlayerAllianceStateAllyBJ(Player(6), Player(4), true)
     call SetPlayerAllianceStateAllyBJ(Player(6), Player(5), true)
     call SetPlayerAllianceStateAllyBJ(Player(6), Player(7), true)
+    call SetPlayerAllianceStateAllyBJ(Player(6), Player(8), true)
+    call SetPlayerAllianceStateAllyBJ(Player(6), Player(9), true)
+    call SetPlayerAllianceStateAllyBJ(Player(6), Player(10), true)
+    call SetPlayerAllianceStateAllyBJ(Player(6), Player(11), true)
+    call SetPlayerAllianceStateAllyBJ(Player(7), Player(0), true)
+    call SetPlayerAllianceStateAllyBJ(Player(7), Player(1), true)
+    call SetPlayerAllianceStateAllyBJ(Player(7), Player(2), true)
+    call SetPlayerAllianceStateAllyBJ(Player(7), Player(3), true)
     call SetPlayerAllianceStateAllyBJ(Player(7), Player(4), true)
     call SetPlayerAllianceStateAllyBJ(Player(7), Player(5), true)
     call SetPlayerAllianceStateAllyBJ(Player(7), Player(6), true)
-    //   Shared Vision
-    call SetPlayerAllianceStateVisionBJ(Player(4), Player(5), true)
-    call SetPlayerAllianceStateVisionBJ(Player(4), Player(6), true)
-    call SetPlayerAllianceStateVisionBJ(Player(4), Player(7), true)
-    call SetPlayerAllianceStateVisionBJ(Player(5), Player(4), true)
-    call SetPlayerAllianceStateVisionBJ(Player(5), Player(6), true)
-    call SetPlayerAllianceStateVisionBJ(Player(5), Player(7), true)
-    call SetPlayerAllianceStateVisionBJ(Player(6), Player(4), true)
-    call SetPlayerAllianceStateVisionBJ(Player(6), Player(5), true)
-    call SetPlayerAllianceStateVisionBJ(Player(6), Player(7), true)
-    call SetPlayerAllianceStateVisionBJ(Player(7), Player(4), true)
-    call SetPlayerAllianceStateVisionBJ(Player(7), Player(5), true)
-    call SetPlayerAllianceStateVisionBJ(Player(7), Player(6), true)
-    // Force: TRIGSTR_2094
-    call SetPlayerTeam(Player(8), 2)
-    call SetPlayerState(Player(8), PLAYER_STATE_ALLIED_VICTORY, 1)
-    call SetPlayerTeam(Player(9), 2)
-    call SetPlayerState(Player(9), PLAYER_STATE_ALLIED_VICTORY, 1)
-    call SetPlayerTeam(Player(10), 2)
-    call SetPlayerState(Player(10), PLAYER_STATE_ALLIED_VICTORY, 1)
-    call SetPlayerTeam(Player(11), 2)
-    call SetPlayerState(Player(11), PLAYER_STATE_ALLIED_VICTORY, 1)
-    //   Allied
+    call SetPlayerAllianceStateAllyBJ(Player(7), Player(8), true)
+    call SetPlayerAllianceStateAllyBJ(Player(7), Player(9), true)
+    call SetPlayerAllianceStateAllyBJ(Player(7), Player(10), true)
+    call SetPlayerAllianceStateAllyBJ(Player(7), Player(11), true)
+    call SetPlayerAllianceStateAllyBJ(Player(8), Player(0), true)
+    call SetPlayerAllianceStateAllyBJ(Player(8), Player(1), true)
+    call SetPlayerAllianceStateAllyBJ(Player(8), Player(2), true)
+    call SetPlayerAllianceStateAllyBJ(Player(8), Player(3), true)
+    call SetPlayerAllianceStateAllyBJ(Player(8), Player(4), true)
+    call SetPlayerAllianceStateAllyBJ(Player(8), Player(5), true)
+    call SetPlayerAllianceStateAllyBJ(Player(8), Player(6), true)
+    call SetPlayerAllianceStateAllyBJ(Player(8), Player(7), true)
     call SetPlayerAllianceStateAllyBJ(Player(8), Player(9), true)
     call SetPlayerAllianceStateAllyBJ(Player(8), Player(10), true)
     call SetPlayerAllianceStateAllyBJ(Player(8), Player(11), true)
+    call SetPlayerAllianceStateAllyBJ(Player(9), Player(0), true)
+    call SetPlayerAllianceStateAllyBJ(Player(9), Player(1), true)
+    call SetPlayerAllianceStateAllyBJ(Player(9), Player(2), true)
+    call SetPlayerAllianceStateAllyBJ(Player(9), Player(3), true)
+    call SetPlayerAllianceStateAllyBJ(Player(9), Player(4), true)
+    call SetPlayerAllianceStateAllyBJ(Player(9), Player(5), true)
+    call SetPlayerAllianceStateAllyBJ(Player(9), Player(6), true)
+    call SetPlayerAllianceStateAllyBJ(Player(9), Player(7), true)
     call SetPlayerAllianceStateAllyBJ(Player(9), Player(8), true)
     call SetPlayerAllianceStateAllyBJ(Player(9), Player(10), true)
     call SetPlayerAllianceStateAllyBJ(Player(9), Player(11), true)
+    call SetPlayerAllianceStateAllyBJ(Player(10), Player(0), true)
+    call SetPlayerAllianceStateAllyBJ(Player(10), Player(1), true)
+    call SetPlayerAllianceStateAllyBJ(Player(10), Player(2), true)
+    call SetPlayerAllianceStateAllyBJ(Player(10), Player(3), true)
+    call SetPlayerAllianceStateAllyBJ(Player(10), Player(4), true)
+    call SetPlayerAllianceStateAllyBJ(Player(10), Player(5), true)
+    call SetPlayerAllianceStateAllyBJ(Player(10), Player(6), true)
+    call SetPlayerAllianceStateAllyBJ(Player(10), Player(7), true)
     call SetPlayerAllianceStateAllyBJ(Player(10), Player(8), true)
     call SetPlayerAllianceStateAllyBJ(Player(10), Player(9), true)
     call SetPlayerAllianceStateAllyBJ(Player(10), Player(11), true)
+    call SetPlayerAllianceStateAllyBJ(Player(11), Player(0), true)
+    call SetPlayerAllianceStateAllyBJ(Player(11), Player(1), true)
+    call SetPlayerAllianceStateAllyBJ(Player(11), Player(2), true)
+    call SetPlayerAllianceStateAllyBJ(Player(11), Player(3), true)
+    call SetPlayerAllianceStateAllyBJ(Player(11), Player(4), true)
+    call SetPlayerAllianceStateAllyBJ(Player(11), Player(5), true)
+    call SetPlayerAllianceStateAllyBJ(Player(11), Player(6), true)
+    call SetPlayerAllianceStateAllyBJ(Player(11), Player(7), true)
     call SetPlayerAllianceStateAllyBJ(Player(11), Player(8), true)
     call SetPlayerAllianceStateAllyBJ(Player(11), Player(9), true)
     call SetPlayerAllianceStateAllyBJ(Player(11), Player(10), true)
     //   Shared Vision
+    call SetPlayerAllianceStateVisionBJ(Player(0), Player(1), true)
+    call SetPlayerAllianceStateVisionBJ(Player(0), Player(2), true)
+    call SetPlayerAllianceStateVisionBJ(Player(0), Player(3), true)
+    call SetPlayerAllianceStateVisionBJ(Player(0), Player(4), true)
+    call SetPlayerAllianceStateVisionBJ(Player(0), Player(5), true)
+    call SetPlayerAllianceStateVisionBJ(Player(0), Player(6), true)
+    call SetPlayerAllianceStateVisionBJ(Player(0), Player(7), true)
+    call SetPlayerAllianceStateVisionBJ(Player(0), Player(8), true)
+    call SetPlayerAllianceStateVisionBJ(Player(0), Player(9), true)
+    call SetPlayerAllianceStateVisionBJ(Player(0), Player(10), true)
+    call SetPlayerAllianceStateVisionBJ(Player(0), Player(11), true)
+    call SetPlayerAllianceStateVisionBJ(Player(1), Player(0), true)
+    call SetPlayerAllianceStateVisionBJ(Player(1), Player(2), true)
+    call SetPlayerAllianceStateVisionBJ(Player(1), Player(3), true)
+    call SetPlayerAllianceStateVisionBJ(Player(1), Player(4), true)
+    call SetPlayerAllianceStateVisionBJ(Player(1), Player(5), true)
+    call SetPlayerAllianceStateVisionBJ(Player(1), Player(6), true)
+    call SetPlayerAllianceStateVisionBJ(Player(1), Player(7), true)
+    call SetPlayerAllianceStateVisionBJ(Player(1), Player(8), true)
+    call SetPlayerAllianceStateVisionBJ(Player(1), Player(9), true)
+    call SetPlayerAllianceStateVisionBJ(Player(1), Player(10), true)
+    call SetPlayerAllianceStateVisionBJ(Player(1), Player(11), true)
+    call SetPlayerAllianceStateVisionBJ(Player(2), Player(0), true)
+    call SetPlayerAllianceStateVisionBJ(Player(2), Player(1), true)
+    call SetPlayerAllianceStateVisionBJ(Player(2), Player(3), true)
+    call SetPlayerAllianceStateVisionBJ(Player(2), Player(4), true)
+    call SetPlayerAllianceStateVisionBJ(Player(2), Player(5), true)
+    call SetPlayerAllianceStateVisionBJ(Player(2), Player(6), true)
+    call SetPlayerAllianceStateVisionBJ(Player(2), Player(7), true)
+    call SetPlayerAllianceStateVisionBJ(Player(2), Player(8), true)
+    call SetPlayerAllianceStateVisionBJ(Player(2), Player(9), true)
+    call SetPlayerAllianceStateVisionBJ(Player(2), Player(10), true)
+    call SetPlayerAllianceStateVisionBJ(Player(2), Player(11), true)
+    call SetPlayerAllianceStateVisionBJ(Player(3), Player(0), true)
+    call SetPlayerAllianceStateVisionBJ(Player(3), Player(1), true)
+    call SetPlayerAllianceStateVisionBJ(Player(3), Player(2), true)
+    call SetPlayerAllianceStateVisionBJ(Player(3), Player(4), true)
+    call SetPlayerAllianceStateVisionBJ(Player(3), Player(5), true)
+    call SetPlayerAllianceStateVisionBJ(Player(3), Player(6), true)
+    call SetPlayerAllianceStateVisionBJ(Player(3), Player(7), true)
+    call SetPlayerAllianceStateVisionBJ(Player(3), Player(8), true)
+    call SetPlayerAllianceStateVisionBJ(Player(3), Player(9), true)
+    call SetPlayerAllianceStateVisionBJ(Player(3), Player(10), true)
+    call SetPlayerAllianceStateVisionBJ(Player(3), Player(11), true)
+    call SetPlayerAllianceStateVisionBJ(Player(4), Player(0), true)
+    call SetPlayerAllianceStateVisionBJ(Player(4), Player(1), true)
+    call SetPlayerAllianceStateVisionBJ(Player(4), Player(2), true)
+    call SetPlayerAllianceStateVisionBJ(Player(4), Player(3), true)
+    call SetPlayerAllianceStateVisionBJ(Player(4), Player(5), true)
+    call SetPlayerAllianceStateVisionBJ(Player(4), Player(6), true)
+    call SetPlayerAllianceStateVisionBJ(Player(4), Player(7), true)
+    call SetPlayerAllianceStateVisionBJ(Player(4), Player(8), true)
+    call SetPlayerAllianceStateVisionBJ(Player(4), Player(9), true)
+    call SetPlayerAllianceStateVisionBJ(Player(4), Player(10), true)
+    call SetPlayerAllianceStateVisionBJ(Player(4), Player(11), true)
+    call SetPlayerAllianceStateVisionBJ(Player(5), Player(0), true)
+    call SetPlayerAllianceStateVisionBJ(Player(5), Player(1), true)
+    call SetPlayerAllianceStateVisionBJ(Player(5), Player(2), true)
+    call SetPlayerAllianceStateVisionBJ(Player(5), Player(3), true)
+    call SetPlayerAllianceStateVisionBJ(Player(5), Player(4), true)
+    call SetPlayerAllianceStateVisionBJ(Player(5), Player(6), true)
+    call SetPlayerAllianceStateVisionBJ(Player(5), Player(7), true)
+    call SetPlayerAllianceStateVisionBJ(Player(5), Player(8), true)
+    call SetPlayerAllianceStateVisionBJ(Player(5), Player(9), true)
+    call SetPlayerAllianceStateVisionBJ(Player(5), Player(10), true)
+    call SetPlayerAllianceStateVisionBJ(Player(5), Player(11), true)
+    call SetPlayerAllianceStateVisionBJ(Player(6), Player(0), true)
+    call SetPlayerAllianceStateVisionBJ(Player(6), Player(1), true)
+    call SetPlayerAllianceStateVisionBJ(Player(6), Player(2), true)
+    call SetPlayerAllianceStateVisionBJ(Player(6), Player(3), true)
+    call SetPlayerAllianceStateVisionBJ(Player(6), Player(4), true)
+    call SetPlayerAllianceStateVisionBJ(Player(6), Player(5), true)
+    call SetPlayerAllianceStateVisionBJ(Player(6), Player(7), true)
+    call SetPlayerAllianceStateVisionBJ(Player(6), Player(8), true)
+    call SetPlayerAllianceStateVisionBJ(Player(6), Player(9), true)
+    call SetPlayerAllianceStateVisionBJ(Player(6), Player(10), true)
+    call SetPlayerAllianceStateVisionBJ(Player(6), Player(11), true)
+    call SetPlayerAllianceStateVisionBJ(Player(7), Player(0), true)
+    call SetPlayerAllianceStateVisionBJ(Player(7), Player(1), true)
+    call SetPlayerAllianceStateVisionBJ(Player(7), Player(2), true)
+    call SetPlayerAllianceStateVisionBJ(Player(7), Player(3), true)
+    call SetPlayerAllianceStateVisionBJ(Player(7), Player(4), true)
+    call SetPlayerAllianceStateVisionBJ(Player(7), Player(5), true)
+    call SetPlayerAllianceStateVisionBJ(Player(7), Player(6), true)
+    call SetPlayerAllianceStateVisionBJ(Player(7), Player(8), true)
+    call SetPlayerAllianceStateVisionBJ(Player(7), Player(9), true)
+    call SetPlayerAllianceStateVisionBJ(Player(7), Player(10), true)
+    call SetPlayerAllianceStateVisionBJ(Player(7), Player(11), true)
+    call SetPlayerAllianceStateVisionBJ(Player(8), Player(0), true)
+    call SetPlayerAllianceStateVisionBJ(Player(8), Player(1), true)
+    call SetPlayerAllianceStateVisionBJ(Player(8), Player(2), true)
+    call SetPlayerAllianceStateVisionBJ(Player(8), Player(3), true)
+    call SetPlayerAllianceStateVisionBJ(Player(8), Player(4), true)
+    call SetPlayerAllianceStateVisionBJ(Player(8), Player(5), true)
+    call SetPlayerAllianceStateVisionBJ(Player(8), Player(6), true)
+    call SetPlayerAllianceStateVisionBJ(Player(8), Player(7), true)
     call SetPlayerAllianceStateVisionBJ(Player(8), Player(9), true)
     call SetPlayerAllianceStateVisionBJ(Player(8), Player(10), true)
     call SetPlayerAllianceStateVisionBJ(Player(8), Player(11), true)
+    call SetPlayerAllianceStateVisionBJ(Player(9), Player(0), true)
+    call SetPlayerAllianceStateVisionBJ(Player(9), Player(1), true)
+    call SetPlayerAllianceStateVisionBJ(Player(9), Player(2), true)
+    call SetPlayerAllianceStateVisionBJ(Player(9), Player(3), true)
+    call SetPlayerAllianceStateVisionBJ(Player(9), Player(4), true)
+    call SetPlayerAllianceStateVisionBJ(Player(9), Player(5), true)
+    call SetPlayerAllianceStateVisionBJ(Player(9), Player(6), true)
+    call SetPlayerAllianceStateVisionBJ(Player(9), Player(7), true)
     call SetPlayerAllianceStateVisionBJ(Player(9), Player(8), true)
     call SetPlayerAllianceStateVisionBJ(Player(9), Player(10), true)
     call SetPlayerAllianceStateVisionBJ(Player(9), Player(11), true)
+    call SetPlayerAllianceStateVisionBJ(Player(10), Player(0), true)
+    call SetPlayerAllianceStateVisionBJ(Player(10), Player(1), true)
+    call SetPlayerAllianceStateVisionBJ(Player(10), Player(2), true)
+    call SetPlayerAllianceStateVisionBJ(Player(10), Player(3), true)
+    call SetPlayerAllianceStateVisionBJ(Player(10), Player(4), true)
+    call SetPlayerAllianceStateVisionBJ(Player(10), Player(5), true)
+    call SetPlayerAllianceStateVisionBJ(Player(10), Player(6), true)
+    call SetPlayerAllianceStateVisionBJ(Player(10), Player(7), true)
     call SetPlayerAllianceStateVisionBJ(Player(10), Player(8), true)
     call SetPlayerAllianceStateVisionBJ(Player(10), Player(9), true)
     call SetPlayerAllianceStateVisionBJ(Player(10), Player(11), true)
+    call SetPlayerAllianceStateVisionBJ(Player(11), Player(0), true)
+    call SetPlayerAllianceStateVisionBJ(Player(11), Player(1), true)
+    call SetPlayerAllianceStateVisionBJ(Player(11), Player(2), true)
+    call SetPlayerAllianceStateVisionBJ(Player(11), Player(3), true)
+    call SetPlayerAllianceStateVisionBJ(Player(11), Player(4), true)
+    call SetPlayerAllianceStateVisionBJ(Player(11), Player(5), true)
+    call SetPlayerAllianceStateVisionBJ(Player(11), Player(6), true)
+    call SetPlayerAllianceStateVisionBJ(Player(11), Player(7), true)
     call SetPlayerAllianceStateVisionBJ(Player(11), Player(8), true)
     call SetPlayerAllianceStateVisionBJ(Player(11), Player(9), true)
     call SetPlayerAllianceStateVisionBJ(Player(11), Player(10), true)
 endfunction
 function InitAllyPriorities takes nothing returns nothing
-    call SetStartLocPrioCount(0, 11)
+    call SetStartLocPrioCount(0, 2)
     call SetStartLocPrio(0, 0, 1, MAP_LOC_PRIO_HIGH)
     call SetStartLocPrio(0, 1, 2, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(0, 2, 3, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(0, 3, 4, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(0, 4, 5, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(0, 5, 6, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(0, 6, 7, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(0, 7, 8, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(0, 8, 9, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(0, 9, 10, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(0, 10, 11, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrioCount(1, 11)
+    call SetStartLocPrioCount(1, 2)
     call SetStartLocPrio(1, 0, 0, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(1, 1, 2, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(1, 2, 3, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(1, 3, 4, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(1, 4, 5, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(1, 5, 6, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(1, 6, 7, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(1, 7, 8, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(1, 8, 9, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(1, 9, 10, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(1, 10, 11, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrioCount(2, 11)
+    call SetStartLocPrio(1, 1, 8, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrioCount(2, 2)
     call SetStartLocPrio(2, 0, 0, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(2, 1, 1, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(2, 2, 3, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(2, 3, 4, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(2, 4, 5, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(2, 5, 6, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(2, 6, 7, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(2, 7, 8, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(2, 8, 9, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(2, 9, 10, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(2, 10, 11, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrioCount(3, 11)
-    call SetStartLocPrio(3, 0, 0, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(3, 1, 1, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(3, 2, 2, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(3, 3, 4, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(3, 4, 5, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(3, 5, 6, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(3, 6, 7, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(3, 7, 8, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(3, 8, 9, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(3, 9, 10, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(3, 10, 11, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrioCount(4, 11)
-    call SetStartLocPrio(4, 0, 0, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(4, 1, 1, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(4, 2, 2, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(4, 3, 3, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(4, 4, 5, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(4, 5, 6, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(4, 6, 7, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(4, 7, 8, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(4, 8, 9, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(4, 9, 10, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(4, 10, 11, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrioCount(5, 11)
-    call SetStartLocPrio(5, 0, 0, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(5, 1, 1, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(5, 2, 2, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(5, 3, 3, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(5, 4, 4, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(5, 5, 6, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(5, 6, 7, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(5, 7, 8, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(5, 8, 9, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(5, 9, 10, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(5, 10, 11, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrioCount(6, 11)
-    call SetStartLocPrio(6, 0, 0, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(6, 1, 1, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(6, 2, 2, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(6, 3, 3, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(6, 4, 4, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(6, 5, 5, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(6, 6, 7, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(6, 7, 8, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(6, 8, 9, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(6, 9, 10, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(6, 10, 11, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrioCount(7, 11)
-    call SetStartLocPrio(7, 0, 0, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(7, 1, 1, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(7, 2, 2, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(7, 3, 3, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(7, 4, 4, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(7, 5, 5, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(7, 6, 6, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(7, 7, 8, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(7, 8, 9, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(7, 9, 10, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(7, 10, 11, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrioCount(8, 11)
-    call SetStartLocPrio(8, 0, 0, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(8, 1, 1, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(8, 2, 2, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(8, 3, 3, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(8, 4, 4, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(8, 5, 5, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(8, 6, 6, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(8, 7, 7, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(8, 8, 9, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(8, 9, 10, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(8, 10, 11, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrioCount(9, 11)
-    call SetStartLocPrio(9, 0, 0, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(9, 1, 1, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(9, 2, 2, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(9, 3, 3, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(9, 4, 4, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(9, 5, 5, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(9, 6, 6, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(9, 7, 7, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(9, 8, 8, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(9, 9, 10, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(9, 10, 11, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrioCount(10, 11)
-    call SetStartLocPrio(10, 0, 0, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(10, 1, 1, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(10, 2, 2, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(10, 3, 3, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(10, 4, 4, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(10, 5, 5, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(10, 6, 6, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(10, 7, 7, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(10, 8, 8, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(10, 9, 9, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(10, 10, 11, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrioCount(11, 11)
-    call SetStartLocPrio(11, 0, 0, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(11, 1, 1, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(11, 2, 2, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(11, 3, 3, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(11, 4, 4, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(11, 5, 5, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(11, 6, 6, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(11, 7, 7, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(11, 8, 8, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(11, 9, 9, MAP_LOC_PRIO_HIGH)
-    call SetStartLocPrio(11, 10, 10, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrio(2, 1, 10, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrioCount(3, 2)
+    call SetStartLocPrio(3, 0, 5, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrio(3, 1, 6, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrioCount(4, 2)
+    call SetStartLocPrio(4, 0, 9, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrio(4, 1, 11, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrioCount(5, 2)
+    call SetStartLocPrio(5, 0, 3, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrio(5, 1, 7, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrioCount(6, 2)
+    call SetStartLocPrio(6, 0, 3, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrio(6, 1, 11, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrioCount(7, 2)
+    call SetStartLocPrio(7, 0, 5, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrio(7, 1, 8, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrioCount(8, 2)
+    call SetStartLocPrio(8, 0, 1, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrio(8, 1, 7, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrioCount(9, 2)
+    call SetStartLocPrio(9, 0, 4, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrio(9, 1, 10, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrioCount(10, 2)
+    call SetStartLocPrio(10, 0, 2, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrio(10, 1, 9, MAP_LOC_PRIO_HIGH)
+    call SetStartLocPrioCount(11, 2)
+    call SetStartLocPrio(11, 0, 4, MAP_LOC_PRIO_LOW)
+    call SetStartLocPrio(11, 1, 6, MAP_LOC_PRIO_HIGH)
 endfunction
 //***************************************************************************
 //*
@@ -11483,7 +11153,7 @@ endfunction
 //***************************************************************************
 //===========================================================================
 function main takes nothing returns nothing
-    call SetCameraBounds(- 9984.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), - 10496.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 9856.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 9472.0 - GetCameraMargin(CAMERA_MARGIN_TOP), - 9984.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 9472.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 9856.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), - 10496.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
+    call SetCameraBounds(- 6528.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), - 10496.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 9856.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 5888.0 - GetCameraMargin(CAMERA_MARGIN_TOP), - 6528.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 5888.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 9856.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), - 10496.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
     call SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl", "Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
     call NewSoundEnvironment("Default")
     call SetAmbientDaySound("LordaeronFallDay")
@@ -11495,7 +11165,7 @@ function main takes nothing returns nothing
     call CreateAllUnits()
     call InitBlizzard()
 
-call ExecuteFunc("jasshelper__initstructs32047893")
+call ExecuteFunc("jasshelper__initstructs49623153")
 call ExecuteFunc("YDTriggerSaveLoadSystem___Init")
 call ExecuteFunc("InitializeYD")
 call ExecuteFunc("YDWEGeneralBounsSystem__Initialize")
@@ -11518,30 +11188,23 @@ function config takes nothing returns nothing
     call SetPlayers(12)
     call SetTeams(12)
     call SetGamePlacement(MAP_PLACEMENT_TEAMS_TOGETHER)
-    call DefineStartLocation(0, 9216.0, - 9920.0)
-    call DefineStartLocation(1, 9216.0, - 9920.0)
-    call DefineStartLocation(2, 9216.0, - 9920.0)
-    call DefineStartLocation(3, 9216.0, - 9920.0)
-    call DefineStartLocation(4, 9216.0, - 9920.0)
-    call DefineStartLocation(5, 9216.0, - 9920.0)
-    call DefineStartLocation(6, 9216.0, - 9920.0)
-    call DefineStartLocation(7, 9216.0, - 9920.0)
-    call DefineStartLocation(8, 9216.0, - 9920.0)
-    call DefineStartLocation(9, 9216.0, - 9920.0)
-    call DefineStartLocation(10, 9216.0, - 9920.0)
-    call DefineStartLocation(11, 9216.0, - 9920.0)
+    call DefineStartLocation(0, 8640.0, - 6016.0)
+    call DefineStartLocation(1, 5760.0, - 8000.0)
+    call DefineStartLocation(2, 8832.0, - 2304.0)
+    call DefineStartLocation(3, - 5184.0, - 2176.0)
+    call DefineStartLocation(4, 960.0, 4352.0)
+    call DefineStartLocation(5, - 4352.0, - 5696.0)
+    call DefineStartLocation(6, - 4544.0, 960.0)
+    call DefineStartLocation(7, - 1920.0, - 7680.0)
+    call DefineStartLocation(8, 1920.0, - 8448.0)
+    call DefineStartLocation(9, 5056.0, 3520.0)
+    call DefineStartLocation(10, 7872.0, 1408.0)
+    call DefineStartLocation(11, - 3136.0, 3520.0)
     // Player setup
     call InitCustomPlayerSlots()
     call InitCustomTeams()
     call InitAllyPriorities()
 endfunction
-//library ValueIndexing initializer Init requires YDWEBase
-//===========================================================================
-//�޸�����
-//===========================================================================
-//===========================================================================
-//��Ծϵͳ 
-//===========================================================================
 //===========================================================================  
 //===========================================================================  
 //�Զ����¼� 
@@ -11549,6 +11212,13 @@ endfunction
 //===========================================================================   
 //===========================================================================
 //ϵͳ-TimerSystem
+//===========================================================================
+//library ValueIndexing initializer Init requires YDWEBase
+//===========================================================================
+//��Ծϵͳ 
+//===========================================================================
+//===========================================================================
+//�޸�����
 //===========================================================================
 
 
@@ -11587,69 +11257,69 @@ local integer this=f__arg_this
             set s__YDWETimerPattern__Thread_part[this]=""
    return true
 endfunction
-function sa___prototype175_MemoryLeakHelper__GetElapsedGameTime takes nothing returns boolean
+function sa___prototype174_MemoryLeakHelper__GetElapsedGameTime takes nothing returns boolean
 
     set f__result_real= MemoryLeakHelper__GameTime + TimerGetElapsed(MemoryLeakHelper__GameTimeTimer)
     return true
 endfunction
-function sa___prototype179_MemoryLeakHelper__ReleaseLocation takes nothing returns boolean
+function sa___prototype178_MemoryLeakHelper__ReleaseLocation takes nothing returns boolean
     call MemoryLeakHelper__ReleaseLocation(f__arg_location1)
     return true
 endfunction
-function sa___prototype180_MemoryLeakHelper__CatchGroup takes nothing returns boolean
+function sa___prototype179_MemoryLeakHelper__CatchGroup takes nothing returns boolean
     call MemoryLeakHelper__CatchGroup(f__arg_group1)
     return true
 endfunction
-function sa___prototype180_MemoryLeakHelper__ReleaseGroup takes nothing returns boolean
+function sa___prototype179_MemoryLeakHelper__ReleaseGroup takes nothing returns boolean
     call MemoryLeakHelper__ReleaseGroup(f__arg_group1)
     return true
 endfunction
-function sa___prototype181_MemoryLeakHelper__ReleaseEffect takes nothing returns boolean
+function sa___prototype180_MemoryLeakHelper__ReleaseEffect takes nothing returns boolean
     call MemoryLeakHelper__ReleaseEffect(f__arg_effect1)
     return true
 endfunction
-function sa___prototype182_MemoryLeakHelper__PP takes nothing returns boolean
+function sa___prototype181_MemoryLeakHelper__PP takes nothing returns boolean
     call MemoryLeakHelper__PP(f__arg_location1,f__arg_real1,f__arg_real2)
     return true
 endfunction
-function sa___prototype183_MemoryLeakHelper__CU takes nothing returns boolean
+function sa___prototype182_MemoryLeakHelper__CU takes nothing returns boolean
     call MemoryLeakHelper__CU(f__arg_integer1,f__arg_integer2,f__arg_player1,f__arg_location1,f__arg_real1)
     return true
 endfunction
-function sa___prototype184_MemoryLeakHelper__IPO takes nothing returns boolean
+function sa___prototype183_MemoryLeakHelper__IPO takes nothing returns boolean
     call MemoryLeakHelper__IPO(f__arg_unit1,f__arg_string1,f__arg_location1)
     return true
 endfunction
-function sa___prototype185_MemoryLeakHelper__SUP takes nothing returns boolean
+function sa___prototype184_MemoryLeakHelper__SUP takes nothing returns boolean
     call MemoryLeakHelper__SUP(f__arg_unit1,f__arg_location1)
     return true
 endfunction
-function sa___prototype172_MemoryLeakHelper__SUF takes nothing returns boolean
+function sa___prototype171_MemoryLeakHelper__SUF takes nothing returns boolean
     call MemoryLeakHelper__SUF(f__arg_unit1,f__arg_location1,f__arg_real1)
     return true
 endfunction
-function sa___prototype186_MemoryLeakHelper__GUR takes nothing returns boolean
+function sa___prototype185_MemoryLeakHelper__GUR takes nothing returns boolean
     call MemoryLeakHelper__GUR(f__arg_real1,f__arg_location1,f__arg_boolexpr1)
     return true
 endfunction
-function sa___prototype187_MemoryLeakHelper__CUF takes nothing returns boolean
+function sa___prototype186_MemoryLeakHelper__CUF takes nothing returns boolean
     call MemoryLeakHelper__CUF(f__arg_integer1,f__arg_integer2,f__arg_player1,f__arg_location1,f__arg_location2)
     return true
 endfunction
-function sa___prototype188_MemoryLeakHelper__FG takes nothing returns boolean
+function sa___prototype187_MemoryLeakHelper__FG takes nothing returns boolean
     call MemoryLeakHelper__FG(f__arg_group1,f__arg_code1)
     return true
 endfunction
-function sa___prototype189_MemoryLeakHelper__ASETU takes nothing returns boolean
+function sa___prototype188_MemoryLeakHelper__ASETU takes nothing returns boolean
     call MemoryLeakHelper__ASETU(f__arg_string1,f__arg_widget1,f__arg_string2)
     return true
 endfunction
-function sa___prototype190_MemoryLeakHelper__ASE takes nothing returns boolean
+function sa___prototype189_MemoryLeakHelper__ASE takes nothing returns boolean
     call MemoryLeakHelper__ASE(f__arg_location1,f__arg_string1)
     return true
 endfunction
 
-function jasshelper__initstructs32047893 takes nothing returns nothing
+function jasshelper__initstructs49623153 takes nothing returns nothing
     set st__MemoryLeakHelper__GTable_onDestroy[2]=CreateTrigger()
     set st__MemoryLeakHelper__GTable_onDestroy[3]=st__MemoryLeakHelper__GTable_onDestroy[2]
     call TriggerAddCondition(st__MemoryLeakHelper__GTable_onDestroy[2],Condition( function sa__MemoryLeakHelper__GTable_onDestroy))
@@ -11658,51 +11328,51 @@ function jasshelper__initstructs32047893 takes nothing returns nothing
     set st__YDWETimerPattern__Thread_onDestroy[7]=st__YDWETimerPattern__Thread_onDestroy[5]
     set st__YDWETimerPattern__Thread_onDestroy[8]=st__YDWETimerPattern__Thread_onDestroy[5]
     call TriggerAddCondition(st__YDWETimerPattern__Thread_onDestroy[5],Condition( function sa__YDWETimerPattern__Thread_onDestroy))
-    set st___prototype175[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype175[1],function sa___prototype175_MemoryLeakHelper__GetElapsedGameTime)
-    call TriggerAddCondition(st___prototype175[1],Condition(function sa___prototype175_MemoryLeakHelper__GetElapsedGameTime))
+    set st___prototype174[1]=CreateTrigger()
+    call TriggerAddAction(st___prototype174[1],function sa___prototype174_MemoryLeakHelper__GetElapsedGameTime)
+    call TriggerAddCondition(st___prototype174[1],Condition(function sa___prototype174_MemoryLeakHelper__GetElapsedGameTime))
+    set st___prototype178[1]=CreateTrigger()
+    call TriggerAddAction(st___prototype178[1],function sa___prototype178_MemoryLeakHelper__ReleaseLocation)
+    call TriggerAddCondition(st___prototype178[1],Condition(function sa___prototype178_MemoryLeakHelper__ReleaseLocation))
     set st___prototype179[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype179[1],function sa___prototype179_MemoryLeakHelper__ReleaseLocation)
-    call TriggerAddCondition(st___prototype179[1],Condition(function sa___prototype179_MemoryLeakHelper__ReleaseLocation))
+    call TriggerAddAction(st___prototype179[1],function sa___prototype179_MemoryLeakHelper__CatchGroup)
+    call TriggerAddCondition(st___prototype179[1],Condition(function sa___prototype179_MemoryLeakHelper__CatchGroup))
+    set st___prototype179[2]=CreateTrigger()
+    call TriggerAddAction(st___prototype179[2],function sa___prototype179_MemoryLeakHelper__ReleaseGroup)
+    call TriggerAddCondition(st___prototype179[2],Condition(function sa___prototype179_MemoryLeakHelper__ReleaseGroup))
     set st___prototype180[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype180[1],function sa___prototype180_MemoryLeakHelper__CatchGroup)
-    call TriggerAddCondition(st___prototype180[1],Condition(function sa___prototype180_MemoryLeakHelper__CatchGroup))
-    set st___prototype180[2]=CreateTrigger()
-    call TriggerAddAction(st___prototype180[2],function sa___prototype180_MemoryLeakHelper__ReleaseGroup)
-    call TriggerAddCondition(st___prototype180[2],Condition(function sa___prototype180_MemoryLeakHelper__ReleaseGroup))
+    call TriggerAddAction(st___prototype180[1],function sa___prototype180_MemoryLeakHelper__ReleaseEffect)
+    call TriggerAddCondition(st___prototype180[1],Condition(function sa___prototype180_MemoryLeakHelper__ReleaseEffect))
     set st___prototype181[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype181[1],function sa___prototype181_MemoryLeakHelper__ReleaseEffect)
-    call TriggerAddCondition(st___prototype181[1],Condition(function sa___prototype181_MemoryLeakHelper__ReleaseEffect))
+    call TriggerAddAction(st___prototype181[1],function sa___prototype181_MemoryLeakHelper__PP)
+    call TriggerAddCondition(st___prototype181[1],Condition(function sa___prototype181_MemoryLeakHelper__PP))
     set st___prototype182[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype182[1],function sa___prototype182_MemoryLeakHelper__PP)
-    call TriggerAddCondition(st___prototype182[1],Condition(function sa___prototype182_MemoryLeakHelper__PP))
+    call TriggerAddAction(st___prototype182[1],function sa___prototype182_MemoryLeakHelper__CU)
+    call TriggerAddCondition(st___prototype182[1],Condition(function sa___prototype182_MemoryLeakHelper__CU))
     set st___prototype183[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype183[1],function sa___prototype183_MemoryLeakHelper__CU)
-    call TriggerAddCondition(st___prototype183[1],Condition(function sa___prototype183_MemoryLeakHelper__CU))
+    call TriggerAddAction(st___prototype183[1],function sa___prototype183_MemoryLeakHelper__IPO)
+    call TriggerAddCondition(st___prototype183[1],Condition(function sa___prototype183_MemoryLeakHelper__IPO))
     set st___prototype184[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype184[1],function sa___prototype184_MemoryLeakHelper__IPO)
-    call TriggerAddCondition(st___prototype184[1],Condition(function sa___prototype184_MemoryLeakHelper__IPO))
+    call TriggerAddAction(st___prototype184[1],function sa___prototype184_MemoryLeakHelper__SUP)
+    call TriggerAddCondition(st___prototype184[1],Condition(function sa___prototype184_MemoryLeakHelper__SUP))
+    set st___prototype171[1]=CreateTrigger()
+    call TriggerAddAction(st___prototype171[1],function sa___prototype171_MemoryLeakHelper__SUF)
+    call TriggerAddCondition(st___prototype171[1],Condition(function sa___prototype171_MemoryLeakHelper__SUF))
     set st___prototype185[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype185[1],function sa___prototype185_MemoryLeakHelper__SUP)
-    call TriggerAddCondition(st___prototype185[1],Condition(function sa___prototype185_MemoryLeakHelper__SUP))
-    set st___prototype172[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype172[1],function sa___prototype172_MemoryLeakHelper__SUF)
-    call TriggerAddCondition(st___prototype172[1],Condition(function sa___prototype172_MemoryLeakHelper__SUF))
+    call TriggerAddAction(st___prototype185[1],function sa___prototype185_MemoryLeakHelper__GUR)
+    call TriggerAddCondition(st___prototype185[1],Condition(function sa___prototype185_MemoryLeakHelper__GUR))
     set st___prototype186[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype186[1],function sa___prototype186_MemoryLeakHelper__GUR)
-    call TriggerAddCondition(st___prototype186[1],Condition(function sa___prototype186_MemoryLeakHelper__GUR))
+    call TriggerAddAction(st___prototype186[1],function sa___prototype186_MemoryLeakHelper__CUF)
+    call TriggerAddCondition(st___prototype186[1],Condition(function sa___prototype186_MemoryLeakHelper__CUF))
     set st___prototype187[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype187[1],function sa___prototype187_MemoryLeakHelper__CUF)
-    call TriggerAddCondition(st___prototype187[1],Condition(function sa___prototype187_MemoryLeakHelper__CUF))
+    call TriggerAddAction(st___prototype187[1],function sa___prototype187_MemoryLeakHelper__FG)
+    call TriggerAddCondition(st___prototype187[1],Condition(function sa___prototype187_MemoryLeakHelper__FG))
     set st___prototype188[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype188[1],function sa___prototype188_MemoryLeakHelper__FG)
-    call TriggerAddCondition(st___prototype188[1],Condition(function sa___prototype188_MemoryLeakHelper__FG))
+    call TriggerAddAction(st___prototype188[1],function sa___prototype188_MemoryLeakHelper__ASETU)
+    call TriggerAddCondition(st___prototype188[1],Condition(function sa___prototype188_MemoryLeakHelper__ASETU))
     set st___prototype189[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype189[1],function sa___prototype189_MemoryLeakHelper__ASETU)
-    call TriggerAddCondition(st___prototype189[1],Condition(function sa___prototype189_MemoryLeakHelper__ASETU))
-    set st___prototype190[1]=CreateTrigger()
-    call TriggerAddAction(st___prototype190[1],function sa___prototype190_MemoryLeakHelper__ASE)
-    call TriggerAddCondition(st___prototype190[1],Condition(function sa___prototype190_MemoryLeakHelper__ASE))
+    call TriggerAddAction(st___prototype189[1],function sa___prototype189_MemoryLeakHelper__ASE)
+    call TriggerAddCondition(st___prototype189[1],Condition(function sa___prototype189_MemoryLeakHelper__ASE))
 
 
 
